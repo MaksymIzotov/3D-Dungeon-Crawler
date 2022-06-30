@@ -4976,6 +4976,7 @@ MonoBehaviour:
   force: 35
   explosionForce: 200
   radius: 5
+  damage: 20
 --- !u!54 &4493648037400725940
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class FireballController : MonoBehaviour
 
     public float explosionForce;
     public float radius;
+
+    public float damage;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,8 @@ public class FireballController : MonoBehaviour
             {
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
             }
+
+            n.GetComponent<HealthController>()?.TakeDamage(damage);
         }
 
         DestroyObject();
