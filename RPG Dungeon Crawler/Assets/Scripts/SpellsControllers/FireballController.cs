@@ -6,6 +6,8 @@ public class FireballController : MonoBehaviour
 {
     private Rigidbody rb;
 
+    public float rotationSpeed;
+
     public float force;
 
     public float explosionForce;
@@ -18,6 +20,11 @@ public class FireballController : MonoBehaviour
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
 
         Invoke("DestroyObject", 10);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
     }
 
     private void OnCollisionEnter(Collision collision)
