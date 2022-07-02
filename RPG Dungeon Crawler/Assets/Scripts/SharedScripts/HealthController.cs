@@ -32,6 +32,8 @@ public class HealthController : MonoBehaviour
         hp -= actualDamage;
 
         //Do effects
+        if (gameObject.tag != "Player")
+            DamagePopup.Instance.ShowDamage(actualDamage, transform, transform.localScale.y);
 
         if (hp <= 0)
             Die();
