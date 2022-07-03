@@ -37,13 +37,13 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        AssignDefaults();
     }
 
     private void Start()
     {
         //TODO Load From Save File
-
-        AssignDefaults();
 
         //UpdateButtonsText();
     }

@@ -13,6 +13,8 @@ public class SpellsInventory : MonoBehaviour
     private float[] activateTime = new float[4];
     private float[] cooldownTime = new float[4];
 
+    private CooldownCountdown[] cooldownUI = new CooldownCountdown[4];
+
     public Spell[] spells;
     public Transform spellSpawnPoint;
 
@@ -23,6 +25,11 @@ public class SpellsInventory : MonoBehaviour
             activateTime[i] = spells[i].activateTime;
             cooldownTime[i] = spells[i].coolDownTime;
         }
+
+        cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();
+        cooldownUI[1] = GameObject.Find("Spell02").GetComponent<CooldownCountdown>();
+        cooldownUI[2] = GameObject.Find("Spell03").GetComponent<CooldownCountdown>();
+        cooldownUI[3] = GameObject.Find("Spell04").GetComponent<CooldownCountdown>();
     }
 
     private void Update()
@@ -69,8 +76,6 @@ public class SpellsInventory : MonoBehaviour
     }
 
     IEnumerator Activate(int index) {
-        Debug.Log("Activating spell: " + index);
-
         spells[index]?.PreCast(gameObject);
         spellStates[index] = STATE.ACTIVE;
         yield return new WaitForSeconds(activateTime[index]);
@@ -83,10 +88,9 @@ public class SpellsInventory : MonoBehaviour
 
     IEnumerator Cooldown(int index)
     {
-        Debug.Log("Cooldown spell: " + index);
+        cooldownUI[index].SetTimer(cooldownTime[index]);
         yield return new WaitForSeconds(cooldownTime[index]);
 
-        Debug.Log("Ready spell: " + index);
         spellStates[index] = STATE.READY;
     }
 
@@ -97,7 +101,6 @@ public class SpellsInventory : MonoBehaviour
         {
             if (spellStates[i] == STATE.ACTIVE)
             {
-                Debug.Log("Spell is Active " + i);
                 return true;
             }
         }
