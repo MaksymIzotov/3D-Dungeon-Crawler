@@ -14,6 +14,10 @@ public class FireballController : MonoBehaviour
     public float radius;
 
     public float damage;
+
+    public float burnDuration;
+    public float burnDamage;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -40,8 +44,12 @@ public class FireballController : MonoBehaviour
             {
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
             }
+            else if(n.tag == "Enemy")
+            {
+                GetComponent<ParticlesController>().SpawnBurnParticles(n.transform, burnDuration, burnDamage);
+            }
 
-            n.GetComponent<HealthController>()?.TakeDamage(damage);
+            n.GetComponent<IDamagable>()?.TakeDamage(damage);
         }
 
         DestroyObject();
@@ -49,7 +57,7 @@ public class FireballController : MonoBehaviour
 
     private void DestroyObject()
     {
-        GetComponent<ParticlesController>().SpawnParticles();
+        GetComponent<ParticlesController>().SpawnExplosionParticles();
         Destroy(gameObject);
     }
 }

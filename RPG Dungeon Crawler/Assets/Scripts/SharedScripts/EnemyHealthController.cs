@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthController : MonoBehaviour
+public class EnemyHealthController : MonoBehaviour, IDamagable
 {
     public Health properties;
 
     private float hp;
-
     private void Start()
     {
         SetValues();
@@ -18,7 +17,7 @@ public class HealthController : MonoBehaviour
         HealthRegen();
     }
 
-    private void HealthRegen()
+    public void HealthRegen()
     {
         if (hp >= properties.healthPoints) { return; }
 
@@ -32,17 +31,19 @@ public class HealthController : MonoBehaviour
         hp -= actualDamage;
 
         //Do effects
-        if (gameObject.tag != "Player")
-            DamagePopup.Instance.ShowDamage(actualDamage, transform, transform.localScale.y);
+        DamagePopup.Instance.ShowDamage(actualDamage, transform, transform.localScale.y);
 
         if (hp <= 0)
             Die();
     }
 
 
-    private void Die()
+    public void Die()
     {
+        //Death effects?
+        //Drop?
 
+        Destroy(gameObject);
     }
 
     private void SetValues()

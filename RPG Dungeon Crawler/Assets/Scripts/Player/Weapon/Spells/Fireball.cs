@@ -6,6 +6,8 @@ using UnityEngine;
 public class Fireball : Spell
 {
     public GameObject instantiatePrefab;
+    public float burnEffectDuration;
+    public float burnDamage;
 
     public override void PreCast(GameObject parent)
     {
@@ -15,6 +17,8 @@ public class Fireball : Spell
 
     public override void Cast(Transform spellSpawnpoint)
     {
-        Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
+        GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
+        fireball.GetComponent<FireballController>().burnDuration = burnEffectDuration;
+        fireball.GetComponent<FireballController>().burnDamage = burnDamage;
     }
 }

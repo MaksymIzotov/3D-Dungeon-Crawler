@@ -20,6 +20,6 @@ public class DamagePopup : MonoBehaviour
     {
         Vector3 spawnPos = new Vector3(pos.position.x + Random.Range(randomMin,randomMax), pos.position.y + height, pos.position.z + Random.Range(randomMin, randomMax));
         GameObject text = Instantiate(damageText, spawnPos, Quaternion.identity);
-        text.GetComponent<TMP_Text>().text = damage.ToString();
+        text.GetComponent<TMP_Text>().text = damage.ToString("F0");
     }
 }

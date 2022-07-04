@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89cd7463b5602bf4b8454b860bbca0cb, type: 3}
-  m_Name: Fireball
+  m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
+  m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  coolDownTime: 3
-  activateTime: 1
-  instantiatePrefab: {fileID: 8795123936897416075, guid: fcc444274b3242346a3b36a9fabc2214, type: 3}
-  burnEffectDuration: 3
-  burnDamage: 2
+  healthPoints: 100
+  defence: 0
+  healthRegen: 2
