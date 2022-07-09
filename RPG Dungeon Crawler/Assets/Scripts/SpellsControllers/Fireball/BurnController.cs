@@ -9,7 +9,7 @@ public class BurnController : MonoBehaviour
     GameObject enemy;
     private void Start()
     {
-        Destroy(gameObject, GetComponent<ParticleSystem>().duration);
+        Destroy(gameObject, GetComponent<ParticleSystem>().duration + GetComponent<ParticleSystem>().startLifetime);
         enemy = transform.parent.gameObject;
         StartCoroutine(Burn());
     }
