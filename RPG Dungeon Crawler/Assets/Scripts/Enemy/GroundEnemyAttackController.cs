@@ -7,6 +7,7 @@ public class GroundEnemyAttackController : MonoBehaviour
     public EnemyAttack properties;
 
     public bool isAttacking = false;
+    public Transform attackPoint;
 
     public void Attack()
     {
@@ -17,7 +18,7 @@ public class GroundEnemyAttackController : MonoBehaviour
     {
         isAttacking = true;
 
-        EnemyAnimationController.Instance.Attack();
+        GetComponent<EnemyAnimationController>().Attack();
 
         yield return new WaitForSeconds(properties.preAttackTime);
 
@@ -27,7 +28,7 @@ public class GroundEnemyAttackController : MonoBehaviour
     IEnumerator PerformAttack()
     {
         //Deal damage
-        Collider[] objectsNearby = Physics.OverlapSphere(transform.position, 2f);
+        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 0.7f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")

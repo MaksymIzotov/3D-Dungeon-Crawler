@@ -8,6 +8,8 @@ public class DummyChasingState : EnemyBaseState
 
     GameObject player;
     Transform startPos;
+    Transform attackPos;
+
     public override void EnterState(EnemyStateManager manager)
     {
         //Start animation
@@ -15,6 +17,7 @@ public class DummyChasingState : EnemyBaseState
 
         player = GameObject.FindGameObjectWithTag("Player");
         startPos = manager.transform;
+        attackPos = manager.attackPoint;
     }
 
     public override void UpdateState(EnemyStateManager manager)
@@ -31,12 +34,12 @@ public class DummyChasingState : EnemyBaseState
         }
 
         //If player is in attack range check
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 2f);
+        Collider[] objectsNearby = Physics.OverlapSphere(attackPos.position, 0.7f);
         foreach(Collider col in objectsNearby)  
         {
             if (col.tag == "Player")
             {
-                controller.StopAtPosition(startPos);
+                controller.StopAtPosition();
                 manager.SwitchState(manager.AttackingState);
             }
         }

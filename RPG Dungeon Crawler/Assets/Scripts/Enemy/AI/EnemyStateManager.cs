@@ -10,6 +10,8 @@ public class EnemyStateManager : MonoBehaviour
     public DummyIdleState IdleState = new DummyIdleState();
     public DummyChasingState ChasingState = new DummyChasingState();
 
+    public Transform attackPoint;
+
     private void Start()
     {
         currentState = IdleState;

@@ -5,29 +5,39 @@ using UnityEngine.AI;
 
 public class GroundEnemyMovementController : MonoBehaviour
 {
-    public float speed;
-
     private NavMeshAgent agent;
     private GameObject player;
+
+    public float rotationSpeed;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");     
+        player = GameObject.FindGameObjectWithTag("Player");
+        agent.angularSpeed = 0;
+        agent.isStopped = true;
     }
 
     private void Update()
     {
-        //ChasePlayer();
+        if (agent.isStopped) { return; }
+        RotateEnemy();
+    }
+
+    private void RotateEnemy()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime);
     }
 
     public void ChasePlayer()
     {
+        agent.isStopped = false;
         agent.destination = player.transform.position;
     } 
 
-    public void StopAtPosition(Transform pos)
+    public void StopAtPosition()
     {
-        agent.destination = pos.position;
+        agent.isStopped = true;
     }
 }

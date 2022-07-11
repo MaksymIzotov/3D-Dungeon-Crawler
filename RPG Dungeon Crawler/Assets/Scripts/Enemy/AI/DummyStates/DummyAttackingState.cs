@@ -9,7 +9,7 @@ public class DummyAttackingState : EnemyBaseState
     GroundEnemyAttackController attackController;
     public override void EnterState(EnemyStateManager manager)
     {
-        startPos = manager.transform;
+        startPos = manager.attackPoint;
         attackController = manager.gameObject.GetComponent<GroundEnemyAttackController>();
     }
 
@@ -20,7 +20,7 @@ public class DummyAttackingState : EnemyBaseState
 
         bool isPlayerInRange = false;
 
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 2f);
+        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 0.7f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")

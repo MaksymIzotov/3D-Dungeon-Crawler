@@ -48,7 +48,7 @@ public class WeaponCameraFollow : MonoBehaviour
             mouseY *= InputManager.Instance.aimMult;
         }
 
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(new Vector3(Mathf.Clamp(-mouseY * 5, -45, 45), Mathf.Clamp(mouseX * 5, -45, 45), 0)), 0.07f);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(new Vector3(Mathf.Clamp(-mouseY , -45, 45), Mathf.Clamp(mouseX, -45, 45), 0)), 0.07f);
     }
 
     #endregion
