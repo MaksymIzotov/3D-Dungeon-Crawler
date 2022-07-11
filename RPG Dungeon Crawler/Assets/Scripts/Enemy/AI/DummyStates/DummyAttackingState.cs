@@ -5,24 +5,33 @@ using UnityEngine;
 public class DummyAttackingState : EnemyBaseState
 {
     Transform startPos;
+
+    GroundEnemyAttackController attackController;
     public override void EnterState(EnemyStateManager manager)
     {
-        //Start animation
-
         startPos = manager.transform;
+        attackController = manager.gameObject.GetComponent<GroundEnemyAttackController>();
     }
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        //Attack
 
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 5f);
+        if (attackController.isAttacking) { return; }
+
+        bool isPlayerInRange = false;
+
+        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 2f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")
-                return;
+            {
+                isPlayerInRange = true;
+                break;
+            }
         }
 
-        manager.SwitchState(manager.ChasingState);
+        if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
+
+        attackController.Attack();
     }
 }

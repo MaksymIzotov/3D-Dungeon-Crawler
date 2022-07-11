@@ -17,11 +17,6 @@ public class DummyChasingState : EnemyBaseState
         startPos = manager.transform;
     }
 
-    public override void OnCollisionEnter(EnemyStateManager manager)
-    {
-       
-    }
-
     public override void UpdateState(EnemyStateManager manager)
     {
         controller.ChasePlayer();
@@ -36,7 +31,7 @@ public class DummyChasingState : EnemyBaseState
         }
 
         //If player is in attack range check
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 5f);
+        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 2f);
         foreach(Collider col in objectsNearby)  
         {
             if (col.tag == "Player")
