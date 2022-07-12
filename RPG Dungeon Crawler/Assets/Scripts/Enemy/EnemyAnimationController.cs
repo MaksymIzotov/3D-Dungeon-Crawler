@@ -23,4 +23,9 @@ public class EnemyAnimationController : MonoBehaviour
         anim.Play("Chase");
     }
 
+    public void Die()
+    {
+        anim.Play("Death");
+    }
+
 }

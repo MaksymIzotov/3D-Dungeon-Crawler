@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealthController : MonoBehaviour, IDamagable
 {
     public Health properties;
+    public UnityEvent onDeath;
 
     private float hp;
+    [HideInInspector] public bool isDead;
     private void Start()
     {
         SetValues();
@@ -40,14 +43,20 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        //Death effects?
+        isDead = true;
+        GetComponent<EnemyAnimationController>().Die();
+        onDeath.Invoke();
         //Drop?
+    }
 
+    public void DestroyObject()
+    {
         Destroy(gameObject);
     }
 
     private void SetValues()
     {
         hp = properties.healthPoints;
+        isDead = false;
     }
 }

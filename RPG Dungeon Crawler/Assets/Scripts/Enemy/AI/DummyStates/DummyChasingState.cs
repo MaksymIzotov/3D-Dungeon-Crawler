@@ -10,6 +10,7 @@ public class DummyChasingState : EnemyBaseState
     Transform startPos;
     Transform attackPos;
 
+    LayerMask ignore;
     public override void EnterState(EnemyStateManager manager)
     {
         //Start animation
@@ -19,6 +20,8 @@ public class DummyChasingState : EnemyBaseState
         player = GameObject.FindGameObjectWithTag("Player");
         startPos = manager.transform;
         attackPos = manager.attackPoint;
+
+        ignore = LayerMask.GetMask("Enemy");
     }
 
     public override void UpdateState(EnemyStateManager manager)
@@ -28,7 +31,7 @@ public class DummyChasingState : EnemyBaseState
         //If player is out of sight check
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - startPos.position;
-        if (Physics.Raycast(startPos.position, rayDirection, out hit))
+        if (Physics.Raycast(startPos.position, rayDirection, out hit, 1000f, ~ignore))
         {
             if (hit.transform.tag != "Player")
                 manager.SwitchState(manager.IdleState);

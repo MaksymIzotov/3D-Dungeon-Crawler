@@ -23,7 +23,7 @@ public class DummyIdleState : EnemyBaseState
     {
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - startPos.position;
-        if (Physics.Raycast(startPos.position, rayDirection, out hit, 1000f,~ignore))
+        if (Physics.Raycast(startPos.position, rayDirection, out hit, 1000f, ~ignore))
         {
             if (hit.transform.tag == "Player")
                 manager.SwitchState(manager.ChasingState);

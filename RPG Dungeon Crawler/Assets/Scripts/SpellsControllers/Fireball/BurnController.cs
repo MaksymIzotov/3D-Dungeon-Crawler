@@ -9,8 +9,9 @@ public class BurnController : MonoBehaviour
     GameObject enemy;
     private void Start()
     {
-        Destroy(gameObject, GetComponent<ParticleSystem>().duration + GetComponent<ParticleSystem>().startLifetime);
-        enemy = transform.parent.gameObject;
+        var main = GetComponent<ParticleSystem>().main;
+        Destroy(gameObject, main.duration + main.startLifetimeMultiplier);
+        enemy = transform.root.gameObject;
         StartCoroutine(Burn());
     }
 
@@ -18,6 +19,8 @@ public class BurnController : MonoBehaviour
     {
         while (true)
         {
+            if (enemy.GetComponent<EnemyHealthController>().isDead) { break; }
+
             enemy.GetComponent<IDamagable>().TakeDamage(burnDamage);
             yield return new WaitForSeconds(1f);
         }
