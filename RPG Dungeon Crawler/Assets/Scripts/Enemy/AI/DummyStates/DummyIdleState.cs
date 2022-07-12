@@ -11,6 +11,7 @@ public class DummyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateManager manager)
     {
         //Start animation
+        manager.GetComponent<EnemyAnimationController>().Idle();
 
         player = GameObject.FindGameObjectWithTag("Player");
         startPos = manager.transform;

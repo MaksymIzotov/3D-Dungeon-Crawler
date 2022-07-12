@@ -20,7 +20,7 @@ public class DummyAttackingState : EnemyBaseState
 
         bool isPlayerInRange = false;
 
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 0.7f);
+        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 1f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")

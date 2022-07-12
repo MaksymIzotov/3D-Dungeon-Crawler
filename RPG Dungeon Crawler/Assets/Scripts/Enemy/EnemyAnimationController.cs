@@ -14,5 +14,13 @@ public class EnemyAnimationController : MonoBehaviour
     {
         anim.Play("Attack");
     }
+    public void Idle()
+    {
+        anim.Play("Idle");
+    }
+    public void Chase()
+    {
+        anim.Play("Chase");
+    }
 
 }

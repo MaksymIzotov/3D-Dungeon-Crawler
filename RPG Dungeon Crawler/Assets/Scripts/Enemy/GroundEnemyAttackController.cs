@@ -28,7 +28,7 @@ public class GroundEnemyAttackController : MonoBehaviour
     IEnumerator PerformAttack()
     {
         //Deal damage
-        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 0.7f);
+        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 1f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")
