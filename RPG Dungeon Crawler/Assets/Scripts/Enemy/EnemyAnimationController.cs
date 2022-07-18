@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAnimationController : MonoBehaviour
 {
+    public int attackAnimCount;
+
     private Animator anim;
 
     private float speed;
@@ -15,7 +17,22 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void Attack()
     {
-        anim.CrossFade("Attack", 0.1f, 0);
+        int randomNum = Random.Range(1,attackAnimCount+1);
+
+        switch (randomNum)
+        {
+            case 1:
+                anim.CrossFade("Attack1", 0.1f, 0);
+                break;
+            case 2:
+                anim.CrossFade("Attack2", 0.1f, 0);
+                break;
+            case 3:
+                anim.CrossFade("Attack3", 0.1f, 0);
+                break;
+        }
+
+
     }
     public void Idle()
     {
