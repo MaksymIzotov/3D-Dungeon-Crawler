@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyAnimationController : MonoBehaviour
 {
     private Animator anim;
+
+    private float speed;
+    private Vector3 lastPos;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -12,20 +15,21 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void Attack()
     {
-        anim.Play("Attack");
+        anim.CrossFade("Attack", 0.1f, 0);
     }
     public void Idle()
     {
-        anim.Play("Idle");
+        anim.CrossFade("Idle", 0.1f, 0);
     }
+
     public void Chase()
     {
-        anim.Play("Chase");
+        anim.CrossFade("Chase", 0.1f, 0);
     }
 
     public void Die()
     {
-        anim.Play("Death");
+        anim.CrossFade("Death", 0.1f, 0);
     }
 
 }

@@ -6,6 +6,6 @@ public class AnimationManager : MonoBehaviour
 
     public void PlaySpellAnimation(string name)
     {
-        anim.Play(name);
+        anim.CrossFade(name, 0.1f, 0);
     }
 }
