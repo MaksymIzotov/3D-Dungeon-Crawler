@@ -545,7 +545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84e1a414025754947b95bd58d1d337ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c354dce082b5e2f4e88ce10d326e252d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1809,6 +1809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941879778}
   - component: {fileID: 941879777}
+  - component: {fileID: 941879779}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -1861,6 +1862,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941879779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941879776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a810b511c0ca570429b49021cf894d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icons:
+  - name: Fireball
+    icon: {fileID: 21300000, guid: 84e1a414025754947b95bd58d1d337ca, type: 3}
+  - name: Healing
+    icon: {fileID: 21300000, guid: c354dce082b5e2f4e88ce10d326e252d, type: 3}
+  skillsIcons:
+  - {fileID: 2038008793}
+  - {fileID: 1196094281}
+  - {fileID: 1666728290}
+  - {fileID: 459083574}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,6 +3909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
+  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
+  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   spellSpawnPoint: {fileID: 1632590201}
 --- !u!114 &2126161078

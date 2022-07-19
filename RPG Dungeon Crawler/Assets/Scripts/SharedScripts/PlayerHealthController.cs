@@ -47,6 +47,14 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
             Die();
     }
 
+    public void Heal(float amount)
+    {
+        hp += amount;
+
+        if (hp >= properties.healthPoints)
+            hp = properties.healthPoints;
+    }
+
     private void DamageEffect(float damage)
     {
         GameObject hpGO = Instantiate(hpTextAnim, hpText.transform);

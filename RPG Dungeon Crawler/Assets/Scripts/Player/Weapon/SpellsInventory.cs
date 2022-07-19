@@ -10,8 +10,6 @@ public class SpellsInventory : MonoBehaviour
         COOLDOWN
     }
     private STATE[] spellStates = new STATE[4] { STATE.READY, STATE.READY, STATE.READY, STATE.READY };
-    private float[] activateTime = new float[4];
-    private float[] cooldownTime = new float[4];
 
     private CooldownCountdown[] cooldownUI = new CooldownCountdown[4];
 
@@ -20,16 +18,12 @@ public class SpellsInventory : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < spells.Length; i++)
-        {
-            activateTime[i] = spells[i].activateTime;
-            cooldownTime[i] = spells[i].coolDownTime;
-        }
-
         cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();
         cooldownUI[1] = GameObject.Find("Spell02").GetComponent<CooldownCountdown>();
         cooldownUI[2] = GameObject.Find("Spell03").GetComponent<CooldownCountdown>();
         cooldownUI[3] = GameObject.Find("Spell04").GetComponent<CooldownCountdown>();
+
+        SkillsIconManager.Instance.SetupIcon(spells);
     }
 
     private void Update()
@@ -76,11 +70,18 @@ public class SpellsInventory : MonoBehaviour
     }
 
     IEnumerator Activate(int index) {
-        spells[index]?.PreCast(gameObject);
+        spells[index]?.PreCast(spellSpawnPoint);
         spellStates[index] = STATE.ACTIVE;
-        yield return new WaitForSeconds(activateTime[index]);
+        yield return new WaitForSeconds(spells[index].activateTime);
 
         spells[index].Cast(spellSpawnPoint);
+
+        StartCoroutine(AfterActivate(index));
+    }
+
+    IEnumerator AfterActivate(int index)
+    {
+        yield return new WaitForSeconds(spells[index].afterActivateTime);
         spellStates[index] = STATE.COOLDOWN;
 
         StartCoroutine(Cooldown(index));
@@ -88,8 +89,8 @@ public class SpellsInventory : MonoBehaviour
 
     IEnumerator Cooldown(int index)
     {
-        cooldownUI[index].SetTimer(cooldownTime[index]);
-        yield return new WaitForSeconds(cooldownTime[index]);
+        cooldownUI[index].SetTimer(spells[index].coolDownTime);
+        yield return new WaitForSeconds(spells[index].coolDownTime);
 
         spellStates[index] = STATE.READY;
     }

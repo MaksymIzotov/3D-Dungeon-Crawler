@@ -9,9 +9,10 @@ public class Fireball : Spell
     public float burnEffectDuration;
     public float burnDamage;
 
-    public override void PreCast(GameObject parent)
+    public override void PreCast(Transform spellSpawnpoint)
     {
         //Animation
+        GameObject parent = spellSpawnpoint.root.gameObject;
         parent.GetComponent<AnimationManager>().PlaySpellAnimation("Fireball");
     }
 
