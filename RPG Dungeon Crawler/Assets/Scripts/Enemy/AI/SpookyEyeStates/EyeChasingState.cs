@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DummyChasingState", menuName = "States/Dummy/Dummy Chasing State", order = 3)]
-public class DummyChasingState : EnemyBaseState
+[CreateAssetMenu(fileName = "EyeChasingState", menuName = "States/Spooky Eye/Eye Chasing State", order = 2)]
+public class EyeChasingState : EnemyBaseState
 {
-    GroundEnemyMovementController controller;
+    public float shootingRange = 1f;
+
+    FlyingEnemyMovement controller;
 
     GameObject player;
     Transform startPos;
@@ -15,7 +17,7 @@ public class DummyChasingState : EnemyBaseState
     {
         //Start animation
         manager.GetComponent<EnemyAnimationController>().Chase();
-        controller = manager.gameObject.GetComponent<GroundEnemyMovementController>();
+        controller = manager.gameObject.GetComponent<FlyingEnemyMovement>();
 
         player = GameObject.FindGameObjectWithTag("Player");
         startPos = manager.transform;
@@ -38,7 +40,7 @@ public class DummyChasingState : EnemyBaseState
 
         //If player is in attack range check
         RaycastHit attackHit;
-        if (Physics.Raycast(startPos.position, startPos.TransformDirection(Vector3.forward), out attackHit, 2f))
+        if (Physics.Raycast(startPos.position, startPos.TransformDirection(Vector3.forward), out attackHit, shootingRange))
         {
             if (attackHit.transform.tag == "Player")
             {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAnimationController : MonoBehaviour
 {
+    [Tooltip("Number of attack animation it has")]
     public int attackAnimCount;
 
     private Animator anim;

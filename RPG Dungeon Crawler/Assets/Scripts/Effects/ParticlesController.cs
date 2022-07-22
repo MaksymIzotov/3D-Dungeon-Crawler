@@ -16,7 +16,7 @@ public class ParticlesController : MonoBehaviour
 
     public void SpawnBurnParticles(Transform enemy, float burnDuration, float damage)
     {
-        Transform pos = enemy.Find("FX");
+        Transform pos = enemy.Find("Model/FX");
 
         GameObject burn = Instantiate(burnParticles, pos);
         burn.GetComponent<BurnController>().burnDamage = damage;

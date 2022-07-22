@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyBaseState
+public class EnemyBaseState : ScriptableObject
 {
-    public abstract void EnterState(EnemyStateManager manager);
+    public virtual void EnterState(EnemyStateManager manager) { }
 
-    public abstract void UpdateState(EnemyStateManager manager);
+    public virtual void UpdateState(EnemyStateManager manager) { }
 }

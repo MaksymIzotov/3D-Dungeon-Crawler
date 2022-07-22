@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DummyIdleState", menuName = "States/Dummy/Dummy Idle State", order = 1)]
-public class DummyIdleState : EnemyBaseState
+[CreateAssetMenu(fileName = "EyeIdleState", menuName = "States/Spooky Eye/Eye Idle State", order = 1)]
+public class EyeIdleState : EnemyBaseState
 {
     GameObject player;
     Transform startPos;

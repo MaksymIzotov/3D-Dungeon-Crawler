@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "DummyAttackState", menuName = "States/Dummy/Dummy Attacking State", order = 2)]
 public class DummyAttackingState : EnemyBaseState
 {
     Transform startPos;
@@ -9,7 +11,7 @@ public class DummyAttackingState : EnemyBaseState
     GroundEnemyAttackController attackController;
     public override void EnterState(EnemyStateManager manager)
     {
-        startPos = manager.attackPoint;
+        startPos = manager.transform;
         attackController = manager.gameObject.GetComponent<GroundEnemyAttackController>();
     }
 
@@ -20,14 +22,11 @@ public class DummyAttackingState : EnemyBaseState
 
         bool isPlayerInRange = false;
 
-        Collider[] objectsNearby = Physics.OverlapSphere(startPos.position, 1f);
-        foreach (Collider col in objectsNearby)
+        RaycastHit hit;
+        if (Physics.Raycast(startPos.position, startPos.TransformDirection(Vector3.forward), out hit, 2f))
         {
-            if (col.tag == "Player")
-            {
+            if (hit.transform.tag == "Player")
                 isPlayerInRange = true;
-                break;
-            }
         }
 
         if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }

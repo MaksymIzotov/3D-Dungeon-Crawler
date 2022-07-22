@@ -6,9 +6,9 @@ public class EnemyStateManager : MonoBehaviour
 {
     EnemyBaseState currentState;
 
-    public DummyAttackingState AttackingState = new DummyAttackingState();
-    public DummyIdleState IdleState = new DummyIdleState();
-    public DummyChasingState ChasingState = new DummyChasingState();
+    public EnemyBaseState AttackingState;
+    public EnemyBaseState IdleState;
+    public EnemyBaseState ChasingState;
 
     public Transform attackPoint;
 
