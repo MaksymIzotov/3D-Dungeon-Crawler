@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching;
     [HideInInspector]
     public bool isRunning;
-    private bool isGrounded;
+    //private bool isGrounded;
 
     private Vector3 impact = Vector3.zero;
 
@@ -68,11 +68,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(cc.isGrounded);
         //if (InGameUIManager.Instance.state == InGameUIManager.UISTATE.PAUSE) { return; } RECREATE IN THE FUTURE
 
         HandleInput();
-        Crouch();
         Jump();
+        Crouch();
     }
 
     #endregion
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         //    moveY = 0;
         //}
 
-        if (isGrounded && playerVelocity.y < 0)
+        if (cc.isGrounded && playerVelocity.y < 0)
             playerVelocity.y = 0f;
 
         if (cc.isGrounded)
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravity * Time.deltaTime;
         cc.Move(playerVelocity * Time.deltaTime);
-        isGrounded = cc.isGrounded;
+        //isGrounded = cc.isGrounded;
     }
 
     void SpeedHandle()
@@ -132,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (isJumping && isGrounded)
+        if (isJumping && cc.isGrounded)
             playerVelocity.y += Mathf.Sqrt(jumpForce * -3.0f * gravity);
     }
 
@@ -170,8 +171,6 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(InputManager.Instance.Left))
                 moveX = Mathf.Lerp(moveX, -1, speedChangingStep * Time.deltaTime);
         }
-
-
 
         isJumping = Input.GetKeyDown(InputManager.Instance.Jump);
         isRunning = Input.GetKey(InputManager.Instance.Run);

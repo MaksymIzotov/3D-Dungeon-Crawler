@@ -71,8 +71,8 @@ public class InputManager : MonoBehaviour
         Pickup = KeyCode.F;
         Drop = KeyCode.G;
 
-        sensitivity = 5f;
-        aimMult = 1f;
+        //sensitivity = 15f;
+        //aimMult = 1f;
     }
 
 
