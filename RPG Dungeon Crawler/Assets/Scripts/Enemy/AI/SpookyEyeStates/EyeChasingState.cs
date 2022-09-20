@@ -40,7 +40,7 @@ public class EyeChasingState : EnemyBaseState
 
         //If player is in attack range check
         RaycastHit attackHit;
-        if (Physics.Raycast(startPos.position, startPos.TransformDirection(Vector3.forward), out attackHit, shootingRange))
+        if (Physics.Raycast(startPos.position, rayDirection, out attackHit, shootingRange))
         {
             if (attackHit.transform.tag == "Player")
             {

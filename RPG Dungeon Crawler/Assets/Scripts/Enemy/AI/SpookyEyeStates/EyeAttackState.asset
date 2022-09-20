@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3036dfacae0ab9144ba0d0170af4c2cc, type: 3}
-  m_Name: EyeChasingState
+  m_Script: {fileID: 11500000, guid: a4189fd2c00597f40875a1c37f2778b2, type: 3}
+  m_Name: EyeAttackState
   m_EditorClassIdentifier: 
   shootingRange: 15

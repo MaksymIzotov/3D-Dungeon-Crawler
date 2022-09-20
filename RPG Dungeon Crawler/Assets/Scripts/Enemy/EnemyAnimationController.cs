@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyAnimationController : MonoBehaviour
 {
     [Tooltip("Number of attack animation it has")]
-    public int attackAnimCount;
+    [SerializeField] private int attackAnimCount;
 
-    private Animator anim;
+    [SerializeField] private Animator anim;
 
     private float speed;
     private Vector3 lastPos;
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
     public void Attack()

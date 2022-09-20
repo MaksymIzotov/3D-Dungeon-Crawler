@@ -20,7 +20,6 @@ public class FlyingEnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (agent.isStopped) { return; }
         RotateEnemy();
     }
 

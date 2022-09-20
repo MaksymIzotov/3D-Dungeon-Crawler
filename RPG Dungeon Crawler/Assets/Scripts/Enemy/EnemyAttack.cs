@@ -8,4 +8,6 @@ public class EnemyAttack : ScriptableObject
     public float attackDelay;
     public float damage;
     public float preAttackTime;
+
+    public GameObject bullet;
 }

@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAnimCount: 3
+  anim: {fileID: 7365368488397697665}
 --- !u!95 &7365368488397697665
 Animator:
   serializedVersion: 3
