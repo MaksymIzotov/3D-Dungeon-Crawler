@@ -195,6 +195,8 @@ public class PlayerController : MonoBehaviour
 
     #region Technical Methods
 
+    public Vector3 GetMovement() { return movement; }
+
     void VariablesAssignment()
     {
         cc = GetComponent<CharacterController>();
