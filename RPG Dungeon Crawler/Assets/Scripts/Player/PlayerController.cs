@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching;
     [HideInInspector]
     public bool isRunning;
-    //private bool isGrounded;
 
     private Vector3 impact = Vector3.zero;
 
@@ -196,6 +195,7 @@ public class PlayerController : MonoBehaviour
     #region Technical Methods
 
     public Vector3 GetMovement() { return movement; }
+    public bool GetIsGrounded() { return cc.isGrounded; }
 
     void VariablesAssignment()
     {
