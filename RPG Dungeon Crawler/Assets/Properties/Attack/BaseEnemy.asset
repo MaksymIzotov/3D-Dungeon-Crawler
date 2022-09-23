@@ -15,3 +15,4 @@ MonoBehaviour:
   attackDelay: 1
   damage: 12
   preAttackTime: 0.5
+  bullet: {fileID: 4940093926140264369, guid: aa5e7904d6515de4293fa9adb1bcc29b, type: 3}
