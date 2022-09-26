@@ -6,24 +6,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DummyAttackState", menuName = "States/Dummy/Dummy Attacking State", order = 2)]
 public class DummyAttackingState : EnemyBaseState
 {
-    Transform startPos;
-
-    GroundEnemyAttackController attackController;
     public override void EnterState(EnemyStateManager manager)
     {
-        startPos = manager.transform;
-        attackController = manager.gameObject.GetComponent<GroundEnemyAttackController>();
+       
     }
 
     public override void UpdateState(EnemyStateManager manager)
     {
-
-        if (attackController.isAttacking) { return; }
+        if (manager.gameObject.GetComponent<GroundEnemyAttackController>().isAttacking) { return; }
 
         bool isPlayerInRange = false;
 
         RaycastHit hit;
-        if (Physics.Raycast(startPos.position, startPos.TransformDirection(Vector3.forward), out hit, 2f))
+        if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out hit, 2f))
         {
             if (hit.transform.tag == "Player")
                 isPlayerInRange = true;
@@ -31,6 +26,6 @@ public class DummyAttackingState : EnemyBaseState
 
         if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
 
-        attackController.Attack();
+        manager.gameObject.GetComponent<GroundEnemyAttackController>().Attack();
     }
 }

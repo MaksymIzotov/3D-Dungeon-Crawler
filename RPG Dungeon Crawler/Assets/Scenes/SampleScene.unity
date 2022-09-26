@@ -4106,11 +4106,11 @@ GameObject:
   - component: {fileID: 2126161074}
   - component: {fileID: 2126161073}
   - component: {fileID: 2126161075}
+  - component: {fileID: 2126161080}
   - component: {fileID: 2126161076}
   - component: {fileID: 2126161077}
   - component: {fileID: 2126161078}
   - component: {fileID: 2126161079}
-  - component: {fileID: 2126161080}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4247,7 +4247,6 @@ MonoBehaviour:
   amplitude: 0.005
   frequency: 13
   cam: {fileID: 963194228}
-  camHolder: {fileID: 1653812779}
 --- !u!1001 &5942186500610465775
 PrefabInstance:
   m_ObjectHideFlags: 0

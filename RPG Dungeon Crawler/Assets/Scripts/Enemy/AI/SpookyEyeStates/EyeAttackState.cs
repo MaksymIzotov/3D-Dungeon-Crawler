@@ -7,27 +7,21 @@ public class EyeAttackState : EnemyBaseState
 {
     public float shootingRange = 1f;
 
-    Transform startPos;
     GameObject player;
-
-    ShootingEnemy attackController;
     public override void EnterState(EnemyStateManager manager)
     {
-        startPos = manager.transform;
-        attackController = manager.gameObject.GetComponent<ShootingEnemy>();
-
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        if (attackController.isAttacking) { return; }
+        if (manager.gameObject.GetComponent<ShootingEnemy>().isAttacking) { return; }
 
         bool isPlayerInRange = false;
 
         RaycastHit hit;
-        Vector3 rayDirection = player.transform.position - startPos.position;
-        if (Physics.Raycast(startPos.position, rayDirection, out hit, shootingRange))
+        Vector3 rayDirection = player.transform.position - manager.transform.position;
+        if (Physics.Raycast(manager.transform.position, rayDirection, out hit, shootingRange))
         {
             if (hit.transform.tag == "Player")
                 isPlayerInRange = true;
@@ -35,6 +29,6 @@ public class EyeAttackState : EnemyBaseState
 
         if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
 
-        attackController.Attack();
+        manager.gameObject.GetComponent<ShootingEnemy>().Attack();
     }
 }

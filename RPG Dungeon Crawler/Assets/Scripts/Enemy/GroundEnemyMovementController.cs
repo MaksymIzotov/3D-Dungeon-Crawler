@@ -33,7 +33,7 @@ public class GroundEnemyMovementController : MonoBehaviour
     public void ChasePlayer()
     {
         agent.isStopped = false;
-        agent.destination = player.transform.position;
+        agent.SetDestination(player.transform.position);
     } 
 
     public void StopAtPosition()

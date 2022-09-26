@@ -75,9 +75,8 @@ public class PlayerMouseLook : MonoBehaviour
         headJump = Mathf.Clamp(Mathf.Lerp(headJump, cc.velocity.y, 0.05f), -10, 10);
 
         playerCam.localRotation = Quaternion.Euler(xRotation + headJump, 0, 0);
-        gameObject.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
+        gameObject.transform.localRotation = Quaternion.Euler(0, desiredX, 0); 
     }
-
 
 
     #endregion

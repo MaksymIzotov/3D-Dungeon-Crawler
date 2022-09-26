@@ -6,16 +6,13 @@ using UnityEngine;
 public class DummyIdleState : EnemyBaseState
 {
     GameObject player;
-    Transform startPos;
     LayerMask ignore;
 
     public override void EnterState(EnemyStateManager manager)
     {
-        //Start animation
         manager.GetComponent<EnemyAnimationController>().Idle();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        startPos = manager.transform;
 
         ignore = LayerMask.GetMask("Enemy");
     }
@@ -23,8 +20,8 @@ public class DummyIdleState : EnemyBaseState
     public override void UpdateState(EnemyStateManager manager)
     {
         RaycastHit hit;
-        Vector3 rayDirection = player.transform.position - startPos.position;
-        if (Physics.Raycast(startPos.position, rayDirection, out hit, 1000f, ~ignore))
+        Vector3 rayDirection = player.transform.position - manager.transform.position;
+        if (Physics.Raycast(manager.transform.position, rayDirection, out hit, 1000f, ~ignore))
         {
             if (hit.transform.tag == "Player")
                 manager.SwitchState(manager.ChasingState);

@@ -11,7 +11,6 @@ public class HeadBobController : MonoBehaviour
     [SerializeField, Range(0, 30)] private float frequency = 10;
 
     [SerializeField] private Transform cam;
-    [SerializeField] private Transform camHolder;
 
     private float toggleSpeed = 0.8f;
     private Vector3 startPos;
@@ -29,7 +28,6 @@ public class HeadBobController : MonoBehaviour
 
         CheckMotion();
         ResetPositon();
-        cam.LookAt(FocusTarget());
     }
 
     private void CheckMotion()
@@ -59,13 +57,6 @@ public class HeadBobController : MonoBehaviour
         Vector3 pos = Vector3.zero;
         pos.y += Mathf.Sin(Time.time * frequency * mult) * amplitude;
         pos.x += Mathf.Cos(Time.time * frequency / 2 * mult) * amplitude * 2;
-        return pos;
-    }
-
-    private Vector3 FocusTarget()
-    {
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + camHolder.localPosition.y, transform.position.z);
-        pos += camHolder.forward * 15;
         return pos;
     }
 }
