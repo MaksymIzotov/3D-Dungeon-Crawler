@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!cc.isGrounded) { return; }
 
-        if (isCrouching) { speed = crouchSpeed; return; }
+        if (cc.height < currentHeight) { speed = crouchSpeed; return; }
 
         if (isRunning)
             speed = runSpeed;

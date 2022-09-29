@@ -4830,7 +4830,6 @@ GameObject:
   - component: {fileID: 8233248856930469852}
   - component: {fileID: 2375124400218017032}
   - component: {fileID: 4429577643597115569}
-  - component: {fileID: 5647960471048974614}
   m_Layer: 0
   m_Name: BurningParticles01
   m_TagString: Untagged
@@ -9624,16 +9623,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5647960471048974614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694186437973308275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da4fd5481e31be4e80c35607177843b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  burnDamage: 0
