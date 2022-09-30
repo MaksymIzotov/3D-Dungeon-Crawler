@@ -11,6 +11,7 @@ public class PlayerMouseLook : MonoBehaviour
     #region Private Variables
 
     private Transform playerCam;
+    [SerializeField] private Transform playerCamHolder;
 
     private float mouseX;
     private float mouseY;
@@ -18,6 +19,7 @@ public class PlayerMouseLook : MonoBehaviour
     private float xRotation;
     private Vector3 rotation;
 
+    [SerializeField] private float cameraPosOffset = 1f;
 
     private float headJump = 0;
 
@@ -33,14 +35,13 @@ public class PlayerMouseLook : MonoBehaviour
     {
         VariablesAssignment();
 
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-
+        SetCameraPosition();
         MouseMovement();
     }
     #endregion
@@ -76,6 +77,11 @@ public class PlayerMouseLook : MonoBehaviour
 
         playerCam.localRotation = Quaternion.Euler(xRotation + headJump, 0, 0);
         gameObject.transform.localRotation = Quaternion.Euler(0, desiredX, 0); 
+    }
+
+    private void SetCameraPosition()
+    {
+        playerCamHolder.localPosition = new Vector3(playerCamHolder.localPosition.x, cc.height - cameraPosOffset, playerCamHolder.localPosition.z);
     }
 
 

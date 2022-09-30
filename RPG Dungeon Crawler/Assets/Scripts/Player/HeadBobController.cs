@@ -37,7 +37,8 @@ public class HeadBobController : MonoBehaviour
         if (speed < toggleSpeed) return;
         if (!controller.GetIsGrounded()) return;
 
-        float mult = controller.isRunning ? 1.5f : 1;
+        //float mult = controller.isRunning ? 1.5f : 1;
+        float mult = controller.speed / controller.walkSpeed;
         PlayMotion(FootStepMotion(mult));
     }
 

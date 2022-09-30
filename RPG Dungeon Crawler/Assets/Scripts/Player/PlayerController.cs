@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!cc.isGrounded) { return; }
 
-        if (cc.height < currentHeight) { speed = crouchSpeed; return; }
+        if (cc.height < currentHeight - 1f) { speed = crouchSpeed; return; }
 
         if (isRunning)
             speed = runSpeed;
@@ -127,6 +127,8 @@ public class PlayerController : MonoBehaviour
             cc.height = Mathf.Lerp(cc.height, crouchHeight, crouchTime);
         else if (CheckHeight())
             cc.height = Mathf.Lerp(cc.height, currentHeight, crouchTime);
+
+        cc.center = Vector3.down * (currentHeight - cc.height) / 2.0f;
     }
 
     void Jump()
