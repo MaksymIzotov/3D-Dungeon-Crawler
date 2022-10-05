@@ -24,6 +24,7 @@ public class Generator2D : MonoBehaviour {
         }
     }
 
+
     [SerializeField]
     Vector2Int size;
     [SerializeField]
@@ -51,6 +52,7 @@ public class Generator2D : MonoBehaviour {
     Delaunay2D delaunay;
     HashSet<Prim.Edge> selectedEdges;
 
+    List<Vector2Int> occupiedPos;
     GameObject dungeon;
 
     void Start() {
@@ -58,6 +60,7 @@ public class Generator2D : MonoBehaviour {
     }
 
     void Generate() {
+        occupiedPos = new List<Vector2Int>();
         random = new Random();
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
         rooms = new List<Room>();
@@ -73,7 +76,7 @@ public class Generator2D : MonoBehaviour {
 
     void DungeonParentSetup()
     {
-        dungeon = new GameObject();
+        dungeon = new GameObject("Dungeon");
         dungeon.transform.position = Vector3.zero;
     }
 
@@ -194,8 +197,21 @@ public class Generator2D : MonoBehaviour {
                 }
 
                 foreach (var pos in path) {
-                    if (grid[pos] == CellType.Hallway) {
-                        PlaceHallway(pos);
+                    if (grid[pos] == CellType.Hallway)
+                    {
+                        bool isOccupied = false;
+
+                        foreach (Vector2Int occupied in occupiedPos)
+                        {
+                            if (occupied == pos)
+                            {
+                                isOccupied = true;
+                                break;
+                            }
+                        }
+
+                        if (!isOccupied)
+                            PlaceHallway(pos);
                     }
                 }
             }
@@ -233,5 +249,7 @@ public class Generator2D : MonoBehaviour {
     void PlaceHallway(Vector2Int location) {
         GameObject corridor = Instantiate(corridorPrefab[random.Next(0, corridorPrefab.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
         corridor.transform.parent = dungeon.transform;
+
+        occupiedPos.Add(location);
     }
 }
