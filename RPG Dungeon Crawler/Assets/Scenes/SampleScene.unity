@@ -710,11 +710,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: size.x
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: size.y
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomCount
@@ -726,8 +726,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.size
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
+      propertyPath: corridorPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3364344812015593363, guid: eb74a1fc6d9a66a49925a13dcc37b48d, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[1]
       value: 

@@ -69,7 +69,7 @@ public class Generator2D : MonoBehaviour {
         CreateHallways();
         PathfindHallways();
 
-        dungeon.transform.localScale = new Vector3(9, 9, 9);
+        dungeon.transform.localScale = new Vector3(8, 8, 8);
     }
 
     void DungeonParentSetup()
