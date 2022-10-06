@@ -43,8 +43,6 @@ public class Generator2D : MonoBehaviour {
     GameObject[] roomsPrefab5x5;
     [SerializeField]
     GameObject[] roomsPrefab6x6;
-    [SerializeField]
-    GameObject[] roomsPrefab7x7;
 
     Random random;
     Grid2D<CellType> grid;
@@ -71,7 +69,7 @@ public class Generator2D : MonoBehaviour {
         CreateHallways();
         PathfindHallways();
 
-        dungeon.transform.localScale = new Vector3(10, 10, 10);
+        dungeon.transform.localScale = new Vector3(9, 9, 9);
     }
 
     void DungeonParentSetup()
@@ -237,10 +235,6 @@ public class Generator2D : MonoBehaviour {
                 break;
             case 6:
                 spawnedRoom = Instantiate(roomsPrefab6x6[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
-                spawnedRoom.transform.parent = dungeon.transform;
-                break;
-            case 7:
-                spawnedRoom = Instantiate(roomsPrefab7x7[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
                 spawnedRoom.transform.parent = dungeon.transform;
                 break;
         }
