@@ -22,7 +22,7 @@ public class HeadBobController : MonoBehaviour
         startPos = cam.localPosition;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!enabled) { return; }
 
@@ -50,7 +50,7 @@ public class HeadBobController : MonoBehaviour
     private void ResetPositon()
     {
         if (cam.localPosition == startPos) { return; }
-        cam.localPosition = Vector3.Lerp(cam.localPosition, startPos, 1 * Time.deltaTime);
+        cam.localPosition = Vector3.Lerp(cam.localPosition, startPos, 1 * Time.fixedDeltaTime);
     }
 
     private Vector3 FootStepMotion(float mult)

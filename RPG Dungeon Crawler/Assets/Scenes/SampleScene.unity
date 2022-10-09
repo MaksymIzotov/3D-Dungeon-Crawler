@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3074.25, g: 3809.0664, b: 5041.418, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -726,12 +726,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 3364344812015593363, guid: eb74a1fc6d9a66a49925a13dcc37b48d, type: 3}
+      objectReference: {fileID: 5433098802033489615, guid: 08bb58a757ddce54ab6a6a4cfab20439, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[1]
       value: 
@@ -1307,7 +1307,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26720
+  m_Name: pb_Mesh16984
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1551,6 +1551,7 @@ GameObject:
   - component: {fileID: 941879778}
   - component: {fileID: 941879777}
   - component: {fileID: 941879779}
+  - component: {fileID: 941879780}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -1625,6 +1626,49 @@ MonoBehaviour:
   - {fileID: 1196094281}
   - {fileID: 1666728290}
   - {fileID: 459083574}
+--- !u!114 &941879780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941879776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea152326b13a475459064141418e9e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateInterval: 0.5
+--- !u!1 &974070081
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974070083}
+  m_Layer: 0
+  m_Name: HDRP Compositor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974070083
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974070081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017567197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3067,7 +3111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1631097672
 Transform:
   m_ObjectHideFlags: 0
@@ -3555,11 +3599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922896542286236743, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 87.4
+      value: 36.6
       objectReference: {fileID: 0}
     - target: {fileID: 1922896542286236743, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 123
+      value: 43.2
       objectReference: {fileID: 0}
     - target: {fileID: 1922896542286236743, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3589,5 +3633,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1922896542286236749, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: amplitude
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896542286236749, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: frequency
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785796, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_AllowMSAA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543264785798, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543704980053, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922896543704980053, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+      propertyPath: m_AllowMSAA
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1922896543264785792, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
+    - {fileID: 1922896543704980074, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
