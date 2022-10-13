@@ -51,6 +51,7 @@ public class Generator2D : MonoBehaviour {
     HashSet<Prim.Edge> selectedEdges;
 
     List<Vector2Int> occupiedPos;
+    List<GameObject> Instances;
     GameObject dungeon;
 
     void Start() {
@@ -62,6 +63,7 @@ public class Generator2D : MonoBehaviour {
         random = new Random();
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
         rooms = new List<Room>();
+        Instances = new List<GameObject>();
 
         DungeonParentSetup();
         PlaceRooms();
@@ -70,12 +72,16 @@ public class Generator2D : MonoBehaviour {
         PathfindHallways();
 
         dungeon.transform.localScale = new Vector3(8, 8, 8);
+
+        GameObject[] gos = Instances.ToArray();
+        StaticBatchingUtility.Combine(gos, dungeon);
     }
 
     void DungeonParentSetup()
     {
         dungeon = new GameObject("Dungeon");
         dungeon.transform.position = Vector3.zero;
+        dungeon.isStatic = true;
     }
 
     void PlaceRooms() {
@@ -217,33 +223,58 @@ public class Generator2D : MonoBehaviour {
     }
 
     void PlaceRoom(Vector2Int location, Vector2Int size) {
-        GameObject spawnedRoom;
+       
 
         switch (size.x)
         {
             case 3:
-                spawnedRoom = Instantiate(roomsPrefab3x3[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
-                spawnedRoom.transform.parent = dungeon.transform;
+                PlaceRoomInstance(roomsPrefab3x3, location, size);
                 break;
             case 4:
-                spawnedRoom = Instantiate(roomsPrefab4x4[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
-                spawnedRoom.transform.parent = dungeon.transform;
+                PlaceRoomInstance(roomsPrefab4x4, location, size);
                 break;
             case 5:
-                spawnedRoom = Instantiate(roomsPrefab5x5[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
-                spawnedRoom.transform.parent = dungeon.transform;
+                PlaceRoomInstance(roomsPrefab5x5, location, size);
                 break;
             case 6:
-                spawnedRoom = Instantiate(roomsPrefab6x6[random.Next(0, roomsPrefab3x3.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
-                spawnedRoom.transform.parent = dungeon.transform;
+                PlaceRoomInstance(roomsPrefab6x6, location, size);
                 break;
         }
+    }
+
+    private void PlaceRoomInstance(GameObject[] roomArray, Vector2Int location, Vector2Int size)
+    {
+        GameObject spawnedRoom = Instantiate(roomArray[random.Next(0, roomArray.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
+        spawnedRoom.transform.parent = dungeon.transform;
+
+        CombineMeshes(ref spawnedRoom);
+
+        Instances.Add(spawnedRoom);
     }
 
     void PlaceHallway(Vector2Int location) {
         GameObject corridor = Instantiate(corridorPrefab[random.Next(0, corridorPrefab.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
         corridor.transform.parent = dungeon.transform;
 
+        CombineMeshes(ref corridor);
+
+        Instances.Add(corridor);
+
         occupiedPos.Add(location);
+    }
+
+    private void CombineMeshes(ref GameObject root)
+    {
+        List<GameObject> go = new List<GameObject>();
+        Transform[] children = root.transform.GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            if (child.name == root.name) { continue; }
+
+            go.Add(child.gameObject);
+        }
+
+        GameObject[] gos = go.ToArray();
+        StaticBatchingUtility.Combine(gos, root);
     }
 }
