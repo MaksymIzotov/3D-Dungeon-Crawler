@@ -13,7 +13,7 @@ public class Fireball : Spell
     {
         //Animation
         GameObject parent = spellSpawnpoint.root.gameObject;
-        parent.GetComponent<AnimationManager>().PlaySpellAnimation("Fireball");
+        parent.GetComponent<AnimationManager>().PlaySpellAnimation("FireballLowPoly");
     }
 
     public override void Cast(Transform spellSpawnpoint)
