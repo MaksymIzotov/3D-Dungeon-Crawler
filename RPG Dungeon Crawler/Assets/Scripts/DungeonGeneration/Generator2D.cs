@@ -269,12 +269,7 @@ public class Generator2D : MonoBehaviour {
         Transform[] children = root.transform.GetComponentsInChildren<Transform>();
         foreach (Transform child in children)
         {
-            if (child.name == root.name) { continue; }
-
-            go.Add(child.gameObject);
+            Instances.Add(child.gameObject);
         }
-
-        GameObject[] gos = go.ToArray();
-        StaticBatchingUtility.Combine(gos, root);
     }
 }
