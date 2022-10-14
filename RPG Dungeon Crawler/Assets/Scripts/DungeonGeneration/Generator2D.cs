@@ -71,7 +71,7 @@ public class Generator2D : MonoBehaviour {
         CreateHallways();
         PathfindHallways();
 
-        dungeon.transform.localScale = new Vector3(8, 8, 8);
+        dungeon.transform.localScale = new Vector3(10, 10, 10);
 
         GameObject[] gos = Instances.ToArray();
         StaticBatchingUtility.Combine(gos, dungeon);
