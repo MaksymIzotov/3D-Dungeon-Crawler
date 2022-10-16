@@ -75,6 +75,8 @@ public class Generator2D : MonoBehaviour {
 
         GameObject[] gos = Instances.ToArray();
         StaticBatchingUtility.Combine(gos, dungeon);
+
+        PlayerSpawner.Instance.SpawnPlayer();
     }
 
     void DungeonParentSetup()
@@ -269,7 +271,10 @@ public class Generator2D : MonoBehaviour {
         Transform[] children = root.transform.GetComponentsInChildren<Transform>();
         foreach (Transform child in children)
         {
-            Instances.Add(child.gameObject);
+            if (child.gameObject.GetComponent<MeshFilter>() != null)
+            {
+                Instances.Add(child.gameObject);
+            }
         }
     }
 }

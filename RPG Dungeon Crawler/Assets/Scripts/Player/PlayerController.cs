@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         HandleInput();
         Jump();
-        Crouch();
+        //Crouch();
     }
 
     #endregion
