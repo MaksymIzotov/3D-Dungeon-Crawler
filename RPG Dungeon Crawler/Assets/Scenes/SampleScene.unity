@@ -2591,6 +2591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomMin: -1
   randomMax: 1
+  hpTextAnim: {fileID: 2410113050773583648, guid: 051fa129f8620794dba0d1b1db18c857, type: 3}
+  hpText: {fileID: 1498641266}
   damageText: {fileID: 892722647978343791, guid: cd2481908d8213d44a5482a4b31016ad, type: 3}
 --- !u!114 &1171373388
 MonoBehaviour:

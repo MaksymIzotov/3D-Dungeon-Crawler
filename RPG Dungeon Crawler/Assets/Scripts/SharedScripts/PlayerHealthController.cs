@@ -8,8 +8,6 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
     private float hp;
     private float lastHp;
 
-    public GameObject hpTextAnim;
-    public GameObject hpText;
     private void Start()
     {
         SetValues();
@@ -41,7 +39,7 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
         hp -= actualDamage;
 
         //Do effects
-        DamageEffect(actualDamage);
+        DamagePopup.Instance.DamageEffect(actualDamage);
 
         if (hp <= 0)
             Die();
@@ -53,12 +51,6 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
         if (hp >= properties.healthPoints)
             hp = properties.healthPoints;
-    }
-
-    private void DamageEffect(float damage)
-    {
-        GameObject hpGO = Instantiate(hpTextAnim, hpText.transform);
-        hpGO.GetComponent<TMP_Text>().text = damage.ToString();
     }
 
     public void Die()

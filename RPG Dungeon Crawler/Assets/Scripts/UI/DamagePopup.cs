@@ -9,6 +9,9 @@ public class DamagePopup : MonoBehaviour
 
     public float randomMin;
     public float randomMax;
+
+    public GameObject hpTextAnim;
+    public GameObject hpText;
     private void Awake()
     {
         Instance = this;
@@ -21,5 +24,11 @@ public class DamagePopup : MonoBehaviour
         Vector3 spawnPos = new Vector3(pos.position.x + Random.Range(randomMin,randomMax), pos.position.y + height, pos.position.z + Random.Range(randomMin, randomMax));
         GameObject text = Instantiate(damageText, spawnPos, Quaternion.identity);
         text.GetComponent<TMP_Text>().text = damage.ToString("F0");
+    }
+
+    public void DamageEffect(float damage)
+    {
+        GameObject hpGO = Instantiate(hpTextAnim, hpText.transform);
+        hpGO.GetComponent<TMP_Text>().text = damage.ToString();
     }
 }
