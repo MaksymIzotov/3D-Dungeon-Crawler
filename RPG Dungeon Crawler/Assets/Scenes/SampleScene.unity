@@ -791,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab6x6.Array.data[0]
       value: 
-      objectReference: {fileID: 5061770085724761247, guid: c394c18f2b9994344a41b6ebb251eefe, type: 3}
+      objectReference: {fileID: 135688533355069029, guid: 1c6f76e9a38c2174a94d30faa708e46e, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[10]
       value: 
