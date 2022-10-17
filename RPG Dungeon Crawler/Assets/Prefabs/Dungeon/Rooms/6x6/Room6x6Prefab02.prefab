@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135688533355069028}
   m_Layer: 0
-  m_Name: Room6x6Prefab01 1
+  m_Name: Room6x6Prefab02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

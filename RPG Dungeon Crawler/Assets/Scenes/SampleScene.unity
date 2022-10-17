@@ -730,7 +730,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab4x4.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
+      propertyPath: roomsPrefab5x5.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
+      propertyPath: roomsPrefab6x6.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[0]
@@ -779,19 +787,27 @@ PrefabInstance:
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab4x4.Array.data[0]
       value: 
-      objectReference: {fileID: 4056860987728503092, guid: 7137c0a5ecc28ff4aa20c5ee65c1d93f, type: 3}
+      objectReference: {fileID: 2547862800579877067, guid: f10428dd011ef0e4a899022d96593a7f, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab4x4.Array.data[1]
       value: 
-      objectReference: {fileID: 5448989316103673358, guid: 435ef7008f8993241ae3f973775d150b, type: 3}
+      objectReference: {fileID: 4056860987728503092, guid: 7137c0a5ecc28ff4aa20c5ee65c1d93f, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab5x5.Array.data[0]
+      value: 
+      objectReference: {fileID: 8804075114324141557, guid: 435f3c87a09dfc743a3515f0e36fec24, type: 3}
+    - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
+      propertyPath: roomsPrefab5x5.Array.data[1]
       value: 
       objectReference: {fileID: 4873166188588911021, guid: b84ba84db3e927f4b9ac620e2cdbe7d7, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: roomsPrefab6x6.Array.data[0]
       value: 
       objectReference: {fileID: 135688533355069029, guid: 1c6f76e9a38c2174a94d30faa708e46e, type: 3}
+    - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
+      propertyPath: roomsPrefab6x6.Array.data[1]
+      value: 
+      objectReference: {fileID: 5061770085724761247, guid: c394c18f2b9994344a41b6ebb251eefe, type: 3}
     - target: {fileID: 1194687584120419154, guid: 6a4555a4400bbee41bd4a33db3535ef0, type: 3}
       propertyPath: corridorPrefab.Array.data[10]
       value: 

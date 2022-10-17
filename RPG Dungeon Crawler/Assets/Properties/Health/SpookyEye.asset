@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
   m_Name: SpookyEye
   m_EditorClassIdentifier: 
-  healthPoints: 75
-  defence: 5
+  healthPoints: 24
+  defence: 0
   healthRegen: 1
