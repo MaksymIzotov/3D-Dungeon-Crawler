@@ -46,10 +46,10 @@ public class FireballController : MonoBehaviour
             }
             else if(n.tag == "Enemy")
             {
-                GetComponent<ParticlesController>().SpawnBurnParticles(n.transform, burnDuration, burnDamage);
+                GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, burnDuration, burnDamage);
             }
 
-            n.GetComponent<IDamagable>()?.TakeDamage(damage);
+            n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage);
         }
 
         DestroyObject();
