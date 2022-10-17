@@ -77,6 +77,7 @@ public class Generator2D : MonoBehaviour {
         StaticBatchingUtility.Combine(gos, dungeon);
 
         PlayerSpawner.Instance.SpawnPlayer();
+        NavMeshBaking.Instance.BakeNavMesh();
     }
 
     void DungeonParentSetup()

@@ -19,6 +19,12 @@ public class PlayerSpawner : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        GameObject player = Instantiate(playerPrefab, GetSpawnPoint().transform.position, Quaternion.identity);
+        //Do something to player before start
+    }
+
+    public Transform GetSpawnPoint()
+    {
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("Spawnpoint");
 
         int index = 0;
@@ -34,7 +40,6 @@ public class PlayerSpawner : MonoBehaviour
             }
         }
 
-        GameObject player = Instantiate(playerPrefab, spawnPoints[index].transform.position, Quaternion.identity);
-        //Do something to player before start
+        return spawnPoints[index].transform;
     }
 }

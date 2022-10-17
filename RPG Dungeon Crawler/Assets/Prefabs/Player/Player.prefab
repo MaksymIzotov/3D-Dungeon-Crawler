@@ -152,8 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: aa48fb33c7966404ca2274cbbb0ae59b, type: 2}
-  hpTextAnim: {fileID: 2410113050773583648, guid: 051fa129f8620794dba0d1b1db18c857, type: 3}
-  hpText: {fileID: 0}
 --- !u!1 &1922896542701707297
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,15 +391,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922896541790089612, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90921056
+      value: 0.9220317
       objectReference: {fileID: 0}
     - target: {fileID: 1922896541790089612, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.41633666
+      value: -0.38711438
       objectReference: {fileID: 0}
     - target: {fileID: 1922896541790089612, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -49.207
+      value: -45.55
       objectReference: {fileID: 0}
     - target: {fileID: 1922896541790089613, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}
       propertyPath: m_Name
