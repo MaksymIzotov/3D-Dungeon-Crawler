@@ -15,18 +15,19 @@ public class SpellKeyCodeHint : MonoBehaviour
 
     private void ChangeKeyCode()
     {
-        switch(gameObject.name) {
+        switch (gameObject.name)
+        {
             case "Spell01":
-                text.text = InputManager.Instance.Spell01.ToString();
+                text.text = InputManager.GetBindingName("Spell01", 0);
                 break;
             case "Spell02":
-                text.text = InputManager.Instance.Spell02.ToString();
+                text.text = InputManager.GetBindingName("Spell02", 0);
                 break;
             case "Spell03":
-                text.text = InputManager.Instance.Spell03.ToString();
+                text.text = InputManager.GetBindingName("Spell03", 0);
                 break;
             case "Spell04":
-                text.text = InputManager.Instance.Spell04.ToString();
+                text.text = InputManager.GetBindingName("Spell04", 0);
                 break;
         }
     }

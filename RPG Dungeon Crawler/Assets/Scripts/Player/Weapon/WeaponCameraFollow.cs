@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponCameraFollow : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class WeaponCameraFollow : MonoBehaviour
     private float mouseY;
 
     private PlayerMouseLook mouseSettings;
+    [SerializeField] private InputActionReference mouseInput;
 
     #endregion
 
@@ -39,14 +41,16 @@ public class WeaponCameraFollow : MonoBehaviour
 
     void WeaponSway()
     {
-        mouseX = Input.GetAxis("Mouse X") * InputManager.Instance.sensitivity * Time.fixedDeltaTime * swayAmount;
-        mouseY = Input.GetAxis("Mouse Y") * InputManager.Instance.sensitivity * Time.fixedDeltaTime * swayAmount;
+        Vector2 targetMouseDelta = Mouse.current.delta.ReadValue() * Time.smoothDeltaTime;
 
-        if (Input.GetKey(InputManager.Instance.Aim))
-        {
-            mouseX *= InputManager.Instance.aimMult;
-            mouseY *= InputManager.Instance.aimMult;
-        }
+        mouseX = targetMouseDelta.x * 5 * Time.fixedDeltaTime * swayAmount;
+        mouseY = targetMouseDelta.y * 5 * Time.fixedDeltaTime * swayAmount;
+
+        //if (Input.GetKey(InputManager.Instance.Aim))
+        //{
+        //    mouseX *= InputManager.Instance.aimMult;
+        //    mouseY *= InputManager.Instance.aimMult;
+        //}
 
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(new Vector3(Mathf.Clamp(-mouseY , -45, 45), Mathf.Clamp(mouseX, -45, 45), 0)), 0.07f);
     }

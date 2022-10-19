@@ -13,9 +13,6 @@ public class DEBUG : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SpawnEnemyAtFirstRoom();
-        }
+        
     }
 }

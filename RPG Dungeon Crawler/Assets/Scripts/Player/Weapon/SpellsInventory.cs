@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpellsInventory : MonoBehaviour
 {
@@ -16,6 +17,25 @@ public class SpellsInventory : MonoBehaviour
     public Spell[] spells;
     public Transform spellSpawnPoint;
 
+    private RebindJumping input;
+
+    private void OnEnable()
+    {
+        input = InputManager.inputActions;
+
+        input.GameControls.Spell01.started += Spell01Cast;
+        input.GameControls.Spell02.started += Spell02Cast;
+        input.GameControls.Spell03.started += Spell03Cast;
+        input.GameControls.Spell04.started += Spell04Cast;
+
+        input.GameControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.GameControls.Disable();
+    }
+
     private void Start()
     {
         cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();
@@ -26,47 +46,37 @@ public class SpellsInventory : MonoBehaviour
         SkillsIconManager.Instance.SetupIcon(spells);
     }
 
-    private void Update()
-    {
-        InputDetector();
-    }
-
-    private void InputDetector()
+    private void Spell01Cast(InputAction.CallbackContext context)
     {
         if (ActiveCheck()) { return; }
+        if (spellStates[0] != STATE.READY) { return; }
 
-        if (Input.GetKeyDown(InputManager.Instance.Spell01))
-        {
-            if (spellStates[0] != STATE.READY) { return; }
+        //Use spell 01
+        StartCoroutine(Activate(0));
+    }
+    private void Spell02Cast(InputAction.CallbackContext context)
+    {
+        if (ActiveCheck()) { return; }
+        if (spellStates[1] != STATE.READY) { return; }
 
-            //Use spell 01
-            StartCoroutine(Activate(0));
-            return;
-        }
-        if (Input.GetKeyDown(InputManager.Instance.Spell02))
-        {
-            if (spellStates[1] != STATE.READY) { return; }
+        //Use spell 01
+        StartCoroutine(Activate(1));
+    }
+    private void Spell03Cast(InputAction.CallbackContext context)
+    {
+        if (ActiveCheck()) { return; }
+        if (spellStates[2] != STATE.READY) { return; }
 
-            //Use spell 02
-            StartCoroutine(Activate(1));
-            return;
-        }
-        if (Input.GetKeyDown(InputManager.Instance.Spell03))
-        {
-            if (spellStates[2] != STATE.READY) { return; }
+        //Use spell 01
+        StartCoroutine(Activate(2));
+    }
+    private void Spell04Cast(InputAction.CallbackContext context)
+    {
+        if (ActiveCheck()) { return; }
+        if (spellStates[3] != STATE.READY) { return; }
 
-            //Use spell 03 
-            StartCoroutine(Activate(2));
-            return;
-        }
-        if (Input.GetKeyDown(InputManager.Instance.Spell04))
-        {
-            if (spellStates[3] != STATE.READY) { return; }
-
-            //Use spell 04 
-            StartCoroutine(Activate(3));
-            return;
-        }
+        //Use spell 01
+        StartCoroutine(Activate(3));
     }
 
     IEnumerator Activate(int index) {

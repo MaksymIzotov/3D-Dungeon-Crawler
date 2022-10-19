@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMouseLook : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class PlayerMouseLook : MonoBehaviour
 
     private float headJump = 0;
 
-    private int sensMult = 10;
-
     CharacterController cc;
+
+    [SerializeField] private InputActionReference mouseInput;
 
     #endregion
 
@@ -50,22 +51,23 @@ public class PlayerMouseLook : MonoBehaviour
 
     void MouseMovement()
     {
-        //if (InGameUIManager.Instance.state != InGameUIManager.UISTATE.PAUSE)
-        //{
-            mouseX = Input.GetAxis("Mouse X") * InputManager.Instance.sensitivity * Time.fixedDeltaTime * sensMult;
-            mouseY = Input.GetAxis("Mouse Y") * InputManager.Instance.sensitivity * Time.fixedDeltaTime * sensMult;
-        //}
-        //else
-        //{
-        //    mouseX = 0;
-        //    mouseY = 0;
-        //}
+        ////if (InGameUIManager.Instance.state != InGameUIManager.UISTATE.PAUSE)
+        ////{
+        Vector2 targetMouseDelta = Mouse.current.delta.ReadValue() * Time.fixedDeltaTime;
+        mouseX = targetMouseDelta.x * 5;
+        mouseY = targetMouseDelta.y * 5;
+        ////}
+        ////else
+        ////{
+        ////    mouseX = 0;
+        ////    mouseY = 0;
+        ////}
 
-        if (Input.GetKey(InputManager.Instance.Aim))
-        {
-            mouseX *= InputManager.Instance.aimMult;
-            mouseY *= InputManager.Instance.aimMult;
-        }
+        //if (Input.GetKey(InputManager.Instance.Aim))
+        //{
+        //    mouseX *= InputManager.Instance.aimMult;
+        //    mouseY *= InputManager.Instance.aimMult;
+        //}
 
         rotation = transform.localRotation.eulerAngles;
         desiredX = rotation.y + mouseX;

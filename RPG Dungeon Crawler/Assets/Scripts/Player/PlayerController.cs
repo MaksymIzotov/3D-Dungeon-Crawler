@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,9 +49,29 @@ public class PlayerController : MonoBehaviour
 
     private Transform playerCam;
 
+    private RebindJumping input;
+    [SerializeField] private InputActionReference movementInput;
+
     #endregion
 
     #region Unity Methods
+
+    private void OnEnable()
+    {
+        input = InputManager.inputActions;
+
+        input.GameControls.Jump.started += Jump;
+        input.GameControls.Run.started += Run;
+        input.GameControls.Run.canceled += Walk;
+
+
+        input.GameControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.GameControls.Disable();
+    }
 
     void Start()
     {
@@ -70,8 +91,7 @@ public class PlayerController : MonoBehaviour
         //if (InGameUIManager.Instance.state == InGameUIManager.UISTATE.PAUSE) { return; } RECREATE IN THE FUTURE
 
         HandleInput();
-        Jump();
-        //Crouch();
+        //Jump();
     }
 
     #endregion
@@ -90,9 +110,10 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
 
         if (cc.isGrounded)
-            movement = Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(moveX, 0, moveY);
+            movement = Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y);
         else
-            movement += Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(moveX, 0, moveY) * 0.05f;
+            movement += Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y) * 0.02f;
+
 
         movement = Vector3.ClampMagnitude(movement, 1);
 
@@ -121,19 +142,9 @@ public class PlayerController : MonoBehaviour
             speed = walkSpeed;
     }
 
-    void Crouch()
+    private void Jump(InputAction.CallbackContext context)
     {
-        if (isCrouching)
-            cc.height = Mathf.Lerp(cc.height, crouchHeight, crouchTime);
-        else if (CheckHeight())
-            cc.height = Mathf.Lerp(cc.height, currentHeight, crouchTime);
-
-        cc.center = Vector3.down * (currentHeight - cc.height) / 2.0f;
-    }
-
-    void Jump()
-    {
-        if (isJumping && cc.isGrounded)
+        if (cc.isGrounded)
             playerVelocity.y += Mathf.Sqrt(jumpForce * -3.0f * gravity);
     }
 
@@ -148,50 +159,37 @@ public class PlayerController : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetKey(InputManager.Instance.Forward) && Input.GetKey(InputManager.Instance.Backward) || !Input.GetKey(InputManager.Instance.Forward) && !Input.GetKey(InputManager.Instance.Backward))
-        {
-            moveY = Mathf.Lerp(moveY, 0, speedChangingStep * Time.deltaTime);
-        }
-        else
-        {
-            if (Input.GetKey(InputManager.Instance.Forward))
-                moveY = Mathf.Lerp(moveY, 1, speedChangingStep * Time.deltaTime);
-            if (Input.GetKey(InputManager.Instance.Backward))
-                moveY = Mathf.Lerp(moveY, -1, speedChangingStep * Time.deltaTime);
-        }
+        //if (Input.GetKey(InputManager.Instance.Forward) && Input.GetKey(InputManager.Instance.Backward) || !Input.GetKey(InputManager.Instance.Forward) && !Input.GetKey(InputManager.Instance.Backward))
+        //{
+        //    moveY = Mathf.Lerp(moveY, 0, speedChangingStep * Time.deltaTime);
+        //}
+        //else
+        //{
+        //    if (Input.GetKey(InputManager.Instance.Forward))
+        //        moveY = Mathf.Lerp(moveY, 1, speedChangingStep * Time.deltaTime);
+        //    if (Input.GetKey(InputManager.Instance.Backward))
+        //        moveY = Mathf.Lerp(moveY, -1, speedChangingStep * Time.deltaTime);
+        //}
 
-        if (Input.GetKey(InputManager.Instance.Left) && Input.GetKey(InputManager.Instance.Right) || !Input.GetKey(InputManager.Instance.Left) && !Input.GetKey(InputManager.Instance.Right))
-        {
-            moveX = Mathf.Lerp(moveX, 0, speedChangingStep * Time.deltaTime);
-        }
-        else
-        {
-            if (Input.GetKey(InputManager.Instance.Right))
-                moveX = Mathf.Lerp(moveX, 1, speedChangingStep * Time.deltaTime);
-            if (Input.GetKey(InputManager.Instance.Left))
-                moveX = Mathf.Lerp(moveX, -1, speedChangingStep * Time.deltaTime);
-        }
+        //if (Input.GetKey(InputManager.Instance.Left) && Input.GetKey(InputManager.Instance.Right) || !Input.GetKey(InputManager.Instance.Left) && !Input.GetKey(InputManager.Instance.Right))
+        //{
+        //    moveX = Mathf.Lerp(moveX, 0, speedChangingStep * Time.deltaTime);
+        //}
+        //else
+        //{
+        //    if (Input.GetKey(InputManager.Instance.Right))
+        //        moveX = Mathf.Lerp(moveX, 1, speedChangingStep * Time.deltaTime);
+        //    if (Input.GetKey(InputManager.Instance.Left))
+        //        moveX = Mathf.Lerp(moveX, -1, speedChangingStep * Time.deltaTime);
+        //}
 
-        isJumping = Input.GetKeyDown(InputManager.Instance.Jump);
-        isRunning = Input.GetKey(InputManager.Instance.Run);
-        isCrouching = Input.GetKey(InputManager.Instance.Crouch);
+        //isJumping = Input.GetKeyDown(InputManager.Instance.Jump);
+        //isRunning = Input.GetKey(InputManager.Instance.Run);
+        //isCrouching = Input.GetKey(InputManager.Instance.Crouch);
     }
 
-    bool CheckHeight()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + cc.radius), transform.TransformDirection(Vector3.up), out hit, currentHeight))
-            return false;
-        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - cc.radius), transform.TransformDirection(Vector3.up), out hit, currentHeight))
-            return false;
-        if (Physics.Raycast(new Vector3(transform.position.x + cc.radius, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.up), out hit, currentHeight))
-            return false;
-        if (Physics.Raycast(new Vector3(transform.position.x - cc.radius, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.up), out hit, currentHeight))
-            return false;
-
-        return true;
-    }
+    private void Run(InputAction.CallbackContext context) => isRunning = true;
+    private void Walk(InputAction.CallbackContext context) => isRunning = false;
     #endregion
 
     #region Technical Methods
