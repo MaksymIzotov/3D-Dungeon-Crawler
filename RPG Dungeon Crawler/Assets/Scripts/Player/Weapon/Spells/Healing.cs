@@ -12,10 +12,6 @@ public class Healing : Spell
     {
         //Animation
         GameObject parent = spellSpawnpoint.root.gameObject;
-
-        GameObject cross = Instantiate(healingCross, spellSpawnpoint);
-        Destroy(cross, activateTime);
-
         parent.GetComponent<AnimationManager>().PlaySpellAnimation("Healing");
     }
 
