@@ -39,7 +39,13 @@ public class ReBindUI : MonoBehaviour
         rebindButton.onClick.AddListener(() => DoRebind());
         resetButton.onClick.AddListener(() => ResetBinding());
 
-        if(inputActionReference != null)
+        if (inputActionReference != null)
+        {
+            GetBindingInfo();
+            UpdateUI();
+        }
+
+        if (inputActionReference != null)
         {
             InputManager.LoadBindingOverride(actionName);
             GetBindingInfo();
@@ -58,11 +64,7 @@ public class ReBindUI : MonoBehaviour
 
     private void OnValidate()
     {
-        if (inputActionReference == null)
-            return; 
-
-        GetBindingInfo();
-        UpdateUI();
+        
     }
 
     private void GetBindingInfo()

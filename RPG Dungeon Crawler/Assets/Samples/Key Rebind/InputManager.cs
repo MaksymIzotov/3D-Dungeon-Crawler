@@ -105,6 +105,7 @@ public class InputManager : MonoBehaviour
         if (inputActions == null)
             inputActions = new RebindJumping();
 
+        Debug.Log("InputManager " + actionName);
         InputAction action = inputActions.asset.FindAction(actionName);
 
         for (int i = 0; i < action.bindings.Count; i++)

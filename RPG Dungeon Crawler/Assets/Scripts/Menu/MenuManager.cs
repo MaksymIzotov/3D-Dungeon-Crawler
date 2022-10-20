@@ -10,7 +10,12 @@ public class MenuManager : MonoBehaviour
 
 	void Awake() => Instance = this;
 
-	public void OpenMenu(string menuName)
+    private void Start()
+    {
+		OpenMenu("main");
+    }
+
+    public void OpenMenu(string menuName)
 	{
 		for (int i = 0; i < menus.Length; i++)
 		{

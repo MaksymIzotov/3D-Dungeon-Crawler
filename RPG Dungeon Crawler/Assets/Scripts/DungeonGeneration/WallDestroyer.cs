@@ -6,6 +6,11 @@ public class WallDestroyer : MonoBehaviour
 {
     private void Start()
     {
+        Invoke("DoDestruction", 0.1f);
+    }
+
+    private void DoDestruction()
+    {
         int layerMask = 1 << 12;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.01f, layerMask);
