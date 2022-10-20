@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &5505009482435663753
 Transform:
@@ -45,7 +45,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2549516034528824608, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_Name
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5085869326119852044, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_RootOrder
@@ -115,7 +115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2549516034528824608, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_Name
@@ -123,7 +123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5085869326119852044, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_RootOrder
@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile.001
       objectReference: {fileID: 0}
+    - target: {fileID: 7850131560393277069, guid: 4b3fcaf0f92100144946168fd0b1c0a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8387805388014126663, guid: 4b3fcaf0f92100144946168fd0b1c0a9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -247,7 +251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2549516034528824608, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_Name
@@ -255,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5085869326119852044, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_RootOrder
@@ -365,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6493361560103112660, guid: 85d29221bf70f1541962c108f5c28e13, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85d29221bf70f1541962c108f5c28e13, type: 3}
@@ -383,7 +387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2549516034528824608, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_Name
@@ -391,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5085869326119852044, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_RootOrder

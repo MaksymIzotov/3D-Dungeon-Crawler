@@ -9,7 +9,7 @@ public class WallDestroyer : MonoBehaviour
         int layerMask = 1 << 12;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.01f, layerMask);
-        Debug.Log(hitColliders.Length);
+
         if (hitColliders.Length == 2)
         {
             DestroyWalls(hitColliders);
@@ -20,7 +20,6 @@ public class WallDestroyer : MonoBehaviour
 
     private void DestroyWalls(Collider[] walls)
     {
-
         Destroy(walls[0].transform.parent.gameObject);
         Destroy(walls[1].transform.parent.gameObject);
         Destroy(walls[1].gameObject);

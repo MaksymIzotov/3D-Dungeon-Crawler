@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 using Graphs;
+using UnityEngine.AI;
 
 public class Generator2D : MonoBehaviour {
     enum CellType {
@@ -74,11 +75,19 @@ public class Generator2D : MonoBehaviour {
 
         dungeon.transform.localScale = new Vector3(10, 10, 10);
 
+        List<NavMeshSurface> navMeshes = new List<NavMeshSurface>();
+        foreach (GameObject n in Instances)
+        {
+            if (n.GetComponent<NavMeshSurface>() != null)
+                navMeshes.Add(n.GetComponent<NavMeshSurface>());
+        }
+        NavMeshSurface[] surfaces = navMeshes.ToArray();
+        NavMeshBaking.Instance.BuildNavMesh(surfaces);
+
         GameObject[] gos = Instances.ToArray();
         StaticBatchingUtility.Combine(gos, dungeon);
 
         PlayerSpawner.Instance.SpawnPlayer();
-        NavMeshBaking.Instance.BakeNavMesh();
     }
 
     void DungeonParentSetup()

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.AI;
+using UnityEngine.AI;
 
 public class NavMeshBaking : MonoBehaviour
 {
@@ -16,9 +16,12 @@ public class NavMeshBaking : MonoBehaviour
 
     #endregion
 
-    public void BakeNavMesh()
+    public void BuildNavMesh(NavMeshSurface[] surfaces)
     {
-        NavMeshBuilder.ClearAllNavMeshes();
-        NavMeshBuilder.BuildNavMesh();
+        for (int i = 0; i < surfaces.Length; i++)
+        {
+            surfaces[i].BuildNavMesh();
+        }
     }
 }
+
