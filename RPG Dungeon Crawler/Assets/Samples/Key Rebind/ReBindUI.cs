@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class ReBindUI : MonoBehaviour
 {
@@ -25,11 +26,11 @@ public class ReBindUI : MonoBehaviour
 
     [Header("UI Fields")]
     [SerializeField]
-    private Text actionText;
+    private TMP_Text actionText;
     [SerializeField]
     private Button rebindButton;
     [SerializeField]
-    private Text rebindText;
+    private TMP_Text rebindText;
     [SerializeField]
     private Button resetButton;
 

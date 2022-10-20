@@ -54,7 +54,8 @@ public class Generator2D : MonoBehaviour {
     List<GameObject> Instances;
     GameObject dungeon;
 
-    void Start() {
+    private void Awake()
+    {
         Generate();
     }
 

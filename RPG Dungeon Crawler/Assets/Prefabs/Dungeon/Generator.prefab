@@ -43,19 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc2b9d06d8fc774e9bca8df799b6625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 70, y: 70}
-  roomCount: 200
+  size: {x: 40, y: 40}
+  roomCount: 100
   roomMinSize: 3
-  roomMaxSize: 7
+  roomMaxSize: 6
   corridorPrefab:
+  - {fileID: 5433098802033489615, guid: 08bb58a757ddce54ab6a6a4cfab20439, type: 3}
+  - {fileID: 3192337049061223842, guid: 2101076a48cc4d74db79cce7b3f3545a, type: 3}
+  - {fileID: 6707951405084897007, guid: 6d246d35c1e7b3d4b951c525c059202d, type: 3}
   - {fileID: 4273189722597875948, guid: 9e3988103e8632c4a9858831fbf92815, type: 3}
+  - {fileID: 5164804539282146322, guid: ad412ee4c416cea4b87c41dd6b482df6, type: 3}
+  - {fileID: 5727564059112658455, guid: 312b298040a9170498e9c528f64b7f92, type: 3}
+  - {fileID: 5505009482435663757, guid: 0870c289bd033f74297332b188b6afc8, type: 3}
   roomsPrefab3x3:
   - {fileID: 743772811747490452, guid: 490b6ba4a08433048bd2b49389b919dc, type: 3}
   roomsPrefab4x4:
+  - {fileID: 2547862800579877067, guid: f10428dd011ef0e4a899022d96593a7f, type: 3}
   - {fileID: 4056860987728503092, guid: 7137c0a5ecc28ff4aa20c5ee65c1d93f, type: 3}
   roomsPrefab5x5:
+  - {fileID: 8804075114324141557, guid: 435f3c87a09dfc743a3515f0e36fec24, type: 3}
   - {fileID: 4873166188588911021, guid: b84ba84db3e927f4b9ac620e2cdbe7d7, type: 3}
   roomsPrefab6x6:
+  - {fileID: 135688533355069029, guid: 1c6f76e9a38c2174a94d30faa708e46e, type: 3}
   - {fileID: 5061770085724761247, guid: c394c18f2b9994344a41b6ebb251eefe, type: 3}
-  roomsPrefab7x7:
-  - {fileID: 6744902992641995802, guid: 0ccd579c4d9ff39498700f0bfbe13355, type: 3}

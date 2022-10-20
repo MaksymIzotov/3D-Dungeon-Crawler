@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class InputManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class InputManager : MonoBehaviour
             inputActions = new RebindJumping();
     }
 
-    public static void StartRebind(string actionName, int bindingIndex, Text statusText, bool excludeMouse)
+    public static void StartRebind(string actionName, int bindingIndex, TMP_Text statusText, bool excludeMouse)
     {
         InputAction action = inputActions.asset.FindAction(actionName);
         if (action == null || action.bindings.Count <= bindingIndex)
@@ -38,7 +39,7 @@ public class InputManager : MonoBehaviour
             DoRebind(action, bindingIndex, statusText, false, excludeMouse);
     }
 
-    private static void DoRebind(InputAction actionToRebind, int bindingIndex, Text statusText, bool allCompositeParts, bool excludeMouse)
+    private static void DoRebind(InputAction actionToRebind, int bindingIndex, TMP_Text statusText, bool allCompositeParts, bool excludeMouse)
     {
         if (actionToRebind == null || bindingIndex < 0)
             return;
