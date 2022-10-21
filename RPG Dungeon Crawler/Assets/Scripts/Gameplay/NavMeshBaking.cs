@@ -22,6 +22,8 @@ public class NavMeshBaking : MonoBehaviour
         {
             surfaces[i].BuildNavMesh();
         }
+
+        MenuManager.Instance.OpenMenu("gui");
     }
 }
 

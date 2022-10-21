@@ -8,7 +8,7 @@ public class DEBUG : MonoBehaviour
 
     private void Start()
     {
-        //Invoke("SpawnEnemyAtFirstRoom", 5);
+        Invoke("SpawnEnemyAtFirstRoom", 5);
     }
 
     public void SpawnEnemyAtFirstRoom()

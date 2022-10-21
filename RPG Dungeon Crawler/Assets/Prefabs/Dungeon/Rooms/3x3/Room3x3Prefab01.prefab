@@ -513,6 +513,10 @@ PrefabInstance:
       value: brick wall.003 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -577,6 +581,10 @@ PrefabInstance:
     - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
       propertyPath: m_Name
       value: brick wall.002 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -647,6 +655,10 @@ PrefabInstance:
     - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
       propertyPath: m_Name
       value: brick wall.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -789,6 +801,10 @@ PrefabInstance:
       value: brick wall.001
       objectReference: {fileID: 0}
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -923,6 +939,10 @@ PrefabInstance:
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_Name
       value: brick wall.001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1193,6 +1213,10 @@ PrefabInstance:
       value: brick wall.001 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -1395,6 +1419,10 @@ PrefabInstance:
       value: brick wall.003 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -1463,6 +1491,10 @@ PrefabInstance:
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_Name
       value: brick wall.001 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1665,6 +1697,10 @@ PrefabInstance:
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_Name
       value: brick wall.001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5884834738064739688, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2041,6 +2077,10 @@ PrefabInstance:
       value: brick wall
       objectReference: {fileID: 0}
     - target: {fileID: 4644394508976024264, guid: d1324c748a4e4274b833853c097565a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644394508976024264, guid: d1324c748a4e4274b833853c097565a6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2199,6 +2239,10 @@ PrefabInstance:
       value: brick wall.002 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350294126752933442, guid: 6e2a01e6fb616234a9f03013f2c38e8c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2337,6 +2381,10 @@ PrefabInstance:
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_Name
       value: brick wall.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4250078067306104076, guid: 56b3b1c70dc850246a2f5db464d73447, type: 3}
       propertyPath: m_StaticEditorFlags

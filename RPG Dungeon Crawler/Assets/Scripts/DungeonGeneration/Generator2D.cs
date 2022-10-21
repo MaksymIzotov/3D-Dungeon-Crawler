@@ -60,7 +60,13 @@ public class Generator2D : MonoBehaviour {
         Generate();
     }
 
-    void Generate() {
+    private void Start()
+    {
+        PlayerSpawner.Instance.SpawnPlayer();
+        Invoke("BuildNavMesh", 0.1f);
+    }
+
+    private void Generate() {
         occupiedPos = new List<Vector2Int>();
         random = new Random();
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
@@ -75,19 +81,43 @@ public class Generator2D : MonoBehaviour {
 
         dungeon.transform.localScale = new Vector3(10, 10, 10);
 
+        GameObject[] gos = Instances.ToArray();
+        StaticBatchingUtility.Combine(gos, dungeon);
+    }
+
+    private void DestroyWalls(GameObject parent)
+    {
+        Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
+        foreach (Transform child in allChildren)
+        {
+            if (child.name == "Checker")
+            {
+                int layerMask = 1 << 12;
+
+                Collider[] hitColliders = Physics.OverlapSphere(child.position, 0.01f, layerMask);
+                Debug.Log(hitColliders.Length);
+                if (hitColliders.Length == 2)
+                {
+                    Destroy(hitColliders[0].transform.parent.gameObject);
+                    Destroy(hitColliders[1].transform.parent.gameObject);
+                }
+
+            }
+        }
+    }
+
+    private void BuildNavMesh()
+    {
         List<NavMeshSurface> navMeshes = new List<NavMeshSurface>();
         foreach (GameObject n in Instances)
         {
+            if (n == null) { continue; }
+
             if (n.GetComponent<NavMeshSurface>() != null)
                 navMeshes.Add(n.GetComponent<NavMeshSurface>());
         }
         NavMeshSurface[] surfaces = navMeshes.ToArray();
         NavMeshBaking.Instance.BuildNavMesh(surfaces);
-
-        GameObject[] gos = Instances.ToArray();
-        StaticBatchingUtility.Combine(gos, dungeon);
-
-        PlayerSpawner.Instance.SpawnPlayer();
     }
 
     void DungeonParentSetup()
@@ -260,6 +290,8 @@ public class Generator2D : MonoBehaviour {
         GameObject spawnedRoom = Instantiate(roomArray[random.Next(0, roomArray.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
         spawnedRoom.transform.parent = dungeon.transform;
 
+        DestroyWalls(spawnedRoom);
+
         CombineMeshes(ref spawnedRoom);
 
         Instances.Add(spawnedRoom);
@@ -268,6 +300,8 @@ public class Generator2D : MonoBehaviour {
     void PlaceHallway(Vector2Int location) {
         GameObject corridor = Instantiate(corridorPrefab[random.Next(0, corridorPrefab.Length)], new Vector3(location.x, 0, location.y), Quaternion.identity);
         corridor.transform.parent = dungeon.transform;
+
+        DestroyWalls(corridor);
 
         CombineMeshes(ref corridor);
 
