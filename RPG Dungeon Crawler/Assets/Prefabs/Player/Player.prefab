@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamHolder: {fileID: 1922896542701707296}
   cameraPosOffset: 2.4
+  mouseInput: {fileID: 0}
 --- !u!114 &1922896542286236736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ GameObject:
   - component: {fileID: 1922896543264785793}
   - component: {fileID: 1922896543264785798}
   - component: {fileID: 1922896543264785799}
+  - component: {fileID: 3493158707449651272}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -299,6 +301,27 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922896543264785796}
   m_Enabled: 1
+--- !u!114 &3493158707449651272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922896543264785796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2fd0b11cfb2fb4ca4ed47adfcc3b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shader: {fileID: 4800000, guid: 9d7e8f87435780644abb4acdfd72a2f0, type: 3}
+  LookupTexture: {fileID: 2800000, guid: 8813871f6491c8d4d97124dbb2cde951, type: 3}
+  Amount: 0
+  TintColor: {r: 1, g: 1, b: 1, a: 1}
+  Hue: 0
+  Saturation: 0
+  Brightness: 0
+  Contrast: 0
+  Sharpness: 0
 --- !u!1 &1922896543704980072
 GameObject:
   m_ObjectHideFlags: 0
