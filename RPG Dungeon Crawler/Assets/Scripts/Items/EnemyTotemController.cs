@@ -13,6 +13,7 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        Debug.Log("SPAWNING");
         //Spawn enemies
     }
 }
