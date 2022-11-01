@@ -37,11 +37,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     private float currentHeight;
-
-    private float moveX;
-    private float moveY;
-    private bool isJumping;
-    private bool isCrouching;
     [HideInInspector]
     public bool isRunning;
 
@@ -86,14 +81,6 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
     }
 
-    private void Update()
-    {
-        //if (InGameUIManager.Instance.state == InGameUIManager.UISTATE.PAUSE) { return; } RECREATE IN THE FUTURE
-
-        HandleInput();
-        //Jump();
-    }
-
     #endregion
 
     #region Created Methods
@@ -127,7 +114,6 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravity * Time.deltaTime;
         cc.Move(playerVelocity * Time.deltaTime);
-        //isGrounded = cc.isGrounded;
     }
 
     void SpeedHandle()
@@ -155,37 +141,6 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = explosionPos.position - transform.position;
         dir.Normalize();
         impact = (-dir * force) / Vector3.Distance(explosionPos.position, transform.position) / 2;
-    }
-
-    void HandleInput()
-    {
-        //if (Input.GetKey(InputManager.Instance.Forward) && Input.GetKey(InputManager.Instance.Backward) || !Input.GetKey(InputManager.Instance.Forward) && !Input.GetKey(InputManager.Instance.Backward))
-        //{
-        //    moveY = Mathf.Lerp(moveY, 0, speedChangingStep * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    if (Input.GetKey(InputManager.Instance.Forward))
-        //        moveY = Mathf.Lerp(moveY, 1, speedChangingStep * Time.deltaTime);
-        //    if (Input.GetKey(InputManager.Instance.Backward))
-        //        moveY = Mathf.Lerp(moveY, -1, speedChangingStep * Time.deltaTime);
-        //}
-
-        //if (Input.GetKey(InputManager.Instance.Left) && Input.GetKey(InputManager.Instance.Right) || !Input.GetKey(InputManager.Instance.Left) && !Input.GetKey(InputManager.Instance.Right))
-        //{
-        //    moveX = Mathf.Lerp(moveX, 0, speedChangingStep * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    if (Input.GetKey(InputManager.Instance.Right))
-        //        moveX = Mathf.Lerp(moveX, 1, speedChangingStep * Time.deltaTime);
-        //    if (Input.GetKey(InputManager.Instance.Left))
-        //        moveX = Mathf.Lerp(moveX, -1, speedChangingStep * Time.deltaTime);
-        //}
-
-        //isJumping = Input.GetKeyDown(InputManager.Instance.Jump);
-        //isRunning = Input.GetKey(InputManager.Instance.Run);
-        //isCrouching = Input.GetKey(InputManager.Instance.Crouch);
     }
 
     private void Run(InputAction.CallbackContext context) => isRunning = true;

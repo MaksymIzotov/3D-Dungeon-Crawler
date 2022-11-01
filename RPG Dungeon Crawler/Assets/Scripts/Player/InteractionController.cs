@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
 public class InteractionController : MonoBehaviour
 {
     [SerializeField] private float distance = 1f;
+
 
     private void Update()
     {

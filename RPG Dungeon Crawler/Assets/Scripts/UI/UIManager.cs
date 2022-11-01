@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,9 +15,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private GameObject InteractionText;
 
+    [SerializeField] private RebindJumping input;
 
     private string interactionInfo = "";
     private bool isInteraction = false;
+
+    private void Start()
+    {
+        input = new RebindJumping();
+    }
+
     public void UpdateHealth(float hp)
     {
         healthText.text = hp.ToString("F0");
@@ -32,8 +40,11 @@ public class UIManager : MonoBehaviour
 
         if(interactionInfo != text)
         {
+            InputAction action = input.asset.FindAction("Interact");
+            string key = action.GetBindingDisplayString(0).ToUpper();
+
             interactionInfo = text;
-            InteractionText.GetComponent<TMP_Text>().text = "Press key to " + text; //Change "key" to actual key
+            InteractionText.GetComponent<TMP_Text>().text = "Press " + key + " to " + text;
         }
     }
 }

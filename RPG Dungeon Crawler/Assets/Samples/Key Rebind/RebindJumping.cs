@@ -98,6 +98,15 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""65de49bf-217f-472b-a7a8-d4393e86e3e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +241,17 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                     ""action"": ""Spell04"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3b61097-fc3e-4139-94ae-6634f175111d"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -276,6 +296,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         m_GameControls_Spell02 = m_GameControls.FindAction("Spell02", throwIfNotFound: true);
         m_GameControls_Spell03 = m_GameControls.FindAction("Spell03", throwIfNotFound: true);
         m_GameControls_Spell04 = m_GameControls.FindAction("Spell04", throwIfNotFound: true);
+        m_GameControls_Interact = m_GameControls.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +364,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControls_Spell02;
     private readonly InputAction m_GameControls_Spell03;
     private readonly InputAction m_GameControls_Spell04;
+    private readonly InputAction m_GameControls_Interact;
     public struct GameControlsActions
     {
         private @RebindJumping m_Wrapper;
@@ -355,6 +377,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         public InputAction @Spell02 => m_Wrapper.m_GameControls_Spell02;
         public InputAction @Spell03 => m_Wrapper.m_GameControls_Spell03;
         public InputAction @Spell04 => m_Wrapper.m_GameControls_Spell04;
+        public InputAction @Interact => m_Wrapper.m_GameControls_Interact;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +411,9 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                 @Spell04.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpell04;
                 @Spell04.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpell04;
                 @Spell04.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpell04;
+                @Interact.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_GameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -416,6 +442,9 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                 @Spell04.started += instance.OnSpell04;
                 @Spell04.performed += instance.OnSpell04;
                 @Spell04.canceled += instance.OnSpell04;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -448,5 +477,6 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         void OnSpell02(InputAction.CallbackContext context);
         void OnSpell03(InputAction.CallbackContext context);
         void OnSpell04(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

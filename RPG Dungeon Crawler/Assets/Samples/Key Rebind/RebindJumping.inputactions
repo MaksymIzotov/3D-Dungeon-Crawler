@@ -11,7 +11,8 @@
                     "id": "b2af7336-b120-42bd-92c0-5670b09de81e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Run",
@@ -19,7 +20,8 @@
                     "id": "0209b7e4-93a2-4920-8efb-fdfeb93f414b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Movement",
@@ -27,7 +29,8 @@
                     "id": "fb860e6a-fd09-4669-8580-2391420e5f8d",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Mouse",
@@ -35,7 +38,8 @@
                     "id": "be168d12-7c58-4ea8-833d-16711c28992d",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Spell01",
@@ -43,7 +47,8 @@
                     "id": "8e9a1540-28f6-4d91-9c54-0fe6e6ddbb4b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Spell02",
@@ -51,7 +56,8 @@
                     "id": "0c7affef-26b6-4ef1-b6ef-de8a44788762",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Spell03",
@@ -59,7 +65,8 @@
                     "id": "b6b174a1-c970-42cb-94da-6ea7bd08c845",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Spell04",
@@ -67,7 +74,17 @@
                     "id": "7cab1028-f81a-40ed-9fe3-8362c3d1ba02",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "65de49bf-217f-472b-a7a8-d4393e86e3e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -200,6 +217,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Spell04",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3b61097-fc3e-4139-94ae-6634f175111d",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
