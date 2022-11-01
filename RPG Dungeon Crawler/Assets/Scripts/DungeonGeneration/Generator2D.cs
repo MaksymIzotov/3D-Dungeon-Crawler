@@ -95,7 +95,6 @@ public class Generator2D : MonoBehaviour {
                 int layerMask = 1 << 12;
 
                 Collider[] hitColliders = Physics.OverlapSphere(child.position, 0.01f, layerMask);
-                Debug.Log(hitColliders.Length);
                 if (hitColliders.Length == 2)
                 {
                     Destroy(hitColliders[0].transform.parent.gameObject);
