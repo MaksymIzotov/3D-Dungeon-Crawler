@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -35,4 +36,13 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
+    #region SceneSwitch
+
+    public void LeaveLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    #endregion
 }
