@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: destroy totem
+  settings: {fileID: 11400000, guid: 14ccad5057dcfe84cb3fbce94ca4797d, type: 2}
 --- !u!65 &5873399395735512294
 BoxCollider:
   m_ObjectHideFlags: 0

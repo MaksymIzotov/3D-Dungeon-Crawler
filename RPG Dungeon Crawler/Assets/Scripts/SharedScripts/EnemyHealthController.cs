@@ -43,7 +43,7 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        Destroy(GameObject.Find("Model/FX"));
+        if (isDead) { return; }
 
         isDead = true;
         GetComponent<EnemyAnimationController>().Die();

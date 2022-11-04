@@ -48,7 +48,6 @@ public class InteractionController : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("ASDSAD");
         if (!canInteract) { return; }
 
         hit.transform.GetComponent<IInteractable>().Interact();
