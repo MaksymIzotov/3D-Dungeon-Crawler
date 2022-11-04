@@ -48,6 +48,8 @@ public class SpellsInventory : MonoBehaviour
 
     private void Spell01Cast(InputAction.CallbackContext context)
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         if (ActiveCheck()) { return; }
         if (spellStates[0] != STATE.READY) { return; }
 
@@ -56,6 +58,8 @@ public class SpellsInventory : MonoBehaviour
     }
     private void Spell02Cast(InputAction.CallbackContext context)
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         if (ActiveCheck()) { return; }
         if (spellStates[1] != STATE.READY) { return; }
 
@@ -64,6 +68,8 @@ public class SpellsInventory : MonoBehaviour
     }
     private void Spell03Cast(InputAction.CallbackContext context)
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         if (ActiveCheck()) { return; }
         if (spellStates[2] != STATE.READY) { return; }
 
@@ -72,6 +78,8 @@ public class SpellsInventory : MonoBehaviour
     }
     private void Spell04Cast(InputAction.CallbackContext context)
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         if (ActiveCheck()) { return; }
         if (spellStates[3] != STATE.READY) { return; }
 

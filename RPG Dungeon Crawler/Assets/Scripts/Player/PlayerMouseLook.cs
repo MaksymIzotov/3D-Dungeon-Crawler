@@ -35,13 +35,12 @@ public class PlayerMouseLook : MonoBehaviour
     void Start()
     {
         VariablesAssignment();
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         SetCameraPosition();
         MouseMovement();
     }
@@ -51,23 +50,9 @@ public class PlayerMouseLook : MonoBehaviour
 
     void MouseMovement()
     {
-        ////if (InGameUIManager.Instance.state != InGameUIManager.UISTATE.PAUSE)
-        ////{
         Vector2 targetMouseDelta = Mouse.current.delta.ReadValue() * Time.fixedDeltaTime;
         mouseX = targetMouseDelta.x * 5;
         mouseY = targetMouseDelta.y * 5;
-        ////}
-        ////else
-        ////{
-        ////    mouseX = 0;
-        ////    mouseY = 0;
-        ////}
-
-        //if (Input.GetKey(InputManager.Instance.Aim))
-        //{
-        //    mouseX *= InputManager.Instance.aimMult;
-        //    mouseY *= InputManager.Instance.aimMult;
-        //}
 
         rotation = transform.localRotation.eulerAngles;
         desiredX = rotation.y + mouseX;

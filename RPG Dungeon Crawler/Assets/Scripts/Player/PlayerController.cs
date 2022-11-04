@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+
         if (cc.isGrounded)
             playerVelocity.y += Mathf.Sqrt(jumpForce * -3.0f * gravity);
     }

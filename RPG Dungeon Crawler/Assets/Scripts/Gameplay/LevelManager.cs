@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
+    #region LevelComlpetion
     private List<GameObject> totems = new List<GameObject>();
 
     public void AddTotem(GameObject totem)
@@ -32,5 +33,6 @@ public class LevelManager : MonoBehaviour
         //Level won
         Debug.Log("NICE!!!!!!!!!!!!!!!!!");
     }
+    #endregion
 
 }
