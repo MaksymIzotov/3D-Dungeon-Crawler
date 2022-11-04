@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameflowController : MonoBehaviour
 {
+    private void Start()
+    {
+        MenuManager.Instance.OpenMenu("main");
+    }
+
     public void ExitGame()
     {
         Application.Quit();

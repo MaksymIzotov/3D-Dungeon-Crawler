@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        input.GameControls.Jump.started -= Jump;
+        input.GameControls.Run.started -= Run;
+        input.GameControls.Run.canceled -= Walk;
         input.GameControls.Disable();
     }
 

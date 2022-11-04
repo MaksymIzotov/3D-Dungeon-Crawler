@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
     {
         if (inputActions == null)
             inputActions = new RebindJumping();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public static void StartRebind(string actionName, int bindingIndex, TMP_Text statusText, bool excludeMouse)

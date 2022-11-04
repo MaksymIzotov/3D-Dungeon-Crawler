@@ -33,6 +33,11 @@ public class SpellsInventory : MonoBehaviour
 
     private void OnDisable()
     {
+        input.GameControls.Spell01.started -= Spell01Cast;
+        input.GameControls.Spell02.started -= Spell02Cast;
+        input.GameControls.Spell03.started -= Spell03Cast;
+        input.GameControls.Spell04.started -= Spell04Cast;
+
         input.GameControls.Disable();
     }
 
