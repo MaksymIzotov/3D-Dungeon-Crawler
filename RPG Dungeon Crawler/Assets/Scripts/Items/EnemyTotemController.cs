@@ -16,6 +16,8 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
     {
         enemySpawn = 0;
         enemyKilled = 0;
+
+        LevelManager.Instance.AddTotem(gameObject);
     }
     public string GetInteractedInfo()
     {
@@ -42,6 +44,8 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
     private void DestroyTotem()
     {
         //Effects
+        LevelManager.Instance.TotemDestroyed(gameObject);
+
         Destroy(gameObject);
     }
 
