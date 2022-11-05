@@ -39,7 +39,7 @@ public class PlayerMouseLook : MonoBehaviour
 
     void Update()
     {
-        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+        if (GameStates.Instance.state != GameStates.STATE.PLAY) { return; }
 
         SetCameraPosition();
         MouseMovement();

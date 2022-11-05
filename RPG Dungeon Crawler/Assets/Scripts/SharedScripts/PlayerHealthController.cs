@@ -8,6 +8,8 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
     private float hp;
     private float lastHp;
 
+    private bool isDead;
+
     private void Start()
     {
         SetValues();
@@ -55,11 +57,15 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        //Player death
+        if (isDead) { return; }
+
+        isDead = true;
+        LevelManager.Instance.onLevelLost.Invoke();
     }
 
     private void SetValues()
     {
         hp = properties.healthPoints;
+        isDead = false;
     }
 }

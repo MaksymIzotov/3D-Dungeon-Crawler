@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class LevelManager : MonoBehaviour
 
     #region LevelComlpetion
     private List<GameObject> totems = new List<GameObject>();
+
+    public UnityEvent onLevelCompleted;
+    public UnityEvent onLevelLost;
 
     public void AddTotem(GameObject totem)
     {
@@ -31,8 +35,7 @@ public class LevelManager : MonoBehaviour
 
     private void LevelCompleted()
     {
-        //Level won
-        Debug.Log("NICE!!!!!!!!!!!!!!!!!");
+        onLevelCompleted.Invoke();
     }
     #endregion
 
@@ -45,4 +48,27 @@ public class LevelManager : MonoBehaviour
     }
 
     #endregion
+
+
+    private bool isSlow = false;
+    private void FixedUpdate()
+    {
+        if (!isSlow) { return; }
+
+        TimeSlow();
+    }
+
+    private void TimeSlow()
+    {
+        if (Time.timeScale == 0) { return; }
+
+        if (Time.timeScale < 0.01f) { Time.timeScale = 0; }
+
+        Time.timeScale = Mathf.Lerp(Time.timeScale, 0, 0.07f);
+    }
+
+    public void StopTime(bool condition)
+    {
+        isSlow = condition;
+    }
 }

@@ -90,26 +90,22 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        //if (isGrounded && InGameUIManager.Instance.state == InGameUIManager.UISTATE.PAUSE)
-        //{
-        //    moveX = 0;
-        //    moveY = 0;
-        //}
-
         if (cc.isGrounded && playerVelocity.y < 0)
             playerVelocity.y = 0f;
-
-        if (cc.isGrounded)
-            movement = Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y);
-        else
-            movement += Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y) * 0.02f;
-
-
+        if (GameStates.Instance.state == GameStates.STATE.PLAY)
+        {
+            if (cc.isGrounded)
+                movement = Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y);
+            else
+                movement += Quaternion.Euler(0, playerCam.transform.eulerAngles.y, 0) * new Vector3(movementInput.action.ReadValue<Vector2>().x, 0, movementInput.action.ReadValue<Vector2>().y) * 0.02f;
+        }
         movement = Vector3.ClampMagnitude(movement, 1);
 
         SpeedHandle();
 
+
         cc.Move(movement * speed * Time.deltaTime);
+
 
         if (impact.magnitude > 0.2) cc.Move(impact * Time.deltaTime);
 

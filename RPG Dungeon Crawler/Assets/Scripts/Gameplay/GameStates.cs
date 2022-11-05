@@ -18,7 +18,9 @@ public class GameStates : MonoBehaviour
     public enum STATE
     {
         PLAY,
-        PAUSE
+        PAUSE,
+        WON,
+        LOST
     }
 
     public STATE state;
@@ -34,19 +36,22 @@ public class GameStates : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void ChangeState(int stateIndex)
+    {
+        state = (STATE)stateIndex;
+        StateChanged();
+    }
+
     private void ChangeState(InputAction.CallbackContext context)
     {
+        if (state == STATE.LOST) { return; }
+        if (state == STATE.WON) { return; }
+
         if (state == STATE.PLAY)
             state = STATE.PAUSE;
         else if (state == STATE.PAUSE)
             state = STATE.PLAY;
 
-        StateChanged();
-    }
-
-    public void Continue()
-    {
-        state = STATE.PLAY;
         StateChanged();
     }
 
@@ -60,13 +65,28 @@ public class GameStates : MonoBehaviour
 
                 MenuManager.Instance.OpenMenu("gui");
                 Time.timeScale = 1;
+                LevelManager.Instance.StopTime(false);
                 break;
             case STATE.PAUSE:
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
 
                 MenuManager.Instance.OpenMenu("pause");
-                Time.timeScale = 0;
+                LevelManager.Instance.StopTime(true);
+                break;
+            case STATE.WON:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+
+                LevelManager.Instance.StopTime(true);
+                MenuManager.Instance.OpenMenu("win");
+                break;
+            case STATE.LOST:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+
+                LevelManager.Instance.StopTime(true);
+                MenuManager.Instance.OpenMenu("lose");
                 break;
         }
     }

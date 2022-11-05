@@ -35,7 +35,6 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
     private void OnEnemyKilled()
     {
         enemyKilled++;
-        Debug.Log(enemyKilled);
 
         if (enemyKilled >= settings.enemiesAmount)
             DestroyTotem();
