@@ -14,12 +14,15 @@ public class InputManager : MonoBehaviour
     public static event Action rebindCanceled;
     public static event Action<InputAction, int> rebindStarted;
 
+    public static GameObject rebindPanel;
+
     private void Awake()
     {
         if (inputActions == null)
             inputActions = new RebindJumping();
 
-        DontDestroyOnLoad(gameObject);
+        rebindPanel = GameObject.Find("RebindBackground");
+        rebindPanel.SetActive(false);
     }
 
     public static void StartRebind(string actionName, int bindingIndex, TMP_Text statusText, bool excludeMouse)
@@ -46,7 +49,8 @@ public class InputManager : MonoBehaviour
         if (actionToRebind == null || bindingIndex < 0)
             return;
 
-        statusText.text = $"Press a {actionToRebind.expectedControlType}";
+        //statusText.text = $"Press a {actionToRebind.expectedControlType}";
+        rebindPanel.SetActive(true);
 
         actionToRebind.Disable();
 
@@ -64,6 +68,8 @@ public class InputManager : MonoBehaviour
                     DoRebind(actionToRebind, nextBindingIndex, statusText, allCompositeParts, excludeMouse);
             }
 
+            rebindPanel.SetActive(false);
+
             SaveBindingOverride(actionToRebind);
             rebindComplete?.Invoke();
         });
@@ -73,6 +79,8 @@ public class InputManager : MonoBehaviour
             actionToRebind.Enable();
             operation.Dispose();
 
+            rebindPanel.SetActive(false);
+
             rebindCanceled?.Invoke();
         });
 
@@ -80,6 +88,7 @@ public class InputManager : MonoBehaviour
 
         if (excludeMouse)
             rebind.WithControlsExcluding("Mouse");
+
 
         rebindStarted?.Invoke(actionToRebind, bindingIndex);
         rebind.Start(); //actually starts the rebinding process
