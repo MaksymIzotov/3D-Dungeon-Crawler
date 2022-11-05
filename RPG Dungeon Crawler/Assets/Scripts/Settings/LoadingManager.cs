@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    public void LoadLevel()
+    public void LoadLevel(int index)
     {
-        StartCoroutine(LoadSceneAsync(1));
+        StartCoroutine(LoadSceneAsync(index));
     }
 
     IEnumerator LoadSceneAsync(int sceneId)
