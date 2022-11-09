@@ -10,6 +10,7 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
     [SerializeField] private EnemiesSpawnSettings settings;
 
     [SerializeField] private GameObject FX;
+    [SerializeField] private GameObject hint;
 
     private int enemySpawn;
     private int enemyKilled;
@@ -35,6 +36,7 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
         GetAllSpawners();
 
         gameObject.tag = "NonInteractable";
+        Destroy(hint);
         StartCoroutine(Spawn());
     }
 
