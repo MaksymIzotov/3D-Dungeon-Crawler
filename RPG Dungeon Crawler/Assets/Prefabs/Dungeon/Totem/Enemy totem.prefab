@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3271585294864433612}
   - component: {fileID: 5524940281433172173}
   - component: {fileID: 5873399395735512294}
+  - component: {fileID: 4180798286524723486}
   m_Layer: 0
   m_Name: Enemy totem
   m_TagString: Interactable
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: destroy totem
   settings: {fileID: 11400000, guid: 14ccad5057dcfe84cb3fbce94ca4797d, type: 2}
+  FX: {fileID: 7059964547193781198, guid: 0eac0b57f2acfd842b305cca87bb83d5, type: 3}
 --- !u!65 &5873399395735512294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,3 +114,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3151669, y: 0.18545812, z: 0.1195715}
   m_Center: {x: 0, y: 0.042729065, z: -0.00045246637}
+--- !u!95 &4180798286524723486
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920380236388556825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d41bce4940d55534382294be9effa7f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

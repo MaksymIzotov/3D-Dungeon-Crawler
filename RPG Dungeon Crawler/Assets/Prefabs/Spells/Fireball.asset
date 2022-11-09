@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   name: Fireball
-  coolDownTime: 3
-  activateTime: 1
-  afterActivateTime: 0.5
+  coolDownTime: 1
+  activateTime: 0.5
+  afterActivateTime: 0.25
   instantiatePrefab: {fileID: 8795123936897416075, guid: fcc444274b3242346a3b36a9fabc2214, type: 3}
   burnEffectDuration: 3
   burnDamage: 2

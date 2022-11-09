@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
   m_Name: BaseEnemy
   m_EditorClassIdentifier: 
-  attackDelay: 1
-  damage: 12
-  preAttackTime: 0.5
+  attackDelay: 0.75
+  damage: 10
+  preAttackTime: 0.25
   bullet: {fileID: 4940093926140264369, guid: aa5e7904d6515de4293fa9adb1bcc29b, type: 3}

@@ -8,9 +8,12 @@ public class EyeAttackState : EnemyBaseState
     public float shootingRange = 1f;
 
     GameObject player;
+
+    public int layerMask;
     public override void EnterState(EnemyStateManager manager)
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        layerMask = LayerMask.GetMask("Enemy");
     }
 
     public override void UpdateState(EnemyStateManager manager)
@@ -21,7 +24,7 @@ public class EyeAttackState : EnemyBaseState
 
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - manager.transform.position;
-        if (Physics.Raycast(manager.transform.position, rayDirection, out hit, shootingRange))
+        if (Physics.Raycast(manager.transform.position, rayDirection, out hit, shootingRange, ~layerMask))
         {
             if (hit.transform.tag == "Player")
                 isPlayerInRange = true;

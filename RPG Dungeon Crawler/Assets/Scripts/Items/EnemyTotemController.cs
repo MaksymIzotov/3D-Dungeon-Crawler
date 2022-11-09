@@ -9,13 +9,19 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
     List<Transform> spawners = new List<Transform>();
     [SerializeField] private EnemiesSpawnSettings settings;
 
+    [SerializeField] private GameObject FX;
+
     private int enemySpawn;
     private int enemyKilled;
+
+    private Animator anim;
 
     private void Start()
     {
         enemySpawn = 0;
         enemyKilled = 0;
+
+        anim = GetComponent<Animator>();
 
         LevelManager.Instance.AddTotem(gameObject);
     }
@@ -37,14 +43,19 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
         enemyKilled++;
 
         if (enemyKilled >= settings.enemiesAmount)
-            DestroyTotem();
+            StartDestroyTotem();
     }
 
-    private void DestroyTotem()
+    private void StartDestroyTotem()
     {
         //Effects
-        LevelManager.Instance.TotemDestroyed(gameObject);
+        Instantiate(FX, transform.position, Quaternion.identity);
+        anim.Play("Destroying");
+    }
 
+    public void Destruction()
+    {
+        LevelManager.Instance.TotemDestroyed(gameObject);
         Destroy(gameObject);
     }
 
