@@ -2,14 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class HintTextController : MonoBehaviour
 {
-    GameObject player;
-    TMP_Text text;
+    private GameObject player;
+    private TMP_Text text;
 
-    Color textColor = new Color(255,255,255,255);
-    float alpha = 255;
+    private Color textColor = new Color(255,255,255,255);
+    private float alpha = 0;
+
+    private RebindJumping input;
+
+    private bool isOn = false;
+
+    private void OnEnable()
+    {
+        input = InputManager.inputActions;
+
+        input.GameControls.Info.started += TurnOn;
+        input.GameControls.Info.canceled += TurnOff;
+
+        //input.GameControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.GameControls.Info.started -= TurnOn;
+        input.GameControls.Info.canceled -= TurnOff; 
+
+        //input.GameControls.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +45,16 @@ public class HintTextController : MonoBehaviour
     {
         Rotate();
 
+        if (!isOn) {
+            textColor.a = 0;
+            text.color = textColor;
+            return;
+        }
+
         float dist = Vector3.Distance(transform.parent.position, player.transform.position);
         if(dist < 10)
         {
-            Debug.Log(alpha);
-            alpha = ExtensionMethods.Remap(dist, 5, 10, 0, 0.5f);
+            alpha = ExtensionMethods.Remap(dist, 5, 10, 0, 1);
             textColor.a = alpha;
         }
         else
@@ -41,4 +69,7 @@ public class HintTextController : MonoBehaviour
     {
         transform.LookAt(player.transform);
     }
+
+    private void TurnOn(InputAction.CallbackContext context) => isOn = true;
+    private void TurnOff(InputAction.CallbackContext context) => isOn = false;
 }
