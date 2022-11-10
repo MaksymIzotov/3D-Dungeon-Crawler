@@ -44,32 +44,11 @@ public class PlayerController : MonoBehaviour
 
     private Transform playerCam;
 
-    private RebindJumping input;
     [SerializeField] private InputActionReference movementInput;
 
     #endregion
 
     #region Unity Methods
-
-    private void OnEnable()
-    {
-        input = InputManager.inputActions;
-
-        input.GameControls.Jump.started += Jump;
-        input.GameControls.Run.started += Run;
-        input.GameControls.Run.canceled += Walk;
-
-
-        input.GameControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        input.GameControls.Jump.started -= Jump;
-        input.GameControls.Run.started -= Run;
-        input.GameControls.Run.canceled -= Walk;
-        input.GameControls.Disable();
-    }
 
     void Start()
     {
@@ -127,7 +106,7 @@ public class PlayerController : MonoBehaviour
             speed = walkSpeed;
     }
 
-    private void Jump(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context)
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
@@ -144,8 +123,8 @@ public class PlayerController : MonoBehaviour
         impact = (-dir * force) / Vector3.Distance(explosionPos.position, transform.position) / 2;
     }
 
-    private void Run(InputAction.CallbackContext context) => isRunning = true;
-    private void Walk(InputAction.CallbackContext context) => isRunning = false;
+    public void Run(InputAction.CallbackContext context) => isRunning = true;
+    public void Walk(InputAction.CallbackContext context) => isRunning = false;
     #endregion
 
     #region Technical Methods

@@ -49,14 +49,9 @@ public class LevelManager : MonoBehaviour
 
     #endregion
 
+    #region TimeSlow
 
     private bool isSlow = false;
-    private void FixedUpdate()
-    {
-        if (!isSlow) { return; }
-
-        TimeSlow();
-    }
 
     private void TimeSlow()
     {
@@ -70,5 +65,19 @@ public class LevelManager : MonoBehaviour
     public void StopTime(bool condition)
     {
         isSlow = condition;
+    }
+    #endregion
+
+    #region Getters
+
+    public List<GameObject> GetCurrentTotems => totems;
+
+    #endregion
+
+    private void FixedUpdate()
+    {
+        if (!isSlow) { return; }
+
+        TimeSlow();
     }
 }

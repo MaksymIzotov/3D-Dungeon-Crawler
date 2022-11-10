@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
 
 public class HintTextController : MonoBehaviour
 {
@@ -12,27 +11,7 @@ public class HintTextController : MonoBehaviour
     private Color textColor = new Color(255,255,255,255);
     private float alpha = 0;
 
-    private RebindJumping input;
-
     private bool isOn = false;
-
-    private void OnEnable()
-    {
-        input = InputManager.inputActions;
-
-        input.GameControls.Info.started += TurnOn;
-        input.GameControls.Info.canceled += TurnOff;
-
-        //input.GameControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        input.GameControls.Info.started -= TurnOn;
-        input.GameControls.Info.canceled -= TurnOff; 
-
-        //input.GameControls.Disable();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +49,6 @@ public class HintTextController : MonoBehaviour
         transform.LookAt(player.transform);
     }
 
-    private void TurnOn(InputAction.CallbackContext context) => isOn = true;
-    private void TurnOff(InputAction.CallbackContext context) => isOn = false;
+    public void TurnOn() => isOn = true;
+    public void TurnOff() => isOn = false;
 }

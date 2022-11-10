@@ -17,30 +17,6 @@ public class SpellsInventory : MonoBehaviour
     public Spell[] spells;
     public Transform spellSpawnPoint;
 
-    private RebindJumping input;
-
-    private void OnEnable()
-    {
-        input = InputManager.inputActions;
-
-        input.GameControls.Spell01.started += Spell01Cast;
-        input.GameControls.Spell02.started += Spell02Cast;
-        input.GameControls.Spell03.started += Spell03Cast;
-        input.GameControls.Spell04.started += Spell04Cast;
-
-        input.GameControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        input.GameControls.Spell01.started -= Spell01Cast;
-        input.GameControls.Spell02.started -= Spell02Cast;
-        input.GameControls.Spell03.started -= Spell03Cast;
-        input.GameControls.Spell04.started -= Spell04Cast;
-
-        input.GameControls.Disable();
-    }
-
     private void Start()
     {
         cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();
@@ -51,7 +27,7 @@ public class SpellsInventory : MonoBehaviour
         SkillsIconManager.Instance.SetupIcon(spells);
     }
 
-    private void Spell01Cast(InputAction.CallbackContext context)
+    public void Spell01Cast(InputAction.CallbackContext context)
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
@@ -61,7 +37,7 @@ public class SpellsInventory : MonoBehaviour
         //Use spell 01
         StartCoroutine(Activate(0));
     }
-    private void Spell02Cast(InputAction.CallbackContext context)
+    public void Spell02Cast(InputAction.CallbackContext context)
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
@@ -71,7 +47,7 @@ public class SpellsInventory : MonoBehaviour
         //Use spell 01
         StartCoroutine(Activate(1));
     }
-    private void Spell03Cast(InputAction.CallbackContext context)
+    public void Spell03Cast(InputAction.CallbackContext context)
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
@@ -81,7 +57,7 @@ public class SpellsInventory : MonoBehaviour
         //Use spell 01
         StartCoroutine(Activate(2));
     }
-    private void Spell04Cast(InputAction.CallbackContext context)
+    public void Spell04Cast(InputAction.CallbackContext context)
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 

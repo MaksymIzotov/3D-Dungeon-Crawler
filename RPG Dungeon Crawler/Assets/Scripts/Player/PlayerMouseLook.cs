@@ -28,6 +28,8 @@ public class PlayerMouseLook : MonoBehaviour
 
     [SerializeField] private InputActionReference mouseInput;
 
+    [SerializeField] private CurrentSettings settings;
+
     #endregion
 
     #region Unity Methods
@@ -51,8 +53,8 @@ public class PlayerMouseLook : MonoBehaviour
     void MouseMovement()
     {
         Vector2 targetMouseDelta = Mouse.current.delta.ReadValue() * Time.fixedDeltaTime;
-        mouseX = targetMouseDelta.x * 5;
-        mouseY = targetMouseDelta.y * 5;
+        mouseX = targetMouseDelta.x * settings.sensitivity;
+        mouseY = targetMouseDelta.y * settings.sensitivity;
 
         rotation = transform.localRotation.eulerAngles;
         desiredX = rotation.y + mouseX;
