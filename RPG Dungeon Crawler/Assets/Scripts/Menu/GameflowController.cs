@@ -7,6 +7,7 @@ public class GameflowController : MonoBehaviour
 {
     private void Start()
     {
+        TabManager.Instance.OpenTab("input");
         MenuManager.Instance.OpenMenu("main");
     }
 

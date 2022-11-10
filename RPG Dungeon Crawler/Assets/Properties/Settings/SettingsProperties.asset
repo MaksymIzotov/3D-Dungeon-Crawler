@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SettingsProperties
   m_EditorClassIdentifier: 
   sensitivity: 3
-  brightness: 0
+  brightness: 1

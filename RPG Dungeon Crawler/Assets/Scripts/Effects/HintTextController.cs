@@ -8,7 +8,7 @@ public class HintTextController : MonoBehaviour
     private GameObject player;
     private TMP_Text text;
 
-    private Color textColor = new Color(255,255,255,255);
+    private Color textColor = new Color(255, 255, 255, 255);
     private float alpha = 0;
 
     private bool isOn = false;
@@ -16,22 +16,25 @@ public class HintTextController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        SetupPlayer();
         text = GetComponent<TMP_Text>();
     }
 
     private void Update()
     {
+        if (player == null) { SetupPlayer(); return; }
+
         Rotate();
 
-        if (!isOn) {
+        if (!isOn)
+        {
             textColor.a = 0;
             text.color = textColor;
             return;
         }
 
         float dist = Vector3.Distance(transform.parent.position, player.transform.position);
-        if(dist < 10)
+        if (dist < 10)
         {
             alpha = ExtensionMethods.Remap(dist, 5, 10, 0, 1);
             textColor.a = alpha;
@@ -47,6 +50,11 @@ public class HintTextController : MonoBehaviour
     private void Rotate()
     {
         transform.LookAt(player.transform);
+    }
+
+    private void SetupPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void TurnOn() => isOn = true;
