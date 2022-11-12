@@ -15,12 +15,6 @@ public class PlayerController : MonoBehaviour
     public float gravity = 19.6f;
     [Tooltip("Amount of force will apply to the player when jumping")]
     public float jumpForce = 5f;
-    [Tooltip("Height of ducking")]
-    public float crouchHeight = 0.5f;
-    [Tooltip("Time to duck")]
-    public float crouchTime = 1f;
-    [Tooltip("Movement speed while crouching")]
-    public float crouchSpeed = 1f;
     [Tooltip("A step to change speed between walking and running")]
     public float speedChangingStep = 0.5f;
 
@@ -36,7 +30,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float speed;
 
-    private float currentHeight;
     [HideInInspector]
     public bool isRunning;
 
@@ -54,7 +47,6 @@ public class PlayerController : MonoBehaviour
     {
         VariablesAssignment();
 
-        currentHeight = cc.height;
         speed = 0;
     }
 
@@ -71,6 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if (cc.isGrounded && playerVelocity.y < 0)
             playerVelocity.y = 0f;
+
         if (GameStates.Instance.state == GameStates.STATE.PLAY)
         {
             if (cc.isGrounded)
@@ -82,9 +75,7 @@ public class PlayerController : MonoBehaviour
 
         SpeedHandle();
 
-
         cc.Move(movement * speed * Time.deltaTime);
-
 
         if (impact.magnitude > 0.2) cc.Move(impact * Time.deltaTime);
 
@@ -97,8 +88,6 @@ public class PlayerController : MonoBehaviour
     void SpeedHandle()
     {
         if (!cc.isGrounded) { return; }
-
-        if (cc.height < currentHeight - 1f) { speed = crouchSpeed; return; }
 
         if (isRunning)
             speed = runSpeed;

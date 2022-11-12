@@ -82,6 +82,10 @@ public class Generator2D : MonoBehaviour {
         dungeon.transform.localScale = new Vector3(10, 10, 10);
 
         GameObject[] gos = Instances.ToArray();
+        foreach(GameObject n in gos)
+        {
+            Debug.Log(n.name);
+        }
         StaticBatchingUtility.Combine(gos, dungeon);
     }
 
@@ -318,6 +322,10 @@ public class Generator2D : MonoBehaviour {
             if (child.gameObject.GetComponent<MeshFilter>() != null)
             {
                 Instances.Add(child.gameObject);
+            }
+            else
+            {
+                //child.parent = null;
             }
         }
     }

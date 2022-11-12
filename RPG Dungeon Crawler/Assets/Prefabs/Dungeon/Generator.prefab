@@ -47,7 +47,7 @@ MonoBehaviour:
   size: {x: 40, y: 40}
   roomCount: 100
   roomMinSize: 3
-  roomMaxSize: 6
+  roomMaxSize: 3
   corridorPrefab:
   - {fileID: 5433098802033489615, guid: 08bb58a757ddce54ab6a6a4cfab20439, type: 3}
   - {fileID: 3192337049061223842, guid: 2101076a48cc4d74db79cce7b3f3545a, type: 3}
