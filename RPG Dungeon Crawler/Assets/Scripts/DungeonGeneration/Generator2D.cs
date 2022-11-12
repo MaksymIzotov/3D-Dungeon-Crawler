@@ -6,6 +6,9 @@ using Graphs;
 using UnityEngine.AI;
 
 public class Generator2D : MonoBehaviour {
+    private const string CHECKER_NAME = "Checker";
+    private const string SPAWNPOINT_TAG = "Spawnpoint";
+
     enum CellType {
         None,
         Room,
@@ -81,12 +84,31 @@ public class Generator2D : MonoBehaviour {
 
         dungeon.transform.localScale = new Vector3(10, 10, 10);
 
-        GameObject[] gos = Instances.ToArray();
-        foreach(GameObject n in gos)
+        GameObject[] gos = GetStaticGameobjectsList().ToArray();
+        foreach (GameObject n in gos)
         {
             Debug.Log(n.name);
         }
         StaticBatchingUtility.Combine(gos, dungeon);
+    }
+
+    private List<GameObject> GetStaticGameobjectsList()
+    {
+        List<GameObject> staticObjects = new List<GameObject>();
+
+        foreach (GameObject item in Instances)
+        {
+            if (item.GetComponent<MeshRenderer>() != null)
+            {
+                staticObjects.Add(item);                
+            }
+            else if(item.GetComponent<Light>() == true)
+            {
+                item.transform.SetParent(null, true);
+            }
+        }
+
+        return staticObjects;
     }
 
     private void DestroyWalls(GameObject parent)
@@ -94,7 +116,7 @@ public class Generator2D : MonoBehaviour {
         Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
         foreach (Transform child in allChildren)
         {
-            if (child.name == "Checker")
+            if (child.name == CHECKER_NAME)
             {
                 int layerMask = 1 << 12;
 
@@ -319,14 +341,7 @@ public class Generator2D : MonoBehaviour {
         Transform[] children = root.transform.GetComponentsInChildren<Transform>();
         foreach (Transform child in children)
         {
-            if (child.gameObject.GetComponent<MeshFilter>() != null)
-            {
-                Instances.Add(child.gameObject);
-            }
-            else
-            {
-                //child.parent = null;
-            }
+            Instances.Add(child.gameObject);
         }
     }
 }
