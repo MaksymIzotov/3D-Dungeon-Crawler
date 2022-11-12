@@ -77,9 +77,6 @@ MonoBehaviour:
   runSpeed: 9
   gravity: -18.4
   jumpForce: 1.3
-  crouchHeight: 1.5
-  crouchTime: 0.1
-  crouchSpeed: 2
   speedChangingStep: 12
   speed: 0
   isRunning: 0
@@ -327,7 +324,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1783
+    m_Bits: 9975
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

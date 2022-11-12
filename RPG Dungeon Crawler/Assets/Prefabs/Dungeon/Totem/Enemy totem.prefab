@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 5524940281433172173}
   - component: {fileID: 5873399395735512294}
   - component: {fileID: 4180798286524723486}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Enemy totem
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4407948306225216163
 Transform:
@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 129775959785002867}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -29.67, z: 0}
 --- !u!33 &757719865843365126
 MeshFilter:
