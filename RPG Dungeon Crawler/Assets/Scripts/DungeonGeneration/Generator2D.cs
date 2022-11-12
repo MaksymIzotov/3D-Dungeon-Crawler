@@ -85,10 +85,6 @@ public class Generator2D : MonoBehaviour {
         dungeon.transform.localScale = new Vector3(10, 10, 10);
 
         GameObject[] gos = GetStaticGameobjectsList().ToArray();
-        foreach (GameObject n in gos)
-        {
-            Debug.Log(n.name);
-        }
         StaticBatchingUtility.Combine(gos, dungeon);
     }
 

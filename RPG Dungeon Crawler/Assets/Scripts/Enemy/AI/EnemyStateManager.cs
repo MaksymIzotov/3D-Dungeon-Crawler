@@ -11,6 +11,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBaseState AttackingState;
 
     public Transform attackPoint;
+    public Transform eyes;
 
     private void Start()
     {
