@@ -10,8 +10,7 @@ public class DummyChasingState : EnemyBaseState
     LayerMask ignore;
     public override void EnterState(EnemyStateManager manager)
     {
-        //Start animation
-        manager.GetComponent<EnemyAnimationController>().Chase();
+        manager.GetComponent<GroundEnemyMovementController>().ChasePlayer();
 
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -20,16 +19,7 @@ public class DummyChasingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        manager.GetComponent<GroundEnemyMovementController>().ChasePlayer();
-
-        //If player is out of sight check
-        RaycastHit hit;
-        Vector3 rayDirection = player.transform.position - manager.eyes.transform.position;
-        if (Physics.Raycast(manager.eyes.transform.position, rayDirection, out hit, 1000f, ~ignore))
-        {
-            if (hit.transform.tag != "Player")
-                manager.SwitchState(manager.IdleState);
-        }
+        manager.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is in attack range check
         RaycastHit attackHit;
@@ -37,17 +27,17 @@ public class DummyChasingState : EnemyBaseState
         {
             if (attackHit.transform.tag == "Player")
             {
-                manager.GetComponent<GroundEnemyMovementController>().StopAtPosition();
+                manager.GetComponent<GroundEnemyMovementController>().StopAgent();
                 manager.SwitchState(manager.AttackingState);
             }
         }
 
-        RaycastHit hitAbove;
-        if (Physics.Raycast(manager.eyes.transform.position, manager.eyes.transform.TransformDirection(Vector3.up), out hitAbove, 1f))
+        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 2f);
+        foreach (Collider col in objectsNearby)
         {
-            if (hitAbove.transform.tag == "Player")
+            if (col.tag == "Player")
             {
-                manager.GetComponent<GroundEnemyMovementController>().StopAtPosition();
+                manager.GetComponent<GroundEnemyMovementController>().StopAgent();
                 manager.SwitchState(manager.AttackingState);
             }
         }

@@ -63,12 +63,13 @@ public class GroundEnemyAttackController : MonoBehaviour
     IEnumerator PerformAttack()
     {
         //Deal damage
-        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 1f);
+        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 3f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")
             {
                 col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage);
+                col.GetComponent<PlayerController>().AddImpact(transform, 100);
             }
         }
 

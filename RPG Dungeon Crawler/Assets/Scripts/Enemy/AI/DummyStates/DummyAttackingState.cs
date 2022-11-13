@@ -27,10 +27,10 @@ public class DummyAttackingState : EnemyBaseState
             }
         }
 
-        RaycastHit hitAbove;
-        if (Physics.Raycast(manager.eyes.transform.position, manager.eyes.transform.TransformDirection(Vector3.up), out hitAbove, 1f))
+        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 2f);
+        foreach (Collider col in objectsNearby)
         {
-            if (hitAbove.transform.tag == "Player")
+            if (col.tag == "Player")
             {
                 isPlayerInRange = true;
                 manager.gameObject.GetComponent<GroundEnemyAttackController>().AttackAbove();
