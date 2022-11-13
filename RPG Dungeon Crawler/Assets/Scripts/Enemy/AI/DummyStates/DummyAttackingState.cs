@@ -27,7 +27,7 @@ public class DummyAttackingState : EnemyBaseState
             }
         }
 
-        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 2f);
+        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 1f);
         foreach (Collider col in objectsNearby)
         {
             if (col.tag == "Player")
