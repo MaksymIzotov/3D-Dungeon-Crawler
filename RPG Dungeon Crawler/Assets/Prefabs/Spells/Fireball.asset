@@ -16,6 +16,7 @@ MonoBehaviour:
   coolDownTime: 1
   activateTime: 0.5
   afterActivateTime: 0.25
+  isUpgraded: 1
   instantiatePrefab: {fileID: 8795123936897416075, guid: fcc444274b3242346a3b36a9fabc2214, type: 3}
   burnEffectDuration: 3
   burnDamage: 2

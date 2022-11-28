@@ -18,6 +18,8 @@ public class FireballController : MonoBehaviour
     public float burnDuration;
     public float burnDamage;
 
+    private bool isUpgraded = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,7 +35,6 @@ public class FireballController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
         //Do damage
 
         var collidersInRange = Physics.OverlapSphere(transform.position, radius);
@@ -44,7 +45,7 @@ public class FireballController : MonoBehaviour
             {
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
             }
-            else if(n.tag == "Enemy")
+            else if(n.tag == "Enemy" && isUpgraded)
             {
                 GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, burnDuration, burnDamage);
             }
@@ -53,6 +54,11 @@ public class FireballController : MonoBehaviour
         }
 
         DestroyObject();
+    }
+
+    public void Upgrade()
+    {
+        isUpgraded = true;
     }
 
     private void DestroyObject()

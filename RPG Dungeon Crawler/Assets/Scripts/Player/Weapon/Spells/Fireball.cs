@@ -19,7 +19,17 @@ public class Fireball : Spell
     public override void Cast(Transform spellSpawnpoint)
     {
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
-        fireball.GetComponent<FireballController>().burnDuration = burnEffectDuration;
-        fireball.GetComponent<FireballController>().burnDamage = burnDamage;
+
+        if (isUpgraded)
+        {
+            CastUpgraded(fireball.transform);
+        }
+    }
+
+    public override void CastUpgraded(Transform spellProperty)
+    {
+        spellProperty.GetComponent<FireballController>().burnDuration = burnEffectDuration;
+        spellProperty.GetComponent<FireballController>().burnDamage = burnDamage;
+        spellProperty.GetComponent<FireballController>().Upgrade();
     }
 }
