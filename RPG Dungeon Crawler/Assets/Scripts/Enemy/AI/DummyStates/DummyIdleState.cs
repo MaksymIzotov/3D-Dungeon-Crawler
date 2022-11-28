@@ -12,7 +12,7 @@ public class DummyIdleState : EnemyBaseState
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Idle();
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
         ignore = LayerMask.GetMask("Enemy");
     }
@@ -23,7 +23,7 @@ public class DummyIdleState : EnemyBaseState
         Vector3 rayDirection = player.transform.position - manager.transform.position;
         if (Physics.Raycast(manager.transform.position, rayDirection, out hit, 1000f, ~ignore))
         {
-            if (hit.transform.tag == "Player")
+            if (hit.transform.tag == TAGS.PLAYER_TAG)
                 manager.SwitchState(manager.ChasingState);
         }
     }

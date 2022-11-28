@@ -79,7 +79,7 @@ public class EnemyTotemController : MonoBehaviour, IInteractable
 
         foreach(Transform child in children)
         {
-            if (child.CompareTag("Spawner"))
+            if (child.CompareTag(TAGS.SPAWNER_TAG))
                 spawners.Add(child);
         }
     }

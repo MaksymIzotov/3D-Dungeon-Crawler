@@ -12,7 +12,7 @@ public class DummyChasingState : EnemyBaseState
     {
         manager.GetComponent<GroundEnemyMovementController>().ChasePlayer();
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
         ignore = LayerMask.GetMask("Enemy");
     }
@@ -25,7 +25,7 @@ public class DummyChasingState : EnemyBaseState
         RaycastHit attackHit;
         if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out attackHit, 2f))
         {
-            if (attackHit.transform.tag == "Player")
+            if (attackHit.transform.tag == TAGS.PLAYER_TAG)
             {
                 manager.GetComponent<GroundEnemyMovementController>().StopAgent();
                 manager.SwitchState(manager.AttackingState);
@@ -35,7 +35,7 @@ public class DummyChasingState : EnemyBaseState
         Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 2f);
         foreach (Collider col in objectsNearby)
         {
-            if (col.tag == "Player")
+            if (col.tag == TAGS.PLAYER_TAG)
             {
                 manager.GetComponent<GroundEnemyMovementController>().StopAgent();
                 manager.SwitchState(manager.AttackingState);

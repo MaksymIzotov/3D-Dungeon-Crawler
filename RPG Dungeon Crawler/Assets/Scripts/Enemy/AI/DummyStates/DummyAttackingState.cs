@@ -20,7 +20,7 @@ public class DummyAttackingState : EnemyBaseState
         RaycastHit hitAttack;
         if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out hitAttack, 2f))
         {
-            if (hitAttack.transform.tag == "Player")
+            if (hitAttack.transform.tag == TAGS.PLAYER_TAG)
             {
                 isPlayerInRange = true;
                 manager.gameObject.GetComponent<GroundEnemyAttackController>().Attack();
@@ -30,7 +30,7 @@ public class DummyAttackingState : EnemyBaseState
         Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 1f);
         foreach (Collider col in objectsNearby)
         {
-            if (col.tag == "Player")
+            if (col.tag == TAGS.PLAYER_TAG)
             {
                 isPlayerInRange = true;
                 manager.gameObject.GetComponent<GroundEnemyAttackController>().AttackAbove();

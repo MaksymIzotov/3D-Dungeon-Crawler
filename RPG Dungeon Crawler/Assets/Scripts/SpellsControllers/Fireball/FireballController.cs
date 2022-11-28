@@ -41,11 +41,11 @@ public class FireballController : MonoBehaviour
 
         foreach (Collider n in collidersInRange)
         {
-            if(n.tag == "Player")
+            if(n.tag == TAGS.PLAYER_TAG)
             {
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
             }
-            else if(n.tag == "Enemy" && isUpgraded)
+            else if(n.tag == TAGS.ENEMY_TAG && isUpgraded)
             {
                 GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, burnDuration, burnDamage);
             }
