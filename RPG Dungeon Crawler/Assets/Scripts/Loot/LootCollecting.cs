@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class LootCollecting : MonoBehaviour
 {
+    public LootInfo info;
+
     [SerializeField] private float speed = 12f;
 
     private bool isNear = false;
     private GameObject player;
 
-    UnityAction onPickup;
 
     private void Start()
     {
@@ -32,13 +33,12 @@ public class LootCollecting : MonoBehaviour
 
     private void PickupItem()
     {
-        onPickup.Invoke();
+        player.GetComponent<ItemPickup>().PickupItem(info);
         Destroy(gameObject);
     }
 
-    public void Collect(UnityAction _onPickup)
+    public void Collect()
     {
-        onPickup = _onPickup;
         isNear = true;
     }
 }

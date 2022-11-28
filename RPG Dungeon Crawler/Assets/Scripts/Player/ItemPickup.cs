@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    private void PickupItem()
+    LootInventory inventory;
+    private void Start()
+    {
+        inventory = GetComponent<LootInventory>();
+    }
+
+    public void PickupItem(LootInfo info)
     {
         //Add item to player inventory
-        Debug.Log("Picked up item");
+        inventory.AddItem(info);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(TAGS.LOOT_TAG))
         {
-            other.GetComponent<LootCollecting>().Collect(PickupItem);
+            other.GetComponent<LootCollecting>().Collect();
         }
     }
 }
