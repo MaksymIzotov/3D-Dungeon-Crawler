@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5524940281433172173}
   - component: {fileID: 5873399395735512294}
   - component: {fileID: 4180798286524723486}
+  - component: {fileID: 8921451171724837731}
   m_Layer: 13
   m_Name: Enemy totem
   m_TagString: Interactable
@@ -34,8 +35,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 129775959785002867}
+  - {fileID: 7268031214191174161}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -29.67, z: 0}
 --- !u!33 &757719865843365126
 MeshFilter:
@@ -136,6 +138,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8921451171724837731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920380236388556825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d235538f554afb3478b03369cc4e7190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 69d5c4eb84c962741923119079b64aa8, type: 2}
+  lootSpawnPoint: {fileID: 7268031214191174161}
 --- !u!1 &7077678368999264206
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,3 +337,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6e2adcc7aa95e458f92b1483934c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7730469988199621412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7268031214191174161}
+  m_Layer: 13
+  m_Name: LootSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7268031214191174161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730469988199621412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.152, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4407948306225216163}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

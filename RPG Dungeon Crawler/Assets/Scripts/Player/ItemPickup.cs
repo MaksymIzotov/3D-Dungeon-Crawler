@@ -18,9 +18,8 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(TAGS.LOOT_TAG))
-        {
-            other.GetComponent<LootCollecting>().Collect();
-        }
+        if (other.transform.parent.CompareTag(TAGS.LOOT_TAG))
+            other.transform.parent.GetComponent<LootCollecting>().Collect();
+
     }
 }
