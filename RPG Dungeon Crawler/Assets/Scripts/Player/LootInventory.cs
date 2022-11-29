@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class LootInventory : MonoBehaviour
 {
-    List<LootInfo> inventory = new List<LootInfo>();
+    [SerializeField] private CurrentInventory inventory;
+
+    private void Start()
+    {
+        ClearInventory();
+    }
 
     public void AddItem(LootInfo item)
     {
-        inventory.Add(item);
-        Debug.Log(item.name);
+        inventory.LevelInventory.Add(item);
+        Debug.Log(item.lootName);
     }
 
     public void RemoveItem(LootInfo item)
     {
-        inventory.Remove(item);
+        inventory.LevelInventory.Remove(item);
+    }
+
+    public void ClearInventory()
+    {
+        inventory.LevelInventory.Clear();
+    }
+
+    public void TransferToGlobal()
+    {
+        inventory.GlobalInventory.AddRange(inventory.LevelInventory);
     }
 }

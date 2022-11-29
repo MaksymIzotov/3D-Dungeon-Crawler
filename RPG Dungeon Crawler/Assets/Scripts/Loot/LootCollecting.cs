@@ -7,7 +7,7 @@ public class LootCollecting : MonoBehaviour
 {
     public LootInfo info;
 
-    [SerializeField] private float speed = 12f;
+    [SerializeField] private float speed = 15f;
 
     private bool isNear = false;
     private Transform player;
@@ -27,7 +27,7 @@ public class LootCollecting : MonoBehaviour
 
         transform.position += dir * speed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, player.position) < 0.5f)
+        if (Vector3.Distance(transform.position, player.position) < 0.7f)
             PickupItem();  
     }
 

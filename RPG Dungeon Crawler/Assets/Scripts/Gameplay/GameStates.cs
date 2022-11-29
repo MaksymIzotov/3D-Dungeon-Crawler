@@ -78,6 +78,7 @@ public class GameStates : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
 
+                LevelLootListing.Instance.DisplayLoot();
                 LevelManager.Instance.StopTime(true);
                 MenuManager.Instance.OpenMenu("win");
                 break;
@@ -85,6 +86,7 @@ public class GameStates : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
 
+                LevelLootListing.Instance.DisplayLoot();
                 LevelManager.Instance.StopTime(true);
                 MenuManager.Instance.OpenMenu("lose");
                 break;

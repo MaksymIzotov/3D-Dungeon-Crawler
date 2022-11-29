@@ -7,5 +7,7 @@ public class LootInfo : ScriptableObject
 {
     public string lootName;
 
+    public GameObject iconPrefab;
+
     //properties
 }
