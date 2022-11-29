@@ -14,7 +14,6 @@ public class LootInventory : MonoBehaviour
     public void AddItem(LootInfo item)
     {
         inventory.LevelInventory.Add(item);
-        Debug.Log(item.lootName);
     }
 
     public void RemoveItem(LootInfo item)
