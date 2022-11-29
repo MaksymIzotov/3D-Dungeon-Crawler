@@ -17,7 +17,7 @@ public class TableItemsInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             onClick.Invoke();
-            isOn = false;
+            OnMouseAway();
         }
     }
 
