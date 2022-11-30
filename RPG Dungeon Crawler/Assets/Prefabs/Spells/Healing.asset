@@ -16,5 +16,7 @@ MonoBehaviour:
   coolDownTime: 15
   activateTime: 1
   afterActivateTime: 0.5
+  isUpgraded: 0
+  icon: {fileID: 21300000, guid: c354dce082b5e2f4e88ce10d326e252d, type: 3}
   hpHealingAmount: 50
   healingCross: {fileID: 7112644600012250534, guid: acdcba31b42cd20409f93a8df48ef6f5, type: 3}

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Fireball : Spell
 {
     public GameObject instantiatePrefab;
+
+    public float damage;
     public float burnEffectDuration;
     public float burnDamage;
 
@@ -19,6 +21,7 @@ public class Fireball : Spell
     public override void Cast(Transform spellSpawnpoint)
     {
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
+        fireball.GetComponent<FireballController>().SetProperties(damage, burnEffectDuration, burnDamage);
 
         if (isUpgraded)
         {
@@ -28,8 +31,16 @@ public class Fireball : Spell
 
     public override void CastUpgraded(Transform spellProperty)
     {
-        spellProperty.GetComponent<FireballController>().burnDuration = burnEffectDuration;
-        spellProperty.GetComponent<FireballController>().burnDamage = burnDamage;
         spellProperty.GetComponent<FireballController>().Upgrade();
+    }
+
+    public override string Stats()
+    {
+        return "Damage: " + damage + "\nCooldown: " + coolDownTime;
+    }
+
+    public override string Desription()
+    {
+        return "This. Is. Fireball. Anything else you want to know?";
     }
 }

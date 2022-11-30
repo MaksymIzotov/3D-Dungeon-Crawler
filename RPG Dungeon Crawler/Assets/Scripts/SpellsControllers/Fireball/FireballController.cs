@@ -6,17 +6,17 @@ public class FireballController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    public float rotationSpeed;
+    [SerializeField] private float rotationSpeed;
 
-    public float force;
+    [SerializeField] private float force;
 
-    public float explosionForce;
-    public float radius;
+    [SerializeField] private float explosionForce;
+    [SerializeField] private float radius;
 
-    public float damage;
+    private float damage;
 
-    public float burnDuration;
-    public float burnDamage;
+    private float burnDuration;
+    private float burnDamage;
 
     private bool isUpgraded = false;
 
@@ -26,6 +26,13 @@ public class FireballController : MonoBehaviour
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
 
         Invoke("DestroyObject", 10);
+    }
+
+    public void SetProperties(float _damage, float _burnDuration, float _burnDamage)
+    {
+        damage = _damage;
+        burnDamage = _burnDamage;
+        burnDuration = _burnDuration;
     }
 
     private void Update()

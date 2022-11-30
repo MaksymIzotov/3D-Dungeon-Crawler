@@ -17,6 +17,8 @@ MonoBehaviour:
   activateTime: 0.5
   afterActivateTime: 0.25
   isUpgraded: 1
+  icon: {fileID: 21300000, guid: 82d716593c228e240a3edc06d2b12c46, type: 3}
   instantiatePrefab: {fileID: 8795123936897416075, guid: fcc444274b3242346a3b36a9fabc2214, type: 3}
+  damage: 20
   burnEffectDuration: 3
   burnDamage: 2

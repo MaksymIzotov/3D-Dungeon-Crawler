@@ -20,4 +20,14 @@ public class Healing : Spell
         GameObject player = spellSpawnpoint.root.gameObject;
         player.GetComponent<PlayerHealthController>().Heal(hpHealingAmount);
     }
+
+    public override string Stats()
+    {
+        return "Healing amount: " + hpHealingAmount + "\nCooldown: " + coolDownTime;
+    }
+
+    public override string Desription()
+    {
+        return "Bruh, like you don't know what is healing for? Are you for real or just pretending that you are?";
+    }
 }
