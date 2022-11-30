@@ -28,14 +28,9 @@ public class SkillsIconManager : MonoBehaviour
     {
         for (int i = 0; i < spells.Length; i++)
         {
-            foreach(Icon n in icons)
-            {
-                if(n.name == spells[i].name)
-                {
-                    skillsIcons[i].sprite = n.icon;
-                    break;
-                }
-            }
+            if (spells[i] == null) { skillsIcons[i].gameObject.SetActive(false); continue; }
+
+            skillsIcons[i].sprite = spells[i].icon;
         }
     }
 }

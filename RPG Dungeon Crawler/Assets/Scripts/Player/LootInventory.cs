@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LootInventory : MonoBehaviour
 {
-    [SerializeField] private CurrentInventory inventory;
+    public CurrentInventory inventory;
 
     private void Start()
     {

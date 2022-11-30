@@ -28,6 +28,6 @@ public class Healing : Spell
 
     public override string Desription()
     {
-        return "Bruh, like you don't know what is healing for? Are you for real or just pretending that you are?";
+        return "Bruh, like you don't know what is healing for? Are you for real stupid or just pretending that you are?";
     }
 }

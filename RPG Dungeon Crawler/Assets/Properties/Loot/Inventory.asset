@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   GlobalInventory: []
-  LevelInventory: []
+  LevelInventory:
+  - {fileID: 11400000, guid: 8ae2ab39fb7015d4caba2c7a79e14736, type: 2}
+  spells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
+  spellsInventory:
+  - buttonPrefab: {fileID: 8782750347074970417, guid: ead1c1ea6818a684ba1af6db258853c3, type: 3}

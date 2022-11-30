@@ -14,11 +14,17 @@ public class SpellsInventory : MonoBehaviour
 
     private CooldownCountdown[] cooldownUI = new CooldownCountdown[4];
 
-    public Spell[] spells;
+    private Spell[] spells;
     public Transform spellSpawnPoint;
 
     private void Start()
     {
+        spells = new Spell[4];
+        for (int i = 0; i < spells.Length; i++)
+        {
+            spells[i] = GetComponent<LootInventory>().inventory.spells[i];
+        }
+
         cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();
         cooldownUI[1] = GameObject.Find("Spell02").GetComponent<CooldownCountdown>();
         cooldownUI[2] = GameObject.Find("Spell03").GetComponent<CooldownCountdown>();
@@ -31,6 +37,7 @@ public class SpellsInventory : MonoBehaviour
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
+        if (spells[0] == null) { return; }
         if (ActiveCheck()) { return; }
         if (spellStates[0] != STATE.READY) { return; }
 
@@ -41,6 +48,7 @@ public class SpellsInventory : MonoBehaviour
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
+        if (spells[1] == null) { return; }
         if (ActiveCheck()) { return; }
         if (spellStates[1] != STATE.READY) { return; }
 
@@ -51,6 +59,7 @@ public class SpellsInventory : MonoBehaviour
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
+        if (spells[2] == null) { return; }
         if (ActiveCheck()) { return; }
         if (spellStates[2] != STATE.READY) { return; }
 
@@ -61,6 +70,7 @@ public class SpellsInventory : MonoBehaviour
     {
         if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
 
+        if (spells[3] == null) { return; }
         if (ActiveCheck()) { return; }
         if (spellStates[3] != STATE.READY) { return; }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7040735813583914214}
   - component: {fileID: 7040735813583914215}
   - component: {fileID: 7040735813583914213}
+  - component: {fileID: 7313457701124741776}
   m_Layer: 5
   m_Name: SpellHealingCross
   m_TagString: Untagged
@@ -117,19 +118,32 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 7040735813583914215}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpellsDescription, Assembly-CSharp
-        m_MethodName: ShowDescription
-        m_Mode: 2
+      - m_Target: {fileID: 7313457701124741776}
+        m_TargetAssemblyTypeName: SpellButtonEventSubscriber, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Spell, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7313457701124741776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040735813583914209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf07458d6806ec439dfc2ba44e8345d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSpellProperties: {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
