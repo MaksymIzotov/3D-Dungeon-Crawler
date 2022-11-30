@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class Spell : ScriptableObject
 {
+    public struct Description
+    {
+        public string statName;
+        public float amount;
+    }
+
     public string name;
 
     public float coolDownTime;
@@ -10,6 +16,8 @@ public class Spell : ScriptableObject
     public float afterActivateTime;
 
     public bool isUpgraded;
+
+    public Description[] descriptionStats;
 
     public virtual void PreCast(Transform spellSpawnpoint)
     {
