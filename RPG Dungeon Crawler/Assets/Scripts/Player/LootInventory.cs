@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class LootInventory : MonoBehaviour
 {
+    #region Singleton Init
+    public static LootInventory Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
+
     public CurrentInventory inventory;
 
     private void Start()

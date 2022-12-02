@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3061dfb39dcfa6d4795844adfaff2d77, type: 3}
   m_Name: SettingsProperties
   m_EditorClassIdentifier: 
-  sensitivity: 3
-  brightness: 0
+  sensitivity: 5
+  brightness: 1
   isPlaying: 0

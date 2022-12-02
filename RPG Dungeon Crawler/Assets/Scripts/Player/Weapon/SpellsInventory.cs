@@ -22,7 +22,7 @@ public class SpellsInventory : MonoBehaviour
         spells = new Spell[4];
         for (int i = 0; i < spells.Length; i++)
         {
-            spells[i] = GetComponent<LootInventory>().inventory.spells[i];
+            spells[i] = LootInventory.Instance.inventory.spells[i];
         }
 
         cooldownUI[0] = GameObject.Find("Spell01").GetComponent<CooldownCountdown>();

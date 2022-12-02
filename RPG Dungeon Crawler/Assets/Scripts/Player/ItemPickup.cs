@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    LootInventory inventory;
-    private void Start()
-    {
-        inventory = GetComponent<LootInventory>();
-    }
 
     public void PickupItem(LootInfo info)
     {
         //Add item to player inventory
-        inventory.AddItem(info);
+        LootInventory.Instance.AddItem(info);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootName: Blue Scroll
   iconPrefab: {fileID: 8280501835035045291, guid: 3e8a59361212c8541aa0955e8bf0d49f, type: 3}
+  buttonPrefab: {fileID: 8178082974687345864, guid: bbde1429cbb6dcc4ba055c6538b8b9c5, type: 3}
+  description: 

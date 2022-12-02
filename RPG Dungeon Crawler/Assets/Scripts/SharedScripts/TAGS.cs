@@ -1,4 +1,3 @@
-
 public static class TAGS
 {
     public const string LOOT_TAG = "Loot";

@@ -11,6 +11,13 @@ public class MouseMenuControl : MonoBehaviour
 
     GameObject hitGO;
     GameObject lastHitGO;
+
+    private void OnEnable()
+    {
+        hitGO = null;
+        lastHitGO = null;
+    }
+
     void Update()
     { 
         ray = cam.ScreenPointToRay(Input.mousePosition);

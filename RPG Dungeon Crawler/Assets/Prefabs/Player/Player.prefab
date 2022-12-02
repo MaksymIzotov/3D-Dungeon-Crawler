@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4246795439440823452}
   - component: {fileID: 1994989817706523549}
   - component: {fileID: 2399920288351966511}
-  - component: {fileID: 6513271573045306269}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -127,11 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fa3f69a5f4a1a4ebf5a0b430e96710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spells:
-  - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
-  - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
-  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
-  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   spellSpawnPoint: {fileID: 5711866808370748680}
 --- !u!114 &1922896542286236739
 MonoBehaviour:
@@ -239,19 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30916deb6d0fdd344be82f5a48122e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6513271573045306269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922896542286236741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1113f77d54b1c84582c02ced60fb6c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 4c72a767dde9d2b41a302e0364aca334, type: 2}
 --- !u!1 &1922896542701707297
 GameObject:
   m_ObjectHideFlags: 0

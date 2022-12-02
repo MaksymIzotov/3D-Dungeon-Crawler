@@ -8,6 +8,7 @@ public class CurrentInventory : ScriptableObject
     [System.Serializable]
     public struct SpellInfo
     {
+        public string spellName;
         public GameObject buttonPrefab;
     }
 

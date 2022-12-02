@@ -17,7 +17,7 @@ public class JumpController : MonoBehaviour
         gameActions.GameControls.Jump.started += DoJump;
         gameActions.GameControls.Enable();
 
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void DoJump(InputAction.CallbackContext obj)

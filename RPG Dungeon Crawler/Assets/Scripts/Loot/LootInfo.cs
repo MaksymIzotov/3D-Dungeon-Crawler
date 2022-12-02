@@ -6,8 +6,9 @@ using UnityEngine;
 public class LootInfo : ScriptableObject
 {
     public string lootName;
-
     public GameObject iconPrefab;
+    public GameObject buttonPrefab;
+    public string description;
 
     //properties
 }

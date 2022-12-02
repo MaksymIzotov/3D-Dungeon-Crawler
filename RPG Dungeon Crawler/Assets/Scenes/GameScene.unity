@@ -1105,6 +1105,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 941879788}
+        m_TargetAssemblyTypeName: LootInventory, Assembly-CSharp
+        m_MethodName: TransferToGlobal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 941879785}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LeaveLevel
@@ -1457,6 +1469,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 941879788}
+        m_TargetAssemblyTypeName: LootInventory, Assembly-CSharp
+        m_MethodName: TransferToGlobal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 941879785}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LeaveLevel
@@ -1975,6 +1999,7 @@ GameObject:
   - component: {fileID: 941879785}
   - component: {fileID: 941879786}
   - component: {fileID: 941879787}
+  - component: {fileID: 941879788}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -2152,6 +2177,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 4c72a767dde9d2b41a302e0364aca334, type: 2}
   layout: {fileID: 709726067}
+--- !u!114 &941879788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941879776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1113f77d54b1c84582c02ced60fb6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 4c72a767dde9d2b41a302e0364aca334, type: 2}
 --- !u!1 &974070081
 GameObject:
   m_ObjectHideFlags: 1

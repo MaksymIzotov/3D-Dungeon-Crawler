@@ -123,8 +123,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7313457701124741776}
-        m_TargetAssemblyTypeName: SpellButtonEventSubscriber, Assembly-CSharp
-        m_MethodName: Click
+        m_TargetAssemblyTypeName: ButtonEventSubscriber, Assembly-CSharp
+        m_MethodName: ClickSpell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
