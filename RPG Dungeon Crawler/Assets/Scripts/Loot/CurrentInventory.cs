@@ -12,8 +12,8 @@ public class CurrentInventory : ScriptableObject
         public GameObject buttonPrefab;
     }
 
-    public List<LootInfo> GlobalInventory;
-    public List<LootInfo> LevelInventory;
+    public List<Item> GlobalInventory;
+    public List<Item> LevelInventory;
 
     public Spell[] spells;
     public List<SpellInfo> spellsInventory;

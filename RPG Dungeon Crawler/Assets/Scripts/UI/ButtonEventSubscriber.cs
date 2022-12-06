@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonEventSubscriber : MonoBehaviour
 {
     [SerializeField] private Spell currentSpellProperties;
-    [SerializeField] private LootInfo currentItemProperties;
+    [SerializeField] private Item currentItemProperties;
 
 
     public void ClickSpell()

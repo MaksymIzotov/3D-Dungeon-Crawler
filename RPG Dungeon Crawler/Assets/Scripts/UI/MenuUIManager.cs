@@ -51,7 +51,7 @@ public class MenuUIManager : MonoBehaviour
 
     public void UpdateItemButtons()
     {
-        List<LootInfo> items = MenuInventoryController.Instance.inventory.GlobalInventory;
+        List<Item> items = MenuInventoryController.Instance.inventory.GlobalInventory;
         List<ExtensionMethods.InventoryFoundItem> foundItems = new List<ExtensionMethods.InventoryFoundItem>();
 
         //Clear
@@ -61,12 +61,12 @@ public class MenuUIManager : MonoBehaviour
         }
 
         //Update
-        foreach (LootInfo item in items)
+        foreach (Item item in items)
         {
             bool doExist = false;
             foreach (ExtensionMethods.InventoryFoundItem foundItem in foundItems)
             {
-                if (foundItem.name == item.name)
+                if (foundItem.itemName == item.itemName)
                 {
                     doExist = true;
                     break;
@@ -76,7 +76,7 @@ public class MenuUIManager : MonoBehaviour
             if (doExist) { continue; }
 
             ExtensionMethods.InventoryFoundItem newItem = new ExtensionMethods.InventoryFoundItem();
-            newItem.name = item.name;
+            newItem.itemName = item.itemName;
             newItem.amount = 1;
 
             foundItems.Add(newItem);
@@ -86,23 +86,13 @@ public class MenuUIManager : MonoBehaviour
         int index = 0;
 
         while (index < foundItemsArr.Length)
-        {
-            GameObject prefab = new GameObject();
-            foreach (LootInfo item in items)
-            {
-                if(item.lootName == foundItemsArr[index].name)
-                {
-                    prefab = item.buttonPrefab;
-                    break;
-                }
-            }
-
-            GameObject lootIcon = Instantiate(prefab, obtainedItemsParent);
+        {         
+            GameObject lootIcon = Instantiate(GetObjectFromList(items, foundItemsArr, index), obtainedItemsParent);
 
             int amount = 0;
-            foreach (LootInfo item in items)
+            foreach (Item item in items)
             {
-                if (item.lootName == foundItemsArr[index].name)
+                if (item.itemName == foundItemsArr[index].itemName)
                     amount++;
             }
 
@@ -110,5 +100,18 @@ public class MenuUIManager : MonoBehaviour
 
             index++;
         }
+    }
+
+    private GameObject GetObjectFromList(List<Item> items, ExtensionMethods.InventoryFoundItem[] foundItemsArr, int index)
+    {
+        foreach (Item item in items)
+        {
+            if (item.itemName == foundItemsArr[index].itemName)
+            {
+                return item.menuButtonPrefab;
+            }
+        }
+
+        return null;
     }
 }

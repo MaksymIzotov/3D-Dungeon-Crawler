@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
 
-    public void PickupItem(LootInfo info)
+    public void PickupItem(Item info)
     {
         //Add item to player inventory
         LootInventory.Instance.AddItem(info);

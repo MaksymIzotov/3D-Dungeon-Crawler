@@ -29,13 +29,13 @@ public class LevelLootListing : MonoBehaviour
     {
         List<Listing> currentItemsToDisplay = new List<Listing>();
 
-        foreach (LootInfo item in inventory.LevelInventory)
+        foreach (Item item in inventory.LevelInventory)
         {
             bool isAlreadyInTheList = false;
 
             foreach (Listing displayItem in currentItemsToDisplay)
             {
-                if (item.lootName == displayItem.lootName)
+                if (item.itemName == displayItem.lootName)
                 {
                     isAlreadyInTheList = true;
                     break;
@@ -45,8 +45,8 @@ public class LevelLootListing : MonoBehaviour
             if (isAlreadyInTheList) { continue; }
 
             Listing data = new Listing();
-            data.lootName = item.lootName;
-            data.itemPrefab = item.iconPrefab;
+            data.lootName = item.itemName;
+            data.itemPrefab = item.ingameIconPrefab;
 
             currentItemsToDisplay.Add(data);
         }
@@ -66,9 +66,9 @@ public class LevelLootListing : MonoBehaviour
             GameObject lootIcon = Instantiate(itemsToDisplay[index].itemPrefab, layout.transform);
 
             int amount = 0;
-            foreach (LootInfo item in inventory.LevelInventory)
+            foreach (Item item in inventory.LevelInventory)
             {
-                if (item.lootName == itemsToDisplay[index].lootName)
+                if (item.itemName == itemsToDisplay[index].lootName)
                     amount++;
             }
 

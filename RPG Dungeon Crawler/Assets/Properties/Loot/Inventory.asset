@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6d880b8af39e849aeec26687209e5f, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  GlobalInventory: []
+  GlobalInventory:
+  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   LevelInventory:
-  - {fileID: 11400000, guid: 8ae2ab39fb7015d4caba2c7a79e14736, type: 2}
-  - {fileID: 11400000, guid: 8ae2ab39fb7015d4caba2c7a79e14736, type: 2}
-  - {fileID: 11400000, guid: 8ae2ab39fb7015d4caba2c7a79e14736, type: 2}
+  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   spells:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}

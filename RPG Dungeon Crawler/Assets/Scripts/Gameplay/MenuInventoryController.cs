@@ -29,8 +29,8 @@ public class MenuInventoryController : MonoBehaviour
         inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
     }
 
-    public void ShowItemDescription(LootInfo info)
+    public void ShowItemDescription(Item info)
     {
-        itemDecription.text = info.description;
+        
     }
 }

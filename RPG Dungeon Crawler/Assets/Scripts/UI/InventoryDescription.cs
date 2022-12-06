@@ -19,14 +19,14 @@ public class InventoryDescription : MonoBehaviour
     [SerializeField] private TMP_Text stats;
     [SerializeField] private TMP_Text description;
 
-    public LootInfo currentLootDisplayed;
+    public Item currentLootDisplayed;
 
-    public void ShowDescription(LootInfo item)
+    public void ShowDescription(Item item)
     {
         icon.sprite = item.icon;
         itemName.text = item.name;
         //stats.text = item.Stats();
-        description.text = item.description;
+        //description.text = item.description;
 
         currentLootDisplayed = item;
     }

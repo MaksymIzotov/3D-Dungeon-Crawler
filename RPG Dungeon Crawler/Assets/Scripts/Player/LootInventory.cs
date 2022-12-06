@@ -20,12 +20,12 @@ public class LootInventory : MonoBehaviour
         ClearInventory();
     }
 
-    public void AddItem(LootInfo item)
+    public void AddItem(Item item)
     {
         inventory.LevelInventory.Add(item);
     }
 
-    public void RemoveItem(LootInfo item)
+    public void RemoveItem(Item item)
     {
         inventory.LevelInventory.Remove(item);
     }

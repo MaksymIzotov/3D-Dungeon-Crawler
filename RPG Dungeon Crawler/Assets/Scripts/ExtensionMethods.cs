@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public static class ExtensionMethods
 {
     public struct InventoryFoundItem{
-        public string name;
+        public string itemName;
         public int amount;
     }
 

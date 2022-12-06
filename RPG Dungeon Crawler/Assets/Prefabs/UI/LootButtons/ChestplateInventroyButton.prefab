@@ -283,4 +283,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpellProperties: {fileID: 0}
-  currentItemProperties: {fileID: 11400000, guid: 9bc8a624b3ff2bb4f801f023f892e6df, type: 2}
+  currentItemProperties: {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}

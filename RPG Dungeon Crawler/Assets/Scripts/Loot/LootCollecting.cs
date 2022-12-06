@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class LootCollecting : MonoBehaviour
 {
-    public LootInfo info;
+    public Item info;
 
     [SerializeField] private float speed = 15f;
 
