@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuInventoryController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class MenuInventoryController : MonoBehaviour
 
     public CurrentInventory inventory;
 
+    [SerializeField] private TMP_Text itemDecription;
+
     public void AddSpellToInventory(int spellIndex)
     {
         for (int i = 0; i < inventory.spells.Length; i++)
@@ -24,5 +27,10 @@ public class MenuInventoryController : MonoBehaviour
         }
 
         inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
+    }
+
+    public void ShowItemDescription(LootInfo info)
+    {
+        itemDecription.text = info.description;
     }
 }
