@@ -5,11 +5,13 @@ using TMPro;
 
 public class LevelLootListing : MonoBehaviour
 {
+    #region Singleton Init
     public static LevelLootListing Instance;
     private void Awake()
     {
         Instance = this;
     }
+    #endregion
 
     private struct Listing
     {
@@ -20,9 +22,23 @@ public class LevelLootListing : MonoBehaviour
     [SerializeField] private CurrentInventory inventory;
     [SerializeField] private GameObject layout;
 
+    [SerializeField] private TMP_Text scrollsBlueAmount;
+    [SerializeField] private TMP_Text scrollsPurpleAmount;
+    [SerializeField] private TMP_Text scrollsRedAmount;
+    [SerializeField] private TMP_Text coinsAmount;
+
     public void DisplayLoot()
     {
         ListingDelayed(UpdateListingItems());
+        UpdateCollectedCoins();
+    }
+
+    private void UpdateCollectedCoins()
+    {
+        scrollsBlueAmount.text = "x" + LootInventory.Instance.collectedScrollsBlue;
+        scrollsPurpleAmount.text = "x" + LootInventory.Instance.collectedScrollsPurple;
+        scrollsRedAmount.text = "x" + LootInventory.Instance.collectedScrollsRed;
+        coinsAmount.text = "x" + LootInventory.Instance.collectedCoins;
     }
 
     private Listing[] UpdateListingItems()

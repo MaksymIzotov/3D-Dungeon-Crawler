@@ -14,6 +14,8 @@ public class SpellsDescription : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] private GameObject descriptionParent;
+
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text spellName;
     [SerializeField] private TMP_Text stats;
@@ -21,8 +23,16 @@ public class SpellsDescription : MonoBehaviour
 
     public Spell currentSpellDisplayed;
 
+    public void HideDescription()
+    {
+        currentSpellDisplayed = null;
+        descriptionParent.SetActive(false);
+    }
+
     public void ShowDescription(Spell spell)
     {
+        descriptionParent.SetActive(true);
+
         icon.sprite = spell.icon;
         spellName.text = spell.name;
         stats.text = spell.Stats();

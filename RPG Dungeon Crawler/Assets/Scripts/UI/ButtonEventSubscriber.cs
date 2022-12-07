@@ -15,6 +15,6 @@ public class ButtonEventSubscriber : MonoBehaviour
 
     public void ClickItem()
     {
-
+        InventoryDescription.Instance.ShowDescription(currentItemProperties);
     }
 }

@@ -11,10 +11,15 @@ public class ItemPickup : MonoBehaviour
         LootInventory.Instance.AddItem(info);
     }
 
+    public void PickupItem(int amount, ExtensionMethods.MoneyType moneyType)
+    {
+        //Add money to player inventory
+        LootInventory.Instance.AddMoney(amount, moneyType);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.parent.CompareTag(TAGS.LOOT_TAG))
             other.transform.parent.GetComponent<LootCollecting>().Collect();
-
     }
 }

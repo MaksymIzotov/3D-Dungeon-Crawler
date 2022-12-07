@@ -16,10 +16,10 @@ public class MenuInventoryController : MonoBehaviour
 
     public CurrentInventory inventory;
 
-    [SerializeField] private TMP_Text itemDecription;
-
     public void AddSpellToInventory(int spellIndex)
     {
+        if (SpellsDescription.Instance.currentSpellDisplayed == null) { return; }
+
         for (int i = 0; i < inventory.spells.Length; i++)
         {
             if (inventory.spells[i] == SpellsDescription.Instance.currentSpellDisplayed)
@@ -29,8 +29,24 @@ public class MenuInventoryController : MonoBehaviour
         inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
     }
 
-    public void ShowItemDescription(Item info)
+    public void AddItemToInventory(int index)
     {
-        
+        Item item = InventoryDescription.Instance.currentLootDisplayed;
+
+        if (index != (int)item.type) { return; }
+
+        switch (item.type)
+        {
+            case Item.ItemType.Weapon:
+                inventory.weapon = item;
+                break;
+            case Item.ItemType.Armor:
+                inventory.armor = item;
+                break;
+            case Item.ItemType.Usable:
+                inventory.usable = item;
+                break;
+
+        }
     }
 }

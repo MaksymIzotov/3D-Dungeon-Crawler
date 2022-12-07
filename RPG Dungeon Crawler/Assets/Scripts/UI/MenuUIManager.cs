@@ -14,10 +14,18 @@ public class MenuUIManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private GameObject[] currentSpells;
+    [Header("Spells")]
 
+    [SerializeField] private GameObject[] currentSpells;
     [SerializeField] private Transform obtainedSpellsParent;
+
+    [Space(10)]
+    [Header("Items")]
+
     [SerializeField] private Transform obtainedItemsParent;
+    [SerializeField] private GameObject weaponSlot;
+    [SerializeField] private GameObject armorSlot;
+    [SerializeField] private GameObject usableSlot;
 
     public void UpdateSpellsIcons()
     {
@@ -47,6 +55,18 @@ public class MenuUIManager : MonoBehaviour
         {
             Instantiate(spell.buttonPrefab, obtainedSpellsParent);
         }
+    }
+
+    public void UpdateItemIcons()
+    {
+        if (MenuInventoryController.Instance.inventory.weapon != null)
+            weaponSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.weapon.icon;
+
+        if (MenuInventoryController.Instance.inventory.armor != null)
+            armorSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.armor.icon;
+
+        if (MenuInventoryController.Instance.inventory.usable != null)
+            usableSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.usable.icon;
     }
 
     public void UpdateItemButtons()

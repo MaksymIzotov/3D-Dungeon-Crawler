@@ -15,6 +15,12 @@ public class CurrentInventory : ScriptableObject
     public List<Item> GlobalInventory;
     public List<Item> LevelInventory;
 
+    public Money moneyInventory;
+
     public Spell[] spells;
     public List<SpellInfo> spellsInventory;
+
+    public Item usable;
+    public Item armor;
+    public Item weapon;
 }

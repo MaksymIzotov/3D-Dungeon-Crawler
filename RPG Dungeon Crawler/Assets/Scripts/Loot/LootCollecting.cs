@@ -7,11 +7,18 @@ public class LootCollecting : MonoBehaviour
 {
     public Item info;
 
+    [Space(10)]
+    [Header("LEAVE EMPTY IF NOT MONEY")]
+    [SerializeField] private ExtensionMethods.MoneyType type;
+    [SerializeField] private int amountMin;
+    [SerializeField] private int amountMax;
+
+    [Space(10)]
+
     [SerializeField] private float speed = 15f;
 
     private bool isNear = false;
     private Transform player;
-
 
     private void Start()
     {
@@ -33,7 +40,13 @@ public class LootCollecting : MonoBehaviour
 
     private void PickupItem()
     {
-        player.GetComponent<ItemPickup>().PickupItem(info);
+        int amount = Random.Range(amountMin, amountMax);
+
+        if (info != null)
+            player.GetComponent<ItemPickup>().PickupItem(info);
+        else
+            player.GetComponent<ItemPickup>().PickupItem(amount, type);
+
         Destroy(gameObject);
     }
 

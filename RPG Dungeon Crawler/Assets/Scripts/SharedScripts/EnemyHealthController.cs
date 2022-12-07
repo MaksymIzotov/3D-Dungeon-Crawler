@@ -8,9 +8,13 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     public Health properties;
     public UnityEvent onDeath;
 
+    private float maxhp;
     private float hp;
+    private float defence;
+    private float hpRegen;
+
     [HideInInspector] public bool isDead;
-    private void Start()
+    private void Awake()
     {
         SetValues();
     }
@@ -22,15 +26,15 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
 
     public void HealthRegen()
     {
-        if (hp >= properties.healthPoints) { return; }
+        if (hp >= maxhp) { return; }
 
-        hp += properties.healthRegen * Time.deltaTime;
+        hp += hpRegen * Time.deltaTime;
     }
 
 
     public void TakeDamage(float damage)
     {
-        float actualDamage = damage - (damage / 100 * properties.defence);
+        float actualDamage = damage - (damage / 100 * defence);
         hp -= actualDamage;
 
         //Do effects
@@ -58,7 +62,20 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
 
     private void SetValues()
     {
-        hp = properties.healthPoints;
+        maxhp = properties.healthPoints;
+        hp = maxhp;
+        defence = properties.defence;
+        hpRegen = properties.healthRegen;
         isDead = false;
+    }
+
+    public void AddDefence(float _defence)
+    {
+        defence += _defence;
+    }
+
+    public void AddHealtRegen(float _hpRegen)
+    {
+        hpRegen += _hpRegen;
     }
 }

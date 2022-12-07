@@ -5,11 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Chestplate", menuName = "Loot/Items/Chestplate", order = 1)]
 public class Chestplate : Item
 {
+    [Space(10)]
+    [Header("Item properties")]
     public float defence;
 
-    public override void ApplyStats()
-    {
-        //TOOD: Give stats to player
+    public override void ApplyStats(GameObject player)
+    {    
+        player.GetComponent<PlayerHealthController>().AddDefence(defence);
     }
 
     public override string Desription()

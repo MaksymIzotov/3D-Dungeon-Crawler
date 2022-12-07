@@ -4914,7 +4914,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1d3043f0147d8448b9cd1c16aa87bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 11400000, guid: 8ae2ab39fb7015d4caba2c7a79e14736, type: 2}
+  info: {fileID: 0}
+  type: 1
+  amountMin: 1
+  amountMax: 5
   speed: 15
 --- !u!65 &3940800866212260766
 BoxCollider:
