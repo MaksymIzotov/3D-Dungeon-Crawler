@@ -32,6 +32,7 @@ public class MenuInventoryController : MonoBehaviour
     public void AddItemToInventory(int index)
     {
         Item item = InventoryDescription.Instance.currentLootDisplayed;
+        if (item == null) { return; }
 
         if (index != (int)item.type) { return; }
 

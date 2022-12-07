@@ -21,6 +21,7 @@ public class LevelLootListing : MonoBehaviour
 
     [SerializeField] private CurrentInventory inventory;
     [SerializeField] private GameObject layout;
+    [SerializeField] private GameObject lootList;
 
     [SerializeField] private TMP_Text scrollsBlueAmount;
     [SerializeField] private TMP_Text scrollsPurpleAmount;
@@ -29,6 +30,8 @@ public class LevelLootListing : MonoBehaviour
 
     public void DisplayLoot()
     {
+        layout.SetActive(true);
+
         ListingDelayed(UpdateListingItems());
         UpdateCollectedCoins();
     }
@@ -73,13 +76,12 @@ public class LevelLootListing : MonoBehaviour
 
     private void ListingDelayed(Listing[] itemsToDisplay)
     {
-        layout.SetActive(true);
-
+        lootList.SetActive(true);
         int index = 0;
 
         while (index < itemsToDisplay.Length)
         {
-            GameObject lootIcon = Instantiate(itemsToDisplay[index].itemPrefab, layout.transform);
+            GameObject lootIcon = Instantiate(itemsToDisplay[index].itemPrefab, lootList.transform);
 
             int amount = 0;
             foreach (Item item in inventory.LevelInventory)

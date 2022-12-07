@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 3940800866212260766}
   - component: {fileID: 4004608181800609461}
   m_Layer: 11
-  m_Name: SpellScroll
+  m_Name: SpellScrollBlue
   m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

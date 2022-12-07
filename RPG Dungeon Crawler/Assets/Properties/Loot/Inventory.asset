@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   LevelInventory:
   - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}
@@ -30,5 +31,5 @@ MonoBehaviour:
   - spellName: HealingCross
     buttonPrefab: {fileID: 7040735813583914209, guid: 6bbc1dbbddf178b4fab32879b6d73164, type: 3}
   usable: {fileID: 0}
-  armor: {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  armor: {fileID: 0}
   weapon: {fileID: 0}

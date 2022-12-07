@@ -31,9 +31,20 @@ public class LootInventory : MonoBehaviour
 
     public void AddMoney(int amount, ExtensionMethods.MoneyType moneyType)
     {
-        if(moneyType == ExtensionMethods.MoneyType.ScrollBlue)
+        switch (moneyType)
         {
-            collectedScrollsBlue += amount;
+            case ExtensionMethods.MoneyType.ScrollBlue:
+                collectedScrollsBlue += amount;
+                break;
+            case ExtensionMethods.MoneyType.ScrollRed:
+                collectedScrollsRed += amount;
+                break;
+            case ExtensionMethods.MoneyType.ScrollPurple:
+                collectedScrollsPurple += amount;
+                break;
+            case ExtensionMethods.MoneyType.Coin:
+                collectedCoins += amount;
+                break;
         }
     }
 
@@ -55,6 +66,9 @@ public class LootInventory : MonoBehaviour
     public void TransferToGlobal()
     {
         inventory.moneyInventory.amountBlueScrolls += collectedScrollsBlue;
+        inventory.moneyInventory.amountPurpleScrolls += collectedScrollsPurple;
+        inventory.moneyInventory.amountRedScrolls += collectedScrollsRed;
+        inventory.moneyInventory.amountCoins += collectedCoins;
 
         inventory.GlobalInventory.AddRange(inventory.LevelInventory);
     }

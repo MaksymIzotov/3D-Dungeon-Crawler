@@ -27,6 +27,24 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private GameObject armorSlot;
     [SerializeField] private GameObject usableSlot;
 
+    [Space(10)]
+    [Header("Money")]
+
+    [SerializeField] private TMP_Text coinsAmount;
+    [SerializeField] private TMP_Text blueScrollsAmount;
+    [SerializeField] private TMP_Text purpleScrollsAmount;
+    [SerializeField] private TMP_Text redScrollsAmount;
+
+    public void UpdateMoneyAmount()
+    {
+        Money money = MenuInventoryController.Instance.inventory.moneyInventory;
+
+        blueScrollsAmount.text = "x" + money.amountBlueScrolls;
+        purpleScrollsAmount.text = "x" + money.amountPurpleScrolls;
+        redScrollsAmount.text = "x" + money.amountRedScrolls;
+        coinsAmount.text = "x" + money.amountCoins;
+    }
+
     public void UpdateSpellsIcons()
     {
         Spell[] inv = MenuInventoryController.Instance.inventory.spells;
