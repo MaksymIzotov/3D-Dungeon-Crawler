@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Spell : ScriptableObject
 {
+    [Header("Main Properties")]
     public string name;
 
     public float coolDownTime;
@@ -10,6 +11,9 @@ public class Spell : ScriptableObject
     public float afterActivateTime;
 
     public bool isUpgraded;
+
+    [Space(10)]
+    [Header("UI")]
 
     public Sprite icon;
     public GameObject buttonPrefab;
