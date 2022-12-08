@@ -17,4 +17,9 @@ public class ButtonEventSubscriber : MonoBehaviour
     {
         InventoryDescription.Instance.ShowDescription(currentItemProperties);
     }
+
+    public void ClickItemClone()
+    {
+        CloneMenuController.Instance.ShowDescription(currentItemProperties);
+    }
 }

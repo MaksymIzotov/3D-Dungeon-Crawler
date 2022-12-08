@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SettingsProperties
   m_EditorClassIdentifier: 
   sensitivity: 5
-  brightness: 1
-  isPlaying: 0
+  brightness: -1
+  isPlaying: 1

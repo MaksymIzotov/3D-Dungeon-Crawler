@@ -22,10 +22,16 @@ public class Item : ScriptableObject
     public Sprite icon;
 
     [Space(10)]
+    [Header("Price")]
+
+    public int clonePrice;
+
+    [Space(10)]
     [Header("Icon Prefabs")]
 
     public GameObject ingameIconPrefab;
     public GameObject menuButtonPrefab;
+    public GameObject cloneButtonPrefab;
 
     public virtual void ApplyStats(GameObject player)
     {
