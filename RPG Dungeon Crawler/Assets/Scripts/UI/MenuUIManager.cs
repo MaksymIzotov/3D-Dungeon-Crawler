@@ -79,12 +79,18 @@ public class MenuUIManager : MonoBehaviour
     {
         if (MenuInventoryController.Instance.inventory.weapon != null)
             weaponSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.weapon.icon;
+        else
+            weaponSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
 
         if (MenuInventoryController.Instance.inventory.armor != null)
             armorSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.armor.icon;
+        else
+            armorSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
 
         if (MenuInventoryController.Instance.inventory.usable != null)
             usableSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.usable.icon;
+        else
+            usableSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
     }
 
     public void UpdateItemButtons()

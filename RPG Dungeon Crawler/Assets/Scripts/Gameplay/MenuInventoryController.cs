@@ -18,36 +18,56 @@ public class MenuInventoryController : MonoBehaviour
 
     public void AddSpellToInventory(int spellIndex)
     {
-        if (SpellsDescription.Instance.currentSpellDisplayed == null) { return; }
-
-        for (int i = 0; i < inventory.spells.Length; i++)
+        if (SpellsDescription.Instance.currentSpellDisplayed == null)
         {
-            if (inventory.spells[i] == SpellsDescription.Instance.currentSpellDisplayed)
-                inventory.spells[i] = null;
+            inventory.spells[spellIndex] = null;
         }
+        else
+        {
+            for (int i = 0; i < inventory.spells.Length; i++)
+            {
+                if (inventory.spells[i] == SpellsDescription.Instance.currentSpellDisplayed)
+                    inventory.spells[i] = null;
+            }
 
-        inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
+            inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
+        }
     }
 
     public void AddItemToInventory(int index)
     {
         Item item = InventoryDescription.Instance.currentLootDisplayed;
-        if (item == null) { return; }
-
-        if (index != (int)item.type) { return; }
-
-        switch (item.type)
+        if (item == null)
         {
-            case Item.ItemType.Weapon:
-                inventory.weapon = item;
-                break;
-            case Item.ItemType.Armor:
-                inventory.armor = item;
-                break;
-            case Item.ItemType.Usable:
-                inventory.usable = item;
-                break;
+            switch (index)
+            {
+                case 0:
+                    inventory.weapon = null;
+                    break;
+                case 1:
+                    inventory.armor = null;
+                    break;
+                case 2:
+                    inventory.usable = null;
+                    break;
+            }
+        }
+        else
+        {
+            if (index != (int)item.type) { return; }
 
+            switch (item.type)
+            {
+                case Item.ItemType.Weapon:
+                    inventory.weapon = item;
+                    break;
+                case Item.ItemType.Armor:
+                    inventory.armor = item;
+                    break;
+                case Item.ItemType.Usable:
+                    inventory.usable = item;
+                    break;
+            }
         }
     }
 }

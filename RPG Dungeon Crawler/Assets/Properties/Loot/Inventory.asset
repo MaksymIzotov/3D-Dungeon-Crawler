@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6d880b8af39e849aeec26687209e5f, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  GlobalInventory:
-  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
-  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
-  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
-  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  GlobalInventory: []
   LevelInventory:
   - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}

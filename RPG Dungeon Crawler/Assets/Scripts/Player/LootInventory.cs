@@ -26,6 +26,7 @@ public class LootInventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        LootQueue.Instance.AddItemToQueue(item.itemName, 1);
         inventory.LevelInventory.Add(item);
     }
 
@@ -35,15 +36,19 @@ public class LootInventory : MonoBehaviour
         {
             case ExtensionMethods.MoneyType.ScrollBlue:
                 collectedScrollsBlue += amount;
+                LootQueue.Instance.AddItemToQueue("Spell Scroll (Blue)", amount);
                 break;
             case ExtensionMethods.MoneyType.ScrollRed:
                 collectedScrollsRed += amount;
+                LootQueue.Instance.AddItemToQueue("Spell Scroll (Red)", amount);
                 break;
             case ExtensionMethods.MoneyType.ScrollPurple:
                 collectedScrollsPurple += amount;
+                LootQueue.Instance.AddItemToQueue("Spell Scroll (Purple)", amount);
                 break;
             case ExtensionMethods.MoneyType.Coin:
                 collectedCoins += amount;
+                LootQueue.Instance.AddItemToQueue("Coins", amount);
                 break;
         }
     }
