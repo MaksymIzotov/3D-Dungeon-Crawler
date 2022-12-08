@@ -47,7 +47,7 @@ public class MenuUIManager : MonoBehaviour
 
     public void UpdateSpellsIcons()
     {
-        Spell[] inv = MenuInventoryController.Instance.inventory.spells;
+        Spell[] inv = MenuInventoryController.Instance.inventory.equipedSpells;
 
         for (int i = 0; i < currentSpells.Length; i++)
         {
@@ -60,7 +60,7 @@ public class MenuUIManager : MonoBehaviour
 
     public void UpdateSpellButtons()
     {
-        List<CurrentInventory.SpellInfo> spells = MenuInventoryController.Instance.inventory.spellsInventory;
+        List<Spell> spells = MenuInventoryController.Instance.inventory.spellsInventory;
 
         //Clear
         foreach (Transform child in obtainedSpellsParent)
@@ -69,7 +69,7 @@ public class MenuUIManager : MonoBehaviour
         }
 
         //Update
-        foreach (CurrentInventory.SpellInfo spell in spells)
+        foreach (Spell spell in spells)
         {
             Instantiate(spell.buttonPrefab, obtainedSpellsParent);
         }

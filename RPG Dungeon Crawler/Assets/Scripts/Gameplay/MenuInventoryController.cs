@@ -20,17 +20,17 @@ public class MenuInventoryController : MonoBehaviour
     {
         if (SpellsDescription.Instance.currentSpellDisplayed == null)
         {
-            inventory.spells[spellIndex] = null;
+            inventory.equipedSpells[spellIndex] = null;
         }
         else
         {
-            for (int i = 0; i < inventory.spells.Length; i++)
+            for (int i = 0; i < inventory.equipedSpells.Length; i++)
             {
-                if (inventory.spells[i] == SpellsDescription.Instance.currentSpellDisplayed)
-                    inventory.spells[i] = null;
+                if (inventory.equipedSpells[i] == SpellsDescription.Instance.currentSpellDisplayed)
+                    inventory.equipedSpells[i] = null;
             }
 
-            inventory.spells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
+            inventory.equipedSpells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
         }
     }
 

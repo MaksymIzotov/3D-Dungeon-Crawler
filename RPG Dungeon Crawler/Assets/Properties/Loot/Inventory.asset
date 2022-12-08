@@ -13,19 +13,15 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   GlobalInventory: []
-  LevelInventory:
-  - {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  LevelInventory: []
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}
-  spells:
+  equipedSpells:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
-  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   spellsInventory:
-  - spellName: Fireball
-    buttonPrefab: {fileID: 8782750347074970417, guid: ead1c1ea6818a684ba1af6db258853c3, type: 3}
-  - spellName: HealingCross
-    buttonPrefab: {fileID: 7040735813583914209, guid: 6bbc1dbbddf178b4fab32879b6d73164, type: 3}
+  - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   usable: {fileID: 0}
   armor: {fileID: 0}
   weapon: {fileID: 0}

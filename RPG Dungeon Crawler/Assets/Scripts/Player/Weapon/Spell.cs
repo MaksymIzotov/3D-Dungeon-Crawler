@@ -12,7 +12,7 @@ public class Spell : ScriptableObject
     public bool isUpgraded;
 
     public Sprite icon;
-
+    public GameObject buttonPrefab;
 
     public virtual void PreCast(Transform spellSpawnpoint)
     {
