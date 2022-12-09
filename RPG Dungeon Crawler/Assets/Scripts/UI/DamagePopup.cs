@@ -19,9 +19,9 @@ public class DamagePopup : MonoBehaviour
 
     public GameObject damageText;
 
-    public void ShowDamage(float damage, Transform pos, float height)
+    public void ShowDamage(float damage, Transform pos, Transform damageTextParent)
     {
-        Vector3 spawnPos = new Vector3(pos.position.x + Random.Range(randomMin,randomMax), pos.position.y + height, pos.position.z + Random.Range(randomMin, randomMax));
+        Vector3 spawnPos = new Vector3(pos.position.x + Random.Range(randomMin,randomMax), damageTextParent.position.y, pos.position.z + Random.Range(randomMin, randomMax));
         GameObject text = Instantiate(damageText, spawnPos, Quaternion.identity);
         text.GetComponent<TMP_Text>().text = damage.ToString("F0");
     }
@@ -29,6 +29,6 @@ public class DamagePopup : MonoBehaviour
     public void DamageEffect(float damage)
     {
         GameObject hpGO = Instantiate(hpTextAnim, hpText.transform);
-        hpGO.GetComponent<TMP_Text>().text = damage.ToString();
+        hpGO.GetComponent<TMP_Text>().text = damage.ToString("F0");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spell : ScriptableObject
 {
     [Header("Main Properties")]
-    public string name;
+    public string spellName;
 
     public float coolDownTime;
     public float activateTime;

@@ -38,6 +38,59 @@ public class LearnMenuController : MonoBehaviour
 
     [SerializeField] private const int learnSpellPrice = 5;
 
+    private void Start()
+    {
+        UpdateSpellLists();
+    }
+
+    private void UpdateSpellLists()
+    {
+        List<Spell> spellInv = MenuInventoryController.Instance.inventory.spellsInventory;
+
+        List<Spell> removeBlue = new List<Spell>();
+        List<Spell> removePurple = new List<Spell>();
+        List<Spell> removeRed = new List<Spell>();
+
+        foreach (Spell spell in spellInv)
+        {
+            foreach (Spell allSpellsBlue in allBlueSpells)
+            {
+                if (allSpellsBlue.spellName == spell.spellName)
+                {
+                    removeBlue.Add(allSpellsBlue);
+                }
+            }
+
+            foreach (Spell allSpellsPurple in allBlueSpells)
+            {
+                if (allSpellsPurple.spellName == spell.spellName)
+                {
+                    removePurple.Add(allSpellsPurple);
+                }
+            }
+
+            foreach (Spell allSpellsRed in allBlueSpells)
+            {
+                if (allSpellsRed.spellName == spell.spellName)
+                {
+                    removeRed.Add(allSpellsRed);
+                }
+            }
+        }
+
+        RemoveItemsFromList(ref allBlueSpells, removeBlue);
+        RemoveItemsFromList(ref allPurpleSpells, removePurple);
+        RemoveItemsFromList(ref allRedSpells, removeRed);
+    }
+
+    private void RemoveItemsFromList(ref List<Spell> mainList, List<Spell> removeList)
+    {
+        foreach (Spell remove in removeList)
+        {
+            mainList.Remove(remove);
+        }
+    }
+
     public void HideDescription()
     {
         descriptionParent.SetActive(false);
@@ -48,7 +101,7 @@ public class LearnMenuController : MonoBehaviour
         descriptionParent.SetActive(true);
 
         icon.sprite = spell.icon;
-        spellName.text = spell.name;
+        spellName.text = spell.spellName;
         stats.text = spell.Stats();
         description.text = spell.Desription();
     }

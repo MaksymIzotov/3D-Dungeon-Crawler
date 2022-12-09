@@ -16,6 +16,16 @@ public class MenuInventoryController : MonoBehaviour
 
     public CurrentInventory inventory;
 
+    public void AddItem(Item item)
+    {
+        inventory.GlobalInventory.Remove(item);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        inventory.GlobalInventory.Add(item);
+    }
+
     public void AddSpellToInventory(int spellIndex)
     {
         if (SpellsDescription.Instance.currentSpellDisplayed == null)

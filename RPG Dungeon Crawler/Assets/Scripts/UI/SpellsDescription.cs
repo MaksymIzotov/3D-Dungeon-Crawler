@@ -34,7 +34,7 @@ public class SpellsDescription : MonoBehaviour
         descriptionParent.SetActive(true);
 
         icon.sprite = spell.icon;
-        spellName.text = spell.name;
+        spellName.text = spell.spellName;
         stats.text = spell.Stats();
         description.text = spell.Desription();
 

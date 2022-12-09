@@ -8,19 +8,33 @@ public class Chestplate : Item
     [Space(10)]
     [Header("Item properties")]
     public float defence;
+    public float returnPercentage;
 
     public override void ApplyStats(GameObject player)
     {    
-        player.GetComponent<PlayerHealthController>().AddDefence(defence);
+        player.GetComponent<PlayerHealthController>().AddDefence(defence); //Add stats
+
+        if (rarity == ItemRarity.Red)
+            player.GetComponent<PlayerPassives>().EnableDamageReturn(returnPercentage); //Add passive
     }
 
     public override string Desription()
     {
-        return "A chestplate to protect your chest";
+        if (rarity == ItemRarity.Blue)
+            return "A chestplate to protect your chest"; //Blue rarity
+        if (rarity == ItemRarity.Purple)
+            return "A chestplate to protect your chest"; //Purple rarity
+
+        return "A chestplate to protect your chest. Returns a percentage of income damage"; //Red rarity
     }
 
     public override string Stats()
-    {
-        return "Defence: " + defence;
+    {     
+        if (rarity == ItemRarity.Blue)
+            return "Defence: " + defence; //Blue rarity
+        if (rarity == ItemRarity.Purple)
+            return "Defence: " + defence; //Purple rarity
+
+        return "Defence: " + defence + "\nReturn percentage: " + returnPercentage; //Red rarity
     }
 }

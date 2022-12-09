@@ -13,6 +13,8 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     private float defence;
     private float hpRegen;
 
+    [SerializeField] private Transform damageTextParent;
+
     [HideInInspector] public bool isDead;
     private void Awake()
     {
@@ -32,13 +34,13 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     }
 
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, GameObject damageDealer)
     {
         float actualDamage = damage - (damage / 100 * defence);
         hp -= actualDamage;
 
         //Do effects
-        DamagePopup.Instance.ShowDamage(actualDamage, transform, transform.localScale.y);
+        DamagePopup.Instance.ShowDamage(actualDamage, transform, damageTextParent);
 
         if (hp <= 0)
             Die();

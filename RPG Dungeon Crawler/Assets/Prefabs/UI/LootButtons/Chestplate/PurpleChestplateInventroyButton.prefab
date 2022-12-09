@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 3639238553212936633}
   - component: {fileID: 7240181667168914398}
   m_Layer: 5
-  m_Name: ChestplateInventroyButton
+  m_Name: PurpleChestplateInventroyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 951502fabf394344098fce933eef6c9f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0ae65cf748d96d41b4b099fcc63b724, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -283,4 +283,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpellProperties: {fileID: 0}
-  currentItemProperties: {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  currentItemProperties: {fileID: 11400000, guid: 9cbe3f71dcf912448a90d1613315f957, type: 2}

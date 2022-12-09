@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private float damage;
 
     private Vector3 dir;
+
+    private GameObject shooter;
     private void Start()
     {
         GetDirection();
@@ -21,7 +23,10 @@ public class Bullet : MonoBehaviour
         dir.Normalize();
     }
 
-    public void SetDamage(float _damage) { damage = _damage; }
+    public void SetDamage(float _damage, GameObject _shooter) { 
+        damage = _damage;
+        shooter = _shooter;
+    }
 
     private void Update()
     {
@@ -43,7 +48,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-            collision.gameObject.GetComponent<IDamagable>().TakeDamage(damage);
+            collision.gameObject.GetComponent<IDamagable>().TakeDamage(damage, shooter);
 
         DestroyObject();
     }

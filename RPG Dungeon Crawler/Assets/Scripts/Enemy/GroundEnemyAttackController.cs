@@ -39,7 +39,7 @@ public class GroundEnemyAttackController : MonoBehaviour
         {
             if (col.tag == "Player")
             {
-                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage);
+                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
                 col.GetComponent<PlayerController>().AddImpact(transform, 200);
             }
         }
@@ -68,7 +68,7 @@ public class GroundEnemyAttackController : MonoBehaviour
         {
             if (col.tag == "Player")
             {
-                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage);
+                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
                 col.GetComponent<PlayerController>().AddImpact(transform, 100);
             }
         }

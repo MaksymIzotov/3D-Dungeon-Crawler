@@ -28,6 +28,7 @@ public class CloneMenuController : MonoBehaviour
     [SerializeField] private TMP_Text stats;
     [SerializeField] private TMP_Text description;
     [SerializeField] private GameObject price;
+    [SerializeField] private TMP_Text levelText;
 
     public void ShowDescription(Item item)
     {
@@ -38,6 +39,7 @@ public class CloneMenuController : MonoBehaviour
         stats.text = item.Stats();
         description.text = item.Desription();
         price.GetComponentInChildren<TMP_Text>().text = "x" + item.clonePrice;
+        levelText.text = "Lvl " + item.lvl;
 
         currentItem = item;
     }
@@ -67,6 +69,8 @@ public class CloneMenuController : MonoBehaviour
         //Update
         foreach (Item item in items)
         {
+            if (item.evolutionItem == null) { continue; }
+
             bool doExist = false;
             foreach (ExtensionMethods.InventoryFoundItem foundItem in foundItems)
             {

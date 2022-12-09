@@ -12,10 +12,18 @@ public class Item : ScriptableObject
         Usable = 2
     }
 
+    public enum ItemRarity
+    {
+        Blue = 0,
+        Purple = 1,
+        Red = 2
+    }
+
     [Header("Item")]
     public string itemName;
     public ItemType type;
-    
+    public ItemRarity rarity;
+
     [Space(10)]
     [Header("Icon")]
 
@@ -25,6 +33,14 @@ public class Item : ScriptableObject
     [Header("Price")]
 
     public int clonePrice;
+    public int upgradePrice;
+    public int evolvePrice;
+
+    [Space(10)]
+    [Header("Upgrades")]
+
+    public Item evolutionItem;
+    public int lvl;
 
     [Space(10)]
     [Header("Icon Prefabs")]
@@ -39,6 +55,11 @@ public class Item : ScriptableObject
     }
 
     public virtual void Use(GameObject player)
+    {
+
+    }
+
+    public virtual void Passive(GameObject player)
     {
 
     }

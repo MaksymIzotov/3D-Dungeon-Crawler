@@ -268,7 +268,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.19350243, b: 1, a: 1}
+      maxColor: {r: 0.73333335, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4955,7 +4955,7 @@ GameObject:
   - component: {fileID: 4912270096038241924}
   - component: {fileID: 4912270096038241922}
   m_Layer: 11
-  m_Name: Chestplate
+  m_Name: PurpleChestplate
   m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5020,5 +5020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1d3043f0147d8448b9cd1c16aa87bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 11400000, guid: f0b7815945b97af4b83a40e1ece353c0, type: 2}
+  info: {fileID: 11400000, guid: 9cbe3f71dcf912448a90d1613315f957, type: 2}
+  type: 0
+  amountMin: 0
+  amountMax: 0
   speed: 15

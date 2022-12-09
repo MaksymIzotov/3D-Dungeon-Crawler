@@ -38,13 +38,17 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
     }
 
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, GameObject damageDealer)
     {
         float actualDamage = damage - (damage / 100 * defence);
         hp -= actualDamage;
 
         //Do effects
         DamagePopup.Instance.DamageEffect(actualDamage);
+
+        //Try passive
+        if (damageDealer != null)
+            GetComponent<PlayerPassives>().ReturnDamage(damageDealer, actualDamage);
 
         if (hp <= 0)
             Die();

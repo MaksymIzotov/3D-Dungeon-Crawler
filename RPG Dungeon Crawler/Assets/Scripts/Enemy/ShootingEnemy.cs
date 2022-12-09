@@ -29,7 +29,7 @@ public class ShootingEnemy : MonoBehaviour
     {
         //Shoot projectile || TODO: Player position prediction
         GameObject bullet = Instantiate(properties.bullet, attackPoint.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDamage(properties.damage);
+        bullet.GetComponent<Bullet>().SetDamage(properties.damage, gameObject);
 
         yield return new WaitForSeconds(properties.attackDelay);
 
