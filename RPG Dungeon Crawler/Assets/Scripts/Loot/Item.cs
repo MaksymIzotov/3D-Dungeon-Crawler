@@ -42,6 +42,7 @@ public class Item : ScriptableObject
     public Item evolutionItem;
     public int lvl;
     public int maxLvl;
+    public Item itemReference;
 
     [Space(10)]
     [Header("Icon Prefabs")]
@@ -61,6 +62,11 @@ public class Item : ScriptableObject
     }
 
     public virtual void Passive(GameObject player)
+    {
+
+    }
+
+    public virtual void UpgradeStats()
     {
 
     }

@@ -90,6 +90,10 @@ public class InventoryDescription : MonoBehaviour
             {
                 MenuInventoryController.Instance.inventory.GlobalInventory[i].lvl++;
                 //TODO: upgrade upgrade price and stats
+                MenuInventoryController.Instance.inventory.GlobalInventory[i].upgradePrice = ExtensionMethods.UpgradePriceSetup(MenuInventoryController.Instance.inventory.GlobalInventory[i].upgradePrice, 2);
+                MenuInventoryController.Instance.inventory.GlobalInventory[i].itemReference.UpgradeStats();
+
+                break;
             }
         }
 
@@ -117,19 +121,20 @@ public class InventoryDescription : MonoBehaviour
         stats.text = item.Stats();
         description.text = item.Desription();
 
-        if (item.lvl >= item.maxLvl) //Update current level text
-            levelText.text = "Lvl max";
-        else
-            levelText.text = "Lvl " + item.lvl;
 
         if (item.lvl >= item.maxLvl) //Level is maximum
         {
             upgradeButton.SetActive(false);
             upgradePrice.SetActive(false);
+
+            levelText.text = "Lvl max";
         }
         else //Show upgrade button and set it up
         {
             upgradeButton.SetActive(true);
+            upgradePrice.SetActive(true);
+
+            levelText.text = "Lvl " + item.lvl;
 
             //TODO: get price for current level
             upgradePrice.GetComponentInChildren<TMP_Text>().text = "x" + item.upgradePrice;

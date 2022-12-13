@@ -18,6 +18,14 @@ public class Chestplate : Item
             player.GetComponent<PlayerPassives>().EnableDamageReturn(returnPercentage); //Add passive
     }
 
+    public override void UpgradeStats()
+    {
+        defence++;
+
+        if (returnPercentage > 0)
+            returnPercentage++;
+    }
+
     public override string Desription()
     {
         if (rarity == ItemRarity.Blue)
