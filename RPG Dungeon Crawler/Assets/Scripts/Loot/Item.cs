@@ -41,6 +41,7 @@ public class Item : ScriptableObject
 
     public Item evolutionItem;
     public int lvl;
+    public int maxLvl;
 
     [Space(10)]
     [Header("Icon Prefabs")]

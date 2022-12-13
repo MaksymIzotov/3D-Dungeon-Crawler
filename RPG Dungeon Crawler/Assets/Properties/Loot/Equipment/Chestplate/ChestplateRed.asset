@@ -21,6 +21,7 @@ MonoBehaviour:
   evolvePrice: 0
   evolutionItem: {fileID: 0}
   lvl: 1
+  maxLvl: 10
   ingameIconPrefab: {fileID: 8280501835035045291, guid: a39498ca195bd2d47a5dba154aa64586, type: 3}
   menuButtonPrefab: {fileID: 8178082974687345864, guid: 92d4146d35ea53249911fb7b4dd33599, type: 3}
   cloneButtonPrefab: {fileID: 609964583898655200, guid: b48e37e05f9107845970c59cb6c7f2bf, type: 3}

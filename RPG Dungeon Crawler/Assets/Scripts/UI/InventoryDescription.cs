@@ -21,9 +21,10 @@ public class InventoryDescription : MonoBehaviour
     [SerializeField] private TMP_Text description;
     [SerializeField] private GameObject evolveImage;
     [SerializeField] private GameObject evolveButton;
+    [SerializeField] private GameObject upgradeButton;
+    [SerializeField] private GameObject upgradePrice;
     [SerializeField] private TMP_Text levelText;
-
-
+    [SerializeField] private GameObject moneyAmount;
 
     public Item currentLootDisplayed;
 
@@ -78,7 +79,27 @@ public class InventoryDescription : MonoBehaviour
 
     public void UpgradeItem()
     {
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentLootDisplayed.upgradePrice) { return; } // Not enough coins
 
+        //Upgrade item
+        MenuInventoryController.Instance.inventory.moneyInventory.amountCoins -= currentLootDisplayed.upgradePrice;
+
+        for (int i = 0; i < MenuInventoryController.Instance.inventory.GlobalInventory.Count; i++)
+        {
+            if(MenuInventoryController.Instance.inventory.GlobalInventory[i].itemName == currentLootDisplayed.itemName)
+            {
+                MenuInventoryController.Instance.inventory.GlobalInventory[i].lvl++;
+                //TODO: upgrade upgrade price and stats
+            }
+        }
+
+        UpdateCurrentMoney();
+        ShowDescription(currentLootDisplayed);
+    }
+
+    public void UpdateCurrentMoney()
+    {
+        moneyAmount.GetComponentInChildren<TMP_Text>().text = "x" + MenuInventoryController.Instance.inventory.moneyInventory.amountCoins;
     }
 
     public void HideDescription()
@@ -95,14 +116,31 @@ public class InventoryDescription : MonoBehaviour
         itemName.text = item.itemName;
         stats.text = item.Stats();
         description.text = item.Desription();
-        levelText.text = "Lvl " + item.lvl;
 
-        if (item.evolutionItem == null)
+        if (item.lvl >= item.maxLvl) //Update current level text
+            levelText.text = "Lvl max";
+        else
+            levelText.text = "Lvl " + item.lvl;
+
+        if (item.lvl >= item.maxLvl) //Level is maximum
+        {
+            upgradeButton.SetActive(false);
+            upgradePrice.SetActive(false);
+        }
+        else //Show upgrade button and set it up
+        {
+            upgradeButton.SetActive(true);
+
+            //TODO: get price for current level
+            upgradePrice.GetComponentInChildren<TMP_Text>().text = "x" + item.upgradePrice;
+        }
+
+        if (item.evolutionItem == null) //Cant evolve
         {
             evolveButton.SetActive(false);
             evolveImage.SetActive(false);
         }
-        else
+        else //Show evolve button and set it up
         {
             evolveButton.SetActive(true);
             evolveImage.SetActive(true);
