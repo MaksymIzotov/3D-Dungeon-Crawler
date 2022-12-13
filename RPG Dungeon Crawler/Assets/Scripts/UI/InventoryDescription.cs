@@ -89,10 +89,7 @@ public class InventoryDescription : MonoBehaviour
             if(MenuInventoryController.Instance.inventory.GlobalInventory[i].itemName == currentLootDisplayed.itemName)
             {
                 MenuInventoryController.Instance.inventory.GlobalInventory[i].lvl++;
-                //TODO: upgrade upgrade price and stats
-                MenuInventoryController.Instance.inventory.GlobalInventory[i].upgradePrice = ExtensionMethods.UpgradePriceSetup(MenuInventoryController.Instance.inventory.GlobalInventory[i].upgradePrice, 2);
                 MenuInventoryController.Instance.inventory.GlobalInventory[i].itemReference.UpgradeStats();
-
                 break;
             }
         }
@@ -104,6 +101,25 @@ public class InventoryDescription : MonoBehaviour
     public void UpdateCurrentMoney()
     {
         moneyAmount.GetComponentInChildren<TMP_Text>().text = "x" + MenuInventoryController.Instance.inventory.moneyInventory.amountCoins;
+    }
+
+    public void ResetAll()
+    {
+        foreach(Item item in MenuInventoryController.Instance.inventory.AllItemsInTheGame)
+        {
+            item.Reset();
+        }
+
+        if (currentLootDisplayed != null)
+            ShowDescription(currentLootDisplayed);
+    }
+
+    public void ResetCurrentItem()
+    {
+        if (currentLootDisplayed == null) { return; }
+
+        currentLootDisplayed.Reset();
+        ShowDescription(currentLootDisplayed);
     }
 
     public void HideDescription()

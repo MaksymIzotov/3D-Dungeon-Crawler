@@ -10,6 +10,18 @@ public class Chestplate : Item
     public float defence;
     public float returnPercentage;
 
+    [Space(10)]
+    [Header("Item Upgrade Stats")]
+    public float defenceAdd;
+    public float returnPercentageAdd;
+    public float priceMult;
+
+    [Space(20)]
+    [Header("Default stats")]
+    public float def_defence;
+    public float def_returnPercentage;
+    public int def_upgradePrice;
+
     public override void ApplyStats(GameObject player)
     {    
         player.GetComponent<PlayerHealthController>().AddDefence(defence); //Add stats
@@ -20,10 +32,13 @@ public class Chestplate : Item
 
     public override void UpgradeStats()
     {
-        defence++;
+        float newUpgradePrice = upgradePrice * priceMult;
+        upgradePrice = (int)newUpgradePrice;
+
+        defence += defenceAdd;
 
         if (returnPercentage > 0)
-            returnPercentage++;
+            returnPercentage += returnPercentageAdd;
     }
 
     public override string Desription()
@@ -44,5 +59,13 @@ public class Chestplate : Item
             return "Defence: " + defence; //Purple rarity
 
         return "Defence: " + defence + "\nReturn percentage: " + returnPercentage; //Red rarity
+    }
+
+    public override void Reset()
+    {
+        defence = def_defence;
+        returnPercentage = def_returnPercentage;
+        upgradePrice = def_upgradePrice;
+        lvl = 1;
     }
 }

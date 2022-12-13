@@ -6,7 +6,18 @@ using UnityEngine;
 public class Healing : Spell
 {
     public float hpHealingAmount;
-    public GameObject healingCross;
+
+    [Space(10)]
+    [Header("Upgrade amount")]
+    public float healingUpgradeAmount;
+    public float cooldownReduce;
+    public float priceMult;
+
+    [Space(20)]
+    [Header("Spell default stats")]
+    public float def_hpHealingAmount;
+    public float def_cooldown;
+    public int def_upgradePrice;
 
     public override void PreCast(Transform spellSpawnpoint)
     {
@@ -23,11 +34,27 @@ public class Healing : Spell
 
     public override string Stats()
     {
-        return "Healing amount: " + hpHealingAmount + "\nCooldown: " + coolDownTime;
+        return "Healing amount: " + hpHealingAmount + "\nCooldown: " + coolDownTime.ToString("F");
     }
 
     public override string Desription()
     {
-        return "Bruh, like you don't know what is healing for? Are you for real stupid or just pretending that you are?";
+        return "Bruh, like you don't know what is healing for?";
+    }
+
+    public override void UpgradeStats()
+    {
+        float newPrice = upgradePrice * priceMult;
+        upgradePrice = (int)newPrice;
+
+        hpHealingAmount += healingUpgradeAmount;
+        coolDownTime -= cooldownReduce;
+    }
+
+    public override void Reset()
+    {
+        hpHealingAmount = def_hpHealingAmount;
+        coolDownTime = def_hpHealingAmount;
+        upgradePrice = def_upgradePrice;
     }
 }

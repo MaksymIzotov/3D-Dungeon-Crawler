@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory", menuName = "Inventory", order = 1)]
 public class CurrentInventory : ScriptableObject
 {
+    public List<Item> AllItemsInTheGame;
+
     public List<Item> GlobalInventory;
     public List<Item> LevelInventory;
 

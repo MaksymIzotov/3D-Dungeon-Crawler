@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    [System.Serializable]
     public enum ItemType
     {
         Weapon = 0,
@@ -67,6 +66,11 @@ public class Item : ScriptableObject
     }
 
     public virtual void UpgradeStats()
+    {
+
+    }
+
+    public virtual void Reset()
     {
 
     }

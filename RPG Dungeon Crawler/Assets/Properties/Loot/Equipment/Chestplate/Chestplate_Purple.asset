@@ -28,3 +28,9 @@ MonoBehaviour:
   cloneButtonPrefab: {fileID: 609964583898655200, guid: 9724771295f0c2c488706f14b9c77d62, type: 3}
   defence: 21
   returnPercentage: 0
+  defenceAdd: 1
+  returnPercentageAdd: 0
+  priceMult: 1.3
+  def_defence: 15
+  def_returnPercentage: 0
+  def_upgradePrice: 10

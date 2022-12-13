@@ -8,8 +8,18 @@ public class Fireball : Spell
     public GameObject instantiatePrefab;
 
     public float damage;
-    public float burnEffectDuration;
-    public float burnDamage;
+
+    [Space(10)]
+    [Header("Upgrade amount")]
+    public float damageMult;
+    public float cooldownReduce;
+    public float priceMult;
+
+    [Space(20)]
+    [Header("Spell default stats")]
+    public float def_damage;
+    public float def_cooldown;
+    public int def_upgradePrice;
 
     public override void PreCast(Transform spellSpawnpoint)
     {
@@ -21,12 +31,7 @@ public class Fireball : Spell
     public override void Cast(Transform spellSpawnpoint)
     {
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
-        fireball.GetComponent<FireballController>().SetProperties(damage, burnEffectDuration, burnDamage);
-
-        if (isUpgraded)
-        {
-            CastUpgraded(fireball.transform);
-        }
+        fireball.GetComponent<FireballController>().SetProperties(damage);
     }
 
     public override void CastUpgraded(Transform spellProperty)
@@ -36,11 +41,29 @@ public class Fireball : Spell
 
     public override string Stats()
     {
-        return "Damage: " + damage + "\nCooldown: " + coolDownTime;
+        return "Damage: " + damage.ToString("F") + "\nCooldown: " + coolDownTime.ToString("F");
     }
 
     public override string Desription()
     {
         return "This. Is. Fireball. Anything else you want to know?";
+    }
+
+    public override void UpgradeStats()
+    {
+        float newPrice = upgradePrice * priceMult;
+        upgradePrice = (int)newPrice;
+
+        coolDownTime -= cooldownReduce;
+        damage *= damageMult;
+    }
+
+    public override void Reset()
+    {
+        damage = def_damage;
+        coolDownTime = def_cooldown;
+        upgradePrice = def_upgradePrice;
+
+        lvl = 1;
     }
 }
