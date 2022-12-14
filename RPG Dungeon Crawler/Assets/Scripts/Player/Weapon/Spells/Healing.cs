@@ -54,7 +54,9 @@ public class Healing : Spell
     public override void Reset()
     {
         hpHealingAmount = def_hpHealingAmount;
-        coolDownTime = def_hpHealingAmount;
+        coolDownTime = def_cooldown;
         upgradePrice = def_upgradePrice;
+
+        lvl = 1;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class CurrentInventory : ScriptableObject
 {
     public List<Item> AllItemsInTheGame;
+    public List<Spell> AllSpellsInTheGame;
 
     public List<Item> GlobalInventory;
     public List<Item> LevelInventory;

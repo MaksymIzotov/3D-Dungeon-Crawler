@@ -16,6 +16,35 @@ public class MenuInventoryController : MonoBehaviour
 
     public CurrentInventory inventory;
 
+    public void ClearInventory()
+    {
+        foreach (Item item in inventory.AllItemsInTheGame)
+        {
+            item.itemReference.Reset();
+        }
+        foreach(Spell spell in inventory.AllSpellsInTheGame)
+        {
+            spell.spellReference.Reset();
+        }
+
+        inventory.GlobalInventory.Clear();
+        inventory.spellsInventory.Clear();
+
+        for (int i = 0; i < inventory.equipedSpells.Length; i++)
+        {
+            inventory.equipedSpells[i] = null;
+        }
+
+        inventory.moneyInventory.amountBlueScrolls = 10;
+        inventory.moneyInventory.amountPurpleScrolls = 0;
+        inventory.moneyInventory.amountRedScrolls = 0;
+        inventory.moneyInventory.amountCoins = 0;
+
+        inventory.weapon = null;
+        inventory.armor = null;
+        inventory.usable = null;
+    }
+
     public void AddItem(Item item)
     {
         inventory.GlobalInventory.Remove(item);

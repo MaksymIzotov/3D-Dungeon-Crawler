@@ -81,6 +81,16 @@ public class SpellsDescription : MonoBehaviour
 
         ShowDescription(currentSpellDisplayed);
     }
+    
+    public void ResetAllSpells()
+    {
+        foreach(Spell spell in MenuInventoryController.Instance.inventory.AllSpellsInTheGame)
+        {
+            spell.spellReference.Reset();
+        }
+
+        ShowDescription(currentSpellDisplayed);
+    }
 
     public void HideDescription()
     {
