@@ -51,7 +51,7 @@ public class FireballController : MonoBehaviour
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, null);
             }
-            else if(n.tag == TAGS.ENEMY_TAG && isUpgraded)
+            else if(n.tag == TAGS.ENEMY_TAG)
             {
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG));
             }

@@ -23,7 +23,7 @@ public class Healing : Spell
     {
         //Animation
         GameObject parent = spellSpawnpoint.root.gameObject;
-        parent.GetComponent<AnimationManager>().PlaySpellAnimation("Healing");
+        parent.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.HEALINGCROSS_ANIM);
     }
 
     public override void Cast(Transform spellSpawnpoint)

@@ -125,6 +125,15 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Usable"",
+                    ""type"": ""Button"",
+                    ""id"": ""00c4fa6d-b61a-4d92-8068-e86cfdf5b321"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -292,6 +301,17 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                     ""action"": ""Info"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff6d33d8-e8d9-4b7c-bc62-0bbb2df71488"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Usable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,6 +359,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         m_GameControls_Interact = m_GameControls.FindAction("Interact", throwIfNotFound: true);
         m_GameControls_Pause = m_GameControls.FindAction("Pause", throwIfNotFound: true);
         m_GameControls_Info = m_GameControls.FindAction("Info", throwIfNotFound: true);
+        m_GameControls_Usable = m_GameControls.FindAction("Usable", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -409,6 +430,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControls_Interact;
     private readonly InputAction m_GameControls_Pause;
     private readonly InputAction m_GameControls_Info;
+    private readonly InputAction m_GameControls_Usable;
     public struct GameControlsActions
     {
         private @RebindJumping m_Wrapper;
@@ -424,6 +446,7 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_GameControls_Interact;
         public InputAction @Pause => m_Wrapper.m_GameControls_Pause;
         public InputAction @Info => m_Wrapper.m_GameControls_Info;
+        public InputAction @Usable => m_Wrapper.m_GameControls_Usable;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -466,6 +489,9 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                 @Info.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInfo;
                 @Info.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInfo;
                 @Info.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnInfo;
+                @Usable.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnUsable;
+                @Usable.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnUsable;
+                @Usable.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnUsable;
             }
             m_Wrapper.m_GameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -503,6 +529,9 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
                 @Info.started += instance.OnInfo;
                 @Info.performed += instance.OnInfo;
                 @Info.canceled += instance.OnInfo;
+                @Usable.started += instance.OnUsable;
+                @Usable.performed += instance.OnUsable;
+                @Usable.canceled += instance.OnUsable;
             }
         }
     }
@@ -538,5 +567,6 @@ public partial class @RebindJumping : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnInfo(InputAction.CallbackContext context);
+        void OnUsable(InputAction.CallbackContext context);
     }
 }

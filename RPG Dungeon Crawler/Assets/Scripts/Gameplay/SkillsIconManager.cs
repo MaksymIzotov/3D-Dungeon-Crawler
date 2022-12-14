@@ -3,21 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SkillsIconManager : MonoBehaviour
 {
     public static SkillsIconManager Instance;
 
-    [Serializable]
-    public struct Icon
-    {
-        public string name;
-        public Sprite icon;
-    }
-
-    public List<Icon> icons = new List<Icon>();
-
     public Image[] skillsIcons;
+    [SerializeField] private Image usableImage;
+    [SerializeField] private TMP_Text usableAmount;
 
     private void Awake()
     {
@@ -32,5 +26,32 @@ public class SkillsIconManager : MonoBehaviour
 
             skillsIcons[i].sprite = spells[i].icon;
         }
+    }
+
+    public void SetupUsable(Item item, out int itemAmount)
+    {
+        if (item == null) { usableImage.gameObject.SetActive(false); itemAmount = 0; return; }
+
+        usableImage.sprite = item.icon;
+
+        int amount = 0;
+        foreach(Item allItem in LootInventory.Instance.inventory.GlobalInventory)
+        {
+            if (item.itemName == allItem.itemName) {
+                amount++;
+            }
+        }
+
+        usableAmount.text = "x" + amount;
+
+        itemAmount = amount;
+    }
+
+    public void UpdateAmount(int amount)
+    {
+        if (amount <= 0)
+            usableImage.gameObject.SetActive(false);
+
+        usableAmount.text = "x" + amount;
     }
 }

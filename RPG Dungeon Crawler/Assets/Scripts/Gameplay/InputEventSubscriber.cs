@@ -11,6 +11,7 @@ public class InputEventSubscriber : MonoBehaviour
     SpellsInventory si;
     InteractionController ic;
     InGameInfoController igic;
+    PlayerItemController pic;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class InputEventSubscriber : MonoBehaviour
         si = GetComponent<SpellsInventory>();
         ic = GetComponent<InteractionController>();
         igic = GetComponent<InGameInfoController>();
+        pic = GetComponent<PlayerItemController>();
     }
 
     private void OnEnable()
@@ -33,6 +35,8 @@ public class InputEventSubscriber : MonoBehaviour
         input.GameControls.Spell02.started += si.Spell02Cast;
         input.GameControls.Spell03.started += si.Spell03Cast;
         input.GameControls.Spell04.started += si.Spell04Cast;
+
+        input.GameControls.Usable.started += pic.UseUsable;
 
         input.GameControls.Interact.started += ic.Interact;
 
@@ -52,6 +56,8 @@ public class InputEventSubscriber : MonoBehaviour
         input.GameControls.Spell02.started -= si.Spell02Cast;
         input.GameControls.Spell03.started -= si.Spell03Cast;
         input.GameControls.Spell04.started -= si.Spell04Cast;
+
+        input.GameControls.Usable.started -= pic.UseUsable;
 
         input.GameControls.Interact.started -= ic.Interact;
 

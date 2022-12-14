@@ -22,6 +22,7 @@ public class Item : ScriptableObject
     public string itemName;
     public ItemType type;
     public ItemRarity rarity;
+    public float usageTime;
 
     [Space(10)]
     [Header("Icon")]
@@ -51,6 +52,11 @@ public class Item : ScriptableObject
     public GameObject cloneButtonPrefab;
 
     public virtual void ApplyStats(GameObject player)
+    {
+
+    }
+
+    public virtual void PreUse(GameObject player)
     {
 
     }

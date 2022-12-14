@@ -77,6 +77,22 @@ public class MenuUIManager : MonoBehaviour
 
     public void UpdateItemIcons()
     {
+        bool isUsableExist = false;
+
+        if (MenuInventoryController.Instance.inventory.usable != null)
+        {
+            foreach(Item item in MenuInventoryController.Instance.inventory.GlobalInventory)
+            {
+                if(item.itemName == MenuInventoryController.Instance.inventory.usable.itemName)
+                {
+                    isUsableExist = true;   
+                }
+            }
+
+            if (!isUsableExist)
+                MenuInventoryController.Instance.inventory.usable = null;
+        }
+
         if (MenuInventoryController.Instance.inventory.weapon != null)
             weaponSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.weapon.icon;
         else

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Healing Cross
   scrollType: 0
-  coolDownTime: 15
+  coolDownTime: 1
   activateTime: 1
   afterActivateTime: 0.5
   icon: {fileID: 21300000, guid: c354dce082b5e2f4e88ce10d326e252d, type: 3}

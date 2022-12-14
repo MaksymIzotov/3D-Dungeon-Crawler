@@ -35,10 +35,13 @@ public class SpellsInventory : MonoBehaviour
 
     public void Spell01Cast(InputAction.CallbackContext context)
     {
-        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE
+            || GameStates.Instance.state == GameStates.STATE.LOST
+            || GameStates.Instance.state == GameStates.STATE.WON) { return; }
 
         if (spells[0] == null) { return; }
         if (ActiveCheck()) { return; }
+        if (GetComponent<PlayerItemController>().GetIsUsing()) { return; }
         if (spellStates[0] != STATE.READY) { return; }
 
         //Use spell 01
@@ -46,10 +49,13 @@ public class SpellsInventory : MonoBehaviour
     }
     public void Spell02Cast(InputAction.CallbackContext context)
     {
-        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE
+             || GameStates.Instance.state == GameStates.STATE.LOST
+             || GameStates.Instance.state == GameStates.STATE.WON) { return; }
 
         if (spells[1] == null) { return; }
         if (ActiveCheck()) { return; }
+        if (GetComponent<PlayerItemController>().GetIsUsing()) { return; }
         if (spellStates[1] != STATE.READY) { return; }
 
         //Use spell 01
@@ -57,10 +63,13 @@ public class SpellsInventory : MonoBehaviour
     }
     public void Spell03Cast(InputAction.CallbackContext context)
     {
-        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE
+            || GameStates.Instance.state == GameStates.STATE.LOST
+            || GameStates.Instance.state == GameStates.STATE.WON) { return; }
 
         if (spells[2] == null) { return; }
         if (ActiveCheck()) { return; }
+        if (GetComponent<PlayerItemController>().GetIsUsing()) { return; }
         if (spellStates[2] != STATE.READY) { return; }
 
         //Use spell 01
@@ -68,10 +77,13 @@ public class SpellsInventory : MonoBehaviour
     }
     public void Spell04Cast(InputAction.CallbackContext context)
     {
-        if (GameStates.Instance.state == GameStates.STATE.PAUSE) { return; }
+        if (GameStates.Instance.state == GameStates.STATE.PAUSE
+            || GameStates.Instance.state == GameStates.STATE.LOST
+            || GameStates.Instance.state == GameStates.STATE.WON) { return; }
 
         if (spells[3] == null) { return; }
         if (ActiveCheck()) { return; }
+        if (GetComponent<PlayerItemController>().GetIsUsing()) { return; }
         if (spellStates[3] != STATE.READY) { return; }
 
         //Use spell 01
@@ -105,7 +117,7 @@ public class SpellsInventory : MonoBehaviour
     }
 
 
-    private bool ActiveCheck()
+    public bool ActiveCheck()
     {
         for (int i = 0; i < spellStates.Length; i++)
         {

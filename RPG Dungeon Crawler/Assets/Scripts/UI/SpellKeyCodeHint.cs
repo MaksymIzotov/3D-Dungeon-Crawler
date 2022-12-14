@@ -29,6 +29,9 @@ public class SpellKeyCodeHint : MonoBehaviour
             case "Spell04":
                 text.text = InputManager.GetBindingName("Spell04", 0);
                 break;
+            case "Usable":
+                text.text = InputManager.GetBindingName("Usable", 0);
+                break;
         }
     }
 }
