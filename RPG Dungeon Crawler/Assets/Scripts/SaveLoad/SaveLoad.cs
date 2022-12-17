@@ -11,6 +11,7 @@ public class SaveLoad : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        saveFile = Application.persistentDataPath + "/gamedata.json";
     }
     #endregion
 
@@ -38,12 +39,12 @@ public class SaveLoad : MonoBehaviour
     private const string SAVE_PURPLESCROLLS = "PurpleScrolls";
     private const string SAVE_REDSCROLLS = "RedScrolls";
 
+    [SerializeField] private GameObject newGameButton;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject newGameButtonWQ;
 
     private void Start()
     {
-        saveFile = Application.persistentDataPath + "/gamedata.json";
-
         if (File.Exists(saveFile))
             continueButton.SetActive(true);
     }
@@ -51,9 +52,17 @@ public class SaveLoad : MonoBehaviour
     public void CheckSaveFile()
     {
         if (File.Exists(saveFile))
+        {
             continueButton.SetActive(true);
+            newGameButtonWQ.SetActive(true);
+            newGameButton.SetActive(false);
+        }
         else
+        {
             continueButton.SetActive(false);
+            newGameButtonWQ.SetActive(false);
+            newGameButton.SetActive(true);
+        }
     }
 
 
@@ -135,11 +144,6 @@ public class SaveLoad : MonoBehaviour
                 newData.isEquiped = true;
 
             dataToSave.Add(newData);
-        }
-
-        foreach (Save save in dataToSave)
-        {
-
         }
 
         //Serialize data

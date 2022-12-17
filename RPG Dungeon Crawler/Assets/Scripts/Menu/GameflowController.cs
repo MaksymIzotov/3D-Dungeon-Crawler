@@ -6,6 +6,7 @@ public class GameflowController : MonoBehaviour
 {
     [SerializeField] private CurrentSettings settings;
     public UnityEvent onContinuePlaying;
+    public UnityEvent onNewGameStarted;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class GameflowController : MonoBehaviour
         if (settings.isPlaying)
             onContinuePlaying.Invoke();
     }
+        
 
     public void StartGame()
     {
