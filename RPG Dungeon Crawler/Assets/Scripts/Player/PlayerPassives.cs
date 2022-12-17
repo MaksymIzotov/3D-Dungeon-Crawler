@@ -7,6 +7,8 @@ public class PlayerPassives : MonoBehaviour
     private bool isReturnDamage = false;
     private float returnDamage;
 
+    public float fireDamage;
+
     public void EnableDamageReturn(float _returnDamage)
     {
         isReturnDamage = true;

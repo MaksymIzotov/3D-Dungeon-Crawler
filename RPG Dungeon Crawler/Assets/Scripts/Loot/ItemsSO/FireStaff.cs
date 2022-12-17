@@ -22,6 +22,7 @@ public class FireStaff : Item
     public override void ApplyStats(GameObject player)
     {
         //Add stats
+        player.GetComponent<PlayerPassives>().fireDamage = damageToFireSpells;
 
         //Add passive
     }

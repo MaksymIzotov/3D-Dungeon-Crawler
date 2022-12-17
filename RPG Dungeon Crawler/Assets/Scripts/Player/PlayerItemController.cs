@@ -31,6 +31,11 @@ public class PlayerItemController : MonoBehaviour
         //Weapon setup
         equiped_weapon = LootInventory.Instance.inventory.weapon;
 
+        if(equiped_weapon != null)
+        {
+            equiped_weapon.ApplyStats(gameObject);
+        }
+
         //Usable setup
         equiped_usable = LootInventory.Instance.inventory.usable;
 
