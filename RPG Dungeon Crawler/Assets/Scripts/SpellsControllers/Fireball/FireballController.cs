@@ -15,10 +15,7 @@ public class FireballController : MonoBehaviour
 
     private float damage;
 
-    private float burnDuration;
     private float burnDamage;
-
-    private bool isUpgraded = false;
 
     void Start()
     {
@@ -28,9 +25,10 @@ public class FireballController : MonoBehaviour
         Invoke("DestroyObject", 10);
     }
 
-    public void SetProperties(float _damage)
+    public void SetProperties(float _damage, float _burnDamage)
     {
         damage = _damage;
+        burnDamage = _burnDamage;
     }
 
     private void Update()
@@ -54,15 +52,15 @@ public class FireballController : MonoBehaviour
             else if(n.tag == TAGS.ENEMY_TAG)
             {
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG));
+
+                if(burnDamage > 0)
+                {
+                    GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, 3f, burnDamage);
+                }
             }
         }
 
         DestroyObject();
-    }
-
-    public void Upgrade()
-    {
-        isUpgraded = true;
     }
 
     private void DestroyObject()

@@ -34,12 +34,13 @@ public class Fireball : Spell
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
 
         float damageAdd = parent.GetComponent<PlayerPassives>().fireDamage;
-        fireball.GetComponent<FireballController>().SetProperties(damage + damageAdd);
+        float burnDamage = parent.GetComponent<PlayerPassives>().GetBurnDamage();
+        fireball.GetComponent<FireballController>().SetProperties(damage + damageAdd, burnDamage);
     }
 
     public override void CastUpgraded(Transform spellProperty)
     {
-        spellProperty.GetComponent<FireballController>().Upgrade();
+        
     }
 
     public override string Stats()

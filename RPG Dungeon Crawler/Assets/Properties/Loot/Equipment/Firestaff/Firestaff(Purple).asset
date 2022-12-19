@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7831bdaf0b260784ca4fb0052fe63a37, type: 3}
+  m_Name: Firestaff(Purple)
+  m_EditorClassIdentifier: 
+  itemName: Firestaff (Purple)
+  type: 0
+  rarity: 1
+  usageTime: 0
+  icon: {fileID: 21300000, guid: 58da8f07e1a1401419083a9d910df05a, type: 3}
+  clonePrice: 10
+  upgradePrice: 10
+  evolvePrice: 10
+  evolutionItem: {fileID: 11400000, guid: 86e774c9307a7ce4c9984d1365309c80, type: 2}
+  lvl: 1
+  maxLvl: 10
+  itemReference: {fileID: 11400000}
+  ingameIconPrefab: {fileID: 8280501835035045291, guid: 753555a9843050446b48a8b5bf90b25a, type: 3}
+  menuButtonPrefab: {fileID: 8178082974687345864, guid: 390e9eccb092ba74c90d366b8658e7c1, type: 3}
+  cloneButtonPrefab: {fileID: 609964583898655200, guid: a3a1d646da78d164b916a984afd7652e, type: 3}
+  damageToFireSpells: 20
+  burnDamage: 0
+  damageToFireSpellsMult: 1.1
+  burnDamageMult: 0
+  priceMult: 1.3
+  def_damage: 20
+  def_burnDamage: 0
+  def_upgradePrice: 10

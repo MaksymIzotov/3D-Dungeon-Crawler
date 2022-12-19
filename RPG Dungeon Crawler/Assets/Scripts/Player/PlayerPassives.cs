@@ -7,7 +7,24 @@ public class PlayerPassives : MonoBehaviour
     private bool isReturnDamage = false;
     private float returnDamage;
 
+    private bool isBurnEffect = false;
+    private float burnDamage;
+
     public float fireDamage;
+
+    public void EnableBurnDamage(float _burnDamage)
+    {
+        isBurnEffect = true;
+        burnDamage = _burnDamage;
+    }
+
+    public float GetBurnDamage()
+    {
+        if (isBurnEffect)
+            return burnDamage;
+        else
+            return 0;
+    }
 
     public void EnableDamageReturn(float _returnDamage)
     {

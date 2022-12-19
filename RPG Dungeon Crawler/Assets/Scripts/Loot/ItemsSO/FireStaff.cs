@@ -8,15 +8,18 @@ public class FireStaff : Item
     [Space(10)]
     [Header("Item properties")]
     public float damageToFireSpells;
+    public float burnDamage;
 
     [Space(10)]
     [Header("Item Upgrade Stats")]
     public float damageToFireSpellsMult;
+    public float burnDamageMult;
     public float priceMult;
 
     [Space(20)]
     [Header("Default stats")]
     public float def_damage;
+    public float def_burnDamage;
     public int def_upgradePrice;
 
     public override void ApplyStats(GameObject player)
@@ -25,6 +28,8 @@ public class FireStaff : Item
         player.GetComponent<PlayerPassives>().fireDamage = damageToFireSpells;
 
         //Add passive
+        if (rarity == ItemRarity.Red)
+            player.GetComponent<PlayerPassives>().EnableBurnDamage(burnDamage);
     }
 
     public override void UpgradeStats()
@@ -33,6 +38,9 @@ public class FireStaff : Item
         upgradePrice = (int)newUpgradePrice;
 
         damageToFireSpells *= damageToFireSpellsMult;
+
+        if (burnDamage > 0)
+            burnDamage *= burnDamageMult;
     }
 
     public override string Desription()
@@ -42,22 +50,23 @@ public class FireStaff : Item
         if (rarity == ItemRarity.Purple)
             return "A staff with fire crystal. Makes your fire spells stronger"; //Purple rarity
 
-        return "A staff with fire crystal. Makes your fire spells stronger"; //Red rarity
+        return "A staff with fire crystal. Makes your fire spells stronger. Every fire spell now has burning effect"; //Red rarity
     }
 
     public override string Stats()
     {
         if (rarity == ItemRarity.Blue)
-            return "Damage: " + damageToFireSpells; //Blue rarity
+            return "Damage: " + damageToFireSpells.ToString("F"); //Blue rarity
         if (rarity == ItemRarity.Purple)
-            return "Damage: " + damageToFireSpells; ; //Purple rarity
+            return "Damage: " + damageToFireSpells.ToString("F"); ; //Purple rarity
 
-        return "Damage: " + damageToFireSpells; //Red rarity
+        return "Damage: " + damageToFireSpells.ToString("F") + "\nBurn damage: " + burnDamage.ToString("F"); //Red rarity
     }
 
     public override void Reset()
     {
         damageToFireSpells = def_damage;
+        burnDamage = def_burnDamage;
         upgradePrice = def_upgradePrice;
         lvl = 1;
     }

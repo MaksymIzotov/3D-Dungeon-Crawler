@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
   m_Name: BaseEnemyHealth
   m_EditorClassIdentifier: 
-  healthPoints: 50
+  healthPoints: 200
   defence: 0
-  healthRegen: 0.5
+  healthRegen: 0
