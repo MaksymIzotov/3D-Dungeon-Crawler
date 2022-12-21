@@ -45,11 +45,15 @@ public class SaveLoad : MonoBehaviour
 
     private void Start()
     {
-        if (File.Exists(saveFile))
-            continueButton.SetActive(true);
+        ContinueButtonCheck();
     }
 
-    public void CheckSaveFile()
+    public bool CheckSaveFile()
+    {
+        return File.Exists(saveFile);
+    }
+
+    public void ContinueButtonCheck()
     {
         if (File.Exists(saveFile))
         {

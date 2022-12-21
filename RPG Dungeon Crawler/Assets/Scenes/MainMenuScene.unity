@@ -1711,7 +1711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &63108800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8824,7 +8824,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 28439072}
         m_TargetAssemblyTypeName: SaveLoad, Assembly-CSharp
-        m_MethodName: CheckSaveFile
+        m_MethodName: ContinueButtonCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20823,7 +20823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1419574682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28021,7 +28021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1662010946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30306,7 +30306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1852770228
 RectTransform:
   m_ObjectHideFlags: 0
