@@ -100,7 +100,7 @@ public class Generator2D : MonoBehaviour {
             }
             else if(item.GetComponent<Light>() == true)
             {
-                item.transform.SetParent(null, true);
+                //item.transform.SetParent(null, true);
             }
         }
 
