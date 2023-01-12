@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8280501835035045288}
   - component: {fileID: 8280501835035045289}
   m_Layer: 5
-  m_Name: BlueFirestaffInGameIcon
+  m_Name: InGameButtonPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 044d1ac503d417745b4d5ebe7a97f0e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 951502fabf394344098fce933eef6c9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

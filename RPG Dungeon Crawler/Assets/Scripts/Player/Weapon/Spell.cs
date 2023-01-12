@@ -22,7 +22,6 @@ public class Spell : ScriptableObject
     [Header("UI")]
 
     public Sprite icon;
-    public GameObject buttonPrefab;
 
     [Space(10)]
     [Header("Upgrades")]

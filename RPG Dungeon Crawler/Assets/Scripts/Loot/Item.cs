@@ -44,13 +44,6 @@ public class Item : ScriptableObject
     public int maxLvl;
     public Item itemReference;
 
-    [Space(10)]
-    [Header("Icon Prefabs")]
-
-    public GameObject ingameIconPrefab;
-    public GameObject menuButtonPrefab;
-    public GameObject cloneButtonPrefab;
-
     public virtual void ApplyStats(GameObject player)
     {
 

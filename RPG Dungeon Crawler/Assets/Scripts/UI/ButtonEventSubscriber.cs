@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ButtonEventSubscriber : MonoBehaviour
 {
-    [SerializeField] private Spell currentSpellProperties;
-    [SerializeField] private Item currentItemProperties;
+    public Spell currentSpellProperties;
+    public Item currentItemProperties;
 
 
     public void ClickSpell()

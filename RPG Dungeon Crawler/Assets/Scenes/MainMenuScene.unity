@@ -799,6 +799,8 @@ MonoBehaviour:
   blueScrollsAmount: {fileID: 0}
   purpleScrollsAmount: {fileID: 0}
   redScrollsAmount: {fileID: 0}
+  itemButtonPrefab: {fileID: 609964583898655200, guid: d0ddab788072cad408354e1244ae16af, type: 3}
+  spellButtonPrefab: {fileID: 8782750347074970417, guid: 5e4e465bc92792d44be20d5fc296d0c5, type: 3}
 --- !u!114 &28439072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18177,6 +18179,7 @@ MonoBehaviour:
   description: {fileID: 1225035027}
   price: {fileID: 1873541412}
   levelText: {fileID: 1671205980}
+  itemButtonPrefab: {fileID: 609964583898655200, guid: 28e8f461e609f6c4f9e582a358172e71, type: 3}
 --- !u!4 &1211851245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2268278782481629495, guid: 7426e467d46463347b9c0c457929734b, type: 3}

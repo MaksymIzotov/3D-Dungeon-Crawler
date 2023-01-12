@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class LevelLootListing : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class LevelLootListing : MonoBehaviour
     [SerializeField] private TMP_Text scrollsPurpleAmount;
     [SerializeField] private TMP_Text scrollsRedAmount;
     [SerializeField] private TMP_Text coinsAmount;
+
+    [SerializeField] private GameObject inGameButtonPrefab;
 
     public void DisplayLoot()
     {
@@ -63,9 +66,12 @@ public class LevelLootListing : MonoBehaviour
 
             if (isAlreadyInTheList) { continue; }
 
+            GameObject newItem = inGameButtonPrefab;
+            newItem.GetComponent<Image>().sprite = item.icon;
+
             Listing data = new Listing();
             data.lootName = item.itemName;
-            data.itemPrefab = item.ingameIconPrefab;
+            data.itemPrefab = newItem;
 
             currentItemsToDisplay.Add(data);
         }

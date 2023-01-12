@@ -2874,6 +2874,7 @@ MonoBehaviour:
   scrollsPurpleAmount: {fileID: 223236853}
   scrollsRedAmount: {fileID: 489066319}
   coinsAmount: {fileID: 1358125471}
+  inGameButtonPrefab: {fileID: 8280501835035045291, guid: e5dbbb39e3f7bc84cb67215b1aa1564e, type: 3}
 --- !u!114 &941879788
 MonoBehaviour:
   m_ObjectHideFlags: 0

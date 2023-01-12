@@ -30,6 +30,8 @@ public class CloneMenuController : MonoBehaviour
     [SerializeField] private GameObject price;
     [SerializeField] private TMP_Text levelText;
 
+    [SerializeField] private GameObject itemButtonPrefab;
+
     public void ShowDescription(Item item)
     {
         descriptionParent.SetActive(true);
@@ -116,7 +118,9 @@ public class CloneMenuController : MonoBehaviour
         {
             if (item.itemName == foundItemsArr[index].itemName)
             {
-                return item.cloneButtonPrefab;
+                itemButtonPrefab.GetComponent<Image>().sprite = item.icon;
+                itemButtonPrefab.GetComponent<ButtonEventSubscriber>().currentItemProperties = item.itemReference;
+                return itemButtonPrefab;
             }
         }
 

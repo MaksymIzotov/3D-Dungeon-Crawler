@@ -35,6 +35,12 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private TMP_Text purpleScrollsAmount;
     [SerializeField] private TMP_Text redScrollsAmount;
 
+    [Space(10)]
+    [Header("Other")]
+
+    [SerializeField] private GameObject itemButtonPrefab;
+    [SerializeField] private GameObject spellButtonPrefab;
+
     public void UpdateMoneyAmount()
     {
         Money money = MenuInventoryController.Instance.inventory.moneyInventory;
@@ -71,7 +77,9 @@ public class MenuUIManager : MonoBehaviour
         //Update
         foreach (Spell spell in spells)
         {
-            Instantiate(spell.buttonPrefab, obtainedSpellsParent);
+            spellButtonPrefab.GetComponent<Image>().sprite = spell.icon;
+            spellButtonPrefab.GetComponent<ButtonEventSubscriber>().currentSpellProperties = spell.spellReference;
+            Instantiate(spellButtonPrefab, obtainedSpellsParent);
         }
     }
 
@@ -168,7 +176,9 @@ public class MenuUIManager : MonoBehaviour
         {
             if (item.itemName == foundItemsArr[index].itemName)
             {
-                return item.menuButtonPrefab;
+                itemButtonPrefab.GetComponent<Image>().sprite = item.icon;
+                itemButtonPrefab.GetComponent<ButtonEventSubscriber>().currentItemProperties = item.itemReference;
+                return itemButtonPrefab;
             }
         }
 
