@@ -46,7 +46,7 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void Chase()
     {
-        anim.CrossFade("Chase", 0.1f, 0);
+        anim.CrossFade("Armature|Chase", 0.1f, 0);
     }
 
     public void Die()
