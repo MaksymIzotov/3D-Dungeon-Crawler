@@ -303,9 +303,9 @@ GameObject:
   - component: {fileID: 1922896543264785793}
   - component: {fileID: 1922896543264785798}
   - component: {fileID: 1922896543264785799}
-  - component: {fileID: 3493158707449651272}
   - component: {fileID: 7233255473392044249}
   - component: {fileID: 4225364913917717181}
+  - component: {fileID: 3985886028366607886}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -380,27 +380,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922896543264785796}
   m_Enabled: 1
---- !u!114 &3493158707449651272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922896543264785796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab2fd0b11cfb2fb4ca4ed47adfcc3b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shader: {fileID: 4800000, guid: 9d7e8f87435780644abb4acdfd72a2f0, type: 3}
-  LookupTexture: {fileID: 2800000, guid: 8813871f6491c8d4d97124dbb2cde951, type: 3}
-  Amount: 0
-  TintColor: {r: 1, g: 1, b: 1, a: 1}
-  Hue: 0
-  Saturation: 0
-  Brightness: 1
-  Contrast: 0
-  Sharpness: 0
 --- !u!114 &7233255473392044249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +427,23 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &3985886028366607886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922896543264785796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 02f187973a1d880429cd7f5f94f9e426, type: 2}
 --- !u!1 &1922896543704980072
 GameObject:
   m_ObjectHideFlags: 0
