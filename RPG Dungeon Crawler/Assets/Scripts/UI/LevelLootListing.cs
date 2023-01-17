@@ -17,7 +17,7 @@ public class LevelLootListing : MonoBehaviour
     private struct Listing
     {
         public string lootName;
-        public GameObject itemPrefab;
+        public Sprite itemIcon;
     }
 
     [SerializeField] private CurrentInventory inventory;
@@ -66,12 +66,9 @@ public class LevelLootListing : MonoBehaviour
 
             if (isAlreadyInTheList) { continue; }
 
-            GameObject newItem = inGameButtonPrefab;
-            newItem.GetComponent<Image>().sprite = item.icon;
-
             Listing data = new Listing();
             data.lootName = item.itemName;
-            data.itemPrefab = newItem;
+            data.itemIcon = item.icon;
 
             currentItemsToDisplay.Add(data);
         }
@@ -87,7 +84,9 @@ public class LevelLootListing : MonoBehaviour
 
         while (index < itemsToDisplay.Length)
         {
-            GameObject lootIcon = Instantiate(itemsToDisplay[index].itemPrefab, lootList.transform);
+            GameObject lootIcon = Instantiate(inGameButtonPrefab, lootList.transform);
+
+            lootIcon.GetComponent<Image>().sprite = itemsToDisplay[index].itemIcon;
 
             int amount = 0;
             foreach (Item item in inventory.LevelInventory)

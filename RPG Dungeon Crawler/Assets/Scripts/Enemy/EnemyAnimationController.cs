@@ -23,25 +23,25 @@ public class EnemyAnimationController : MonoBehaviour
         switch (randomNum)
         {
             case 1:
-                anim.CrossFade("Attack1", 0.1f, 0);
+                anim.CrossFade("Armature|Attack1", 0.1f, 0);
                 break;
             case 2:
-                anim.CrossFade("Attack2", 0.1f, 0);
+                anim.CrossFade("Armature|Attack2", 0.1f, 0);
                 break;
             case 3:
-                anim.CrossFade("Attack3", 0.1f, 0);
+                anim.CrossFade("Armature|Attack3", 0.1f, 0);
                 break;
         }
     }
 
     public void AttackAbove()
     {
-        anim.CrossFade("AttackAbove", 0.1f, 0);
+        anim.CrossFade("Armature|AttackAbove", 0.1f, 0);
     }
 
     public void Idle()
     {
-        anim.CrossFade("Idle", 0.1f, 0);
+        anim.CrossFade("Armature|Idle", 0.1f, 0);
     }
 
     public void Chase()
@@ -51,7 +51,7 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void Die()
     {
-        anim.CrossFade("Death", 0.1f, 0);
+        anim.CrossFade("Armature|Death", 0.1f, 0);
     }
 
 }
