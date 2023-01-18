@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: EnemiesSpawnSettings
+  m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
+  m_Name: EnemyBasicHealth
   m_EditorClassIdentifier: 
-  enemiesAmount: 4
-  minDelay: 0.5
-  maxDelay: 1.5
-  enemies:
-  - {fileID: 5194665444346978576, guid: cade3ddc9ee4c334ba70b85efc44088c, type: 3}
+  healthPoints: 50
+  defence: 0
+  healthRegen: 0

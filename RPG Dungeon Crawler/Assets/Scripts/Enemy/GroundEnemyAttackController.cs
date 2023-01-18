@@ -9,6 +9,7 @@ public class GroundEnemyAttackController : MonoBehaviour
     public bool isAttacking = false;
     public Transform attackPoint;
     [SerializeField] private Transform eyes;
+    [SerializeField] private bool isAddingImpact;
 
     public void Attack()
     {
@@ -40,7 +41,9 @@ public class GroundEnemyAttackController : MonoBehaviour
             if (col.tag == "Player")
             {
                 col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
-                col.GetComponent<PlayerController>().AddImpact(transform, 200);
+
+                if (isAddingImpact)
+                    col.GetComponent<PlayerController>().AddImpact(transform, 200);
             }
         }
 

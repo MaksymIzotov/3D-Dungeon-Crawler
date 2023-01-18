@@ -18,13 +18,13 @@ MonoBehaviour:
   usageTime: 0
   icon: {fileID: 21300000, guid: 483d4fb717a44bd4f98c10195779e111, type: 3}
   clonePrice: 0
-  upgradePrice: 20
+  upgradePrice: 175
   evolvePrice: 0
   evolutionItem: {fileID: 0}
-  lvl: 1
+  lvl: 11
   maxLvl: 11
   itemReference: {fileID: 11400000}
-  stunChance: 15
+  stunChance: 25
   stunChanceAdd: 1
   priceMult: 1.25
   def_stunChance: 15
