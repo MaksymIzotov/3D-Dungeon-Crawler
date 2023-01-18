@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580bd4db9bea2d146b60afc8faa1bfeb, type: 3}
+  m_Name: ShieldPurple
+  m_EditorClassIdentifier: 
+  itemName: Shield (Purple)
+  type: 0
+  rarity: 1
+  usageTime: 0
+  icon: {fileID: 21300000, guid: e01257966f2531a46b20844df6541ea7, type: 3}
+  clonePrice: 10
+  upgradePrice: 10
+  evolvePrice: 10
+  evolutionItem: {fileID: 11400000, guid: c3665a373591c0d48939b069d232e413, type: 2}
+  lvl: 1
+  maxLvl: 10
+  itemReference: {fileID: 11400000}
+  defence: 15
+  blockChance: 0
+  defenceAdd: 1
+  blockChanceAdd: 0
+  priceMult: 1.3
+  def_defence: 15
+  def_blockChance: 0
+  def_upgradePrice: 10

@@ -40,6 +40,13 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage, GameObject damageDealer)
     {
+        if (GetComponent<PlayerPassives>().TryBlockDamage())
+        {
+            print("Blocked");
+            //Add sound for blocking
+            return;
+        }
+
         float actualDamage = damage - (damage / 100 * defence);
         hp -= actualDamage;
 
@@ -49,6 +56,7 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
         //Try passive
         if (damageDealer != null)
             GetComponent<PlayerPassives>().ReturnDamage(damageDealer, actualDamage);
+
 
         if (hp <= 0)
             Die();

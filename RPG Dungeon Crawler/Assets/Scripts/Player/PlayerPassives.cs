@@ -12,6 +12,9 @@ public class PlayerPassives : MonoBehaviour
 
     public float fireDamage;
 
+    private bool isBlockingOn = false;
+    private float blockingChance;
+
     public void EnableBurnDamage(float _burnDamage)
     {
         isBurnEffect = true;
@@ -38,5 +41,24 @@ public class PlayerPassives : MonoBehaviour
 
         float returnAmount = damage / 100 * returnDamage;
         enemy.GetComponent<EnemyHealthController>().TakeDamage(returnAmount, gameObject);
+    }
+
+    public void EnableBlocking(float chance)
+    {
+        isBlockingOn = true;
+        blockingChance = chance;
+    }
+
+    public bool TryBlockDamage()
+    {
+        if (!isBlockingOn) { return false; }
+
+        int rand = Random.Range(0, 100);
+        if(rand < blockingChance)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
