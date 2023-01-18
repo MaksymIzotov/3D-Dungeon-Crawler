@@ -15,6 +15,9 @@ public class PlayerPassives : MonoBehaviour
     private bool isBlockingOn = false;
     private float blockingChance;
 
+    private bool isStunOn = false;
+    private float stunChance;
+
     public void EnableBurnDamage(float _burnDamage)
     {
         isBurnEffect = true;
@@ -55,6 +58,25 @@ public class PlayerPassives : MonoBehaviour
 
         int rand = Random.Range(0, 100);
         if(rand < blockingChance)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void EnableStun(float chance)
+    {
+        isStunOn = true;
+        stunChance = chance;
+    }
+
+    public bool TryStun()
+    {
+        if (!isStunOn) { return false; }
+
+        int rand = Random.Range(0, 100);
+        if (rand < stunChance)
         {
             return true;
         }

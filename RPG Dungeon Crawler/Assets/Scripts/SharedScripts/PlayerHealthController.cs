@@ -42,7 +42,6 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
     {
         if (GetComponent<PlayerPassives>().TryBlockDamage())
         {
-            print("Blocked");
             //Add sound for blocking
             return;
         }

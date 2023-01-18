@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TestSettings
   m_EditorClassIdentifier: 
   items:
-  - prefab: {fileID: 7534031361520244703, guid: 910f25a357afe76438f2dea6db694013, type: 3}
+  - prefab: {fileID: 4809424025701705063, guid: 2c8926b5e5f57754ba9bad94a7f332e2, type: 3}
     dropChance: 100
-  - prefab: {fileID: 7534031361520244703, guid: 33b4f6094093cc14fba9666573289a5e, type: 3}
+  - prefab: {fileID: 4809424025701705063, guid: 9c4607d07fc8e7f4cafc98447465a3ef, type: 3}
     dropChance: 75
-  - prefab: {fileID: 7534031361520244703, guid: 0dace262f39b7474ab53ac6aa62b59d6, type: 3}
+  - prefab: {fileID: 4809424025701705063, guid: e3854dbc0ff000c4182ec74a6e3350fb, type: 3}
     dropChance: 50

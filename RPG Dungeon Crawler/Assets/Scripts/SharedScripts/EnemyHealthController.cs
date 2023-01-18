@@ -43,7 +43,17 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
         DamagePopup.Instance.ShowDamage(actualDamage, transform, damageTextParent);
 
         if (hp <= 0)
+        {
             Die();
+        }
+        else
+        {
+            if (GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG).GetComponent<PlayerPassives>().TryStun())
+            {
+                GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().StunState);
+            }
+
+        }
     }
 
 

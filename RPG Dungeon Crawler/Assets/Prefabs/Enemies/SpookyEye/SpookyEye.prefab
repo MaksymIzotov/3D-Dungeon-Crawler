@@ -371,6 +371,37 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000002191402, y: 0.008346242, z: 0.00092987716}
     m_Extent: {x: 0.01973591, y: 0.011436007, z: 0.009907365}
   m_DirtyAABB: 0
+--- !u!1 &1844836133610763295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195592763674597673}
+  m_Layer: 9
+  m_Name: OverheadPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195592763674597673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844836133610763295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2122520650812745735}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2407904535903247137
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +450,7 @@ GameObject:
   - component: {fileID: 2850031045421770566}
   - component: {fileID: 5951791651789763186}
   - component: {fileID: 6001209297591341848}
+  - component: {fileID: 2095602217548888494}
   m_Layer: 9
   m_Name: SpookyEye
   m_TagString: Enemy
@@ -441,6 +473,7 @@ Transform:
   - {fileID: 2547656802899717100}
   - {fileID: 6492523157945098029}
   - {fileID: 8249472704679460377}
+  - {fileID: 1195592763674597673}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -459,6 +492,7 @@ MonoBehaviour:
   IdleState: {fileID: 11400000, guid: 31cd284bf39fd1a41b3bb2a85d181f7a, type: 2}
   ChasingState: {fileID: 11400000, guid: c269e6f082fee6e45951dc5e4c06f994, type: 2}
   AttackingState: {fileID: 11400000, guid: cd035f0ce1cb203409cf364ed3c25e70, type: 2}
+  StunState: {fileID: 11400000, guid: a331152879a65ee458f7c406d7daae37, type: 2}
   attackPoint: {fileID: 2547656802899717100}
   eyes: {fileID: 0}
 --- !u!114 &2145388419
@@ -611,6 +645,20 @@ MonoBehaviour:
   properties: {fileID: 11400000, guid: 6e51028c4dfd92f4abf4b8d0eb3dac2d, type: 2}
   isAttacking: 0
   attackPoint: {fileID: 2547656802899717100}
+--- !u!114 &2095602217548888494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463538878062744067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14a55bdea9e55347bb42ca7f4e7dedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overheadPoint: {fileID: 1195592763674597673}
+  stunFX: {fileID: 3744881054337799942, guid: e7ba9c7e88cf4a44ca9f7ef7bc2d13a0, type: 3}
 --- !u!1 &2582726193971784968
 GameObject:
   m_ObjectHideFlags: 0

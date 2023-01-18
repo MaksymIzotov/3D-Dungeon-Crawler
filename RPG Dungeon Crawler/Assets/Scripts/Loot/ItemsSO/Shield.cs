@@ -44,11 +44,11 @@ public class Shield : Item
     public override string Desription()
     {
         if (rarity == ItemRarity.Blue)
-            return "Shield to protect your body"; //Blue rarity
+            return "A shield to protect your body"; //Blue rarity
         if (rarity == ItemRarity.Purple)
-            return "Shield to protect your body"; //Purple rarity
+            return "A shield to protect your body"; //Purple rarity
 
-        return "Shield to protect your body. Has a chance to fully block income damage"; //Red rarity
+        return "A shield to protect your body. Has a chance to fully block income damage"; //Red rarity
     }
 
     public override string Stats()
