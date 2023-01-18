@@ -14,6 +14,7 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     private float hpRegen;
 
     [SerializeField] private Transform damageTextParent;
+    [SerializeField] private bool isExploding;
 
     [HideInInspector] public bool isDead;
     private void Awake()
@@ -62,8 +63,19 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
         if (isDead) { return; }
 
         isDead = true;
-        GetComponent<EnemyAnimationController>().Die();
+        if (isExploding)
+        {
+            GetComponent<EnemyAnimationController>().StopAnimation();
+            GetComponent<EnemyExplode>().Explode();
+        }
+        else
+        {
+            GetComponent<EnemyAnimationController>().Die();
+        }
+
         onDeath.Invoke();
+        Destroy(gameObject, 5);
+            
         //Drop?
     }
 
