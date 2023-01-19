@@ -51,6 +51,7 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
         //Do effects
         DamagePopup.Instance.DamageEffect(actualDamage);
+        GetComponent<CameraShake>().EnableShaking(actualDamage/100);
 
         //Try passive
         if (damageDealer != null)
