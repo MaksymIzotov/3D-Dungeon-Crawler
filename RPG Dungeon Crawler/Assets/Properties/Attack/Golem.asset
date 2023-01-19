@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: EnemiesSpawnSettings
+  m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
+  m_Name: Golem
   m_EditorClassIdentifier: 
-  enemiesAmount: 1
-  minDelay: 0.5
-  maxDelay: 1.5
-  enemies:
-  - {fileID: 8815258617298195631, guid: 40cc7edc4c5cbe6489a0fd0dc9a06072, type: 3}
+  attackDelay: 1
+  damage: 25
+  preAttackTime: 0.4
+  bullet: {fileID: 0}
