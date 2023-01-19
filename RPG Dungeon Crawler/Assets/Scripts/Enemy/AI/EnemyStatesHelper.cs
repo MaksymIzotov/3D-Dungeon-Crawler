@@ -7,6 +7,8 @@ public class EnemyStatesHelper : MonoBehaviour
     [SerializeField] private Transform overheadPoint;
     [SerializeField] private GameObject stunFX;
 
+    [SerializeField] private GameObject GroundStompPrefab;
+
     public void Stun(float duration)
     {
         StartCoroutine(StunTimer(duration));
@@ -19,5 +21,17 @@ public class EnemyStatesHelper : MonoBehaviour
         yield return new WaitForSeconds(stunDuration);
 
         GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().IdleState);
+    }
+
+    public void GroundStomp()
+    {
+        Vector3 pos = new Vector3(transform.position.x, 0.4f, transform.position.z);
+        Instantiate(GroundStompPrefab, pos, Quaternion.identity);
+    }
+
+    public void SwitchStateBack()
+    {
+        GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().IdleState);
+
     }
 }

@@ -264,9 +264,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdleState: {fileID: 11400000, guid: 2035920836834554794e1a8b405f947a, type: 2}
-  ChasingState: {fileID: 11400000, guid: 8117fc62394abb3468a3900ed74be9ae, type: 2}
+  ChasingState: {fileID: 11400000, guid: d23b6c3b763a89842a010c98ae24b3fe, type: 2}
   AttackingState: {fileID: 11400000, guid: 45b5c3f86e97f4b49ac00b4ff2a1409c, type: 2}
   StunState: {fileID: 11400000, guid: a331152879a65ee458f7c406d7daae37, type: 2}
+  GroundStompState: {fileID: 11400000, guid: 6d2b0995a1891694c8fb2ffff85fe999, type: 2}
   attackPoint: {fileID: 8815258616095052253}
   eyes: {fileID: 8815258617950258685}
 --- !u!114 &8815258617298195618
@@ -283,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overheadPoint: {fileID: 8815258617950258685}
   stunFX: {fileID: 3744881054337799942, guid: e7ba9c7e88cf4a44ca9f7ef7bc2d13a0, type: 3}
+  GroundStompPrefab: {fileID: 3731085949534258564, guid: 823a7a3f06d26fd4cbeceb09187e7bc0, type: 3}
 --- !u!114 &8815258617298195628
 MonoBehaviour:
   m_ObjectHideFlags: 0

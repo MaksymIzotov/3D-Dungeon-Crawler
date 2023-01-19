@@ -10,6 +10,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBaseState ChasingState;
     public EnemyBaseState AttackingState;
     public EnemyBaseState StunState;
+    public EnemyBaseState GroundStompState;
 
     public Transform attackPoint;
     public Transform eyes;

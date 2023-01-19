@@ -59,4 +59,9 @@ public class EnemyAnimationController : MonoBehaviour
         anim.CrossFade("Death", 0.1f, 0);
     }
 
+    public void GroundStomp()
+    {
+        anim.CrossFade("GroundStomp", 0.1f, 0);
+    }
+
 }
