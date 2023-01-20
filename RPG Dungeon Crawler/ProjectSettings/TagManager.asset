@@ -19,7 +19,7 @@ TagManager:
   - UI
   - Spells
   - Player
-  - 
+  - PathfindingObstacle
   - Enemy
   - EnemyBullet
   - Loot

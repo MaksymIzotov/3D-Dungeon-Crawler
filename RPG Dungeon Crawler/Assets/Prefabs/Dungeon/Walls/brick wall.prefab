@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8937564639274756626}
   - component: {fileID: 4447900652902456000}
   - component: {fileID: 306603701263634846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brick wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 47.5, y: 47.5, z: 33}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5904441508847758216}
   m_Father: {fileID: 0}
@@ -53,6 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -102,6 +104,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 3662309117232562030}
     m_Modifications:
     - target: {fileID: 681787079946873973, guid: 568cf77e57eb88146a521f400fcc7e89, type: 3}
@@ -152,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checker
       objectReference: {fileID: 0}
+    - target: {fileID: 4026089271079778767, guid: 568cf77e57eb88146a521f400fcc7e89, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8484814977664002422, guid: 568cf77e57eb88146a521f400fcc7e89, type: 3}
       propertyPath: m_Center.x
       value: 0
@@ -161,6 +168,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 568cf77e57eb88146a521f400fcc7e89, type: 3}
 --- !u!4 &5904441508847758216 stripped
 Transform:

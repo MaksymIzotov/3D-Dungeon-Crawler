@@ -129,16 +129,7 @@ public class Generator2D : MonoBehaviour {
 
     private void BuildNavMesh()
     {
-        List<NavMeshSurface> navMeshes = new List<NavMeshSurface>();
-        foreach (GameObject n in Instances)
-        {
-            if (n == null) { continue; }
-
-            if (n.GetComponent<NavMeshSurface>() != null)
-                navMeshes.Add(n.GetComponent<NavMeshSurface>());
-        }
-        NavMeshSurface[] surfaces = navMeshes.ToArray();
-        NavMeshBaking.Instance.BuildNavMesh(surfaces);
+        NavMeshBaking.Instance.BuildNavMesh();
     }
 
     void DungeonParentSetup()

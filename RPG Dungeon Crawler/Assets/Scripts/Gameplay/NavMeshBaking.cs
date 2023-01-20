@@ -15,14 +15,11 @@ public class NavMeshBaking : MonoBehaviour
     }
 
     #endregion
+    [SerializeField] GameObject pathfinding;
 
-    public void BuildNavMesh(NavMeshSurface[] surfaces)
+    public void BuildNavMesh()
     {
-        for (int i = 0; i < surfaces.Length; i++)
-        {
-            surfaces[i].BuildNavMesh();
-        }
-
+        pathfinding.GetComponent<AstarPath>().Scan();
         MenuManager.Instance.OpenMenu("gui");
     }
 }

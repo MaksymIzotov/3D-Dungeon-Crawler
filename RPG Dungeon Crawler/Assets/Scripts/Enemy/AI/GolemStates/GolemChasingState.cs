@@ -12,7 +12,7 @@ public class GolemChasingState : EnemyBaseState
     LayerMask ignore;
     public override void EnterState(EnemyStateManager manager)
     {
-        manager.GetComponent<GroundEnemyMovementController>().ChasePlayer();
+        manager.gameObject.GetComponent<EnemyAnimationController>().Chase();
 
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
@@ -24,8 +24,9 @@ public class GolemChasingState : EnemyBaseState
         manager.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is in attack range check
+
         RaycastHit attackHit;
-        if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out attackHit, 2f))
+        if (Physics.Raycast(manager.attackPoint.position, manager.attackPoint.TransformDirection(Vector3.forward), out attackHit, 2f))
         {
             if (attackHit.transform.tag == TAGS.PLAYER_TAG)
             {

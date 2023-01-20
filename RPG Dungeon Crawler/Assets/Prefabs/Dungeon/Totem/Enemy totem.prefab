@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5873399395735512294}
   - component: {fileID: 4180798286524723486}
   - component: {fileID: 8921451171724837731}
-  m_Layer: 13
+  - component: {fileID: 6694401950485316191}
+  m_Layer: 8
   m_Name: Enemy totem
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -152,6 +153,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 69d5c4eb84c962741923119079b64aa8, type: 2}
   lootSpawnPoint: {fileID: 7268031214191174161}
+--- !u!114 &6694401950485316191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920380236388556825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 8733472468292602991
+  updateError: 1
+  checkTime: 1
 --- !u!1 &7077678368999264206
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +181,7 @@ GameObject:
   - component: {fileID: 1942310674252960107}
   - component: {fileID: 2241886893173141919}
   - component: {fileID: 2211625193262346271}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: HintText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7268031214191174161}
-  m_Layer: 13
+  m_Layer: 8
   m_Name: LootSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

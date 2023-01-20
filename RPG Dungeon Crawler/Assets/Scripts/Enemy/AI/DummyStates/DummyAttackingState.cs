@@ -18,7 +18,7 @@ public class DummyAttackingState : EnemyBaseState
         bool isPlayerInRange = false;
 
         RaycastHit hitAttack;
-        if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out hitAttack, 2f))
+        if (Physics.Raycast(manager.attackPoint.position, manager.attackPoint.TransformDirection(Vector3.forward), out hitAttack, 2f))
         {
             if (hitAttack.transform.tag == TAGS.PLAYER_TAG)
             {
