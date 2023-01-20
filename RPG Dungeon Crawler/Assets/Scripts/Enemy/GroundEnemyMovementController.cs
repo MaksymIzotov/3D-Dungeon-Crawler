@@ -23,6 +23,8 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     private void Update()
     {
+        if (GetComponent<EnemyStateManager>().GetCurrentState() == GetComponent<EnemyStateManager>().GroundStompState) { RotateEnemy(); }
+
         if (agent.isStopped) { return; }
 
         RotateEnemy();

@@ -48,6 +48,9 @@ public class FireballController : MonoBehaviour
             {
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, null);
+
+
+                Debug.Log("Damaging " + n.gameObject.name);
             }
             else if(n.tag == TAGS.ENEMY_TAG)
             {
@@ -57,6 +60,8 @@ public class FireballController : MonoBehaviour
                 {
                     GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, 3f, burnDamage);
                 }
+
+                Debug.Log("Damaging " + n.gameObject.name);
             }
         }
 

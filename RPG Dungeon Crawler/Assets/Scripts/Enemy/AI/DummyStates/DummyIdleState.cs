@@ -6,15 +6,13 @@ using UnityEngine;
 public class DummyIdleState : EnemyBaseState
 {
     GameObject player;
-    LayerMask ignore;
+    public LayerMask ignore;
 
     public override void EnterState(EnemyStateManager manager)
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Idle();
 
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
-
-        ignore = LayerMask.GetMask("Enemy");
     }
 
     public override void UpdateState(EnemyStateManager manager)

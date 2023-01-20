@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c827fda77a28a498c385e6ad3377e7, type: 3}
   m_Name: DummyIdleState
   m_EditorClassIdentifier: 
+  ignore:
+    serializedVersion: 2
+    m_Bits: 36352

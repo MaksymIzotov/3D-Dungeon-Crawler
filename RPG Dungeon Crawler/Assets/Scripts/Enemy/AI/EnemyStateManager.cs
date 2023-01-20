@@ -32,4 +32,9 @@ public class EnemyStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
+
+    public EnemyBaseState GetCurrentState()
+    {
+        return currentState;
+    }
 }

@@ -25,7 +25,7 @@ public class EnemyStatesHelper : MonoBehaviour
 
     public void GroundStomp()
     {
-        Vector3 pos = new Vector3(transform.position.x, 0.4f, transform.position.z);
+        Vector3 pos = new Vector3(transform.position.x, 0.2f, transform.position.z);
         Instantiate(GroundStompPrefab, pos, Quaternion.identity);
     }
 

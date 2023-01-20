@@ -32,11 +32,27 @@ public class GroundStompController : MonoBehaviour
         if (isDestroying) { return; }
 
         Move();
+        CollisionCheck();
     }
 
     private void Move()
     {
         transform.position += dir * speed * Time.deltaTime;
+    }
+
+    private void CollisionCheck()
+    {
+        Collider[] objectsNearby = Physics.OverlapSphere(transform.position, 1.5f);
+        foreach (Collider col in objectsNearby)
+        {
+            if (col.tag == TAGS.PLAYER_TAG)
+            {
+                col.gameObject.GetComponent<IDamagable>().TakeDamage(10, null);
+                col.gameObject.GetComponent<PlayerController>().AddImpact(transform, 100);
+                isDestroying = true;
+                Destroy(gameObject, 2);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
