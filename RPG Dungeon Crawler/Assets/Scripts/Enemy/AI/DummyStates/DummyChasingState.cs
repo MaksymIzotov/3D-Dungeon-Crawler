@@ -10,7 +10,7 @@ public class DummyChasingState : EnemyBaseState
     LayerMask ignore;
     public override void EnterState(EnemyStateManager manager)
     {
-        manager.GetComponent<GroundEnemyMovementController>().ChasePlayer();
+        manager.gameObject.GetComponent<EnemyAnimationController>().Chase();
 
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
