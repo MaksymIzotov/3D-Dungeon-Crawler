@@ -22,24 +22,11 @@ public class DummyChasingState : EnemyBaseState
         manager.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is in attack range check
-        RaycastHit attackHit;
-        if (Physics.Raycast(manager.transform.position, manager.transform.TransformDirection(Vector3.forward), out attackHit, 2f))
+        if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange() ||
+            manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            if (attackHit.transform.tag == TAGS.PLAYER_TAG)
-            {
-                manager.GetComponent<GroundEnemyMovementController>().StopAgent();
-                manager.SwitchState(manager.AttackingState);
-            }
-        }
-
-        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 2f);
-        foreach (Collider col in objectsNearby)
-        {
-            if (col.tag == TAGS.PLAYER_TAG)
-            {
-                manager.GetComponent<GroundEnemyMovementController>().StopAgent();
-                manager.SwitchState(manager.AttackingState);
-            }
+            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.SwitchState(manager.AttackingState);
         }
     }
 }

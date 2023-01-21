@@ -12,7 +12,8 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBaseState StunState;
     public EnemyBaseState GroundStompState;
 
-    public Transform attackPoint;
+    public GameObject attackPoint;
+    public GameObject attackPointAbove;
     public Transform eyes;
 
     private void Start()

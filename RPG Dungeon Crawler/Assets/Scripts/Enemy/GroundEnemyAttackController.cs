@@ -7,7 +7,8 @@ public class GroundEnemyAttackController : MonoBehaviour
     public EnemyAttack properties;
 
     public bool isAttacking = false;
-    public Transform attackPoint;
+    public GameObject attackPoint;
+    public GameObject attackPointAbove;
     [SerializeField] private Transform eyes;
     [SerializeField] private bool isAddingImpact;
 
@@ -34,15 +35,13 @@ public class GroundEnemyAttackController : MonoBehaviour
 
     IEnumerator PerformAttackAbove()
     {
+        GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
+
         //Deal damage
-        Collider[] objectsNearby = Physics.OverlapSphere(eyes.position, 2f);
-        foreach (Collider col in objectsNearby)
+        if (attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            if (col.tag == "Player")
-            {
-                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
-                col.GetComponent<PlayerController>().AddImpact(transform, 300);
-            }
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+            player.GetComponent<PlayerController>().AddImpact(transform, 300);
         }
 
         yield return new WaitForSeconds(properties.attackDelay);
@@ -63,17 +62,17 @@ public class GroundEnemyAttackController : MonoBehaviour
 
     IEnumerator PerformAttack()
     {
-        //Deal damage
-        Collider[] objectsNearby = Physics.OverlapSphere(attackPoint.position, 3f);
-        foreach (Collider col in objectsNearby)
-        {
-            if (col.tag == "Player")
-            {
-                col.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+        GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
-                if (isAddingImpact)
-                    col.GetComponent<PlayerController>().AddImpact(transform, 100);
-            }
+        //Deal damage
+        if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
+        {
+
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+
+            if (isAddingImpact)
+                player.GetComponent<PlayerController>().AddImpact(transform, 100);
+
         }
 
         yield return new WaitForSeconds(properties.attackDelay);

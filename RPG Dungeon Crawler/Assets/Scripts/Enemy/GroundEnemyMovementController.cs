@@ -22,6 +22,6 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     public void StopAgent()
     {
-        aiPath.destination = transform.position;
+        //aiPath.destination = transform.position;
     }  
 }

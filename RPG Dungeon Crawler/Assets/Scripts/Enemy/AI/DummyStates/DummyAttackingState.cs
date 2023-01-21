@@ -17,28 +17,18 @@ public class DummyAttackingState : EnemyBaseState
 
         bool isPlayerInRange = false;
 
-        RaycastHit hitAttack;
-        if (Physics.Raycast(manager.attackPoint.position, manager.attackPoint.TransformDirection(Vector3.forward), out hitAttack, 2f))
+        if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            if (hitAttack.transform.tag == TAGS.PLAYER_TAG)
-            {
-                isPlayerInRange = true;
-                manager.gameObject.GetComponent<GroundEnemyAttackController>().Attack();
-            }
+            isPlayerInRange = true;
+            manager.gameObject.GetComponent<GroundEnemyAttackController>().Attack();
         }
 
-        Collider[] objectsNearby = Physics.OverlapSphere(manager.eyes.position, 1f);
-        foreach (Collider col in objectsNearby)
+        if (manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            if (col.tag == TAGS.PLAYER_TAG)
-            {
-                isPlayerInRange = true;
-                manager.gameObject.GetComponent<GroundEnemyAttackController>().AttackAbove();
-            }
+            isPlayerInRange = true;
+            manager.gameObject.GetComponent<GroundEnemyAttackController>().AttackAbove();
         }
 
         if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
-
-        
     }
 }
