@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf0de68c1afcd554999579baff997c74, type: 2}
+  - {fileID: 2100000, guid: 95c6fdb50f927f94cacfbfa8af7c736c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,7 +178,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf0de68c1afcd554999579baff997c74, type: 2}
+  - {fileID: 2100000, guid: 95c6fdb50f927f94cacfbfa8af7c736c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -793,7 +793,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf0de68c1afcd554999579baff997c74, type: 2}
+  - {fileID: 2100000, guid: 95c6fdb50f927f94cacfbfa8af7c736c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -966,7 +966,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf0de68c1afcd554999579baff997c74, type: 2}
+  - {fileID: 2100000, guid: 95c6fdb50f927f94cacfbfa8af7c736c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1032,15 +1032,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c87aca36e117a8946b53fdf86d4bed05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10000001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c87aca36e117a8946b53fdf86d4bed05, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10000004
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c87aca36e117a8946b53fdf86d4bed05, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c87aca36e117a8946b53fdf86d4bed05, type: 3}
       propertyPath: m_LocalPosition.x
