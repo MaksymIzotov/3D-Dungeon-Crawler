@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
   m_Name: EnemiesSpawnSettings
   m_EditorClassIdentifier: 
-  enemiesAmount: 50
-  minDelay: 0.5
-  maxDelay: 1
+  enemiesAmount: 5
+  minDelay: 1
+  maxDelay: 2
   enemies:
   - {fileID: 5194665444346978576, guid: cade3ddc9ee4c334ba70b85efc44088c, type: 3}
   - {fileID: 8815258617298195631, guid: 40cc7edc4c5cbe6489a0fd0dc9a06072, type: 3}
