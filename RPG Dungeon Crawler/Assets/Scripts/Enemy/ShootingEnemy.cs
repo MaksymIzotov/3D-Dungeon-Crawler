@@ -61,13 +61,14 @@ public class ShootingEnemy : MonoBehaviour
 
     IEnumerator PerformPush()
     {
+        Debug.Log("Pushing");
         GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
         //Deal damage
         if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
 
-            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.pushDamage, gameObject);
             player.GetComponent<PlayerController>().AddImpact(transform, 100);
         }
 

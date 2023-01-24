@@ -22,6 +22,15 @@ public class GroundEnemyMovementController : MonoBehaviour
         RotateEnemy();
     }
 
+    private void RotateEnemy()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
+        lookRotation.x = 0;
+        lookRotation.z = 0;
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime);
+    }
+
     public void ChangeDestination()
     {
         aiPath.destination = player.transform.position;
@@ -32,9 +41,4 @@ public class GroundEnemyMovementController : MonoBehaviour
         aiPath.destination = transform.position;
     }
 
-    private void RotateEnemy()
-    {
-        Quaternion lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime);
-    }
 }

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
   m_Name: Golem
   m_EditorClassIdentifier: 
-  attackDelay: 1
+  attackDelayMelee: 1
   damage: 25
-  preAttackTime: 0.4
+  preAttackTimeMelee: 0.4
+  attackDelayShooting: 0
+  preAttackTimeShooting: 0
+  pushDamage: 0
   bullet: {fileID: 0}
