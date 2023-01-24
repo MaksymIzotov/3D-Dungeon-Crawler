@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireballController : MonoBehaviour
 {
     private Rigidbody rb;
+    private bool isColliding;
 
     [SerializeField] private float rotationSpeed;
 
@@ -20,7 +21,6 @@ public class FireballController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * force, ForceMode.Impulse);
 
         Invoke("DestroyObject", 10);
     }
@@ -31,23 +31,34 @@ public class FireballController : MonoBehaviour
         burnDamage = _burnDamage;
     }
 
+    private void FixedUpdate()
+    {
+        rb.MovePosition(transform.position + transform.forward * force * Time.deltaTime);
+    }
+
     private void Update()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
+        isColliding = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Do damage
+        if (isColliding) { return; }
+        isColliding = true;
 
+        //Do damage
+        bool isPlayerHit = false;
         var collidersInRange = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider n in collidersInRange)
         {
             if(n.tag == TAGS.PLAYER_TAG)
             {
+                if (isPlayerHit) { continue; }
+
                 n.gameObject.GetComponent<PlayerController>().AddImpact(transform, explosionForce);
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, null);
+                isPlayerHit = true;
             }
             else if(n.tag == TAGS.ENEMY_TAG)
             {

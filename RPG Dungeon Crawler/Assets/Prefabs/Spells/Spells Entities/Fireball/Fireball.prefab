@@ -4935,7 +4935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 80
-  force: 35
+  force: 40
   explosionForce: 200
   radius: 5
 --- !u!54 &4493648037400725940
