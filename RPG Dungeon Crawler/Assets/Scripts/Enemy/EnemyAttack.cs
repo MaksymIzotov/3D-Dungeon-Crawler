@@ -5,9 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewProperty", menuName = "Properties/Attack", order = 2)]
 public class EnemyAttack : ScriptableObject
 {
-    public float attackDelay;
+    [Header("Melee enemies")]
+    public float attackDelayMelee;
     public float damage;
-    public float preAttackTime;
+    public float preAttackTimeMelee;
 
+    [Space(10)]
+    [Header("Shooting enemies")]
+
+    public float attackDelayShooting;
+    public float preAttackTimeShooting;
+    public float pushDamage;
     public GameObject bullet;
 }

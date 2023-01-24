@@ -44,6 +44,11 @@ public class EnemyAnimationController : MonoBehaviour
         anim.CrossFade("AttackAbove", 0.1f, 0);
     }
 
+    public void PushAway()
+    {
+        anim.CrossFade("Push Away", 0.1f, 0);
+    }
+
     public void Idle()
     {
         anim.CrossFade("Idle", 0.1f, 0);

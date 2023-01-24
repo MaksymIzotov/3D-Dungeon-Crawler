@@ -22,7 +22,7 @@ public class EyeChasingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        manager.gameObject.GetComponent<FlyingEnemyMovement>().ChasePlayer();
+        manager.gameObject.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is out of sight check
         RaycastHit hit;
@@ -33,13 +33,20 @@ public class EyeChasingState : EnemyBaseState
                 manager.SwitchState(manager.IdleState);
         }
 
+        if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange() ||
+           manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
+        {
+            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.SwitchState(manager.AttackingState);
+        }
+
         //If player is in attack range check
         RaycastHit attackHit;
         if (Physics.Raycast(manager.transform.position, rayDirection, out attackHit, shootingRange, ~ignore))
         {
             if (attackHit.transform.tag == "Player")
             {
-                manager.gameObject.GetComponent<FlyingEnemyMovement>().StopAtPosition();
+                manager.gameObject.GetComponent<GroundEnemyMovementController>().StopAgent();
                 manager.SwitchState(manager.AttackingState);
             }
         }

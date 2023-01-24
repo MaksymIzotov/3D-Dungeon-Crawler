@@ -15,20 +15,19 @@ public class DummyAttackingState : EnemyBaseState
     {
         if (manager.gameObject.GetComponent<GroundEnemyAttackController>().isAttacking) { return; }
 
-        bool isPlayerInRange = false;
 
         if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            isPlayerInRange = true;
             manager.gameObject.GetComponent<GroundEnemyAttackController>().Attack();
+            return;
         }
 
         if (manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            isPlayerInRange = true;
             manager.gameObject.GetComponent<GroundEnemyAttackController>().AttackAbove();
+            return;
         }
 
-        if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
+        manager.SwitchState(manager.ChasingState);
     }
 }

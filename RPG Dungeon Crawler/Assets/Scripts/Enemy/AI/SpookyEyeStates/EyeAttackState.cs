@@ -9,7 +9,7 @@ public class EyeAttackState : EnemyBaseState
 
     GameObject player;
 
-    public int layerMask;
+    private int layerMask;
     public override void EnterState(EnemyStateManager manager)
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -20,18 +20,29 @@ public class EyeAttackState : EnemyBaseState
     {
         if (manager.gameObject.GetComponent<ShootingEnemy>().isAttacking) { return; }
 
-        bool isPlayerInRange = false;
+        if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
+        {
+            manager.gameObject.GetComponent<ShootingEnemy>().Push();
+            return;
+        }
+
+        if (manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
+        {
+            manager.gameObject.GetComponent<ShootingEnemy>().AttackAbove();
+            return;
+        }
 
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - manager.transform.position;
         if (Physics.Raycast(manager.transform.position, rayDirection, out hit, shootingRange, ~layerMask))
         {
             if (hit.transform.tag == "Player")
-                isPlayerInRange = true;
+            {
+                manager.gameObject.GetComponent<ShootingEnemy>().Attack();
+                return;
+            }
         }
 
-        if (!isPlayerInRange) { manager.SwitchState(manager.ChasingState); return; }
-
-        manager.gameObject.GetComponent<ShootingEnemy>().Attack();
+        manager.SwitchState(manager.ChasingState);
     }
 }

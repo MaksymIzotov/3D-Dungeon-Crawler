@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
-  m_Name: Spooky Eye
+  m_Name: EnemyWizard
   m_EditorClassIdentifier: 
-  attackDelay: 2
+  attackDelayMelee: 2
   damage: 15
-  preAttackTimeMelee: 0
-  preAttackTimeShooting: 0
-  pushDamage: 0
+  preAttackTimeMelee: 0.25
+  attackDelayShooting: 2
+  preAttackTimeShooting: 0.5
+  pushDamage: 5
   bullet: {fileID: 4940093926140264369, guid: aa5e7904d6515de4293fa9adb1bcc29b, type: 3}

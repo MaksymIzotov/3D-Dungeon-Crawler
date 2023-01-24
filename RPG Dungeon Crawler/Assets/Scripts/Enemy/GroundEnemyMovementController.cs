@@ -15,6 +15,13 @@ public class GroundEnemyMovementController : MonoBehaviour
         aiPath = GetComponent<AIPath>();
     }
 
+    private void Update()
+    {
+        if (aiPath.enableRotation) { return; }
+
+        RotateEnemy();
+    }
+
     public void ChangeDestination()
     {
         aiPath.destination = player.transform.position;
@@ -22,6 +29,12 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     public void StopAgent()
     {
-        //aiPath.destination = transform.position;
-    }  
+        aiPath.destination = transform.position;
+    }
+
+    private void RotateEnemy()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime);
+    }
 }

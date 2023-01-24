@@ -28,7 +28,7 @@ public class GroundEnemyAttackController : MonoBehaviour
 
         GetComponent<EnemyAnimationController>().AttackAbove();
 
-        yield return new WaitForSeconds(properties.preAttackTime);
+        yield return new WaitForSeconds(properties.preAttackTimeMelee);
 
         StartCoroutine(PerformAttackAbove());
     }
@@ -44,7 +44,7 @@ public class GroundEnemyAttackController : MonoBehaviour
             player.GetComponent<PlayerController>().AddImpact(transform, 300);
         }
 
-        yield return new WaitForSeconds(properties.attackDelay);
+        yield return new WaitForSeconds(properties.attackDelayMelee);
 
         isAttacking = false;
     }
@@ -55,7 +55,7 @@ public class GroundEnemyAttackController : MonoBehaviour
 
         GetComponent<EnemyAnimationController>().Attack();
 
-        yield return new WaitForSeconds(properties.preAttackTime);
+        yield return new WaitForSeconds(properties.preAttackTimeMelee);
 
         StartCoroutine(PerformAttack());
     }
@@ -75,7 +75,7 @@ public class GroundEnemyAttackController : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(properties.attackDelay);
+        yield return new WaitForSeconds(properties.attackDelayMelee);
 
         isAttacking = false;
     }
