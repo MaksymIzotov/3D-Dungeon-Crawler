@@ -61,7 +61,6 @@ public class ShootingEnemy : MonoBehaviour
 
     IEnumerator PerformPush()
     {
-        Debug.Log("Pushing");
         GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
         //Deal damage

@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     private Vector3 dir;
 
     private GameObject shooter;
+
+    [SerializeField] private Transform fx;
     private void Start()
     {
         GetDirection();
@@ -19,6 +21,9 @@ public class Bullet : MonoBehaviour
     private void GetDirection()
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        fx.LookAt(player);
+
         dir = player.position - transform.position;
         dir.Normalize();
     }

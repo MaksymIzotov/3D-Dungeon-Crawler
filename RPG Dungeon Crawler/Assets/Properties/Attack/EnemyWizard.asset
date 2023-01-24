@@ -18,4 +18,4 @@ MonoBehaviour:
   attackDelayShooting: 2
   preAttackTimeShooting: 0.5
   pushDamage: 5
-  bullet: {fileID: 4940093926140264369, guid: aa5e7904d6515de4293fa9adb1bcc29b, type: 3}
+  bullet: {fileID: 6380300505573747842, guid: bdec1d2d6f05d2342ae9a20dbcdea8f2, type: 3}
