@@ -2894,6 +2894,7 @@ MonoBehaviour:
   collectedScrollsPurple: 0
   collectedScrollsRed: 0
   collectedCoins: 0
+  collectedCrystals: 0
 --- !u!114 &941879789
 MonoBehaviour:
   m_ObjectHideFlags: 0

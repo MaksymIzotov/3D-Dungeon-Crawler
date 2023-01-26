@@ -13,7 +13,8 @@ public static class ExtensionMethods
         Coin = 0,
         ScrollBlue = 1,
         ScrollPurple = 2,
-        ScrollRed = 3
+        ScrollRed = 3,
+        Crystal = 4
     }
 
     public static int UpgradePriceSetup(int startingPrice, int lvl)

@@ -9,4 +9,5 @@ public class Money : ScriptableObject
     public int amountPurpleScrolls;
     public int amountRedScrolls;
     public int amountCoins;
+    public int amountCrystals;
 }

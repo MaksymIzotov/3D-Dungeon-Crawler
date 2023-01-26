@@ -18,6 +18,7 @@ public class LootInventory : MonoBehaviour
     [HideInInspector] public int collectedScrollsPurple;
     [HideInInspector] public int collectedScrollsRed;
     [HideInInspector] public int collectedCoins;
+    [HideInInspector] public int collectedCrystals;
 
     private void Start()
     {
@@ -50,6 +51,10 @@ public class LootInventory : MonoBehaviour
                 collectedCoins += amount;
                 LootQueue.Instance.AddItemToQueue("Coins", amount);
                 break;
+            case ExtensionMethods.MoneyType.Crystal:
+                collectedCrystals += amount;
+                LootQueue.Instance.AddItemToQueue("Crystal", amount);
+                break;
         }
     }
 
@@ -64,6 +69,7 @@ public class LootInventory : MonoBehaviour
         collectedScrollsPurple = 0;
         collectedScrollsRed = 0;
         collectedCoins = 0;
+        collectedCrystals = 0;
 
         inventory.LevelInventory.Clear();
     }
@@ -74,6 +80,7 @@ public class LootInventory : MonoBehaviour
         inventory.moneyInventory.amountPurpleScrolls += collectedScrollsPurple;
         inventory.moneyInventory.amountRedScrolls += collectedScrollsRed;
         inventory.moneyInventory.amountCoins += collectedCoins;
+        inventory.moneyInventory.amountCrystals += collectedCrystals;
 
         inventory.GlobalInventory.AddRange(inventory.LevelInventory);
     }
