@@ -39,6 +39,9 @@ public class SaveLoad : MonoBehaviour
     private const string SAVE_PURPLESCROLLS = "PurpleScrolls";
     private const string SAVE_REDSCROLLS = "RedScrolls";
 
+    private const string SAVE_DAMAGEMULT = "DamageMult";
+    private const string SAVE_HEALTHMULT = "HealthMult";
+
     [SerializeField] private GameObject newGameButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject newGameButtonWQ;
@@ -161,6 +164,10 @@ public class SaveLoad : MonoBehaviour
         PlayerPrefs.SetInt(SAVE_BLUESCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls);
         PlayerPrefs.SetInt(SAVE_PURPLESCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls);
         PlayerPrefs.SetInt(SAVE_REDSCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls);
+
+        //Save enemy difficulty
+        PlayerPrefs.SetFloat(SAVE_HEALTHMULT, MenuInventoryController.Instance.multipliers.healthMult);
+        PlayerPrefs.SetFloat(SAVE_DAMAGEMULT, MenuInventoryController.Instance.multipliers.damageMult);
     }
 
     public void LoadData()
@@ -253,6 +260,12 @@ public class SaveLoad : MonoBehaviour
                 MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls = PlayerPrefs.GetInt(SAVE_PURPLESCROLLS);
             if (PlayerPrefs.HasKey(SAVE_REDSCROLLS))
                 MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls = PlayerPrefs.GetInt(SAVE_REDSCROLLS);
+
+            //Load enemy difficulty
+            if (PlayerPrefs.HasKey(SAVE_HEALTHMULT))
+                MenuInventoryController.Instance.multipliers.healthMult = PlayerPrefs.GetFloat(SAVE_HEALTHMULT);
+            if (PlayerPrefs.HasKey(SAVE_DAMAGEMULT))
+                MenuInventoryController.Instance.multipliers.damageMult = PlayerPrefs.GetFloat(SAVE_DAMAGEMULT);
         }
     }
 }

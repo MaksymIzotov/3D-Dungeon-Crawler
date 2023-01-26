@@ -2813,6 +2813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1367072d635c1ab408829b695b54a5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStatsMultiplier: {fileID: 11400000, guid: afa919cd537d3644286418265e19a2ff, type: 2}
   onLevelCompleted:
     m_PersistentCalls:
       m_Calls:

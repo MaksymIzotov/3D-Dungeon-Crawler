@@ -1155,6 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1367072d635c1ab408829b695b54a5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStatsMultiplier: {fileID: 0}
   onLevelCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -1687,6 +1688,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec1d2d6f05d2342ae9a20dbcdea8f2, type: 3}
+--- !u!1001 &8080496648677928095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586409, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080496648436586410, guid: db0c1772112391646902a305365fc3fa, type: 3}
+      propertyPath: m_Name
+      value: EnemyHealthBar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: db0c1772112391646902a305365fc3fa, type: 3}
 --- !u!1001 &8815258616125631450
 PrefabInstance:
   m_ObjectHideFlags: 0

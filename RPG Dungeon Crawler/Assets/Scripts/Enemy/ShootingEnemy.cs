@@ -41,7 +41,7 @@ public class ShootingEnemy : MonoBehaviour
     {
         //Shoot projectile
         GameObject bullet = Instantiate(properties.bullet, projectileSpawnpoint.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDamage(properties.damage, gameObject);
+        bullet.GetComponent<Bullet>().SetDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
 
         yield return new WaitForSeconds(properties.attackDelayShooting);
 
@@ -67,7 +67,7 @@ public class ShootingEnemy : MonoBehaviour
         if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
 
-            player.GetComponent<PlayerHealthController>().TakeDamage(properties.pushDamage, gameObject);
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.pushDamage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
             player.GetComponent<PlayerController>().AddImpact(transform, 100);
         }
 
@@ -94,7 +94,7 @@ public class ShootingEnemy : MonoBehaviour
         //Deal damage
         if (attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
             player.GetComponent<PlayerController>().AddImpact(transform, 300);
         }
 

@@ -30,8 +30,10 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     public void HealthRegen()
     {
         if (hp >= maxhp) { return; }
+        if (hpRegen <= 0) { return; }
 
         hp += hpRegen * Time.deltaTime;
+        GetComponent<EnemyHealthbar>().UpdateHealthbarValue(maxhp, hp);
     }
 
 
@@ -42,6 +44,7 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
 
         //Do effects
         DamagePopup.Instance.ShowDamage(actualDamage, transform, damageTextParent);
+        GetComponent<EnemyHealthbar>().UpdateHealthbarValue(maxhp,hp);
 
         if (hp <= 0)
         {
@@ -74,6 +77,9 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
         }
 
         onDeath.Invoke();
+
+        Destroy(transform.Find("FX").gameObject);
+        Destroy(transform.Find("EnemyHealthBar").gameObject);
         Destroy(gameObject, 5);
             
         //Drop?
@@ -87,6 +93,7 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     private void SetValues()
     {
         maxhp = properties.healthPoints;
+        maxhp *= LevelManager.Instance.enemyStatsMultiplier.healthMult;
         hp = maxhp;
         defence = properties.defence;
         hpRegen = properties.healthRegen;

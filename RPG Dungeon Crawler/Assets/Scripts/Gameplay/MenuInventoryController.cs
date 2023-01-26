@@ -15,6 +15,7 @@ public class MenuInventoryController : MonoBehaviour
     #endregion
 
     public CurrentInventory inventory;
+    public EnemyStatsMultiplier multipliers;
 
     public void ClearInventory()
     {

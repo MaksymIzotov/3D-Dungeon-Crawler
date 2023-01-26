@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     #region LevelComlpetion
     private List<GameObject> totems = new List<GameObject>();
+    public EnemyStatsMultiplier enemyStatsMultiplier;
 
     public UnityEvent onLevelCompleted;
     public UnityEvent onLevelLost;
@@ -36,6 +37,13 @@ public class LevelManager : MonoBehaviour
     private void LevelCompleted()
     {
         onLevelCompleted.Invoke();
+        DifficultyIncrease();
+    }
+    
+    public void DifficultyIncrease()
+    {
+        enemyStatsMultiplier.healthMult *= 1.1f;
+        enemyStatsMultiplier.damageMult *= 1.1f;
     }
     #endregion
 

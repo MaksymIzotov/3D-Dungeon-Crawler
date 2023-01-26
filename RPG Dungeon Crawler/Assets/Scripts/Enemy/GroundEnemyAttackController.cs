@@ -40,7 +40,7 @@ public class GroundEnemyAttackController : MonoBehaviour
         //Deal damage
         if (attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
             player.GetComponent<PlayerController>().AddImpact(transform, 300);
         }
 
@@ -68,7 +68,7 @@ public class GroundEnemyAttackController : MonoBehaviour
         if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
 
-            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage, gameObject);
+            player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
 
             if (isAddingImpact)
                 player.GetComponent<PlayerController>().AddImpact(transform, 100);

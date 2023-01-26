@@ -11,7 +11,7 @@ public class LootDropController : MonoBehaviour
     {
         for (int i = 0; i < settings.items.Length; i++)
         {
-            float chance = Random.Range(0, 100);
+            float chance = Random.Range(0f, 100f);
 
             if (chance < settings.items[i].dropChance)
                 Spawn(i);
