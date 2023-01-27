@@ -27,7 +27,7 @@ public class Chestplate : Item
         player.GetComponent<PlayerHealthController>().AddDefence(defence); //Add stats
 
         if (rarity == ItemRarity.Red)
-            player.GetComponent<PlayerPassives>().EnableDamageReturn(returnPercentage); //Add passive
+            player.GetComponent<PlayerPassives>().EnableDamageReturn(returnPercentage, passiveDescription); //Add passive
     }
 
     public override void UpgradeStats()

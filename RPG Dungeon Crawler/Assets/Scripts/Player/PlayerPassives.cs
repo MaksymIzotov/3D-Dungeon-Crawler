@@ -18,10 +18,14 @@ public class PlayerPassives : MonoBehaviour
     private bool isStunOn = false;
     private float stunChance;
 
-    public void EnableBurnDamage(float _burnDamage)
+    public List<PassiveDescription> activePassives = new List<PassiveDescription>();
+
+    public void EnableBurnDamage(float _burnDamage, PassiveDescription passiveDescription)
     {
         isBurnEffect = true;
         burnDamage = _burnDamage;
+
+        activePassives.Add(passiveDescription);
     }
 
     public float GetBurnDamage()
@@ -32,10 +36,12 @@ public class PlayerPassives : MonoBehaviour
             return 0;
     }
 
-    public void EnableDamageReturn(float _returnDamage)
+    public void EnableDamageReturn(float _returnDamage, PassiveDescription passiveDescription)
     {
         isReturnDamage = true;
         returnDamage = _returnDamage;
+
+        activePassives.Add(passiveDescription);
     }
 
     public void ReturnDamage(GameObject enemy, float damage)
@@ -46,10 +52,12 @@ public class PlayerPassives : MonoBehaviour
         enemy.GetComponent<EnemyHealthController>().TakeDamage(returnAmount, gameObject);
     }
 
-    public void EnableBlocking(float chance)
+    public void EnableBlocking(float chance, PassiveDescription passiveDescription)
     {
         isBlockingOn = true;
         blockingChance = chance;
+
+        activePassives.Add(passiveDescription);
     }
 
     public bool TryBlockDamage()
@@ -65,10 +73,12 @@ public class PlayerPassives : MonoBehaviour
         return false;
     }
 
-    public void EnableStun(float chance)
+    public void EnableStun(float chance, PassiveDescription passiveDescription)
     {
         isStunOn = true;
         stunChance = chance;
+
+        activePassives.Add(passiveDescription);
     }
 
     public bool TryStun()

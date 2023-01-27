@@ -27,7 +27,7 @@ public class Shield : Item
         player.GetComponent<PlayerHealthController>().AddDefence(defence); //Add stats
 
         if (rarity == ItemRarity.Red)
-            player.GetComponent<PlayerPassives>().EnableBlocking(blockChance); //Add passive
+            player.GetComponent<PlayerPassives>().EnableBlocking(blockChance, passiveDescription); //Add passive
     }
 
     public override void UpgradeStats()

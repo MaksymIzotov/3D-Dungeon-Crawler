@@ -29,7 +29,7 @@ public class FireStaff : Item
 
         //Add passive
         if (rarity == ItemRarity.Red)
-            player.GetComponent<PlayerPassives>().EnableBurnDamage(burnDamage);
+            player.GetComponent<PlayerPassives>().EnableBurnDamage(burnDamage, passiveDescription);
     }
 
     public override void UpgradeStats()

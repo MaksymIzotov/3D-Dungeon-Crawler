@@ -24,6 +24,7 @@ MonoBehaviour:
   lvl: 1
   maxLvl: 5
   itemReference: {fileID: 11400000}
+  passiveDescription: {fileID: 11400000, guid: 910f349bf459012439b05298d9993db7, type: 2}
   stunChance: 5
   stunChanceAdd: 1
   priceMult: 1.3

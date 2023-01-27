@@ -24,6 +24,7 @@ MonoBehaviour:
   lvl: 6
   maxLvl: 6
   itemReference: {fileID: 11400000}
+  passiveDescription: {fileID: 11400000, guid: 32d655b290f70e448a3fc6f8ad87f698, type: 2}
   defence: 30
   returnPercentage: 20
   defenceAdd: 1

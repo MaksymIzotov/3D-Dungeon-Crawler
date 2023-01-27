@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 
 public class InGameInfoController : MonoBehaviour
 {
-
     public void ToggleOn(InputAction.CallbackContext context)
     {
+        PassiveDescriptionShow.Instance.Toggle(true);
+
         //Showing hints for totems
         List<GameObject> totems = LevelManager.Instance.GetCurrentTotems;
 
@@ -20,6 +21,8 @@ public class InGameInfoController : MonoBehaviour
 
     public void ToggleOff(InputAction.CallbackContext context)
     {
+        PassiveDescriptionShow.Instance.Toggle(false);
+
         //Showing hints for totems
         List<GameObject> totems = LevelManager.Instance.GetCurrentTotems;
 

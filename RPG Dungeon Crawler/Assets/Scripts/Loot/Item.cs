@@ -44,6 +44,10 @@ public class Item : ScriptableObject
     public int maxLvl;
     public Item itemReference;
 
+    [Space(10)]
+    [Header("Description")]
+
+    public PassiveDescription passiveDescription;
     public virtual void ApplyStats(GameObject player)
     {
 

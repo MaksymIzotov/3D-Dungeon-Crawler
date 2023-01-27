@@ -22,7 +22,7 @@ public class Hammer : Item
     public override void ApplyStats(GameObject player)
     {
         //Add passive
-        player.GetComponent<PlayerPassives>().EnableStun(stunChance);
+        player.GetComponent<PlayerPassives>().EnableStun(stunChance, passiveDescription);
     }
 
     public override void UpgradeStats()

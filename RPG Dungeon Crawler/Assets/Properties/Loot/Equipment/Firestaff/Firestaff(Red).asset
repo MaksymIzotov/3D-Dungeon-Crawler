@@ -24,9 +24,7 @@ MonoBehaviour:
   lvl: 5
   maxLvl: 10
   itemReference: {fileID: 11400000}
-  ingameIconPrefab: {fileID: 8280501835035045291, guid: ed5704b87b1df434aaf6a477aef4f6d3, type: 3}
-  menuButtonPrefab: {fileID: 8178082974687345864, guid: 161006cd958c771438db6e5a922e88df, type: 3}
-  cloneButtonPrefab: {fileID: 609964583898655200, guid: f717f232e2a28514a934bc0ee1e0ae19, type: 3}
+  passiveDescription: {fileID: 11400000, guid: 9ed368f0c8ed0ea4a8b42a511240a545, type: 2}
   damageToFireSpells: 58.564003
   burnDamage: 2.8560996
   damageToFireSpellsMult: 1.1
