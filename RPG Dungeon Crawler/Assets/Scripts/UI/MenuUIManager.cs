@@ -36,10 +36,21 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private TMP_Text redScrollsAmount;
 
     [Space(10)]
+    [Header("Boss Menu")]
+
+    [SerializeField] private TMP_Text crystalsAmount;
+    [SerializeField] private int crystalsNeededForBoss;
+
+    [Space(10)]
     [Header("Other")]
 
     [SerializeField] private GameObject itemButtonPrefab;
     [SerializeField] private GameObject spellButtonPrefab;
+
+    public void UpdateCrystalAmount()
+    {
+        crystalsAmount.text = MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals + "/" + crystalsNeededForBoss; 
+    }
 
     public void UpdateMoneyAmount()
     {
