@@ -4274,6 +4274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317777015}
   - component: {fileID: 1317777014}
+  - component: {fileID: 1317777016}
   m_Layer: 0
   m_Name: Pathfinding
   m_TagString: Untagged
@@ -4295,7 +4296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABIIewv9lnGXgIAABsFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2zAM/BUPz23HVmw17i2VHaeHxJ64nVx0YUTI4pgiNXz4lfG/F6SecU4SgcVyF4D0Qbg0FWRW6ZXm7FkxIL9G5IEdqMyAkW+jHvAEJ7pTcssv0OLeOLOFB9GAeaWWK4xPfJlRJVjNswe5Ex48xqCTPFe6XLIdJMpYg+GcCgOY0sr6aomhjxE5NQXn5nnxz9EV3zKQFnSPmkSzG9xkViOdzAQtK2BecV9wN26J8S0AJbppMOMfni1TQnDTiCH2XAWzCa2MQysIYJyiuSDDey2A7wrbHLridZ4bsI0wTc8LrrFHNSv5rerGldTsa20HKpy/52d8H1TVpM9f8rXmXKvyqbt2HDzZgmf7V3rOqLGDzg7Di8/CnTxSsafvAt4KkC9qpZWTbFDrDESLwbkzlxSQeWFWO+jEtsGuuvo6zUk/zWvwf0oEL9+bDB63QoV+RzGeQeNs/qDgsBt+X6I66jX8M/CX7oZL1CQeuTYWUw2p9OLeldMeSpahad6Ls4nSEkK48VGBpMKeN0hjb0d4kxtce5N5pP5z+VzVfgU3JSHc4aNxPchhcqOOYVx+L02hjs9girWzgkvoZfvEC3YqUVLWOzbsSlu2dTqn2aBs5zj7vFwE4skYpiyOIjadRnH8fR7d0XkcxdPZ/C6e3s9JWD8u0SkVm1poYxXnJntyiZvmGf1/ZbTStAr7zjQ9rvilVIOmc5mrbaYB5Lpm6ISDxkvwy2RLxrFFW7CWyzBx8pESobI9sLQjSoPT5clqmvYsKan4QVkfSUkS/h4p8eFulzcaDhyO/vKW7Equ/wFQSwMEFAAACAgAAEgh7Cr9GIttAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKqmaFBqkmKmZFRiomJkZmZrqWRcaKlmZGZiamlsZmJhaVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAEgh7C/2WcZeAgAAGwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAEgh7Cr9GIttAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    dataString: UEsDBBQAAAgIAABIIexEVphjngIAAKMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVFtv2jAU/ivIz9sEKURjbx1Quklt0djUh6UPbnwgFo4d+cKlFf995zghBDopkuNz+fx95xz7nUntKsi9sXMrxYMRwL712K3Ycp2DYJ9654B72PO10Uv5Bqe4Zyl8QUE8xvziXhq0DyjNmRK8lfmtXisK7qMxaLkytpyJNUyM8w7NK64coMsaT9kaTe89tm8SDs36RmvviH85aA/2HDVIRldxg1EdGXSueFmBIMbnhJv+CRj/YqBGNU1M/wuh5UYp6RoyzB+qKPYXP5BUITkKixRIZwFyXfhm0yY+rVYOfEPK8sNUWqxPjci+m7poJXebmteWq0BnJKM0MqpBHz74a74ra8r79th+1OMLmW+QYc6d71S1a55eEg96x9WGvyp4LkA/mrk1QYtObnCQTDv7VtykgJyIeRugJXsyttnVx04Ozp08Rv37iZLla+PB7VKZWOskxT1Y7MsPJBzngmYlqa3E4Y+D33zdHaDGcSet8+hqQDWRezXBUiibxaKRluAnxmqI5kZHBZorf1ggjL9u4ZWvc+yV547TVbnMOt2Aq5RobuOTft3IrnNhdrFdo7obP0NZLYzUfgnc5kUH0RVm9wCueApeSQ1nTeR4xDJOjNb1ALr/pC2DXfG8k+Zh74OFKfc8XgHkhHPSHQ6HJY0ZOihFMxl1EPhfVEHfC5W54Hiuimb2aJAZGi/WFxqEdZDictAZpIM+DEWaJGI4TNL08zi54eM0SYej8U06/Dpm8SpIjVXnalEXrSk7zpA+a9E49YRI71tvbnkV756wfDeXb6XpDIDUK7PMLYB+qhFasWDxEHwhxExIlLkE76WO08feM6ZMvgGRtUBZLOxs7y3PzigZq+TWeLJkbBJfsYyRub1XCwtbCTs6/AR2ZMd/UEsDBBQAAAgIAABIIewDesX3bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jO00FFQSi9KLMgoBooYgjilmSkgdrRSqpmhQapJipmRUYqJiZGZma6lkXGipZmRmYmppbGZiYWlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAABIIexEVphjngIAAKMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAABIIewDesX3bQAAAHgAAAAJACQAAAAAAAAAAAAAAOsCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAowMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4310,7 +4311,7 @@ MonoBehaviour:
   unwalkableNodeDebugSize: 0.2
   logPathResults: 1
   maxNearestNodeDistance: 100
-  scanOnStartup: 1
+  scanOnStartup: 0
   fullGetNearestSearch: 0
   prioritizeGraphs: 0
   prioritizeGraphsLimit: 1
@@ -4357,7 +4358,7 @@ MonoBehaviour:
   - 31
   heuristic: 2
   heuristicScale: 1
-  threadCount: 1
+  threadCount: -2
   maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
@@ -4382,6 +4383,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317777016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317777013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1764de1de43cc4d19af52679d3eaae06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  desiredSimulationFPS: 20
+  workerThreads: -2
+  doubleBuffering: 0
+  symmetryBreakingBias: 0
+  movementPlane: 0
+  drawObstacles: 0
 --- !u!1 &1358125469
 GameObject:
   m_ObjectHideFlags: 0
