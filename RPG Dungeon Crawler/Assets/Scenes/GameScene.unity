@@ -2762,6 +2762,7 @@ GameObject:
   - component: {fileID: 941879788}
   - component: {fileID: 941879789}
   - component: {fileID: 941879790}
+  - component: {fileID: 941879791}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -2993,6 +2994,23 @@ MonoBehaviour:
   positionOff: {fileID: 1585752577}
   speed: 500
   iconPrefab: {fileID: 360115957800756887, guid: d3df5240352239449a95d9332bfdccff, type: 3}
+--- !u!114 &941879791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941879776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09cfdbb9e8729934eaf21fd0dbfe5408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: a1aad64e48d0d1843bc77d30edd7a258, type: 2}
+  startDelay: 5
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 36552
 --- !u!1 &974070081
 GameObject:
   m_ObjectHideFlags: 1
