@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ConstantEnemies
   m_EditorClassIdentifier: 
   enemiesAmount: 5
-  minDelay: 3
-  maxDelay: 10
+  minDelay: 10
+  maxDelay: 60
   enemies:
   - {fileID: 6582798051437936781, guid: 4d212a1ebf798ff4596d1615396ce00e, type: 3}
