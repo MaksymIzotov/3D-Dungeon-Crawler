@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: EnemiesSpawnSettings
+  m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
+  m_Name: Pavuk
   m_EditorClassIdentifier: 
-  enemiesAmount: 1
-  minDelay: 1
-  maxDelay: 2
-  enemies:
-  - {fileID: 6582798051437936781, guid: 4d212a1ebf798ff4596d1615396ce00e, type: 3}
+  attackDelayMelee: 0.75
+  damage: 5
+  preAttackTimeMelee: 0.25
+  attackDelayShooting: 0
+  preAttackTimeShooting: 0
+  pushDamage: 0
+  bullet: {fileID: 0}

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: EnemiesSpawnSettings
+  m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
+  m_Name: PavukHealth
   m_EditorClassIdentifier: 
-  enemiesAmount: 1
-  minDelay: 1
-  maxDelay: 2
-  enemies:
-  - {fileID: 6582798051437936781, guid: 4d212a1ebf798ff4596d1615396ce00e, type: 3}
+  healthPoints: 25
+  defence: 0
+  healthRegen: 1
