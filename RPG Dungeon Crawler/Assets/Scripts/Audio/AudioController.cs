@@ -7,6 +7,6 @@ public class AudioController : MonoBehaviour
 {
     public void PlayAudio(AudioSource audioSource, Audio tracks)
     {
-        audioSource.PlayOneShot(tracks.sounds[Random.Range(0, tracks.sounds.Length)]);
+        audioSource.PlayOneShot(tracks.sounds[Random.Range(0, tracks.sounds.Length)], tracks.volume);
     }
 }

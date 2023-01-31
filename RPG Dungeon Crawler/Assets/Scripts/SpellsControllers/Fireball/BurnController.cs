@@ -10,7 +10,7 @@ public class BurnController : MonoBehaviour
     private void Start()
     {
         var main = GetComponent<ParticleSystem>().main;
-        Destroy(gameObject, main.duration + main.startLifetimeMultiplier);
+        StartCoroutine(DestroyObject(main.duration + main.startLifetimeMultiplier));
         enemy = transform.root.gameObject;
         StartCoroutine(Burn());
     }
@@ -19,10 +19,46 @@ public class BurnController : MonoBehaviour
     {
         while (true)
         {
-            if (enemy.GetComponent<EnemyHealthController>().isDead == true) { Destroy(gameObject); break; }
+            if (enemy.GetComponent<EnemyHealthController>().isDead == true) { StopAndDestroy(1); break; }
 
             enemy.GetComponent<IDamagable>().TakeDamage(burnDamage, null);
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    private IEnumerator DestroyObject(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+
+        StopAndDestroy(1);
+    }
+
+    private void StopAndDestroy(float destroyTime)
+    {
+        var main = GetComponent<ParticleSystem>().main;
+        main.maxParticles = 0;
+
+        ParticleSystem[] particles = GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particle in particles)
+        {
+            var mainChild = particle.main;
+            mainChild.maxParticles = 0;
+        }
+
+        StartCoroutine(StartFade(GetComponent<AudioSource>(), destroyTime, 0));
+        Destroy(gameObject, destroyTime);
+    }
+
+    private IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 }
