@@ -12,6 +12,7 @@ public class InputEventSubscriber : MonoBehaviour
     InteractionController ic;
     InGameInfoController igic;
     PlayerItemController pic;
+    PlayerAudio pa;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class InputEventSubscriber : MonoBehaviour
         ic = GetComponent<InteractionController>();
         igic = GetComponent<InGameInfoController>();
         pic = GetComponent<PlayerItemController>();
+        pa = GetComponent<PlayerAudio>();
     }
 
     private void OnEnable()
@@ -43,6 +45,9 @@ public class InputEventSubscriber : MonoBehaviour
         input.GameControls.Info.started += igic.ToggleOn;
         input.GameControls.Info.canceled += igic.ToggleOff;
 
+        input.GameControls.Movement.started += pa.Walk;
+        input.GameControls.Movement.canceled += pa.StopWalking;
+
         input.GameControls.Enable();
     }
 
@@ -63,6 +68,9 @@ public class InputEventSubscriber : MonoBehaviour
 
         input.GameControls.Info.started -= igic.ToggleOn;
         input.GameControls.Info.canceled -= igic.ToggleOff;
+
+        input.GameControls.Movement.started -= pa.Walk;
+        input.GameControls.Movement.canceled -= pa.StopWalking;
 
         input.GameControls.Disable();
     }
