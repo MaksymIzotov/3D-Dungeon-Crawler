@@ -11,6 +11,7 @@ public class DummyChasingState : EnemyBaseState
     public override void EnterState(EnemyStateManager manager)
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Chase();
+        manager.GetComponent<EnemyAudio>().Walk();
 
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 

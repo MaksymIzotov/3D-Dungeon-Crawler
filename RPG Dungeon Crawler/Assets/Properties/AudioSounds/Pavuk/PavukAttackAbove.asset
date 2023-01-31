@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 560f5034f8224af4195f7520cc3cc40e, type: 3}
-  m_Name: JumpLand
+  m_Name: PavukAttackAbove
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 1bfad52dcf0486e468ea3baea06a9be8, type: 3}
-  volume: 0.3
+  - {fileID: 8300000, guid: 67c0f63c1e15830458065039e4a0ac27, type: 3}
+  volume: 1

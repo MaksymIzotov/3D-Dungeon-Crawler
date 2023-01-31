@@ -11,6 +11,7 @@ public class DummyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateManager manager)
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Idle();
+        manager.GetComponent<EnemyAudio>().Stop();
 
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
     }

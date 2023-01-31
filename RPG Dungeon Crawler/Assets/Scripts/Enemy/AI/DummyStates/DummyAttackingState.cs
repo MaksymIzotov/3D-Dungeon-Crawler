@@ -8,7 +8,7 @@ public class DummyAttackingState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager manager)
     {
-       
+        manager.GetComponent<EnemyAudio>().Stop();
     }
 
     public override void UpdateState(EnemyStateManager manager)
