@@ -65,6 +65,13 @@ public class GameStates : MonoBehaviour
 
                 MenuManager.Instance.OpenMenu("gui");
                 Time.timeScale = 1;
+
+                AudioSource[] sources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+                foreach (AudioSource audioSource in sources)
+                {
+                    audioSource.pitch = Time.timeScale;
+                }
+
                 LevelManager.Instance.StopTime(false);
                 break;
             case STATE.PAUSE:

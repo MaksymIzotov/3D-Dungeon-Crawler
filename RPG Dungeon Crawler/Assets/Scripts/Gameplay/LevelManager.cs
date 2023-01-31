@@ -63,11 +63,25 @@ public class LevelManager : MonoBehaviour
 
     private void TimeSlow()
     {
+        AudioSource[] sources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
         if (Time.timeScale == 0) { return; }
 
-        if (Time.timeScale < 0.01f) { Time.timeScale = 0; }
+        if (Time.timeScale < 0.01f)
+        {
+            Time.timeScale = 0;
+            foreach (AudioSource audioSource in sources)
+            {
+                audioSource.pitch = Time.timeScale;
+            }
+        }
 
         Time.timeScale = Mathf.Lerp(Time.timeScale, 0, 0.07f);
+   
+        foreach(AudioSource audioSource in sources)
+        {
+            audioSource.pitch = Time.timeScale;
+        }
     }
 
     public void StopTime(bool condition)

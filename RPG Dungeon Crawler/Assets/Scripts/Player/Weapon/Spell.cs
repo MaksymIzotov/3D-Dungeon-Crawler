@@ -30,6 +30,10 @@ public class Spell : ScriptableObject
     public int lvl;
     public int maxLvl;
 
+    [Space(10)]
+    [Header("Sounds")]
+    public Audio castAudio;
+
     public virtual void PreCast(Transform spellSpawnpoint)
     {
 

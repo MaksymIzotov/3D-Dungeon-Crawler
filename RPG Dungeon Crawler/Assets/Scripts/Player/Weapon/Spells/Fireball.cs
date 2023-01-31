@@ -26,6 +26,9 @@ public class Fireball : Spell
         //Animation
         GameObject parent = spellSpawnpoint.root.gameObject;
         parent.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.FIREBALL_ANIM);
+
+        //Sound
+        parent.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.GetComponent<AudioSource>(), castAudio);
     }
 
     public override void Cast(Transform spellSpawnpoint)

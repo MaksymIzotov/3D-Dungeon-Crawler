@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Fireball
   scrollType: 0
-  coolDownTime: 2
+  coolDownTime: 0.1
   activateTime: 0.5
   afterActivateTime: 0.25
   icon: {fileID: 21300000, guid: 82d716593c228e240a3edc06d2b12c46, type: 3}
-  buttonPrefab: {fileID: 8782750347074970417, guid: ead1c1ea6818a684ba1af6db258853c3, type: 3}
   spellReference: {fileID: 11400000}
   upgradePrice: 10
   lvl: 1
   maxLvl: 10
+  castAudio: {fileID: 11400000, guid: d1f98dc1148fecc43a4f5581087301c6, type: 2}
   instantiatePrefab: {fileID: 8795123936897416075, guid: fcc444274b3242346a3b36a9fabc2214, type: 3}
   damage: 20
   damageMult: 1.2
