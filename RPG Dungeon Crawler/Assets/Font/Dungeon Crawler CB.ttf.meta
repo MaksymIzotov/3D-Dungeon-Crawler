@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89436675fec402a46abdb9a6f4e686c9
+guid: b24f902eb75147c47b15c067eff79307
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Fipps
+  - Dungeon Crawler CB
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
