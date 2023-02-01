@@ -48,6 +48,10 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private GameObject spellButtonPrefab;
 
     [SerializeField] private Sprite armorSlotIcon;
+    [SerializeField] private Sprite weaponSlotIcon;
+    [SerializeField] private Sprite usableSlotIcon;
+
+    [SerializeField] private Sprite spellSlotIcon;
 
     public void UpdateCrystalAmount()
     {
@@ -71,7 +75,7 @@ public class MenuUIManager : MonoBehaviour
         for (int i = 0; i < currentSpells.Length; i++)
         {
             if (inv[i] == null)
-                currentSpells[i].GetComponent<Image>().sprite = null; //TODO: Add empty spell sprite
+                currentSpells[i].GetComponent<Image>().sprite = spellSlotIcon; 
             else
                 currentSpells[i].GetComponent<Image>().sprite = inv[i].icon;
         }
@@ -117,17 +121,17 @@ public class MenuUIManager : MonoBehaviour
         if (MenuInventoryController.Instance.inventory.weapon != null)
             weaponSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.weapon.icon;
         else
-            weaponSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
+            weaponSlot.GetComponent<Image>().sprite = weaponSlotIcon; 
 
         if (MenuInventoryController.Instance.inventory.armor != null)
             armorSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.armor.icon;
         else
-            armorSlot.GetComponent<Image>().sprite = armorSlotIcon; //TODO: empty slot sprite
+            armorSlot.GetComponent<Image>().sprite = armorSlotIcon; 
 
         if (MenuInventoryController.Instance.inventory.usable != null)
             usableSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.usable.icon;
         else
-            usableSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
+            usableSlot.GetComponent<Image>().sprite = usableSlotIcon; 
     }
 
     public void UpdateItemButtons()
