@@ -47,6 +47,8 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private GameObject itemButtonPrefab;
     [SerializeField] private GameObject spellButtonPrefab;
 
+    [SerializeField] private Sprite armorSlotIcon;
+
     public void UpdateCrystalAmount()
     {
         crystalsAmount.text = MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals + "/" + crystalsNeededForBoss; 
@@ -120,7 +122,7 @@ public class MenuUIManager : MonoBehaviour
         if (MenuInventoryController.Instance.inventory.armor != null)
             armorSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.armor.icon;
         else
-            armorSlot.GetComponent<Image>().sprite = null; //TODO: empty slot sprite
+            armorSlot.GetComponent<Image>().sprite = armorSlotIcon; //TODO: empty slot sprite
 
         if (MenuInventoryController.Instance.inventory.usable != null)
             usableSlot.GetComponent<Image>().sprite = MenuInventoryController.Instance.inventory.usable.icon;
