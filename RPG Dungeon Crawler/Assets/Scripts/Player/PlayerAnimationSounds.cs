@@ -33,6 +33,6 @@ public class PlayerAnimationSounds : MonoBehaviour
 
     private void Healing()
     {
-        source.PlayOneShot(healing, 0.5f);
+        source.PlayOneShot(healing, 0.3f);
     }
 }

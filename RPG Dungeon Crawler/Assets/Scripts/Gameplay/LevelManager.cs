@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class LevelManager : MonoBehaviour
     public UnityEvent onLevelCompleted;
     public UnityEvent onLevelLost;
 
+    private bool isLevelCompleted = false;
+    private float timeToLeave = 10;
+
+    [SerializeField] private GameObject levelExitText;
+
     public void AddTotem(GameObject totem)
     {
         totems.Add(totem);
@@ -31,7 +37,10 @@ public class LevelManager : MonoBehaviour
         totems.Remove(totem);
 
         if (totems.Count == 0)
-            LevelCompleted();
+        {
+            isLevelCompleted = true;
+            levelExitText.SetActive(true);
+        }
     }
 
     private void LevelCompleted()
@@ -101,5 +110,19 @@ public class LevelManager : MonoBehaviour
         if (!isSlow) { return; }
 
         TimeSlow();
+    }
+
+    private void Update()
+    {
+        if (!isLevelCompleted) { return; }
+
+        timeToLeave -= Time.deltaTime;
+        levelExitText.GetComponent<TMP_Text>().text = "Leaving dungeon in " + timeToLeave.ToString("F0");
+
+        if(timeToLeave <= 0)
+        {
+            LevelCompleted();
+            isLevelCompleted = false;
+        }
     }
 }

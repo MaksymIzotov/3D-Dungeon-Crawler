@@ -31,6 +31,8 @@ public class CameraShake : MonoBehaviour
 
 	void Update()
 	{
+		if (GameStates.Instance.state != GameStates.STATE.PLAY) return;
+
 		if (shakeDuration > 0)
 		{
 			float amount = shakeAmount * Mathf.Clamp(shakeDuration * 10, 1, 10);
