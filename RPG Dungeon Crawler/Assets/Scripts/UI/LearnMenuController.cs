@@ -31,16 +31,38 @@ public class LearnMenuController : MonoBehaviour
     [SerializeField] private GameObject purplePriceScrolls;
     [SerializeField] private GameObject redPriceScrolls;
 
+    private List<Spell> allBlueSpells = new List<Spell>();
+    private List<Spell> allPurpleSpells = new List<Spell>();
+    private List<Spell> allRedSpells = new List<Spell>();
 
-    [SerializeField] List<Spell> allBlueSpells;
-    [SerializeField] List<Spell> allPurpleSpells;
-    [SerializeField] List<Spell> allRedSpells;
+    [SerializeField] private AudioClip learnSpellClip;
 
     [SerializeField] private const int learnSpellPrice = 5;
 
-    private void Start()
+    private void OnEnable()
     {
+        SetSpellsLists();
         UpdateSpellLists();
+    }
+
+    private void SetSpellsLists()
+    {
+        allBlueSpells.Clear();
+        allPurpleSpells.Clear();
+        allRedSpells.Clear();
+
+        foreach(Spell spell in MenuInventoryController.Instance.allBlueSpellsReset)
+        {
+            allBlueSpells.Add(spell);
+        }
+        foreach (Spell spell in MenuInventoryController.Instance.allPurpleSpellsReset)
+        {
+            allPurpleSpells.Add(spell);
+        }
+        foreach (Spell spell in MenuInventoryController.Instance.allRedSpellsReset)
+        {
+            allRedSpells.Add(spell);
+        }
     }
 
     private void UpdateSpellLists()
@@ -134,6 +156,7 @@ public class LearnMenuController : MonoBehaviour
 
         MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls -= learnSpellPrice;
 
+        MenuManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(learnSpellClip, 1);
         UpdateScrollsAmount();
         ShowDescription(learnedSpell);
     }
@@ -152,6 +175,7 @@ public class LearnMenuController : MonoBehaviour
 
         MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls -= learnSpellPrice;
 
+        MenuManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(learnSpellClip, 1);
         UpdateScrollsAmount();
         ShowDescription(learnedSpell);
     }
@@ -170,6 +194,7 @@ public class LearnMenuController : MonoBehaviour
 
         MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls -= learnSpellPrice;
 
+        MenuManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(learnSpellClip, 1);
         UpdateScrollsAmount();
         ShowDescription(learnedSpell);
     }

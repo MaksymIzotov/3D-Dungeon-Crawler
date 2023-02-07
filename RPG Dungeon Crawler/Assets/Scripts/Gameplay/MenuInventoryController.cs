@@ -17,6 +17,12 @@ public class MenuInventoryController : MonoBehaviour
     public CurrentInventory inventory;
     public EnemyStatsMultiplier multipliers;
 
+    public List<Spell> allBlueSpellsReset;
+    public List<Spell> allPurpleSpellsReset;
+    public List<Spell> allRedSpellsReset;
+
+    [SerializeField] private AudioClip equipItemClip;
+
     public void ClearInventory()
     {
         foreach (Item item in inventory.AllItemsInTheGame)
@@ -82,13 +88,25 @@ public class MenuInventoryController : MonoBehaviour
             switch (index)
             {
                 case 0:
-                    inventory.weapon = null;
+                    if (inventory.weapon != null)
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
+                        inventory.weapon = null;
+                    }
                     break;
                 case 1:
-                    inventory.armor = null;
+                    if (inventory.armor != null)
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
+                        inventory.armor = null;
+                    }
                     break;
                 case 2:
-                    inventory.usable = null;
+                    if (inventory.usable != null)
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
+                        inventory.usable = null;
+                    }
                     break;
             }
         }
@@ -99,12 +117,15 @@ public class MenuInventoryController : MonoBehaviour
             switch (item.type)
             {
                 case Item.ItemType.Weapon:
+                    GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
                     inventory.weapon = item;
                     break;
                 case Item.ItemType.Armor:
+                    GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
                     inventory.armor = item;
                     break;
                 case Item.ItemType.Usable:
+                    GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
                     inventory.usable = item;
                     break;
             }
