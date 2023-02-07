@@ -13,6 +13,8 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
     private bool isDead;
 
+    [SerializeField] private PlayerHeartbeatSound hbSound;
+
     private void Awake()
     {
         SetValues();
@@ -25,7 +27,7 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
     private void LateUpdate()
     {
-        if (lastHp != hp) { UIManager.Instance.UpdateHealth(hp); }
+        if (lastHp != hp) { UIManager.Instance.UpdateHealth(hp); GetComponent<PlayerHealthbar>().UpdateHealthbarValue(maxhp, hp); hbSound.UpdateAudio(maxhp, hp); }
 
         lastHp = hp;
     }
@@ -35,6 +37,7 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
         if (hp >= maxhp) { return; }
 
         hp += hpRegen * Time.deltaTime;
+        
     }
 
 
