@@ -37,7 +37,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  spellsInventory: []
+  spellsInventory:
+  - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
+  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   usable: {fileID: 0}
   armor: {fileID: 0}
   weapon: {fileID: 0}

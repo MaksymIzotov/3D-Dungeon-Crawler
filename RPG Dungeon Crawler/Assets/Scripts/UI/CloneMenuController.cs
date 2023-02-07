@@ -32,6 +32,8 @@ public class CloneMenuController : MonoBehaviour
 
     [SerializeField] private GameObject itemButtonPrefab;
 
+    [SerializeField] private AudioClip cloneClip;
+
     public void ShowDescription(Item item)
     {
         descriptionParent.SetActive(true);
@@ -131,6 +133,7 @@ public class CloneMenuController : MonoBehaviour
     {
         if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentItem.clonePrice) { return; }
 
+        MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(cloneClip, 1);
         MenuInventoryController.Instance.inventory.GlobalInventory.Add(currentItem);
         MenuInventoryController.Instance.inventory.moneyInventory.amountCoins -= currentItem.clonePrice;
     }

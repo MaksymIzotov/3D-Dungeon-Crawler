@@ -19858,6 +19858,7 @@ MonoBehaviour:
   price: {fileID: 1873541412}
   levelText: {fileID: 1671205980}
   itemButtonPrefab: {fileID: 609964583898655200, guid: 28e8f461e609f6c4f9e582a358172e71, type: 3}
+  cloneClip: {fileID: 8300000, guid: c10b13a7e08b1c74dbf1a9817a8a0039, type: 3}
 --- !u!4 &1211851245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2268278782481629495, guid: 7426e467d46463347b9c0c457929734b, type: 3}
@@ -29614,6 +29615,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1661595940}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c10b13a7e08b1c74dbf1a9817a8a0039, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   text: {fileID: 1888877433}
 --- !u!65 &1608749546
 BoxCollider:
@@ -30273,7 +30286,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.331
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -33065,13 +33078,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1661595935}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: CloseMenu
-        m_Mode: 2
+      - m_Target: {fileID: 28439072}
+        m_TargetAssemblyTypeName: SaveLoad, Assembly-CSharp
+        m_MethodName: LoadData
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2096152849}
-          m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -36729,6 +36742,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1661595940}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0c6037bd395aff64daf0348d7f441cc0, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
