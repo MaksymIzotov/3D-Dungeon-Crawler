@@ -143,10 +143,10 @@ public class LearnMenuController : MonoBehaviour
     }
 
     public void LearnNewSpellBlue()
-    {
-        if (allBlueSpells.Count <= 0) { return; } //Show all spells learned message
+    {      
+        if (allBlueSpells.Count <= 0) { MenuNotification.Instance.ShowMessage("All blue spells are learned"); return; }
 
-        if (MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls < learnSpellPrice) { return; }
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls < learnSpellPrice) { MenuNotification.Instance.ShowMessage("Not enough blue spell scrolls"); return; }
 
         int index = Random.Range(0,allBlueSpells.Count);
 
@@ -162,10 +162,10 @@ public class LearnMenuController : MonoBehaviour
     }
 
     public void LearnNewSpellPurple()
-    {
-        if (allPurpleSpells.Count <= 0) { return; } //Show all spells learned message
+    {        
+        if (allPurpleSpells.Count <= 0) { MenuNotification.Instance.ShowMessage("All purple spells are learned"); return; }
 
-        if (MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls < learnSpellPrice) { return; }
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls < learnSpellPrice) { MenuNotification.Instance.ShowMessage("Not enough purple spell scrolls"); return; }
 
         int index = Random.Range(0, allPurpleSpells.Count);
 
@@ -182,9 +182,9 @@ public class LearnMenuController : MonoBehaviour
 
     public void LearnNewSpellRed()
     {
-        if (allRedSpells.Count <= 0) { return; } //Show all spells learned message
+        if (allRedSpells.Count <= 0) { MenuNotification.Instance.ShowMessage("All red spells are learned"); return; }
 
-        if (MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls < learnSpellPrice) { return; }
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls < learnSpellPrice) { MenuNotification.Instance.ShowMessage("Not enough red spell scrolls"); return; }
 
         int index = Random.Range(0, allRedSpells.Count);
 
