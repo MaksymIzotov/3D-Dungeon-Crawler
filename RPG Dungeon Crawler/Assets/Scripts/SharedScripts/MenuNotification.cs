@@ -21,6 +21,7 @@ public class MenuNotification : MonoBehaviour
     public void ShowMessage(string message)
     {
         GameObject text = Instantiate(messagePrefab, messageParent);
+        text.transform.SetSiblingIndex(messageParent.transform.childCount-2);
 
         text.GetComponent<TMP_Text>().text = message;
     }

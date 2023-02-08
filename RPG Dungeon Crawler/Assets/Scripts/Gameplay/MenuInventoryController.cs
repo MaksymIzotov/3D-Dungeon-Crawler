@@ -22,6 +22,7 @@ public class MenuInventoryController : MonoBehaviour
     public List<Spell> allRedSpellsReset;
 
     [SerializeField] private AudioClip equipItemClip;
+    [SerializeField] private AudioClip equipSpellClip;
 
     public void ClearInventory()
     {
@@ -76,6 +77,7 @@ public class MenuInventoryController : MonoBehaviour
                     inventory.equipedSpells[i] = null;
             }
 
+            MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(equipSpellClip, 1);
             inventory.equipedSpells[spellIndex] = SpellsDescription.Instance.currentSpellDisplayed;
         }
     }

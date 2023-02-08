@@ -28,6 +28,9 @@ public class InventoryDescription : MonoBehaviour
 
     public Item currentLootDisplayed;
 
+    [SerializeField] private AudioClip upgradeClip;
+    [SerializeField] private AudioClip evolveClip;
+
     public void EvolveItem()
     {
         int amount = 0;
@@ -37,7 +40,7 @@ public class InventoryDescription : MonoBehaviour
                 amount++;
         }
 
-        if (currentLootDisplayed.evolvePrice > amount) { return; } //Cant afford
+        if (currentLootDisplayed.evolvePrice > amount) { MenuNotification.Instance.ShowMessage("Not enough items to evolve"); return; } //Cant afford
 
         if (currentLootDisplayed.evolvePrice == amount)
         {
@@ -69,6 +72,8 @@ public class InventoryDescription : MonoBehaviour
             MenuInventoryController.Instance.inventory.GlobalInventory.Remove(currentLootDisplayed);
         }
 
+        MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(evolveClip, 1);
+
         currentLootDisplayed = currentLootDisplayed.evolutionItem;
         MenuInventoryController.Instance.inventory.GlobalInventory.Add(currentLootDisplayed);
 
@@ -79,7 +84,7 @@ public class InventoryDescription : MonoBehaviour
 
     public void UpgradeItem()
     {
-        if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentLootDisplayed.upgradePrice) { return; } // Not enough coins
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentLootDisplayed.upgradePrice) { MenuNotification.Instance.ShowMessage("Not enough coins to upgrade"); return; } // Not enough coins
 
         //Upgrade item
         MenuInventoryController.Instance.inventory.moneyInventory.amountCoins -= currentLootDisplayed.upgradePrice;
@@ -94,6 +99,7 @@ public class InventoryDescription : MonoBehaviour
             }
         }
 
+        MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(upgradeClip, 1);
         UpdateCurrentMoney();
         ShowDescription(currentLootDisplayed);
     }

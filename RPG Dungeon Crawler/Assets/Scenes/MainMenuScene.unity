@@ -782,6 +782,7 @@ MonoBehaviour:
   allPurpleSpellsReset: []
   allRedSpellsReset: []
   equipItemClip: {fileID: 8300000, guid: 2179dd81418ca53418154961c45fdca6, type: 3}
+  equipSpellClip: {fileID: 8300000, guid: c82974b060bde3746bd51e69853dbc79, type: 3}
 --- !u!114 &28439071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8624,6 +8625,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1661595940}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 6c1ffdfc8bf34594987bc005bd906971, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31588,6 +31601,7 @@ MonoBehaviour:
   purpleScrolls: {fileID: 328275533}
   redScrolls: {fileID: 1660467356}
   currentSpellDisplayed: {fileID: 0}
+  upgradeClip: {fileID: 8300000, guid: cd7eefad9201d2c4993d3dc67b6529ce, type: 3}
 --- !u!1 &1740718838
 GameObject:
   m_ObjectHideFlags: 0
@@ -34695,6 +34709,8 @@ MonoBehaviour:
   levelText: {fileID: 385367288}
   moneyAmount: {fileID: 289466091}
   currentLootDisplayed: {fileID: 0}
+  upgradeClip: {fileID: 8300000, guid: 15f6ace904f341a48880e50b79e908be, type: 3}
+  evolveClip: {fileID: 8300000, guid: 2179dd81418ca53418154961c45fdca6, type: 3}
 --- !u!1001 &1980821985
 PrefabInstance:
   m_ObjectHideFlags: 0

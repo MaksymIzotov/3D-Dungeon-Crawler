@@ -131,7 +131,7 @@ public class CloneMenuController : MonoBehaviour
 
     public void CloneItem()
     {
-        if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentItem.clonePrice) { return; }
+        if (MenuInventoryController.Instance.inventory.moneyInventory.amountCoins < currentItem.clonePrice) { MenuNotification.Instance.ShowMessage("Not enough coins to clone"); return; }
 
         MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(cloneClip, 1);
         MenuInventoryController.Instance.inventory.GlobalInventory.Add(currentItem);

@@ -33,22 +33,24 @@ public class SpellsDescription : MonoBehaviour
 
     public Spell currentSpellDisplayed;
 
+    [SerializeField] private AudioClip upgradeClip;
+
     public void UpgradeSpell()
     {
         //Money check and update
         switch (currentSpellDisplayed.scrollType) {
             case Spell.ScrollType.Blue:
-                if (MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls < currentSpellDisplayed.upgradePrice) { return; }
+                if (MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls < currentSpellDisplayed.upgradePrice) { MenuNotification.Instance.ShowMessage("Not enough spell scrolls to upgrade"); return; }
 
                 MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls -= currentSpellDisplayed.upgradePrice;
                 break;
             case Spell.ScrollType.Purple:
-                if (MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls < currentSpellDisplayed.upgradePrice) { return; }
+                if (MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls < currentSpellDisplayed.upgradePrice) { MenuNotification.Instance.ShowMessage("Not enough spell scrolls to upgrade"); return; }
 
                 MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls -= currentSpellDisplayed.upgradePrice;
                 break;
             case Spell.ScrollType.Red:
-                if (MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls < currentSpellDisplayed.upgradePrice) { return; }
+                if (MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls < currentSpellDisplayed.upgradePrice) { MenuNotification.Instance.ShowMessage("Not enough spell scrolls to upgrade"); return; }
 
                 MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls -= currentSpellDisplayed.upgradePrice;
                 break;
@@ -63,6 +65,8 @@ public class SpellsDescription : MonoBehaviour
                 MenuInventoryController.Instance.inventory.spellsInventory[i].spellReference.UpgradeStats();
             }
         }
+
+        MenuUIManager.Instance.gameObject.GetComponent<AudioSource>().PlayOneShot(upgradeClip, 1);
 
         UpdateScrollsAmount();
         ShowDescription(currentSpellDisplayed);
