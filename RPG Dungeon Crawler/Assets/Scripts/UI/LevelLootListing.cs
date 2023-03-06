@@ -27,7 +27,8 @@ public class LevelLootListing : MonoBehaviour
     [SerializeField] private TMP_Text scrollsBlueAmount;
     [SerializeField] private TMP_Text scrollsPurpleAmount;
     [SerializeField] private TMP_Text scrollsRedAmount;
-    [SerializeField] private TMP_Text coinsAmount;
+    [SerializeField] private TMP_Text coinsAmount; 
+    [SerializeField] private TMP_Text crystalsAmount;
 
     [SerializeField] private GameObject inGameButtonPrefab;
 
@@ -45,6 +46,7 @@ public class LevelLootListing : MonoBehaviour
         scrollsPurpleAmount.text = "x" + LootInventory.Instance.collectedScrollsPurple;
         scrollsRedAmount.text = "x" + LootInventory.Instance.collectedScrollsRed;
         coinsAmount.text = "x" + LootInventory.Instance.collectedCoins;
+        crystalsAmount.text = "x" + LootInventory.Instance.collectedCrystals;
     }
 
     private Listing[] UpdateListingItems()
