@@ -2880,6 +2880,7 @@ MonoBehaviour:
   Footsteps: {fileID: 11400000, guid: 0327b1cdcc72e0c41947d403efc3254b, type: 2}
   Attack: {fileID: 0}
   AttackAbove: {fileID: 0}
+  SpecialHit: {fileID: 11400000, guid: b6f77644dbd34eb429258be774f34b18, type: 2}
   isWalkingLooped: 0
 --- !u!1 &8815258617950258684
 GameObject:

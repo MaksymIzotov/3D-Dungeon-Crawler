@@ -7,6 +7,7 @@ public class EnemyAudio : AudioController
     public Audio Footsteps;
     public Audio Attack;
     public Audio AttackAbove;
+    public Audio SpecialHit;
 
     private AudioSource audioSource;
     [SerializeField] private bool isWalkingLooped;
@@ -29,6 +30,11 @@ public class EnemyAudio : AudioController
         {
             PlayAudio(audioSource, Footsteps);
         }
+    }
+
+    public void PlaySpecialHit()
+    {
+        PlayAudio(audioSource, SpecialHit);
     }
 
     public void PlayAttack()
