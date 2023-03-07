@@ -16,7 +16,7 @@ public class GroundStompController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
         dir = FindMovingVector();
 
-        Destroy(gameObject, 5);
+        Invoke("StopBeforeDestroy", 5);
     }
 
     private Vector3 FindMovingVector()
@@ -49,8 +49,7 @@ public class GroundStompController : MonoBehaviour
             {
                 col.gameObject.GetComponent<IDamagable>().TakeDamage(10, null);
                 col.gameObject.GetComponent<PlayerController>().AddImpact(transform, 100);
-                isDestroying = true;
-                Destroy(gameObject, 2);
+                StopBeforeDestroy();
             }
         }
     }
@@ -63,9 +62,15 @@ public class GroundStompController : MonoBehaviour
         {
             collision.gameObject.GetComponent<IDamagable>().TakeDamage(10, null);
             collision.gameObject.GetComponent<PlayerController>().AddImpact(transform,100);
-            isDestroying = true;
-            GetComponent<BoxCollider>().enabled = false;
-            Destroy(gameObject, 2);
+            StopBeforeDestroy();
         }
+    }
+
+    private void StopBeforeDestroy()
+    {
+        isDestroying = true;
+        AudioFader.Instance.Fade(GetComponent<AudioSource>(), 0.3f, 0);
+        GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject, 2);
     }
 }

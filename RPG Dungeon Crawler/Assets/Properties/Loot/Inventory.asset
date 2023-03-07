@@ -29,8 +29,7 @@ MonoBehaviour:
   AllSpellsInTheGame:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
-  GlobalInventory:
-  - {fileID: 11400000, guid: 470753403a794cf4086fef215dea18cc, type: 2}
+  GlobalInventory: []
   LevelInventory: []
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}
   equipedSpells:
@@ -42,5 +41,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   usable: {fileID: 0}
-  armor: {fileID: 11400000, guid: 470753403a794cf4086fef215dea18cc, type: 2}
+  armor: {fileID: 0}
   weapon: {fileID: 0}
