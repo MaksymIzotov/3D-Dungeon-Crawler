@@ -2878,9 +2878,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Footsteps: {fileID: 11400000, guid: 0327b1cdcc72e0c41947d403efc3254b, type: 2}
-  Attack: {fileID: 0}
+  Attack: {fileID: 11400000, guid: 937142357114b424aafb6fae61d3bd05, type: 2}
+  AttackMissed: {fileID: 11400000, guid: 3b41f641e797ec942b6b69c71f70eaa4, type: 2}
   AttackAbove: {fileID: 0}
   SpecialHit: {fileID: 11400000, guid: b6f77644dbd34eb429258be774f34b18, type: 2}
+  attack: {fileID: 8300000, guid: df82295cf42465540963d8274ca03580, type: 3}
   isWalkingLooped: 0
 --- !u!1 &8815258617950258684
 GameObject:

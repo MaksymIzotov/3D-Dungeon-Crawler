@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: EnemiesSpawnSettings
+  m_Script: {fileID: 11500000, guid: 560f5034f8224af4195f7520cc3cc40e, type: 3}
+  m_Name: PavukAttackMiss
   m_EditorClassIdentifier: 
-  enemiesAmount: 1
-  minDelay: 1
-  maxDelay: 2
-  enemies:
-  - {fileID: 8815258617298195631, guid: 40cc7edc4c5cbe6489a0fd0dc9a06072, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: a2cd48294ff2d724da01772a17984e62, type: 3}
+  volume: 1

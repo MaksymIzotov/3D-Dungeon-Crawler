@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560f5034f8224af4195f7520cc3cc40e, type: 3}
+  m_Name: GolemAttack
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: df82295cf42465540963d8274ca03580, type: 3}
+  - {fileID: 8300000, guid: 40171504f5c0a764cbb9f1f13d148bef, type: 3}
+  - {fileID: 8300000, guid: e2be2e5ec6b1f8b41b02cdd0920a8c7e, type: 3}
+  volume: 1

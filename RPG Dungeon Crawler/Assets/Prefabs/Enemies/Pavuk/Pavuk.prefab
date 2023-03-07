@@ -708,7 +708,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Footsteps: {fileID: 11400000, guid: 1e8ae4697e607cf4fb2c3b08dcbfe013, type: 2}
   Attack: {fileID: 11400000, guid: c07d3f9bc39a26f4e8f4239c9e79cff6, type: 2}
+  AttackMissed: {fileID: 11400000, guid: 3d3755c1067a675419d706a27238b1b8, type: 2}
   AttackAbove: {fileID: 11400000, guid: 7ed300d1161402741bb69d1d3fefb28e, type: 2}
+  SpecialHit: {fileID: 0}
   isWalkingLooped: 1
 --- !u!1 &6582798051828313735
 GameObject:

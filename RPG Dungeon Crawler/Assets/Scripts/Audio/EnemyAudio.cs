@@ -6,6 +6,7 @@ public class EnemyAudio : AudioController
 {
     public Audio Footsteps;
     public Audio Attack;
+    public Audio AttackMissed;
     public Audio AttackAbove;
     public Audio SpecialHit;
 
@@ -19,10 +20,9 @@ public class EnemyAudio : AudioController
 
     public void Walk()
     {
-        audioSource.loop = true;
-
         if (isWalkingLooped)
         {
+            audioSource.loop = true;
             audioSource.clip = Footsteps.sounds[0];   
             audioSource.Play();
         }
@@ -40,6 +40,11 @@ public class EnemyAudio : AudioController
     public void PlayAttack()
     {
         PlayAudio(audioSource, Attack);
+    }
+
+    public void PlayAttackMissed()
+    {
+        PlayAudio(audioSource, AttackMissed);
     }
 
     public void PlayAttackAbove()

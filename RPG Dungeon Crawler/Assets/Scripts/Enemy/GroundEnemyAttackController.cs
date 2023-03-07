@@ -37,6 +37,8 @@ public class GroundEnemyAttackController : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
+        GetComponent<EnemyAudio>().PlayAttackAbove();
+
         //Deal damage
         if (attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
@@ -67,12 +69,17 @@ public class GroundEnemyAttackController : MonoBehaviour
         //Deal damage
         if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
+            GetComponent<EnemyAudio>().PlayAttack();
 
             player.GetComponent<PlayerHealthController>().TakeDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
 
             if (isAddingImpact)
                 player.GetComponent<PlayerController>().AddImpact(transform, 100);
 
+        }
+        else
+        {
+            GetComponent<EnemyAudio>().PlayAttackMissed();
         }
 
         yield return new WaitForSeconds(properties.attackDelayMelee);
