@@ -6,6 +6,7 @@ public class EnemyStateManager : MonoBehaviour
 {
     EnemyBaseState currentState;
 
+    public EnemyBaseState SpawnState;
     public EnemyBaseState IdleState;
     public EnemyBaseState ChasingState;
     public EnemyBaseState AttackingState;
@@ -18,9 +19,9 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Start()
     {
-        currentState = IdleState;
+        currentState = SpawnState;
 
-        IdleState.EnterState(this);
+        SpawnState.EnterState(this);
     }
 
     private void Update()

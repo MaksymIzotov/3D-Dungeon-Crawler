@@ -2593,6 +2593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7bd5dbdbcea04498368ee6b2fd759f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnState: {fileID: 11400000, guid: ae8c0296974c07145815cd6ca108c177, type: 2}
   IdleState: {fileID: 11400000, guid: 2035920836834554794e1a8b405f947a, type: 2}
   ChasingState: {fileID: 11400000, guid: d23b6c3b763a89842a010c98ae24b3fe, type: 2}
   AttackingState: {fileID: 11400000, guid: 45b5c3f86e97f4b49ac00b4ff2a1409c, type: 2}
@@ -2882,7 +2883,6 @@ MonoBehaviour:
   AttackMissed: {fileID: 11400000, guid: 3b41f641e797ec942b6b69c71f70eaa4, type: 2}
   AttackAbove: {fileID: 0}
   SpecialHit: {fileID: 11400000, guid: b6f77644dbd34eb429258be774f34b18, type: 2}
-  attack: {fileID: 8300000, guid: df82295cf42465540963d8274ca03580, type: 3}
   isWalkingLooped: 0
 --- !u!1 &8815258617950258684
 GameObject:

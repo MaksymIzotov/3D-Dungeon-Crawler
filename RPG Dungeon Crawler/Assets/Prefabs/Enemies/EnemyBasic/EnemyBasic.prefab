@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7bd5dbdbcea04498368ee6b2fd759f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnState: {fileID: 11400000, guid: ae8c0296974c07145815cd6ca108c177, type: 2}
   IdleState: {fileID: 11400000, guid: 2035920836834554794e1a8b405f947a, type: 2}
   ChasingState: {fileID: 11400000, guid: 8117fc62394abb3468a3900ed74be9ae, type: 2}
   AttackingState: {fileID: 11400000, guid: 45b5c3f86e97f4b49ac00b4ff2a1409c, type: 2}
