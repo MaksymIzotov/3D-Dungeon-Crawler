@@ -54,6 +54,7 @@ MonoBehaviour:
   amountMin: 1
   amountMax: 5
   speed: 15
+  pickupSound: {fileID: 8300000, guid: 2179dd81418ca53418154961c45fdca6, type: 3}
 --- !u!65 &3940800866212260766
 BoxCollider:
   m_ObjectHideFlags: 0

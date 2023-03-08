@@ -16,6 +16,7 @@ public class LootCollecting : MonoBehaviour
     [Space(10)]
 
     [SerializeField] private float speed = 15f;
+    [SerializeField] private AudioClip pickupSound;
 
     private bool isNear = false;
     private Transform player;
@@ -41,6 +42,8 @@ public class LootCollecting : MonoBehaviour
     private void PickupItem()
     {
         int amount = Random.Range(amountMin, amountMax);
+
+        InGameSoundFX.Instance.PlaySoundFX(pickupSound);
 
         if (info != null)
             player.GetComponent<ItemPickup>().PickupItem(info);

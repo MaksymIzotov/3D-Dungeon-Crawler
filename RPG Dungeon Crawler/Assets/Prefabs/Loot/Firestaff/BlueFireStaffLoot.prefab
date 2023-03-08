@@ -295,6 +295,7 @@ MonoBehaviour:
   amountMin: 0
   amountMax: 0
   speed: 15
+  pickupSound: {fileID: 8300000, guid: 2179dd81418ca53418154961c45fdca6, type: 3}
 --- !u!1001 &5916157966982513454
 PrefabInstance:
   m_ObjectHideFlags: 0

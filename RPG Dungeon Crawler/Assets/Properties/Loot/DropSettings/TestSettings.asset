@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - prefab: {fileID: 5719627657043409983, guid: 2f0fc0356348f4b489e35c4f9c8497cf, type: 3}
-    dropChance: 5
+    dropChance: 50
   - prefab: {fileID: 5719627657043409983, guid: 1905030fa7f85114290325746ebe7042, type: 3}
-    dropChance: 0.5
+    dropChance: 50
   - prefab: {fileID: 5111467396007295822, guid: 6f9d377099fc7794ab12cca7fddf2c58, type: 3}
-    dropChance: 1
+    dropChance: 50
   - prefab: {fileID: 4809424025701705063, guid: 2c8926b5e5f57754ba9bad94a7f332e2, type: 3}
-    dropChance: 2
+    dropChance: 50
   - prefab: {fileID: 5546454407057139743, guid: 34300de8781c9704b9d5c4d27865e7a9, type: 3}
-    dropChance: 15
+    dropChance: 50
   - prefab: {fileID: 1800378508729787462, guid: 98eaa5881d1dac8478c92a6efa727195, type: 3}
-    dropChance: 12
+    dropChance: 50
   - prefab: {fileID: 1800378508729787462, guid: f12163ac3249ca54082edc820d4cb3ba, type: 3}
-    dropChance: 3
+    dropChance: 50
   - prefab: {fileID: 1800378508729787462, guid: 4640ce8e0a218bc43826d6128f4f0fa5, type: 3}
-    dropChance: 1
+    dropChance: 50
   - prefab: {fileID: 3366979449212885380, guid: 5ca030656468ac64198da81f0f1cc637, type: 3}
-    dropChance: 10
+    dropChance: 50
   - prefab: {fileID: 7534031361520244703, guid: 910f25a357afe76438f2dea6db694013, type: 3}
-    dropChance: 4
+    dropChance: 50
   - prefab: {fileID: 7534031361520244703, guid: 33b4f6094093cc14fba9666573289a5e, type: 3}
-    dropChance: 0.3
+    dropChance: 50
   - prefab: {fileID: 5819736392669314391, guid: 9b4709b45ac134040b43bdfcb47ce640, type: 3}
-    dropChance: 1
+    dropChance: 50
