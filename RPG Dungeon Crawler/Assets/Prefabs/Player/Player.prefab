@@ -1918,7 +1918,7 @@ AudioSource:
   m_GameObject: {fileID: 8343720365593428812}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1baf687816943044299afbc70baa34d0, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2020,6 +2020,7 @@ MonoBehaviour:
   swallow: {fileID: 8300000, guid: 3ac68e3543372e04794592a5f60e789f, type: 3}
   potionOpen: {fileID: 8300000, guid: aca65685a6253114badc7e086a1f0237, type: 3}
   healing: {fileID: 8300000, guid: fc7f95dc280b82546bd8c0978dc6bb66, type: 3}
+  fireball: {fileID: 8300000, guid: bd460c4b63a363543b5bf2aecef79bc2, type: 3}
 --- !u!4 &8717048261857885471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247673242362073499, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}

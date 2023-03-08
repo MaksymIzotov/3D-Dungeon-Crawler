@@ -16,6 +16,11 @@ public class PlayerAnimationSounds : MonoBehaviour
 
     [SerializeField] private AudioClip healing;
 
+    [Space(10)]
+    [Header("Fireball")]
+
+    [SerializeField] private AudioClip fireball;
+
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -34,5 +39,10 @@ public class PlayerAnimationSounds : MonoBehaviour
     private void Healing()
     {
         source.PlayOneShot(healing, 0.3f);
+    }
+
+    private void Fireball()
+    {
+        source.PlayOneShot(fireball, 0.3f);
     }
 }

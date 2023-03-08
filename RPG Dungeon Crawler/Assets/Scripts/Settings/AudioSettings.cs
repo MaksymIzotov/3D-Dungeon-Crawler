@@ -19,16 +19,29 @@ public class AudioSettings : MonoBehaviour
 
     public void LoadSettingsMenu()
     {
-
+        if (PlayerPrefs.HasKey("Volume"))
+            volumeSlider.value = PlayerPrefs.GetFloat("Volume");
+        else
+            volumeSlider.value = 0;
     }
 
     public void SaveSettings()
     {
         audioMixer.SetFloat("Volume", volumeSlider.value);
+
+        SavePrefs();
+    }
+
+    private void SavePrefs()
+    {
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
     }
 
     public void LoadData()
     {
-
+        if (PlayerPrefs.HasKey("Volume"))
+            audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("Volume"));
+        else
+            audioMixer.SetFloat("Volume", 0);
     }
 }
