@@ -17,3 +17,5 @@ MonoBehaviour:
   maxDelay: 2
   enemies:
   - {fileID: 8815258617298195631, guid: 40cc7edc4c5cbe6489a0fd0dc9a06072, type: 3}
+  - {fileID: 5194665444346978576, guid: cade3ddc9ee4c334ba70b85efc44088c, type: 3}
+  - {fileID: 5194665444346978576, guid: a45f7a50f455a9849a2ff4f385e1915a, type: 3}

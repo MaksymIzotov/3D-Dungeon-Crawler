@@ -70,7 +70,6 @@ public class GroundStompController : MonoBehaviour
     {
         isDestroying = true;
         AudioFader.Instance.Fade(GetComponent<AudioSource>(), 0.3f, 0);
-        GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 2);
     }
 }
