@@ -23,29 +23,6 @@ public class VideoSettings : MonoBehaviour
     private void Start()
     {
         volume.profile.TryGet(out brightness);
-
-        Setup();
-    }
-
-    private void Setup()
-    {
-        if (PlayerPrefs.HasKey("BrightnessPreference"))
-        {
-            brightness.postExposure.value = PlayerPrefs.GetFloat("BrightnessPreference");
-        }
-        else
-        {
-            brightness.postExposure.value = 1;
-        }
-
-        if (PlayerPrefs.HasKey("ContrastPreference"))
-        {
-            brightness.contrast.value = PlayerPrefs.GetFloat("ContrastPreference");
-        }
-        else
-        {
-            brightness.contrast.value = 0;
-        }
     }
 
     public void SetBrightness()

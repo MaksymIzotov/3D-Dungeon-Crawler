@@ -12,9 +12,9 @@ public class SpawnState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        manager.transform.localScale = Vector3.Lerp(manager.transform.localScale, Vector3.one, 2*Time.deltaTime);
+        manager.transform.localScale = Vector3.Lerp(manager.transform.localScale, Vector3.one, 2.5f*Time.deltaTime);
 
-        if(Vector3.Distance(manager.transform.localScale, Vector3.one) < 0.1f)
+        if(Vector3.Distance(manager.transform.localScale, Vector3.one) < 0.05f)
         {
             manager.transform.localScale = Vector3.one;
             manager.SwitchState(manager.IdleState);
