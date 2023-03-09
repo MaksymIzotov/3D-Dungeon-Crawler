@@ -24,6 +24,8 @@ public class AudioFader : MonoBehaviour
         float start = audioSource.volume;
         while (currentTime < duration)
         {
+            if(audioSource == null) yield return null;
+
             currentTime += Time.deltaTime;
             audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;

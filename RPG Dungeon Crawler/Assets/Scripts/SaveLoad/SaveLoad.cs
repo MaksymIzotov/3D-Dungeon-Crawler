@@ -38,6 +38,7 @@ public class SaveLoad : MonoBehaviour
     private const string SAVE_BLUESCROLLS = "BlueScrolls";
     private const string SAVE_PURPLESCROLLS = "PurpleScrolls";
     private const string SAVE_REDSCROLLS = "RedScrolls";
+    private const string SAVE_CRYSTALS = "Crystals";
 
     private const string SAVE_DAMAGEMULT = "DamageMult";
     private const string SAVE_HEALTHMULT = "HealthMult";
@@ -164,6 +165,7 @@ public class SaveLoad : MonoBehaviour
         PlayerPrefs.SetInt(SAVE_BLUESCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountBlueScrolls);
         PlayerPrefs.SetInt(SAVE_PURPLESCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls);
         PlayerPrefs.SetInt(SAVE_REDSCROLLS, MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls);
+        PlayerPrefs.SetInt(SAVE_CRYSTALS, MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals);
 
         //Save enemy difficulty
         PlayerPrefs.SetFloat(SAVE_HEALTHMULT, MenuInventoryController.Instance.multipliers.healthMult);
@@ -260,6 +262,8 @@ public class SaveLoad : MonoBehaviour
                 MenuInventoryController.Instance.inventory.moneyInventory.amountPurpleScrolls = PlayerPrefs.GetInt(SAVE_PURPLESCROLLS);
             if (PlayerPrefs.HasKey(SAVE_REDSCROLLS))
                 MenuInventoryController.Instance.inventory.moneyInventory.amountRedScrolls = PlayerPrefs.GetInt(SAVE_REDSCROLLS);
+            if (PlayerPrefs.HasKey(SAVE_CRYSTALS))
+                MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals = PlayerPrefs.GetInt(SAVE_CRYSTALS);
 
             //Load enemy difficulty
             if (PlayerPrefs.HasKey(SAVE_HEALTHMULT))
