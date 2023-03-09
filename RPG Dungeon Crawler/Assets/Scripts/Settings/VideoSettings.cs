@@ -4,20 +4,69 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class VideoSettings : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private TMP_Dropdown qualityDropdown;
     [SerializeField] private Toggle isFullscreenToggle;
+    [SerializeField] private Slider brightnessSlider;
+    [SerializeField] private Slider contrastSlider;
+
+    [SerializeField] private Volume volume;
+    private ColorAdjustments brightness;
 
     Resolution[] resolutions;
+
+    private void Start()
+    {
+        volume.profile.TryGet(out brightness);
+
+        Setup();
+    }
+
+    private void Setup()
+    {
+        if (PlayerPrefs.HasKey("BrightnessPreference"))
+        {
+            brightness.postExposure.value = PlayerPrefs.GetFloat("BrightnessPreference");
+        }
+        else
+        {
+            brightness.postExposure.value = 1;
+        }
+
+        if (PlayerPrefs.HasKey("ContrastPreference"))
+        {
+            brightness.contrast.value = PlayerPrefs.GetFloat("ContrastPreference");
+        }
+        else
+        {
+            brightness.contrast.value = 0;
+        }
+    }
+
+    public void SetBrightness()
+    {
+        brightness.postExposure.value = brightnessSlider.value;
+
+        PlayerPrefs.SetFloat("BrightnessPreference", brightnessSlider.value);
+    }
+
+    public void SetContrast()
+    {
+        brightness.contrast.value = contrastSlider.value;
+
+        PlayerPrefs.SetFloat("ContrastPreference", contrastSlider.value);
+    }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
 
-        SaveSettings();
+        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
     }
 
     public void SetResolution(int resolutionIndex)
@@ -25,7 +74,7 @@ public class VideoSettings : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
-        SaveSettings();
+        PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 
     public void SetQuality(int qualityIndex)
@@ -33,16 +82,7 @@ public class VideoSettings : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex, false);
         qualityDropdown.value = qualityIndex;
 
-        SaveSettings();
-    }
-
-    public void SaveSettings()
-    {
         PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
-        PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
-        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
-
-        PlayerPrefs.Save();
     }
 
     public void LoadSettings(int currentResolutionIndex)
@@ -55,6 +95,7 @@ public class VideoSettings : MonoBehaviour
         {
             qualityDropdown.SetValueWithoutNotify(1);
         }
+
         if (PlayerPrefs.HasKey("ResolutionPreference"))
         {
             resolutionDropdown.SetValueWithoutNotify(PlayerPrefs.GetInt("ResolutionPreference"));
@@ -63,6 +104,7 @@ public class VideoSettings : MonoBehaviour
         {
             resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
         }
+
         if (PlayerPrefs.HasKey("FullscreenPreference"))
         {
             isFullscreenToggle.SetIsOnWithoutNotify(Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference")));
@@ -70,6 +112,24 @@ public class VideoSettings : MonoBehaviour
         else
         {
             isFullscreenToggle.SetIsOnWithoutNotify(true);
+        }
+
+        if (PlayerPrefs.HasKey("BrightnessPreference"))
+        {
+            brightnessSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat("BrightnessPreference"));
+        }
+        else
+        {
+            brightnessSlider.SetValueWithoutNotify(1);
+        }
+
+        if (PlayerPrefs.HasKey("ContrastPreference"))
+        {
+            contrastSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat("ContrastPreference"));
+        }
+        else
+        {
+            contrastSlider.SetValueWithoutNotify(0);
         }
     }
 
