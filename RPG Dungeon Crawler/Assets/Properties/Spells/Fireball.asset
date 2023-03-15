@@ -15,7 +15,7 @@ MonoBehaviour:
   spellName: Fireball
   scrollType: 0
   isDamage: 1
-  coolDownTime: 0.1
+  coolDownTime: 2
   activateTime: 0.5
   afterActivateTime: 0.25
   icon: {fileID: 21300000, guid: 82d716593c228e240a3edc06d2b12c46, type: 3}

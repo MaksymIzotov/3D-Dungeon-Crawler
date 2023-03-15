@@ -13,6 +13,9 @@ public class SkillsIconManager : MonoBehaviour
     [SerializeField] private Image usableImage;
     [SerializeField] private TMP_Text usableAmount;
 
+    [SerializeField] private Sprite emptySpellSlot;
+    [SerializeField] private Sprite emptyUsableSlot;
+
     private void Awake()
     {
         Instance = this;
@@ -22,7 +25,15 @@ public class SkillsIconManager : MonoBehaviour
     {
         for (int i = 0; i < spells.Length; i++)
         {
-            if (spells[i] == null) { skillsIcons[i].gameObject.SetActive(false); continue; }
+            if (spells[i] == null)
+            {
+                skillsIcons[i].sprite = emptySpellSlot;
+                foreach (Transform child in skillsIcons[i].transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+                continue;
+            }
 
             skillsIcons[i].sprite = spells[i].icon;
         }
@@ -30,7 +41,16 @@ public class SkillsIconManager : MonoBehaviour
 
     public void SetupUsable(Item item, out int itemAmount)
     {
-        if (item == null) { usableImage.gameObject.SetActive(false); itemAmount = 0; return; }
+        if (item == null)
+        {
+            usableImage.sprite = emptyUsableSlot;
+            foreach (Transform child in usableImage.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            itemAmount = 0;
+            return;
+        }
 
         usableImage.sprite = item.icon;
 
