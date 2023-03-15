@@ -13,6 +13,7 @@ public class Spell : ScriptableObject
     [Header("Main Properties")]
     public string spellName;
     public ScrollType scrollType;
+    public bool isDamage;
 
     public float coolDownTime;
     public float activateTime;

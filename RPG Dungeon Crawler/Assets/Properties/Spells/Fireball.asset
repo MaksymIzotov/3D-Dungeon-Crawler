@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Fireball
   scrollType: 0
+  isDamage: 1
   coolDownTime: 0.1
   activateTime: 0.5
   afterActivateTime: 0.25

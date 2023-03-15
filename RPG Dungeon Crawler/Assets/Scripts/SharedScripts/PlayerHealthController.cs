@@ -79,7 +79,6 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
         isDead = true;
 
-        //GetComponent<LootInventory>().TransferToGlobal();
         LevelManager.Instance.onLevelLost.Invoke();
     }
 

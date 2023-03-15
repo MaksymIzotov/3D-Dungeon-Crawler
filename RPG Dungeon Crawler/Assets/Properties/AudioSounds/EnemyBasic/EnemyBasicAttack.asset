@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560f5034f8224af4195f7520cc3cc40e, type: 3}
   m_Name: EnemyBasicAttack
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - {fileID: 8300000, guid: 3f6d871984e448c4b9921af507733113, type: 3}
+  - {fileID: 8300000, guid: f4de7904c0e4f8c4aa33347838440042, type: 3}
+  - {fileID: 8300000, guid: 17ad13d7cc6ea6f48bd54accf5eded61, type: 3}
   volume: 1

@@ -11,7 +11,7 @@ public class DamageTextController : MonoBehaviour
     GameObject player;
     TMP_Text text;
 
-    Color transparent = new Color(0,0,0,0);
+    Color transparent = new Color(0, 0, 0, 0);
     public float colorChangeStep;
 
     // Start is called before the first frame update
