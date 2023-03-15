@@ -25,14 +25,16 @@ public class Dash : Spell
 
     public override void Cast(Transform spellSpawnpoint)
     {
+        spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), castAudio);
+
         spellSpawnpoint.root.GetComponent<CharacterController>().enabled = false;
 
         RaycastHit hit;
         if (Physics.Raycast(spellSpawnpoint.root.position, spellSpawnpoint.root.forward, out hit, distance, ~goThroughLayer))
         {
-            float dist = Vector3.Distance(spellSpawnpoint.transform.root.position, hit.transform.position);
-            Vector3 newPos = spellSpawnpoint.transform.root.position + (spellSpawnpoint.transform.root.forward * (dist-2));
-            spellSpawnpoint.root.position = newPos;
+            float dist = Vector3.Distance(spellSpawnpoint.transform.root.position, hit.point);
+            Vector3 newPos = spellSpawnpoint.transform.root.position + (spellSpawnpoint.transform.root.forward * (dist-0.5f));
+            spellSpawnpoint.root.position = new Vector3(newPos.x, spellSpawnpoint.transform.root.position.y, newPos.z);
         }
         else
         {
