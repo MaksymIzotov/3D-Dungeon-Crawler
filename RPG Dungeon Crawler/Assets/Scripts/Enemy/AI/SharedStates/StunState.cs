@@ -13,6 +13,7 @@ public class StunState : EnemyBaseState
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Idle();
         manager.gameObject.GetComponent<EnemyStatesHelper>().Stun(stunDuration);
+        manager.gameObject.GetComponent<EnemyAudio>().Stop();
         manager.GetComponent<GroundEnemyMovementController>().StopAgent();
 
         //Add FX

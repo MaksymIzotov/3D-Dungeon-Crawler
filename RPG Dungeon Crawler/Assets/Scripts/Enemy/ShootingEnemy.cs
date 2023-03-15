@@ -43,6 +43,8 @@ public class ShootingEnemy : MonoBehaviour
         GameObject bullet = Instantiate(properties.bullet, projectileSpawnpoint.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().SetDamage(properties.damage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
 
+        GetComponent<EnemyAudio>().PlayAttack();
+
         yield return new WaitForSeconds(properties.attackDelayShooting);
 
         isAttacking = false;

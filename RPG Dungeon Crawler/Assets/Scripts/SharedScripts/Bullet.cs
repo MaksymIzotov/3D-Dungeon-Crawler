@@ -12,10 +12,11 @@ public class Bullet : MonoBehaviour
     private GameObject shooter;
 
     [SerializeField] private Transform fx;
+    [SerializeField] private GameObject destroyFXPrefab;
     private void Start()
     {
         GetDirection();
-        DestroyObject(15);
+        Invoke("DestroyObject", 15);
     }
 
     private void GetDirection()
@@ -40,14 +41,8 @@ public class Bullet : MonoBehaviour
 
     private void DestroyObject()
     {
-        //DO EFFECTS
+        Instantiate(destroyFXPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
-    }
-
-    private void DestroyObject(float time)
-    {
-        //DO EFFECTS
-        Destroy(gameObject, time);
     }
 
     private void OnCollisionEnter(Collision collision)
