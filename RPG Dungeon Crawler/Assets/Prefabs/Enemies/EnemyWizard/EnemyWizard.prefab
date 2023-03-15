@@ -932,9 +932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Footsteps: {fileID: 0}
   Attack: {fileID: 11400000, guid: 1a2825793ded37c428499a4b1196d3ba, type: 2}
-  AttackMissed: {fileID: 0}
+  AttackMissed: {fileID: 11400000, guid: 08af6b44f2fecbd44b77b04baf4496bb, type: 2}
   AttackAbove: {fileID: 11400000, guid: 7ed300d1161402741bb69d1d3fefb28e, type: 2}
-  SpecialHit: {fileID: 0}
+  SpecialHit: {fileID: 11400000, guid: edd91efcc4bf49142b98b1b3ef9cdaeb, type: 2}
   isWalkingLooped: 0
 --- !u!1 &5238313364147262114
 GameObject:

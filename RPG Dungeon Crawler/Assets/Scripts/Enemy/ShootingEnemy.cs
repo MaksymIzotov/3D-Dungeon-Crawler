@@ -68,9 +68,13 @@ public class ShootingEnemy : MonoBehaviour
         //Deal damage
         if (attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-
+            GetComponent<EnemyAudio>().PlaySpecialHit();
             player.GetComponent<PlayerHealthController>().TakeDamage(properties.pushDamage * LevelManager.Instance.enemyStatsMultiplier.damageMult, gameObject);
             player.GetComponent<PlayerController>().AddImpact(transform, 100);
+        }
+        else
+        {
+            GetComponent<EnemyAudio>().PlayAttackMissed();
         }
 
         yield return new WaitForSeconds(properties.attackDelayMelee);
@@ -83,6 +87,7 @@ public class ShootingEnemy : MonoBehaviour
         isAttacking = true;
 
         GetComponent<EnemyAnimationController>().AttackAbove();
+        GetComponent<EnemyAudio>().PlayAttackAbove();
 
         yield return new WaitForSeconds(properties.preAttackTimeMelee);
 
@@ -92,6 +97,7 @@ public class ShootingEnemy : MonoBehaviour
     IEnumerator PerformAttackAbove()
     {
         GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
+
 
         //Deal damage
         if (attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
