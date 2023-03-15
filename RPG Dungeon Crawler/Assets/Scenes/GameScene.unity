@@ -2593,14 +2593,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillsIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  usableImage: {fileID: 0}
-  usableAmount: {fileID: 0}
-  emptySpellSlot: {fileID: 0}
-  emptyUsableSlot: {fileID: 0}
+  - {fileID: 2041175677}
+  - {fileID: 1903074778}
+  - {fileID: 1096899843}
+  - {fileID: 316973174}
+  usableImage: {fileID: 583358158}
+  usableAmount: {fileID: 1892111336}
+  emptySpellSlot: {fileID: 21300000, guid: 3ef002e8fbcc6ab4f87e32321c45d20a, type: 3}
+  emptyUsableSlot: {fileID: 21300000, guid: cec880411161f584c896c8237020551e, type: 3}
 --- !u!114 &941879780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2709,7 +2709,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  levelExitText: {fileID: 0}
+  levelExitText: {fileID: 1609632780}
 --- !u!114 &941879786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,7 +2775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 4905298519506744259, guid: 4baffb86553eba041b113cc0a11f68d7, type: 3}
-  textParent: {fileID: 0}
+  textParent: {fileID: 1537600548}
 --- !u!114 &941879790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,9 +2788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac8ffa68602ad4faf6271f041ff777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 0}
-  positionOn: {fileID: 0}
-  positionOff: {fileID: 0}
+  description: {fileID: 272279430}
+  positionOn: {fileID: 1365902712}
+  positionOff: {fileID: 1819776711}
   speed: 500
   iconPrefab: {fileID: 360115957800756887, guid: d3df5240352239449a95d9332bfdccff, type: 3}
 --- !u!114 &941879791
@@ -3495,7 +3495,7 @@ MonoBehaviour:
   randomMin: -1
   randomMax: 1
   hpTextAnim: {fileID: 2410113050773583648, guid: 051fa129f8620794dba0d1b1db18c857, type: 3}
-  hpText: {fileID: 0}
+  hpText: {fileID: 1408123541}
   damageText: {fileID: 892722647978343791, guid: cd2481908d8213d44a5482a4b31016ad, type: 3}
 --- !u!114 &1171373388
 MonoBehaviour:
@@ -3597,8 +3597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3099e3b541ccf394d8aa0880ebf883ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  InteractionText: {fileID: 0}
+  healthText: {fileID: 1408123543}
+  InteractionText: {fileID: 1207716066}
 --- !u!114 &1171373393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3612,7 +3612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menus:
-  - {fileID: 0}
+  - {fileID: 1537600549}
   - {fileID: 1416430204}
   - {fileID: 867263180}
   - {fileID: 1800817296}
