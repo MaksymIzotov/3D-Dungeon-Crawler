@@ -20,7 +20,7 @@ public class EnemyStatesHelper : MonoBehaviour
 
         yield return new WaitForSeconds(stunDuration);
 
-        GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().IdleState);
+        GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().ChasingState);
     }
 
     public void GroundStomp()
@@ -31,7 +31,6 @@ public class EnemyStatesHelper : MonoBehaviour
 
     public void SwitchStateBack()
     {
-        GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().IdleState);
-
+        GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().ChasingState);
     }
 }

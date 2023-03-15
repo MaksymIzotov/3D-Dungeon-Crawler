@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class StunState : EnemyBaseState
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Idle();
         manager.gameObject.GetComponent<EnemyStatesHelper>().Stun(stunDuration);
-        manager.GetComponent<NavMeshAgent>().isStopped = true;
+        manager.GetComponent<GroundEnemyMovementController>().StopAgent();
 
         //Add FX
     }
