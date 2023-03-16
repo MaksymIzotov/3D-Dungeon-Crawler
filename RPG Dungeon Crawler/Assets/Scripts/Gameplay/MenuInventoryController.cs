@@ -118,11 +118,11 @@ public class MenuInventoryController : MonoBehaviour
 
             switch (item.type)
             {
-                case Item.ItemType.Weapon:
+                case Item.ItemType.Hands:
                     GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
                     inventory.weapon = item;
                     break;
-                case Item.ItemType.Armor:
+                case Item.ItemType.Body:
                     GetComponent<AudioSource>().PlayOneShot(equipItemClip, 1);
                     inventory.armor = item;
                     break;

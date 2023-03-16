@@ -15,6 +15,7 @@ public class InventoryDescription : MonoBehaviour
     #endregion
     [SerializeField] private GameObject descriptionParent;
 
+    [SerializeField] private TMP_Text slotText;
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text itemName;
     [SerializeField] private TMP_Text stats;
@@ -46,13 +47,13 @@ public class InventoryDescription : MonoBehaviour
         {
             switch (currentLootDisplayed.type)
             {
-                case Item.ItemType.Weapon:
+                case Item.ItemType.Hands:
                     if (MenuInventoryController.Instance.inventory.weapon == currentLootDisplayed)
                     {
                         MenuInventoryController.Instance.inventory.weapon = null;
                     }
                     break;
-                case Item.ItemType.Armor:
+                case Item.ItemType.Body:
                     if (MenuInventoryController.Instance.inventory.armor == currentLootDisplayed)
                     {
                         MenuInventoryController.Instance.inventory.armor = null;
@@ -175,6 +176,19 @@ public class InventoryDescription : MonoBehaviour
             evolveImage.GetComponent<Image>().sprite = item.icon;
             evolveImage.GetComponentInChildren<TMP_Text>().text = "x" + item.evolvePrice;
         }
+
+        switch (item.type) {
+            case Item.ItemType.Hands:
+                slotText.text = "Slot: Hands";
+                break;
+            case Item.ItemType.Body:
+                slotText.text = "Slot: Body";
+                break;
+            case Item.ItemType.Usable:
+                slotText.text = "Slot: Usable";
+                break;
+        }
+
 
         currentLootDisplayed = item;
     }

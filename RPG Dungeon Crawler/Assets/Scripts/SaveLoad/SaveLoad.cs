@@ -238,10 +238,10 @@ public class SaveLoad : MonoBehaviour
                         {
                             switch (currentItem.type)
                             {
-                                case Item.ItemType.Weapon:
+                                case Item.ItemType.Hands:
                                     MenuInventoryController.Instance.inventory.weapon = currentItem;
                                     break;
-                                case Item.ItemType.Armor:
+                                case Item.ItemType.Body:
                                     MenuInventoryController.Instance.inventory.armor = currentItem;
                                     break;
                                 case Item.ItemType.Usable:

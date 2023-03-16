@@ -6,8 +6,8 @@ public class Item : ScriptableObject
 {
     public enum ItemType
     {
-        Weapon = 0,
-        Armor = 1,
+        Hands = 0,
+        Body = 1,
         Usable = 2
     }
 

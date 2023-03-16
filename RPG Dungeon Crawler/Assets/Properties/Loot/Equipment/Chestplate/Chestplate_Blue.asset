@@ -15,18 +15,17 @@ MonoBehaviour:
   itemName: Chestplate (Blue)
   type: 1
   rarity: 0
-  icon: {fileID: 21300000, guid: 951502fabf394344098fce933eef6c9f, type: 3}
+  usageTime: 0
+  icon: {fileID: 21300000, guid: 929aa04d6ff39084c8cca530c890ac19, type: 3}
   clonePrice: 5
-  upgradePrice: 48
+  upgradePrice: 5
   evolvePrice: 5
   evolutionItem: {fileID: 11400000, guid: 9cbe3f71dcf912448a90d1613315f957, type: 2}
-  lvl: 11
+  lvl: 1
   maxLvl: 10
   itemReference: {fileID: 11400000}
-  ingameIconPrefab: {fileID: 8280501835035045291, guid: 5211ea38c0e402d4f8c46594b8c58eec, type: 3}
-  menuButtonPrefab: {fileID: 8178082974687345864, guid: 83b5008bb5382814189644dc22ca21ea, type: 3}
-  cloneButtonPrefab: {fileID: 609964583898655200, guid: 8ef1171643ae9e140918071267587a84, type: 3}
-  defence: 15
+  passiveDescription: {fileID: 0}
+  defence: 5
   returnPercentage: 0
   defenceAdd: 1
   returnPercentageAdd: 0
