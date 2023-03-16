@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   rarity: 1
   usageTime: 0
-  icon: {fileID: 21300000, guid: 58da8f07e1a1401419083a9d910df05a, type: 3}
+  icon: {fileID: 21300000, guid: cdae63ccdd6035e409d71f2d41d2a7e6, type: 3}
   clonePrice: 10
   upgradePrice: 10
   evolvePrice: 10
@@ -24,9 +24,7 @@ MonoBehaviour:
   lvl: 1
   maxLvl: 10
   itemReference: {fileID: 11400000}
-  ingameIconPrefab: {fileID: 8280501835035045291, guid: 753555a9843050446b48a8b5bf90b25a, type: 3}
-  menuButtonPrefab: {fileID: 8178082974687345864, guid: 390e9eccb092ba74c90d366b8658e7c1, type: 3}
-  cloneButtonPrefab: {fileID: 609964583898655200, guid: a3a1d646da78d164b916a984afd7652e, type: 3}
+  passiveDescription: {fileID: 0}
   damageToFireSpells: 20
   burnDamage: 0
   damageToFireSpellsMult: 1.1

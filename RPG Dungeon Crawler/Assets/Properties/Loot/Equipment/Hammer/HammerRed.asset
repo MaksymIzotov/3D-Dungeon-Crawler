@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   rarity: 2
   usageTime: 0
-  icon: {fileID: 21300000, guid: 483d4fb717a44bd4f98c10195779e111, type: 3}
+  icon: {fileID: 21300000, guid: 1ae5d5bed6e97134599bea072b031a87, type: 3}
   clonePrice: 0
   upgradePrice: 175
   evolvePrice: 0

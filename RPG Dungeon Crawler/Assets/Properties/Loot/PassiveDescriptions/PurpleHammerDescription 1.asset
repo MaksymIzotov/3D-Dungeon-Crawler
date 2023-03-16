@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e40342225c250f44a74a43812b2530c, type: 3}
   m_Name: PurpleHammerDescription 1
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 0098ab50b644e8a44bfab56f2e135d6b, type: 3}
+  icon: {fileID: 21300000, guid: 29ae4162035f89944a106bbbffe7f1c1, type: 3}
   description: A chance to stun enemy while attacking

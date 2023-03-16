@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e40342225c250f44a74a43812b2530c, type: 3}
   m_Name: FireStaffDescription
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: e200142fde8517b4090ca36dbedf28d3, type: 3}
+  icon: {fileID: 21300000, guid: 1727a61dfcb75934fa8a7f0296de6b2c, type: 3}
   description: All fire spells now deal additional burn damage

@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 2
   rarity: 0
   usageTime: 2
-  icon: {fileID: 21300000, guid: 3af2ca53709ed534489173392e255ac7, type: 3}
+  icon: {fileID: 21300000, guid: 8d3083ad5e666f34a910043515a7bdad, type: 3}
   clonePrice: 0
   upgradePrice: 0
   evolvePrice: 0
@@ -24,7 +24,5 @@ MonoBehaviour:
   lvl: 1
   maxLvl: 1
   itemReference: {fileID: 11400000}
-  ingameIconPrefab: {fileID: 8280501835035045291, guid: 0f103277a8269594f88b4e66f630f271, type: 3}
-  menuButtonPrefab: {fileID: 8178082974687345864, guid: b4a0194011cc7684cafd358ad5203f34, type: 3}
-  cloneButtonPrefab: {fileID: 0}
+  passiveDescription: {fileID: 0}
   healingAmount: 20

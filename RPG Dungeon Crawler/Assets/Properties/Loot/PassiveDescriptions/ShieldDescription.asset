@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e40342225c250f44a74a43812b2530c, type: 3}
   m_Name: ShieldDescription
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a4d5408454982c8468fb64efd6a679f2, type: 3}
+  icon: {fileID: 21300000, guid: 52c8ce61269e48f44b71cfe3a63fd17a, type: 3}
   description: A chance to fully block income damage
