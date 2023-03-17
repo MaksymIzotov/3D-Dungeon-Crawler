@@ -137,7 +137,7 @@ public class PlayerPassives : MonoBehaviour
         int rand = Random.Range(0, 100);
         if (rand < criticalChance)
         {
-            return criticalDamage;
+            return criticalDamage / 100;
         }
 
         return 1;

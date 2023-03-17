@@ -45,6 +45,9 @@ public class FireballController : MonoBehaviour
     {
         if (isColliding) { return; }
         isColliding = true;
+        GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
+
+        float criticalMult = player.GetComponent<PlayerPassives>().TryCriticalDamage();
 
         //Do damage
         bool isPlayerHit = false;
@@ -62,7 +65,7 @@ public class FireballController : MonoBehaviour
             }
             else if(n.tag == TAGS.ENEMY_TAG)
             {
-                n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG));
+                n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage * criticalMult, player);
 
                 if(burnDamage > 0)
                 {
