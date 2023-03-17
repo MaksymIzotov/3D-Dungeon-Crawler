@@ -6,7 +6,7 @@ public class PlayerPassives : MonoBehaviour
 {
     public float damage;
     public float fireDamage;
-    
+ 
     private bool isReturnDamage = false;
     private float returnDamage;
 
@@ -22,6 +22,9 @@ public class PlayerPassives : MonoBehaviour
     private bool isStealthAttackOn = false;
     private float stealthChance;
     private float stealthAttackDamage;
+
+    private float criticalDamage;
+    private float criticalChance;
 
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
@@ -119,5 +122,24 @@ public class PlayerPassives : MonoBehaviour
         }
 
         return 0;
+    }
+
+    public void SetupCriticalDamage(float chance, float damage, PassiveDescription passiveDescription)
+    {
+        criticalChance = chance;
+        criticalDamage = damage;
+
+        activePassives.Add(passiveDescription);
+    }
+
+    public float TryCriticalDamage()
+    {
+        int rand = Random.Range(0, 100);
+        if (rand < criticalChance)
+        {
+            return criticalDamage;
+        }
+
+        return 1;
     }
 }

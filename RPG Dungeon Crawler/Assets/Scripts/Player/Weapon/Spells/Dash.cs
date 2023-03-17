@@ -44,7 +44,6 @@ public class Dash : Spell
         float stealthDamage = spellSpawnpoint.root.GetComponent<PlayerPassives>().TryStealthAttack();
         if (stealthDamage > 0)
         {
-            Debug.Log("Working");
             Collider[] colliders = Physics.OverlapSphere(spellSpawnpoint.root.position, 7);
             foreach(Collider col in colliders)
             {

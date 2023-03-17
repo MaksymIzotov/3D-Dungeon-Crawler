@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b85aa59ba4fc34498ce11f722b29aeb, type: 3}
+  m_Name: SwordPurple
+  m_EditorClassIdentifier: 
+  itemName: Sword (Purple)
+  type: 0
+  rarity: 1
+  usageTime: 0
+  icon: {fileID: 21300000, guid: bc0e14b313ea62444b6d1407a0bf31c0, type: 3}
+  clonePrice: 10
+  upgradePrice: 20
+  evolvePrice: 10
+  evolutionItem: {fileID: 11400000, guid: 1dbbea41cede0c94bae2a3b121b86f9b, type: 2}
+  lvl: 1
+  maxLvl: 10
+  itemReference: {fileID: 11400000}
+  passiveDescription: {fileID: 11400000, guid: 95e47e2d132921c4186bb5618e044e3c, type: 2}
+  criticalChance: 15
+  criticalDamage: 400
+  criticalChanceAdd: 1
+  criticalDamageAdd: 15
+  priceMult: 1.1
+  def_criticalChance: 15
+  def_criticalDamage: 400
+  def_upgradePrice: 20

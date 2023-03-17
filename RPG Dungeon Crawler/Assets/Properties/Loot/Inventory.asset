@@ -29,6 +29,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3820bad075e99a847b3783498202baf1, type: 2}
   - {fileID: 11400000, guid: 515cf2f252c3d86479922f89984bb072, type: 2}
   - {fileID: 11400000, guid: f2ac2beda010d824dae3f86aa56d510a, type: 2}
+  - {fileID: 11400000, guid: 39e26081ceb424641a2cf98b073b7b0c, type: 2}
+  - {fileID: 11400000, guid: f634ecb32abce4c40b4177b58c067e47, type: 2}
+  - {fileID: 11400000, guid: 1dbbea41cede0c94bae2a3b121b86f9b, type: 2}
   AllSpellsInTheGame:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
@@ -179,6 +182,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2ac2beda010d824dae3f86aa56d510a, type: 2}
   - {fileID: 11400000, guid: 515cf2f252c3d86479922f89984bb072, type: 2}
   - {fileID: 11400000, guid: 3820bad075e99a847b3783498202baf1, type: 2}
+  - {fileID: 11400000, guid: 39e26081ceb424641a2cf98b073b7b0c, type: 2}
+  - {fileID: 11400000, guid: f634ecb32abce4c40b4177b58c067e47, type: 2}
+  - {fileID: 11400000, guid: 1dbbea41cede0c94bae2a3b121b86f9b, type: 2}
   LevelInventory: []
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}
   equipedSpells:
