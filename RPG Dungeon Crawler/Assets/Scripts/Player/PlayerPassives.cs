@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PlayerPassives : MonoBehaviour
 {
+    public float damage;
+    public float fireDamage;
+    
     private bool isReturnDamage = false;
     private float returnDamage;
 
     private bool isBurnEffect = false;
     private float burnDamage;
 
-    public float fireDamage;
-
     private bool isBlockingOn = false;
     private float blockingChance;
 
     private bool isStunOn = false;
     private float stunChance;
+
+    private bool isStealthAttackOn = false;
+    private float stealthChance;
+    private float stealthAttackDamage;
 
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
@@ -92,5 +97,27 @@ public class PlayerPassives : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void EnableStealthAttack(float chance, float damage, PassiveDescription passiveDescription)
+    {
+        isStealthAttackOn = true;
+        stealthChance = chance;
+        stealthAttackDamage = damage;
+
+        activePassives.Add(passiveDescription);
+    }
+
+    public float TryStealthAttack()
+    {
+        if (!isStealthAttackOn) { return 0; }
+
+        int rand = Random.Range(0, 100);
+        if (rand < stealthChance)
+        {
+            return stealthAttackDamage;
+        }
+
+        return 0;
     }
 }

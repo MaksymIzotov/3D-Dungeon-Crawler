@@ -26,8 +26,7 @@ public class Dash : Spell
     public override void Cast(Transform spellSpawnpoint)
     {
         spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), castAudio);
-
-        spellSpawnpoint.root.GetComponent<CharacterController>().enabled = false;
+        spellSpawnpoint.root.GetComponent<CharacterController>().enabled = false;    
 
         RaycastHit hit;
         if (Physics.Raycast(spellSpawnpoint.root.position, spellSpawnpoint.root.forward, out hit, distance, ~goThroughLayer))
@@ -40,6 +39,20 @@ public class Dash : Spell
         {
             Vector3 newPos = spellSpawnpoint.transform.root.position + (spellSpawnpoint.transform.root.forward * distance);
             spellSpawnpoint.root.position = newPos;
+        }
+
+        float stealthDamage = spellSpawnpoint.root.GetComponent<PlayerPassives>().TryStealthAttack();
+        if (stealthDamage > 0)
+        {
+            Debug.Log("Working");
+            Collider[] colliders = Physics.OverlapSphere(spellSpawnpoint.root.position, 7);
+            foreach(Collider col in colliders)
+            {
+                if (col.CompareTag(TAGS.ENEMY_TAG))
+                {
+                    col.gameObject.GetComponent<IDamagable>()?.TakeDamage(stealthDamage, spellSpawnpoint.root.gameObject);
+                }
+            }
         }
 
         spellSpawnpoint.root.GetComponent<CharacterController>().enabled = true;

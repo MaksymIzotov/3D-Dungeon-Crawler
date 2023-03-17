@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3caa1ab27d62f4780838fb62671664, type: 3}
+  m_Name: DaggerPurple
+  m_EditorClassIdentifier: 
+  itemName: Dagger (Purple)
+  type: 0
+  rarity: 1
+  usageTime: 0
+  icon: {fileID: 21300000, guid: 3a632e38062415a4daa501715e4f640c, type: 3}
+  clonePrice: 15
+  upgradePrice: 20
+  evolvePrice: 10
+  evolutionItem: {fileID: 11400000, guid: f2ac2beda010d824dae3f86aa56d510a, type: 2}
+  lvl: 1
+  maxLvl: 10
+  itemReference: {fileID: 11400000}
+  passiveDescription: {fileID: 0}
+  damage: 5
+  attackChance: 0
+  stealthAttackDamage: 0
+  damageMult: 1.05
+  attackChanceAdd: 0
+  stealthAttackDamageMult: 0
+  priceMult: 1.1
+  def_damage: 5
+  def_attackChance: 0
+  def_stealthAttackDamage: 0
+  def_upgradePrice: 20

@@ -33,7 +33,7 @@ public class Fireball : Spell
         GameObject parent = spellSpawnpoint.root.gameObject;
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
 
-        float damageAdd = parent.GetComponent<PlayerPassives>().fireDamage;
+        float damageAdd = parent.GetComponent<PlayerPassives>().fireDamage + parent.GetComponent<PlayerPassives>().damage;
         float burnDamage = parent.GetComponent<PlayerPassives>().GetBurnDamage();
         fireball.GetComponent<FireballController>().SetProperties(damage + damageAdd, burnDamage);
     }
