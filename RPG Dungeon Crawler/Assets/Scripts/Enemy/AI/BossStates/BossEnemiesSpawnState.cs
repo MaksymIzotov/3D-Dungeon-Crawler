@@ -5,10 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BossEnemiesSpawnState", menuName = "States/Boss/Boss Enemies Spawn State", order = 1)]
 public class BossEnemiesSpawnState : EnemyBaseState
 {
-    [Space(10)]
-    [Header("Enemies")]
-    public float minDelay, maxDelay;
-    public int minAmount, maxAmount;
+    [Header("Settings")]
+
+    public float minDelay;
+    public float maxDelay;
+    public int minAmount;
+    public int maxAmount;
 
     [Space(10)]
     [Header("Enemies")]
@@ -40,7 +42,7 @@ public class BossEnemiesSpawnState : EnemyBaseState
         int i = 0;
         do
         {
-            Instantiate(enemiesPrefab[Random.Range(0,enemiesPrefab.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
+            Instantiate(enemiesPrefab[Random.Range(0, enemiesPrefab.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
 
             float delay = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(delay);

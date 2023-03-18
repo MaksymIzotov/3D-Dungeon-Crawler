@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76b243a1e6e3b2428f0ec637eec8996, type: 3}
+  m_Name: BossEnemiesSpawnState
+  m_EditorClassIdentifier: 
+  minDelay: 2
+  maxDelay: 3
+  minAmount: 2
+  maxAmount: 5
+  enemiesPrefab:
+  - {fileID: 5194665444346978576, guid: cade3ddc9ee4c334ba70b85efc44088c, type: 3}
+  - {fileID: 5194665444346978576, guid: a45f7a50f455a9849a2ff4f385e1915a, type: 3}
