@@ -17,7 +17,7 @@ public class SpawnState : EnemyBaseState
         if(Vector3.Distance(manager.transform.localScale, Vector3.one) < 0.05f)
         {
             manager.transform.localScale = Vector3.one;
-            manager.SwitchState(manager.IdleState);
+            manager.SwitchState(manager.ChasingState);
         }
     }
 }

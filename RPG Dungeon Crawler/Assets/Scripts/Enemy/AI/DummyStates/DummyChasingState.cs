@@ -5,17 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DummyChasingState", menuName = "States/Dummy/Dummy Chasing State", order = 3)]
 public class DummyChasingState : EnemyBaseState
 {
-    GameObject player;
-
-    LayerMask ignore;
     public override void EnterState(EnemyStateManager manager)
     {
         manager.gameObject.GetComponent<EnemyAnimationController>().Chase();
         manager.GetComponent<EnemyAudio>().Walk();
-
-        player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
-
-        ignore = LayerMask.GetMask("Enemy");
     }
 
     public override void UpdateState(EnemyStateManager manager)

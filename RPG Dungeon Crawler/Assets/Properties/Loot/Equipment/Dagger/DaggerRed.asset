@@ -33,6 +33,6 @@ MonoBehaviour:
   stealthAttackDamageMult: 1.2
   priceMult: 1.1
   def_damage: 10
-  def_attackChance: 100
+  def_attackChance: 20
   def_stealthAttackDamage: 10
   def_upgradePrice: 35

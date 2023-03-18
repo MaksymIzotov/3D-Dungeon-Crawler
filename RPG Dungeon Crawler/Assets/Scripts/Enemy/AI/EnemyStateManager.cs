@@ -6,12 +6,21 @@ public class EnemyStateManager : MonoBehaviour
 {
     EnemyBaseState currentState;
 
+    [Space(10)]
+    [Header("Enemy states")]
+
     public EnemyBaseState SpawnState;
     public EnemyBaseState IdleState;
     public EnemyBaseState ChasingState;
     public EnemyBaseState AttackingState;
     public EnemyBaseState StunState;
     public EnemyBaseState GroundStompState;
+
+    [Space(10)]
+    [Header("Boss states")]
+
+    public EnemyBaseState MovingState;
+    public EnemyBaseState SpawnEnemiesState;
 
     public GameObject attackPoint;
     public GameObject attackPointAbove;
