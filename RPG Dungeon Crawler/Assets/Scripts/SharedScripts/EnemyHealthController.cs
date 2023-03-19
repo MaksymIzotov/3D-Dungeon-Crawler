@@ -81,8 +81,7 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
         Destroy(transform.Find("FX").gameObject);
         Destroy(transform.Find("EnemyHealthBar").gameObject);
         Destroy(gameObject, 5);
-            
-        //Drop?
+           
     }
 
     public void DestroyObject()

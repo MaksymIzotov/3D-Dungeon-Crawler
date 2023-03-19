@@ -26,7 +26,7 @@ MonoBehaviour:
   castAudio: {fileID: 11400000, guid: ff62b7338d624a947a7b4302adefc9ec, type: 2}
   goThroughLayer:
     serializedVersion: 2
-    m_Bits: 36480
+    m_Bits: 102016
   distance: 20
   cooldownReduce: 0.5
   priceMult: 1.2

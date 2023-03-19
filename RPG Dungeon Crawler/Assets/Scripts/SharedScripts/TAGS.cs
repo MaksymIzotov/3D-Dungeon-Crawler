@@ -5,4 +5,5 @@ public static class TAGS
     public const string ENEMY_TAG = "Enemy";
     public const string SPAWNER_TAG = "Spawner";
     public const string HEALTHBAR_TAG = "Healthbar";
+    public const string BORDER_TAG = "Border";
 }

@@ -20,6 +20,8 @@ public class EnemyAudio : AudioController
 
     public void Walk()
     {
+        if (Footsteps == null) { return; }
+
         if (isWalkingLooped)
         {
             audioSource.loop = true;

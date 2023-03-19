@@ -69,4 +69,9 @@ public class EnemyAnimationController : MonoBehaviour
         anim.CrossFade("GroundStomp", 0.1f, 0);
     }
 
+    public void BossEnemySpawn()
+    {
+        anim.CrossFade("Spawn", 0.1f, 0);
+    }
+
 }

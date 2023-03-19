@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class ExtensionMethods
 {
@@ -27,6 +28,30 @@ public static class ExtensionMethods
         }
         
         return (int)newPrice;
+    }
+
+    public static float GetMin(float[] array)
+    {
+        float min = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] < min)
+                min = array[i];
+        }
+
+        return min;
+    }
+
+    public static float GetMax(float[] array)
+    {
+        float max = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] > max)
+                max = array[i];
+        }
+
+        return max;
     }
 
     public static float Remap(this float value, float from1, float to1, float from2, float to2)

@@ -10,6 +10,8 @@ TagManager:
   - Interactable
   - NonInteractable
   - Loot
+  - Healthbar
+  - Border
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - IgnoreNavMesh
   - 
   - EnemyParts
-  - 
+  - BossObstacle
   - 
   - 
   - 

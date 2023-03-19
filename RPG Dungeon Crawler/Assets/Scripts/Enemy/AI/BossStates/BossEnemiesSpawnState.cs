@@ -22,7 +22,7 @@ public class BossEnemiesSpawnState : EnemyBaseState
 
     public override void EnterState(EnemyStateManager manager)
     {
-        //Start animation
+        manager.GetComponent<EnemyAnimationController>().BossEnemySpawn();
         isFinished = false;
 
         spawnPoints = GameObject.FindGameObjectsWithTag(TAGS.SPAWNER_TAG);
@@ -34,7 +34,7 @@ public class BossEnemiesSpawnState : EnemyBaseState
     public override void UpdateState(EnemyStateManager manager)
     {
         if (isFinished)
-            manager.SwitchState(manager.MovingState);
+            manager.SwitchState(manager.ChasingState);
     }
 
     IEnumerator SpawnEnemy(int amount)

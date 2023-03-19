@@ -42,8 +42,6 @@ public class VideoSettings : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
-
-        //PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
     }
 
     public void SetResolution(int resolutionIndex)
@@ -83,17 +81,6 @@ public class VideoSettings : MonoBehaviour
         {
             resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
         }
-
-        //if (PlayerPrefs.HasKey("FullscreenPreference"))
-        //{
-        //    //isFullscreenToggle.SetIsOnWithoutNotify(Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference")));
-        //    isFullscreenToggle.isOn = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
-        //}
-        //else
-        //{
-        //    //   isFullscreenToggle.SetIsOnWithoutNotify(true);
-        //    isFullscreenToggle.isOn = true;
-        //}
 
         isFullscreenToggle.SetIsOnWithoutNotify(Screen.fullScreen);
 
