@@ -13,15 +13,18 @@ public class GameflowController : MonoBehaviour
     #endregion
 
     [SerializeField] private CurrentSettings settings;
+    [SerializeField] private VideoSettings videoSettings;
     public UnityEvent onStartGame;
     public UnityEvent onBossStart;
     public UnityEvent onContinuePlaying;
-    public UnityEvent onNewGameStarted;
+    public UnityEvent onNewGameStarted; //Load up tutorial
 
     private int bossCrystalsAmount = 15;
 
     private void Start()
     {
+        videoSettings.UpdateSettingsMenu();
+
         TabManager.Instance.OpenTab("input");
         MenuManager.Instance.OpenMenu("main");
 

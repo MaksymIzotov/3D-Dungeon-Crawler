@@ -790,6 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 925633b8737909840854c153632466cf, type: 2}
+  videoSettings: {fileID: 1661595942}
   onStartGame:
     m_PersistentCalls:
       m_Calls:
