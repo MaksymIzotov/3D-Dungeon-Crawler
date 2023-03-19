@@ -33,7 +33,7 @@ public class BossMovingState : EnemyBaseState
     public override void UpdateState(EnemyStateManager manager)
     {
         lookRotation = Quaternion.LookRotation((player.transform.position - manager.transform.position).normalized);
-        manager.transform.rotation = Quaternion.Slerp(manager.transform.rotation, new Quaternion(manager.transform.rotation.x, lookRotation.y, manager.transform.rotation.z, manager.transform.rotation.w), 5f * Time.deltaTime);
+        manager.transform.rotation = Quaternion.Slerp(manager.transform.rotation, new Quaternion(manager.transform.rotation.x, lookRotation.y, manager.transform.rotation.z, manager.transform.rotation.w), 10f * Time.deltaTime);
 
         walkingTime -= Time.deltaTime;
 

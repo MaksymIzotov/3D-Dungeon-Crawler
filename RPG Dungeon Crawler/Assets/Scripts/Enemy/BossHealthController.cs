@@ -66,7 +66,7 @@ public class BossHealthController : MonoBehaviour, IDamagable
         if (hpRegen <= 0) { return; }
 
         hp += hpRegen * Time.deltaTime;
-        //Update healthbar
+        BossLevelController.Instance.UpdateHealthBar(hp, maxhp);
     }
 
     public void TakeDamage(float damage, GameObject damageDealer)
@@ -76,7 +76,7 @@ public class BossHealthController : MonoBehaviour, IDamagable
 
         //Do effects
         DamagePopup.Instance.ShowDamage(actualDamage, transform, damageTextParent);
-        //Update healthbar
+        BossLevelController.Instance.UpdateHealthBar(hp, maxhp);
 
         if (hp <= 0)
         {
