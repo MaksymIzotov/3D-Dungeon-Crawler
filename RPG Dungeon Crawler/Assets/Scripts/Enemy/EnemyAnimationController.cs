@@ -28,50 +28,54 @@ public class EnemyAnimationController : MonoBehaviour
         switch (randomNum)
         {
             case 1:
-                anim.CrossFade("Attack1", 0.1f, 0);
+                anim.CrossFade("Attack1", 0.2f, 0);
                 break;
             case 2:
-                anim.CrossFade("Attack2", 0.1f, 0);
+                anim.CrossFade("Attack2", 0.2f, 0);
                 break;
             case 3:
-                anim.CrossFade("Attack3", 0.1f, 0);
+                anim.CrossFade("Attack3", 0.2f, 0);
                 break;
         }
     }
 
     public void AttackAbove()
     {
-        anim.CrossFade("AttackAbove", 0.1f, 0);
+        anim.CrossFade("AttackAbove", 0.2f, 0);
     }
 
     public void PushAway()
     {
-        anim.CrossFade("Push Away", 0.1f, 0);
+        anim.CrossFade("Push Away", 0.2f, 0);
     }
 
     public void Idle()
     {
-        anim.CrossFade("Idle", 0.1f, 0);
+        anim.CrossFade("Idle", 0.2f, 0);
     }
 
     public void Chase()
     {
-        anim.CrossFade("Chase", 0.1f, 0);
+        anim.CrossFade("Chase", 0.2f, 0);
     }
 
     public void Die()
     {
-        anim.CrossFade("Death", 0.1f, 0);
+        anim.CrossFade("Death", 0.2f, 0);
     }
 
     public void GroundStomp()
     {
-        anim.CrossFade("GroundStomp", 0.1f, 0);
+        anim.CrossFade("GroundStomp", 0.2f, 0);
     }
 
     public void BossEnemySpawn()
     {
-        anim.CrossFade("Spawn", 0.1f, 0);
+        anim.CrossFade("Spawn", 0.2f, 0);
     }
 
+    public void BossShoot()
+    {
+        anim.CrossFade("Shoot", 0.2f, 0);
+    }
 }

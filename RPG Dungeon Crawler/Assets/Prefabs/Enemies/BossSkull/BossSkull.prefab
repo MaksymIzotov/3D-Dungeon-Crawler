@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 530511393614965343}
   - component: {fileID: 530511393614965336}
   - component: {fileID: 530511393614965337}
+  - component: {fileID: 6234366988709915044}
+  - component: {fileID: 6465773325845562673}
   m_Layer: 9
   m_Name: BossSkull
   m_TagString: Enemy
@@ -273,14 +275,14 @@ MonoBehaviour:
   SpawnState: {fileID: 11400000, guid: 523746156bc5b684ea109660f691d3f8, type: 2}
   IdleState: {fileID: 0}
   ChasingState: {fileID: 11400000, guid: 0f7bb12ca0790ae4e977a79409d16203, type: 2}
-  AttackingState: {fileID: 0}
+  AttackingState: {fileID: 11400000, guid: ac1d1e7843379024d85cb4c3db36c54b, type: 2}
   StunState: {fileID: 11400000, guid: a331152879a65ee458f7c406d7daae37, type: 2}
   GroundStompState: {fileID: 0}
   MovingState: {fileID: 0}
   SpawnEnemiesState: {fileID: 11400000, guid: d431b0bbb0f366144beff6fca552dfd2, type: 2}
   attackPoint: {fileID: 0}
   attackPointAbove: {fileID: 0}
-  eyes: {fileID: 0}
+  eyes: {fileID: 1844767425401675345}
 --- !u!114 &530511393614965343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,9 +376,71 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6234366988709915044}
+        m_TargetAssemblyTypeName: LootDropController, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6234366988709915044}
+        m_TargetAssemblyTypeName: LootDropController, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6234366988709915044}
+        m_TargetAssemblyTypeName: LootDropController, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   damageTextParent: {fileID: 530511394232323421}
   isExploding: 1
   isDead: 0
+--- !u!114 &6234366988709915044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530511393614965413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d235538f554afb3478b03369cc4e7190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 6a56a4a281c85ce4aa32db3093da2090, type: 2}
+  lootSpawnPoint: {fileID: 530511393614965414}
+--- !u!114 &6465773325845562673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530511393614965413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5bde0a8d023254b98ff50e502f01b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &530511393986414954
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +532,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1844767425401675345}
   - {fileID: 399554110750476323}
   - {fileID: 9152922086552342109}
   - {fileID: 3488170869925384116}
@@ -754,7 +819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2964324145296276610}
   m_LocalRotation: {x: 0.7054078, y: 0.000002779128, z: 0.7088017, w: -0.0000028002357}
-  m_LocalPosition: {x: -0, y: 1.4390113, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4390113, z: 0}
   m_LocalScale: {x: 1000, y: 999.9998, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -956,6 +1021,37 @@ CapsuleCollider:
   m_Height: 0.0004252348
   m_Direction: 1
   m_Center: {x: 0.0000017478676, y: -0.00011284699, z: 0.00024065922}
+--- !u!1 &7536382006347064891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844767425401675345}
+  m_Layer: 9
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844767425401675345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536382006347064891}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.7180001, y: 2.174, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008361414827232562}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &530511393737970805
 PrefabInstance:
   m_ObjectHideFlags: 0

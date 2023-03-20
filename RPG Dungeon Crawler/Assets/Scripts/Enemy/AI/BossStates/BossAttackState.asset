@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
-  m_Name: BossSkullHealth
+  m_Script: {fileID: 11500000, guid: 21d477d048bf346479e1224fd8da0fad, type: 3}
+  m_Name: BossAttackState
   m_EditorClassIdentifier: 
-  healthPoints: 50
-  defence: 20
-  healthRegen: 0
+  skullPrefab: {fileID: 4524820621263936683, guid: 8fab8e347161c1e4ca840855ad5c19f5, type: 3}
+  delay: 0.5
+  attacksAmount: 5
+  damage: 10

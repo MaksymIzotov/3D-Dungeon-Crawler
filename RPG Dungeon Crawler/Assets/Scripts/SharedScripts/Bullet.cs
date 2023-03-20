@@ -41,7 +41,9 @@ public class Bullet : MonoBehaviour
 
     private void DestroyObject()
     {
-        Instantiate(destroyFXPrefab, transform.position, transform.rotation);
+        if (destroyFXPrefab != null)
+            Instantiate(destroyFXPrefab, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
 

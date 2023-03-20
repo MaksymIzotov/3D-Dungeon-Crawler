@@ -15,14 +15,9 @@ public class BossMovingState : EnemyBaseState
     private float walkingTime;
 
     private Vector3 walkingPoint;
-    private GameObject player;
-
-    private Quaternion lookRotation;
 
     public override void EnterState(EnemyStateManager manager)
     {
-        player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
-
         walkingTime = Random.Range(minWalkingTime, maxWalkingTime);
         walkingPoint = PickNextWaypoint(manager.transform.position.y);
 
@@ -32,8 +27,6 @@ public class BossMovingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        lookRotation = Quaternion.LookRotation((player.transform.position - manager.transform.position).normalized);
-        manager.transform.rotation = Quaternion.Slerp(manager.transform.rotation, new Quaternion(manager.transform.rotation.x, lookRotation.y, manager.transform.rotation.z, manager.transform.rotation.w), 10f * Time.deltaTime);
 
         walkingTime -= Time.deltaTime;
 
@@ -49,7 +42,7 @@ public class BossMovingState : EnemyBaseState
             if (rand < 25)
                 manager.SwitchState(manager.SpawnEnemiesState);
             else
-                manager.SwitchState(manager.SpawnEnemiesState);
+                manager.SwitchState(manager.AttackingState);
 
             manager.GetComponent<AIPath>().destination = manager.transform.position;
         }
