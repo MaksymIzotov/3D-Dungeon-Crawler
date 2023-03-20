@@ -99,4 +99,9 @@ public class BossHealthController : MonoBehaviour, IDamagable
         hpRegen = properties.healthRegen;
         isDead = false;
     }
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
 }

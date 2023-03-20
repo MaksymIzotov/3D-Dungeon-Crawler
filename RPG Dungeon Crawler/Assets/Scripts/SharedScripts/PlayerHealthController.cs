@@ -100,4 +100,9 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
     {
         hpRegen += _hpRegen;
     }
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
 }

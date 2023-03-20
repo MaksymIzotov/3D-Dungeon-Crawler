@@ -8,4 +8,5 @@ public interface IDamagable
     void HealthRegen();
     public void AddDefence(float _defence);
     public void AddHealtRegen(float _hpRegen);
+    public bool IsDead();
 }

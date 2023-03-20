@@ -19,7 +19,7 @@ public class BurnController : MonoBehaviour
     {
         while (true)
         {
-            if (enemy.GetComponent<EnemyHealthController>().isDead == true) { StopAndDestroy(1); break; }
+            if (enemy.GetComponent<IDamagable>()?.IsDead() == true) { StopAndDestroy(1); break; }
 
             enemy.GetComponent<IDamagable>().TakeDamage(burnDamage, null);
             yield return new WaitForSeconds(1f);

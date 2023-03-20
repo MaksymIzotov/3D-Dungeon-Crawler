@@ -56,7 +56,6 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
             {
                 GetComponent<EnemyStateManager>().SwitchState(GetComponent<EnemyStateManager>().StunState);
             }
-
         }
     }
 
@@ -107,5 +106,10 @@ public class EnemyHealthController : MonoBehaviour, IDamagable
     public void AddHealtRegen(float _hpRegen)
     {
         hpRegen += _hpRegen;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }
