@@ -93,6 +93,7 @@ public class GameflowController : MonoBehaviour
             return;
         }
 
+        MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals -= bossCrystalsAmount;
         onBossStart.Invoke();
     }
 
