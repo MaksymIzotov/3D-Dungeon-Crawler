@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.43, y: 0.84}
-  m_SizeDelta: {x: 20, y: 5}
+  m_SizeDelta: {x: 30, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &892722647978343785
 MeshRenderer:
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: Insta Kill
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee74db1ab4e614447b8f1f2ee785ec1b, type: 2}
   m_sharedMaterial: {fileID: 6337618381014387920, guid: ee74db1ab4e614447b8f1f2ee785ec1b, type: 2}

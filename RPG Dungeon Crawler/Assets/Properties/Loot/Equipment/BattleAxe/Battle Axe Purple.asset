@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b34bc28e0520344adcb33fe5e2d2d5, type: 3}
+  m_Name: Battle Axe Purple
+  m_EditorClassIdentifier: 
+  itemName: Battle Axe (Purple)
+  type: 0
+  rarity: 1
+  usageTime: 0
+  icon: {fileID: 21300000, guid: 6de4739f995d26344ae7ba5662d82e12, type: 3}
+  clonePrice: 10
+  upgradePrice: 20
+  evolvePrice: 10
+  evolutionItem: {fileID: 11400000, guid: 91efb31c1c3bc2741a2e46702efa9158, type: 2}
+  lvl: 1
+  maxLvl: 10
+  itemReference: {fileID: 11400000}
+  passiveDescription: {fileID: 11400000, guid: b8a365608c5deb246b863837ddc16eab, type: 2}
+  killChance: 1
+  killChanceAdd: 0.1
+  priceMult: 1.2
+  def_killChance: 1
+  def_upgradePrice: 20

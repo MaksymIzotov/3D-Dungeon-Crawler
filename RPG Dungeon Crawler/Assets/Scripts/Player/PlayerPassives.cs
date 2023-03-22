@@ -26,6 +26,9 @@ public class PlayerPassives : MonoBehaviour
     private float criticalDamage;
     private float criticalChance;
 
+    private bool isInstaKillOn = false;
+    private float instaKillChance;
+
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
     public void EnableBurnDamage(float _burnDamage, PassiveDescription passiveDescription)
@@ -141,5 +144,26 @@ public class PlayerPassives : MonoBehaviour
         }
 
         return 1;
+    }
+
+    public void EnableInstaKill(float chance, PassiveDescription passiveDescription)
+    {
+        isInstaKillOn = true;
+        instaKillChance = chance;
+
+        activePassives.Add(passiveDescription);
+    }
+
+    public bool TryInstaKill()
+    {
+        if (!isInstaKillOn) { return false; }
+
+        float rand = Random.Range(0, 100);
+        if (rand < instaKillChance)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

@@ -55,7 +55,7 @@ public class FireballController : MonoBehaviour
 
         foreach (Collider n in collidersInRange)
         {
-            if(n.tag == TAGS.PLAYER_TAG)
+            if (n.tag == TAGS.PLAYER_TAG)
             {
                 if (isPlayerHit) { continue; }
 
@@ -63,11 +63,14 @@ public class FireballController : MonoBehaviour
                 n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage, null);
                 isPlayerHit = true;
             }
-            else if(n.tag == TAGS.ENEMY_TAG)
+            else if (n.tag == TAGS.ENEMY_TAG)
             {
-                n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage * criticalMult, player);
+                if (player.GetComponent<PlayerPassives>().TryInstaKill())
+                    n.transform.root.GetComponent<IDamagable>()?.TakeDamage(999999, player);
+                else
+                    n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage * criticalMult, player);
 
-                if(burnDamage > 0)
+                if (burnDamage > 0)
                 {
                     GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, 3f, burnDamage);
                 }

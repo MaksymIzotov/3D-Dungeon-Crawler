@@ -71,6 +71,9 @@ public class BossHealthController : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage, GameObject damageDealer)
     {
+        if (damage >= 99999)
+            damage = 500;
+
         float actualDamage = damage - (damage / 100 * defence);
         hp -= actualDamage;
 
