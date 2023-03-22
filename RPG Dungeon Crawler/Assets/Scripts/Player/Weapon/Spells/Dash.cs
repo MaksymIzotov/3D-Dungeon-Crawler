@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dash", menuName = "Spells/Dash", order = 1)]
 public class Dash : Spell
 {
+    [Header("Main properties")]
     public LayerMask goThroughLayer;
     public float distance;
 
@@ -44,14 +45,20 @@ public class Dash : Spell
         float stealthDamage = spellSpawnpoint.root.GetComponent<PlayerPassives>().TryStealthAttack();
         if (stealthDamage > 0)
         {
+            bool isEnemyNear = false;
+
             Collider[] colliders = Physics.OverlapSphere(spellSpawnpoint.root.position, 7);
             foreach(Collider col in colliders)
             {
                 if (col.CompareTag(TAGS.ENEMY_TAG))
                 {
+                    isEnemyNear = true;
                     col.gameObject.GetComponent<IDamagable>()?.TakeDamage(stealthDamage, spellSpawnpoint.root.gameObject);
                 }
             }
+
+            if (isEnemyNear)
+                spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayStealthAttack();
         }
 
         spellSpawnpoint.root.GetComponent<CharacterController>().enabled = true;

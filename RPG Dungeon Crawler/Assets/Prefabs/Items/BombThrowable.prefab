@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6999c1a03773cec49a6f763de986ae5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 40
+  force: 25
   torqueForce: 30
   radius: 10
   explosionFXPrefab: {fileID: 8187977711249729811, guid: 40e219573dcd854419b2b6d196dcb69f, type: 3}

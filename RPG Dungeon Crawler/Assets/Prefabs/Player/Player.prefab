@@ -426,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Footsteps: {fileID: 11400000, guid: e5ff66bbd465e864789aac45b6b8525d, type: 2}
   JumpLand: {fileID: 11400000, guid: 509faab103cfaf94abf243dc15f83ed7, type: 2}
+  StealthAttack: {fileID: 11400000, guid: 3cf7db8f69006994990f95c90fab6ebc, type: 2}
   walkingStepRate: 0.5
   runningStepRate: 0.3
   jumpImpactDelay: 0.5
@@ -2180,6 +2181,7 @@ MonoBehaviour:
   potionOpen: {fileID: 8300000, guid: aca65685a6253114badc7e086a1f0237, type: 3}
   healing: {fileID: 8300000, guid: fc7f95dc280b82546bd8c0978dc6bb66, type: 3}
   fireball: {fileID: 8300000, guid: bd460c4b63a363543b5bf2aecef79bc2, type: 3}
+  bombThrow: {fileID: 8300000, guid: a2cd48294ff2d724da01772a17984e62, type: 3}
 --- !u!4 &8717048261857885471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247673242362073499, guid: 25c4f6039a339de4aa3e441372cf6914, type: 3}

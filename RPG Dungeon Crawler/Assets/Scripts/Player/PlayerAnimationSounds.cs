@@ -21,6 +21,11 @@ public class PlayerAnimationSounds : MonoBehaviour
 
     [SerializeField] private AudioClip fireball;
 
+    [Space(10)]
+    [Header("Bomb")]
+
+    [SerializeField] private AudioClip bombThrow;
+
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -44,5 +49,10 @@ public class PlayerAnimationSounds : MonoBehaviour
     private void Fireball()
     {
         source.PlayOneShot(fireball, 0.3f);
+    }
+
+    private void BombThrow()
+    {
+        source.PlayOneShot(bombThrow, 1f);
     }
 }

@@ -7,6 +7,9 @@ public class PlayerAudio : AudioController
 {
     public Audio Footsteps;
     public Audio JumpLand;
+    public Audio StealthAttack;
+
+    private AudioSource soundFX;
 
     private CharacterController characterController;
     private AudioSource audioSource;
@@ -84,5 +87,10 @@ public class PlayerAudio : AudioController
     public void StopWalking(InputAction.CallbackContext context)
     {
         isWalking = false;
+    }
+
+    public void PlayStealthAttack()
+    {
+        PlayAudio(audioSource, StealthAttack);
     }
 }

@@ -9,7 +9,7 @@ public class PlayerThrowables : MonoBehaviour
 
     public void ThrowBomb(float damage)
     {
-        Quaternion rot = new Quaternion(transform.rotation.x, transform.rotation.y, Camera.main.transform.rotation.z, transform.rotation.w);
+        Quaternion rot = new Quaternion(Camera.main.transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 
         GameObject bomb = Instantiate(bombPrefab, spellSpawnPointRight.position, rot);
         bomb.GetComponent<BombController>().SetupDamage(damage);
