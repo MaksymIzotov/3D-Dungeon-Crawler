@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfac2e57ac155642b87f1394a92632c, type: 3}
+  m_Name: DefaultDrop
+  m_EditorClassIdentifier: 
+  items:
+  - prefab: {fileID: 6570504387265425574, guid: c78637ea1a5535f46836f86c380a1e13, type: 3}
+    dropChance: 20
+  - prefab: {fileID: 5719627657043409983, guid: 2f0fc0356348f4b489e35c4f9c8497cf, type: 3}
+    dropChance: 20
+  - prefab: {fileID: 5719627657043409983, guid: 1905030fa7f85114290325746ebe7042, type: 3}
+    dropChance: 5
+  - prefab: {fileID: 5819736392669314391, guid: 9b4709b45ac134040b43bdfcb47ce640, type: 3}
+    dropChance: 10
+  - prefab: {fileID: 5951267031820142354, guid: 1bb6b19e87ac016489ccd274f9bbb883, type: 3}
+    dropChance: 10
+  - prefab: {fileID: 1253941806633110477, guid: 9f7f3e7148ed66f42a788da624e01d03, type: 3}
+    dropChance: 2
+  - prefab: {fileID: 5111467396007295822, guid: 6f9d377099fc7794ab12cca7fddf2c58, type: 3}
+    dropChance: 10
+  - prefab: {fileID: 4809424025701705063, guid: 2c8926b5e5f57754ba9bad94a7f332e2, type: 3}
+    dropChance: 7
+  - prefab: {fileID: 4809424025701705063, guid: 9c4607d07fc8e7f4cafc98447465a3ef, type: 3}
+    dropChance: 2
+  - prefab: {fileID: 5546454407057139743, guid: 34300de8781c9704b9d5c4d27865e7a9, type: 3}
+    dropChance: 40
+  - prefab: {fileID: 1800378508729787462, guid: 98eaa5881d1dac8478c92a6efa727195, type: 3}
+    dropChance: 50
+  - prefab: {fileID: 3366979449212885380, guid: 5ca030656468ac64198da81f0f1cc637, type: 3}
+    dropChance: 20
+  - prefab: {fileID: 7534031361520244703, guid: 910f25a357afe76438f2dea6db694013, type: 3}
+    dropChance: 15
+  - prefab: {fileID: 7534031361520244703, guid: 33b4f6094093cc14fba9666573289a5e, type: 3}
+    dropChance: 3
+  - prefab: {fileID: 3865808516356687413, guid: d0e9582d6d26749488edde146aa59fca, type: 3}
+    dropChance: 20
+  - prefab: {fileID: 6575005678998734771, guid: e628d9a792da6574e8a843eb3a7aa670, type: 3}
+    dropChance: 5
