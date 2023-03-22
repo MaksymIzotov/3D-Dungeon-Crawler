@@ -57,7 +57,7 @@ public class PlayerPassives : MonoBehaviour
         if (!isReturnDamage) { return; }
 
         float returnAmount = damage / 100 * returnDamage;
-        enemy.GetComponent<EnemyHealthController>().TakeDamage(returnAmount, gameObject);
+        enemy.GetComponent<IDamagable>()?.TakeDamage(returnAmount, gameObject);
     }
 
     public void EnableBlocking(float chance, PassiveDescription passiveDescription)

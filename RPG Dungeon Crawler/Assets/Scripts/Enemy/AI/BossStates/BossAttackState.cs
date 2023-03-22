@@ -12,6 +12,10 @@ public class BossAttackState : EnemyBaseState
     public int attacksAmount;
     public float damage;
 
+    [Space(10)]
+    [Header("Explosion attack properties")]
+    public LayerMask collissionLayer;
+
     private int attackType;
     private bool isAttacking;
 

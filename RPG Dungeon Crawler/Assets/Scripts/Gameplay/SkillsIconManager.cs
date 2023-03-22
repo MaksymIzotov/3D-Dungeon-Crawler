@@ -70,7 +70,14 @@ public class SkillsIconManager : MonoBehaviour
     public void UpdateAmount(int amount)
     {
         if (amount <= 0)
-            usableImage.gameObject.SetActive(false);
+        {
+            usableImage.sprite = emptyUsableSlot;
+            foreach (Transform child in usableImage.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+            
 
         usableAmount.text = "x" + amount;
     }
