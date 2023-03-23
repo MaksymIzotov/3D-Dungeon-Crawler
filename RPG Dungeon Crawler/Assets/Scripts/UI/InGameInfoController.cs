@@ -12,6 +12,7 @@ public class InGameInfoController : MonoBehaviour
         minimapCamera = GameObject.Find("MinimapCamera");
         minimapCamera.transform.position = new Vector3(transform.position.x, minimapCamera.transform.position.y, transform.position.z);
         minimapCamera.transform.parent = transform;
+        minimapCamera.transform.localEulerAngles = new Vector3(minimapCamera.transform.eulerAngles.x, 0, 0);
     }
 
     public void ToggleOn(InputAction.CallbackContext context)
@@ -40,6 +41,7 @@ public class InGameInfoController : MonoBehaviour
         minimapCamera.GetComponent<Camera>().orthographicSize = 150;
         minimapCamera.transform.position = new Vector3(transform.position.x, minimapCamera.transform.position.y, transform.position.z);
         minimapCamera.transform.parent = transform;
+        minimapCamera.transform.localEulerAngles = new Vector3(minimapCamera.transform.eulerAngles.x, 0, 0);
 
         //Showing hints for totems
         List<GameObject> totems = LevelManager.Instance.GetCurrentTotems;
