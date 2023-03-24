@@ -52,9 +52,8 @@ public class ThrowableHealingPotionController : MonoBehaviour
     private void DestroyObject()
     {
         Vector3 spawnPos = new Vector3(transform.position.x, 0, transform.position.z);
-        Quaternion spawnRot = new Quaternion(-90, 0, 0, 0);
 
-        GameObject healingArea = Instantiate(healingAreaPrefab, spawnPos, spawnRot);
+        GameObject healingArea = Instantiate(healingAreaPrefab, spawnPos, Quaternion.Euler(-90,0,0));
         healingArea.GetComponent<HealingAreaController>().Setup(regenAmount);
 
         Destroy(gameObject);

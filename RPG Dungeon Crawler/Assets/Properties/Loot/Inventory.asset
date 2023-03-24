@@ -306,15 +306,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9cbe3f71dcf912448a90d1613315f957, type: 2}
   - {fileID: 11400000, guid: 86e774c9307a7ce4c9984d1365309c80, type: 2}
   - {fileID: 11400000, guid: 91efb31c1c3bc2741a2e46702efa9158, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
-  - {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
+  - {fileID: 11400000, guid: 91efb31c1c3bc2741a2e46702efa9158, type: 2}
   LevelInventory: []
   moneyInventory: {fileID: 11400000, guid: f19717d29e69bcf47b0af0b9c223604d, type: 2}
   equipedSpells:
@@ -329,4 +321,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b81e0e684d51c284f91b4907f2b47ff2, type: 2}
   usable: {fileID: 11400000, guid: 2f1a997bd1d4dc9428adca3c8c10a607, type: 2}
   armor: {fileID: 11400000, guid: 470753403a794cf4086fef215dea18cc, type: 2}
-  weapon: {fileID: 11400000, guid: 86e774c9307a7ce4c9984d1365309c80, type: 2}
+  weapon: {fileID: 0}
