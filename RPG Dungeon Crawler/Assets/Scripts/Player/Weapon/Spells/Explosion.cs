@@ -30,6 +30,7 @@ public class Explosion : Spell
         player.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.EXPLOSION_ANIM);
 
         //Play audio (riser)
+        spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), preCastAudio);
     }
 
     public override void Cast(Transform spellSpawnpoint)
@@ -58,8 +59,11 @@ public class Explosion : Spell
             }
         }
 
-        // Play audio (explosion)
+        //Shake the camera
+        spellSpawnpoint.root.GetComponent<CameraShake>().EnableShaking(0.6f);
 
+         // Play audio (explosion)
+         spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), castAudio);
     }
 
     public override void CastUpgraded(Transform spellProperty)

@@ -33,6 +33,7 @@ public class Spell : ScriptableObject
 
     [Space(10)]
     [Header("Sounds")]
+    public Audio preCastAudio;
     public Audio castAudio;
 
     public virtual void PreCast(Transform spellSpawnpoint)
