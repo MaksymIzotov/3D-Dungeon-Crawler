@@ -9,4 +9,5 @@ public static class ANIMATIONS
     public static string HEALINGPOTION_ANIM = "HealingPotionUse";
     public static string BOMB_ANIM = "BombUse";
     public static string EXPLOSION_ANIM = "Explosion";
+    public static string HEALINGTHROW_ANIM = "HealingThrow";
 }
