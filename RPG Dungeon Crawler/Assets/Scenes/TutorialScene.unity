@@ -7442,6 +7442,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   levelExitText: {fileID: 2099259376}
+  isTutorialLevel: 1
 --- !u!114 &1727796582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7638,6 +7639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialSteps:
   - text: Welcome to the Dungeon. Take a quick look around.
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls: []
@@ -7646,6 +7648,7 @@ MonoBehaviour:
         m_Calls: []
   - text: You can see your spells here. Try them out now, so you know how they work
       before going into the fight.
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls:
@@ -7678,6 +7681,7 @@ MonoBehaviour:
           m_CallState: 2
   - text: 'This is your minimap. It will show you some important information such
       as: enemies, totems and most importantly, dungeon map.'
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls:
@@ -7711,6 +7715,7 @@ MonoBehaviour:
   - text: By pressing tab button, you can get some extra information. Minimap will
       show you full dungeon. On the left side you can see your passives, if there
       any. Also, all totems will be seen through walls with "!" above them.
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls: []
@@ -7719,6 +7724,7 @@ MonoBehaviour:
         m_Calls: []
   - text: You have to destroy every totem in dungeon to complete it. But be careful.
       There are enemies, that you have to defeat before.
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls: []
@@ -7726,6 +7732,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - text: Let's move forward. Try to interact with the totem in the next room.
+    doLock: 1
     action:
       m_PersistentCalls:
         m_Calls:
@@ -7744,9 +7751,20 @@ MonoBehaviour:
     finishedAction:
       m_PersistentCalls:
         m_Calls: []
+  - text: Look there, you've got some loot.
+    doLock: 1
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+    finishedAction:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialBackground: {fileID: 1057923479}
   nextStep: {fileID: 606564776}
   tutorialText: {fileID: 246916202}
+  tutorialSpells:
+  - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
+  - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
 --- !u!4 &1736791030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8530123032332774913, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
@@ -20876,6 +20894,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8921451171724837731, guid: fc862e75f05753640ba07d75adf95db9, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: a16079f3a9425e848b010d7433a2f85f, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: fc862e75f05753640ba07d75adf95db9, type: 3}

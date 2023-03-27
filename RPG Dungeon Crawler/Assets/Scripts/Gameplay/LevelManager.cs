@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject levelExitText;
 
+    [SerializeField] private bool isTutorialLevel = false;
+
     public void AddTotem(GameObject totem)
     {
         totems.Add(totem);
@@ -38,8 +40,15 @@ public class LevelManager : MonoBehaviour
 
         if (totems.Count == 0)
         {
-            isLevelCompleted = true;
-            levelExitText.SetActive(true);
+            if (isTutorialLevel)
+            {
+                GetComponent<TutorialLevelController>().SetLock(false);
+            }
+            else
+            {
+                isLevelCompleted = true;
+                levelExitText.SetActive(true);
+            }        
         }
     }
 
