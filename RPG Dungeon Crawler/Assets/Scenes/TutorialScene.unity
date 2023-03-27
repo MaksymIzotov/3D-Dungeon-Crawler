@@ -7752,19 +7752,40 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - text: Look there, you've got some loot.
-    doLock: 1
+    doLock: 0
     action:
       m_PersistentCalls:
         m_Calls: []
     finishedAction:
       m_PersistentCalls:
         m_Calls: []
+  - text: You are now ready for the real dungeon. Press Enter to exit tutorial.
+    doLock: 0
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+    finishedAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1727796597}
+          m_TargetAssemblyTypeName: TutorialLevelController, Assembly-CSharp
+          m_MethodName: ExitTutorial
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   tutorialBackground: {fileID: 1057923479}
   nextStep: {fileID: 606564776}
   tutorialText: {fileID: 246916202}
   tutorialSpells:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
+  tutorialArmor: {fileID: 11400000, guid: 470753403a794cf4086fef215dea18cc, type: 2}
 --- !u!4 &1736791030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8530123032332774913, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}
@@ -20886,6 +20907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5524940281433172173, guid: fc862e75f05753640ba07d75adf95db9, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: c5a33ebaf0aff464bb78f2d39e6b0bb5, type: 2}
     - target: {fileID: 6694401950485316191, guid: fc862e75f05753640ba07d75adf95db9, type: 3}
       propertyPath: uniqueID
       value: 4112332763075644953

@@ -23,9 +23,11 @@ public class TutorialLevelController : MonoBehaviour
     [SerializeField] private TMP_Text tutorialText;
 
     [SerializeField] private Spell[] tutorialSpells;
+    [SerializeField] private Item tutorialArmor;
 
     private bool isLocked;
-  
+    private bool isCoroutineRunning = false;
+
     private int index = -1;
 
     private void Awake()
@@ -47,6 +49,8 @@ public class TutorialLevelController : MonoBehaviour
         {
             LootInventory.Instance.inventory.equipedSpells[i] = tutorialSpells[i];
         }
+
+        LootInventory.Instance.inventory.armor = tutorialArmor;
     }
 
     private void ClearSpells()
@@ -55,6 +59,8 @@ public class TutorialLevelController : MonoBehaviour
         {
             LootInventory.Instance.inventory.equipedSpells[i] = null;
         }
+
+        LootInventory.Instance.inventory.armor = null;
     }
 
     private void Update()
@@ -62,7 +68,25 @@ public class TutorialLevelController : MonoBehaviour
         if (isLocked) return;
 
         if (Input.GetKeyDown(KeyCode.Return))
-            UpdateTutorialStep();
+        {
+            if (isCoroutineRunning)
+            {
+                StopAllCoroutines();
+                isCoroutineRunning = false;
+                tutorialText.text = tutorialSteps[index].text;
+                nextStep.SetActive(true);
+            }
+            else
+            {
+                UpdateTutorialStep();
+            }
+        }          
+    }
+
+    public void ExitTutorial()
+    {
+        ClearSpells();
+        LevelManager.Instance.onLevelCompleted.Invoke();
     }
 
     public void SetLock(bool _isLocked)
@@ -109,6 +133,7 @@ public class TutorialLevelController : MonoBehaviour
         tutorialBackground.SetActive(true);
         nextStep.SetActive(false);
         tutorialText.text = "";
+        isCoroutineRunning = true;
 
         for (int i = 0; i < tutorialSteps[index].text.Length; i++)
         {
@@ -117,6 +142,7 @@ public class TutorialLevelController : MonoBehaviour
             yield return new WaitForSeconds(0.07f);
         }
 
+        isCoroutineRunning = false;
         nextStep.SetActive(true);
     }
 }
