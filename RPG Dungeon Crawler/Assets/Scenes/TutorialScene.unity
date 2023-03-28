@@ -7468,7 +7468,6 @@ GameObject:
   - component: {fileID: 1727796587}
   - component: {fileID: 1727796585}
   - component: {fileID: 1727796584}
-  - component: {fileID: 1727796598}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -7829,7 +7828,7 @@ MonoBehaviour:
     finishedAction:
       m_PersistentCalls:
         m_Calls: []
-  - text: Look there, you've got some loot.
+  - text: Over there, you've got some loot.
     doLock: 0
     action:
       m_PersistentCalls:
@@ -7864,19 +7863,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   tutorialArmor: {fileID: 11400000, guid: 470753403a794cf4086fef215dea18cc, type: 2}
---- !u!114 &1727796598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727796580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3be5e2aa153aa4f96688cc2a50bd1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
 --- !u!4 &1736791030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8530123032332774913, guid: 60b50a7c9fdcac342b583b5d3f4e5e09, type: 3}

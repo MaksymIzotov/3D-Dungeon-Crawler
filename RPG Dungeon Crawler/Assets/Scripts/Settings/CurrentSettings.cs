@@ -8,5 +8,6 @@ public class CurrentSettings : ScriptableObject
     public float sensitivity = 1f;
     public float brightness = 0f;
 
-    public bool isPlaying = false;
+    public bool isPlaying;
+    public bool isTutorial;
 }

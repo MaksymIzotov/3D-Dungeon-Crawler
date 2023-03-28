@@ -43,10 +43,11 @@ public class MenuInventoryController : MonoBehaviour
             inventory.equipedSpells[i] = null;
         }
 
-        inventory.moneyInventory.amountBlueScrolls = 10;
+        inventory.moneyInventory.amountBlueScrolls = 0;
         inventory.moneyInventory.amountPurpleScrolls = 0;
         inventory.moneyInventory.amountRedScrolls = 0;
         inventory.moneyInventory.amountCoins = 0;
+        inventory.moneyInventory.amountCrystals = 0;
 
         inventory.weapon = null;
         inventory.armor = null;
