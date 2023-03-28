@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DEBUG : MonoBehaviour
+public class DEBUG : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject enemyPrefab;
 
@@ -16,8 +18,17 @@ public class DEBUG : MonoBehaviour
         GameObject player = Instantiate(enemyPrefab, PlayerSpawner.Instance.GetSpawnPoint().transform.position, Quaternion.identity);
     }
 
-    private void Update()
+    public void Update()
     {
-        
+       
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Mouse Over: " + eventData.pointerCurrentRaycast.gameObject.name);
+        if (eventData.pointerCurrentRaycast.gameObject != null)
+        {
+            
+        }
     }
 }
