@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         {
             if (isTutorialLevel)
             {
-                GetComponent<TutorialLevelController>().SetLock(false);
+                GetComponent<TutorialStepsShow>().SetLock(false);
             }
             else
             {

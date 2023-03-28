@@ -17,6 +17,7 @@ public class GameflowController : MonoBehaviour
     public UnityEvent onStartGame;
     public UnityEvent onBossStart;
     public UnityEvent onContinuePlaying;
+    public UnityEvent onTutorialContinue;
 
     private int bossCrystalsAmount = 15;
 
@@ -29,6 +30,9 @@ public class GameflowController : MonoBehaviour
 
         if (settings.isPlaying)
             onContinuePlaying.Invoke();
+        else if(settings.isTutorial)
+            onTutorialContinue.Invoke();
+        
     }
     
     public void TryStartGame()
@@ -94,6 +98,17 @@ public class GameflowController : MonoBehaviour
 
         MenuInventoryController.Instance.inventory.moneyInventory.amountCrystals -= bossCrystalsAmount;
         onBossStart.Invoke();
+    }
+
+    public void StartTutorial()
+    {
+        settings.isTutorial = true;
+        settings.isPlaying = false;
+    }
+
+    public void FinishTutorial()
+    {
+        settings.isTutorial = false;
     }
 
     public void StartGame()
