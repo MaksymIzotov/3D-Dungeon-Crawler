@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: ConstantEnemies
+  m_Script: {fileID: 11500000, guid: 32941a9dee6f9694883789cbfae8cd3b, type: 3}
+  m_Name: EnemyBombHealth
   m_EditorClassIdentifier: 
-  enemiesAmount: 5
-  minDelay: 10
-  maxDelay: 60
-  enemies:
-  - {fileID: 7001259368477215862, guid: 4fb658f5bc201914e8cb7827711298a6, type: 3}
+  healthPoints: 20
+  defence: 0
+  healthRegen: 1

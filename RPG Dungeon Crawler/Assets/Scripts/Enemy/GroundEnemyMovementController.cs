@@ -24,11 +24,10 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     private void RotateEnemy()
     {
-        Quaternion lookRotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
-        lookRotation.x = 0;
-        lookRotation.z = 0;
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime);
+        var lookPos = player.transform.position - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10f);
     }
 
     public void ChangeDestination()

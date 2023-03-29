@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af326c4a62391e4ea402be810eab425, type: 3}
-  m_Name: ConstantEnemies
+  m_Script: {fileID: 11500000, guid: 366bea82b5012bf4b9d4e3238ebbb875, type: 3}
+  m_Name: EnemyBomb
   m_EditorClassIdentifier: 
-  enemiesAmount: 5
-  minDelay: 10
-  maxDelay: 60
-  enemies:
-  - {fileID: 7001259368477215862, guid: 4fb658f5bc201914e8cb7827711298a6, type: 3}
+  attackDelayMelee: 1
+  damage: 30
+  preAttackTimeMelee: 0.5
+  attackDelayShooting: 0
+  preAttackTimeShooting: 0
+  pushDamage: 0
+  bullet: {fileID: 0}
