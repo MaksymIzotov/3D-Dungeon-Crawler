@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 97637a2a763b7f24b8da4e139e4144ca, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 82b660520bdecce4daf45d270ec93fe4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000055046083, g: 0.00014094963, b: 0.0042733354, a: 1}
+  m_IndirectSpecularColor: {r: 0.01602986, g: 0.018923363, b: 0.021959236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ab5b5a5713ebcfe44bfc7a51086dfe61, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7df5f7a563485c1419c8ed4fb9d5272f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3406,7 +3406,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 150
+  m_Intensity: 60
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3987,7 +3987,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 150
+  m_Intensity: 60
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6375,7 +6375,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 150
+  m_Intensity: 60
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8217,7 +8217,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 150
+  m_Intensity: 60
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9682,6 +9682,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   levelExitText: {fileID: 969332287}
+  isTutorialLevel: 0
 --- !u!114 &1754740304
 MonoBehaviour:
   m_ObjectHideFlags: 0

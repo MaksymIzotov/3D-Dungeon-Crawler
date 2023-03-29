@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 97637a2a763b7f24b8da4e139e4144ca, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 82b660520bdecce4daf45d270ec93fe4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000055046083, g: 0.00014094963, b: 0.0042733354, a: 1}
+  m_IndirectSpecularColor: {r: 0.01602986, g: 0.018923363, b: 0.021959236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 47747f6d82361b54a85eb86380fcac73, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: acbd596a4e9b78444ae1f9db29eae978, type: 2}
+  m_LightingDataAsset: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7df5f7a563485c1419c8ed4fb9d5272f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5568,18 +5568,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1727796581}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LeaveLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 707959455}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
@@ -5587,6 +5575,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 7e74aa750b1702b40b8792cf17caaeee, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1727796597}
+        m_TargetAssemblyTypeName: TutorialLevelController, Assembly-CSharp
+        m_MethodName: ExitTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6839,7 +6839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABIIewXxXkJmQIAAKEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVFtv2jAU/ivIz9sEKURjbx1Quklt0djUh6UPbnwgFo4d+cKlFf995zghBDoJKfhcv++cz35nUrsKcm/s3ErxYASwbz12K7Zc5yDYp9454B72fG30Ur7BKe5ZCl9QEI8xv7iXBu0DSnOmBG9lfqvXioL7aAxarowtZ2INE+O8Q/OKKwfossZTtkbTe4/tm4RD832jb++I/3LQHuw5anQdNqrjgs4VLysQhPccPmjjB02gRi5NTP/LiDoYpaRroDB/qCLVX/xARIXkSCsCIJYFyHXhm0Ob+LRaOfANJssPU2lxOnVF9t3UIyu529S4tlwF6pGM0oioLvrwwV/jXVlT3rdt+33q4QuZbxBhzp3vzLRrnl4CD3rH1Ya/KnguQD+auTVBi05ucJBMO+eW3KSAnIB5G6AFezK22dXHPQ7OezxG/vuJkuVr48HjUpk46yTFM1jcyw8EHFVBSklqK2H44+A3X3fl0zjupHUeXU1RTeBeTbAUymZxaMQl+ImxGqK54VGB5sofFljGX6/wytdpe+W543RRLrNO+r9KieY2PunXi+w6F2YX1zWqt/EzlNXCSO2XwG1edCq6wuwewBVPwSup4cyJHI84xonRuhag+0/aMtgVzztpHvY+WJhyz+MVQEyok644HI40ZuigFGky8qDif5EF/V5ozAXHviqa2aNBZGi8+L6QENZBikuhM0gHfRiKNEnEcJik6edxcsPHaZIOR+ObdPh1zOJVkBqnztWiHlozdtSQPnPRqHqqSK9bb255Fe+esHw3l2+l6QhA6pVZ5hZAP9UVWrJgsQm+EGImJNJcgvdSR/Wx94wpk29AZG2hLA52tveWZ+cqGavk1niyZGwS37CMkbm9VwsLWwk7an4qdmTHf1BLAwQUAAAICAAASCHsA3rF920AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IztNBRUEovSizIKAaKGII4pZkpIHa0UqqZoUGqSYqZkVGKiYmRmZmupZFxoqWZkZmJqaWxmYmFpVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAASCHsF8V5CZkCAAChBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAASCHsA3rF920AAAB4AAAACQAkAAAAAAAAAAAAAADmAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAJ4DAAAAAA==
+    dataString: UEsDBBQAAAgIAABIIeyoNHN/qgIAAK8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVF1v2jAU/SvIz1sFAbKytw4o3aS2qGzqw+iDG1+IhWNH/ijQiv++e50QAp0UKfH9POfe43wwqV0JmTd2ZqW4NwLY9w67EW9cZyDYl84p4A52fG30Qr7DMe5ZCp9TEI8xT9xLg/YepTlTgLcyu9FrRcFdNAYtV8YWU7GGsXHeoXnFlQN0WeMpW6Ppo8N2dcK+fr/Tu3PArwy0B3uKGvauviW9fv8iOB1dDa+7vaQ/illBZ4oXJQhCf0ruDY9N8CsGamRWx3SvhtTPKCVdDYz5fRmJP/E90RaSI8kIhzjnINe5rw9N4uNq5cDX2CzfT6TFWVUV2Q9TDbDgblPheuMqUI9kmEZEVdH7T/4K78qa4q5p2+1SD5/LbIMIM+58a8Jt8+QceNBbrjb8VcFzDvrBzKwJWrRyg4Nk0jo35MY5ZATM2wAN2KOxyS4/b7V32uoh8t+NlSxeaw8eF8rEWScpnsHiXn4i4KgR0k1SWQnDHwe/+botptpxK63z6KqLagL3aoKlUDaNQyMuwY+N1RDNNY8SNFd+P8cy/nKFF75W2wvPLadrc551vA0XKdHcxCfdapFt59xs47qG1TZ+haKcG6n9ArjN8lZFl5vtPbj8MXglNZw4keMBxzg2WlcCdP9JWwS74lkrzcPOBwsT7nm8AogJddIWh8ORxgwdlCJNRh5U/C+yoOeFxpxz7KuimT0YRIbGs/cLCWEdpDgXOoO014WBSJNEDAZJmn4dJX0+SpN0MBz108H1iMWrIDVOnat5NbR67KghfeKiUfVUkf51nZnlZbx7wvLtTL4XpiUAqVdmkVkA/VhVaMiCxSb4hxBTIZHmAryXOqqPfSyZMtkGxLIptIyDne685ctTlSUr5ZvxZFmycfyjLRmZm3s1t/AmYUvNj8UO7PAPUEsDBBQAAAgIAABIIewDesX3bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jO00FFQSi9KLMgoBooYgjilmSkgdrRSqpmhQapJipmRUYqJiZGZma6lkXGipZmRmYmppbGZiYWlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAABIIeyoNHN/qgIAAK8FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAABIIewDesX3bQAAAHgAAAAJACQAAAAAAAAAAAAAAPcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAArwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -8606,7 +8606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Skip Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee74db1ab4e614447b8f1f2ee785ec1b, type: 2}
   m_sharedMaterial: {fileID: 6337618381014387920, guid: ee74db1ab4e614447b8f1f2ee785ec1b, type: 2}
@@ -11198,8 +11198,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 100
-  m_Range: 120
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -11394,8 +11394,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 100
-  m_Range: 120
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -11519,8 +11519,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 100
-  m_Range: 120
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -18694,8 +18694,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 100
-  m_Range: 120
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -19565,8 +19565,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6666667, b: 0.15686275, a: 1}
-  m_Intensity: 100
-  m_Range: 120
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

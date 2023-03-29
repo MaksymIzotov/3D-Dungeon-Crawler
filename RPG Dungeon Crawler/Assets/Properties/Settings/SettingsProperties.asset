@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 12
   brightness: 1
-  isPlaying: 1
+  isPlaying: 0
+  isTutorial: 0

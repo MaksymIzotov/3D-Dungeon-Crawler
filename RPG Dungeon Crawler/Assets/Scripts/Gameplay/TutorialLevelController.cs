@@ -46,6 +46,9 @@ public class TutorialLevelController : MonoBehaviour
 
     public void ExitTutorial()
     {
+        if (LootInventory.Instance.collectedScrollsBlue < 16)
+            LootInventory.Instance.collectedScrollsBlue = 16;
+
         ClearSpells();
         LevelManager.Instance.onLevelCompleted.Invoke();
     }   
