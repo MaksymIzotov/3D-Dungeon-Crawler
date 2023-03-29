@@ -19,15 +19,18 @@ public class Dash : Spell
     public float def_cooldown;
     public int def_upgradePrice;
 
+    public float normalFOV;
+
     public override void PreCast(Transform spellSpawnpoint)
     {
-
+        float desiredFOV = normalFOV + 10;
+        spellSpawnpoint.root.GetComponent<SpellsInventory>().StartCoroutine(FOVChange());
     }
 
     public override void Cast(Transform spellSpawnpoint)
     {
         spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), castAudio);
-        spellSpawnpoint.root.GetComponent<CharacterController>().enabled = false;    
+        spellSpawnpoint.root.GetComponent<CharacterController>().enabled = false;
 
         RaycastHit hit;
         if (Physics.Raycast(spellSpawnpoint.root.position, spellSpawnpoint.root.forward, out hit, distance, ~goThroughLayer))
@@ -62,6 +65,36 @@ public class Dash : Spell
         }
 
         spellSpawnpoint.root.GetComponent<CharacterController>().enabled = true;
+
+        spellSpawnpoint.root.GetComponent<PlayerController>().StartCoroutine(FOVChangeBack());
+    }
+
+    IEnumerator FOVChangeBack()
+    {
+        float timer = 0;
+
+        while(timer <= afterActivateTime)
+        {
+            Camera.main.fieldOfView -= 0.3f;
+
+            timer += 0.01f;
+            yield return new WaitForSeconds(0.001f);
+        }
+
+        Camera.main.fieldOfView = normalFOV;
+    }
+
+    IEnumerator FOVChange()
+    {
+        float timer = 0;
+
+        while (timer <= activateTime)
+        {
+            Camera.main.fieldOfView += 0.3f;
+
+            timer += 0.01f;
+            yield return new WaitForSeconds(0.001f);
+        }
     }
 
     public override string Stats()

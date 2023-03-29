@@ -15,14 +15,15 @@ MonoBehaviour:
   spellName: Dash
   scrollType: 0
   isDamage: 0
-  coolDownTime: 5
-  activateTime: 0
-  afterActivateTime: 0
+  coolDownTime: 2
+  activateTime: 0.5
+  afterActivateTime: 0.5
   icon: {fileID: 21300000, guid: 84d60c0be598a764c860340bdc562d5f, type: 3}
   spellReference: {fileID: 11400000}
   upgradePrice: 10
   lvl: 1
   maxLvl: 5
+  preCastAudio: {fileID: 0}
   castAudio: {fileID: 11400000, guid: ff62b7338d624a947a7b4302adefc9ec, type: 2}
   goThroughLayer:
     serializedVersion: 2
@@ -32,3 +33,4 @@ MonoBehaviour:
   priceMult: 1.2
   def_cooldown: 2
   def_upgradePrice: 10
+  normalFOV: 90
