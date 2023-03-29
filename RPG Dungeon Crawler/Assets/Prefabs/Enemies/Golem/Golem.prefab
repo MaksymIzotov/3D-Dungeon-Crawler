@@ -2631,6 +2631,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8815258617298195616}
+        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+        m_MethodName: StopAllCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   damageTextParent: {fileID: 8815258616973142481}
   isExploding: 1
   isDead: 0
@@ -2979,7 +2991,7 @@ MonoBehaviour:
   Footsteps: {fileID: 11400000, guid: 0327b1cdcc72e0c41947d403efc3254b, type: 2}
   Attack: {fileID: 11400000, guid: 937142357114b424aafb6fae61d3bd05, type: 2}
   AttackMissed: {fileID: 11400000, guid: 3b41f641e797ec942b6b69c71f70eaa4, type: 2}
-  AttackAbove: {fileID: 0}
+  AttackAbove: {fileID: 11400000, guid: 3b41f641e797ec942b6b69c71f70eaa4, type: 2}
   SpecialHit: {fileID: 11400000, guid: b6f77644dbd34eb429258be774f34b18, type: 2}
   isWalkingLooped: 0
 --- !u!1 &8815258617950258684

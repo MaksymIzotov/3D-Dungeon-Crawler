@@ -10,6 +10,7 @@ public class BombAttackState : EnemyBaseState
 
     public override void EnterState(EnemyStateManager manager)
     {
+        manager.GetComponent<GroundEnemyMovementController>().StopAgent();
         //Explode
         //Play sound
 
