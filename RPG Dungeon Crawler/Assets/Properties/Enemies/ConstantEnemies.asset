@@ -17,3 +17,4 @@ MonoBehaviour:
   maxDelay: 60
   enemies:
   - {fileID: 7001259368477215862, guid: 4fb658f5bc201914e8cb7827711298a6, type: 3}
+  - {fileID: 6582798051437936781, guid: 4d212a1ebf798ff4596d1615396ce00e, type: 3}
