@@ -32,12 +32,14 @@ public class FireballController : MonoBehaviour
     {
         passives = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG).GetComponent<PlayerPassives>();
 
-        damage = _damage;
-        burnDamage = passives.GetBurnDamage();
+        damage = _damage;     
         isFireball = _isFireball;
 
         if (isFireball)
+        {
+            burnDamage = passives.GetBurnDamage();
             damage += passives.fireDamage;
+        }        
     }
 
     private void FixedUpdate()
