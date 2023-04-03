@@ -15,8 +15,11 @@ public class FireballController : MonoBehaviour
     [SerializeField] private float radius;
 
     private float damage;
-
     private float burnDamage;
+
+    private bool isFireball;
+
+    private PlayerPassives passives;
 
     void Start()
     {
@@ -25,10 +28,16 @@ public class FireballController : MonoBehaviour
         Invoke("DestroyObject", 10);
     }
 
-    public void SetProperties(float _damage, float _burnDamage)
+    public void SetProperties(float _damage, bool _isFireball)
     {
+        passives = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG).GetComponent<PlayerPassives>();
+
         damage = _damage;
-        burnDamage = _burnDamage;
+        burnDamage = passives.GetBurnDamage();
+        isFireball = _isFireball;
+
+        if (isFireball)
+            damage += passives.fireDamage;
     }
 
     private void FixedUpdate()
@@ -47,7 +56,7 @@ public class FireballController : MonoBehaviour
         isColliding = true;
         GameObject player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
 
-        float criticalMult = player.GetComponent<PlayerPassives>().TryCriticalDamage();
+        float criticalMult = passives.TryCriticalDamage();
 
         //Do damage
         bool isPlayerHit = false;
@@ -65,7 +74,7 @@ public class FireballController : MonoBehaviour
             }
             else if (n.tag == TAGS.ENEMY_TAG)
             {
-                if (player.GetComponent<PlayerPassives>().TryInstaKill())
+                if (passives.TryInstaKill())
                     n.transform.root.GetComponent<IDamagable>()?.TakeDamage(999999, player);
                 else
                     n.transform.root.GetComponent<IDamagable>()?.TakeDamage(damage * criticalMult, player);

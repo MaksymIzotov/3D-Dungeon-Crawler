@@ -1019,6 +1019,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8010afc73e1a5a4fa3cfa5d9752ce9a, type: 2}
   - {fileID: 11400000, guid: b81e0e684d51c284f91b4907f2b47ff2, type: 2}
   - {fileID: 11400000, guid: 2a8282da95cb74644ae4e5413629a30b, type: 2}
+  - {fileID: 11400000, guid: 8486e569b38859242b0f37b146127448, type: 2}
   allPurpleSpellsReset: []
   allRedSpellsReset: []
   equipItemClip: {fileID: 8300000, guid: 2179dd81418ca53418154961c45fdca6, type: 3}

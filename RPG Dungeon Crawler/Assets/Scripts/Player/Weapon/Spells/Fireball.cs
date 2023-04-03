@@ -8,6 +8,7 @@ public class Fireball : Spell
     public GameObject instantiatePrefab;
 
     public float damage;
+    public bool isFireball;
 
     [Space(10)]
     [Header("Upgrade amount")]
@@ -26,6 +27,8 @@ public class Fireball : Spell
         //Animation
         GameObject parent = spellSpawnpoint.root.gameObject;
         parent.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.FIREBALL_ANIM);
+
+        spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), preCastAudio);
     }
 
     public override void Cast(Transform spellSpawnpoint)
@@ -33,9 +36,7 @@ public class Fireball : Spell
         GameObject parent = spellSpawnpoint.root.gameObject;
         GameObject fireball = Instantiate(instantiatePrefab, spellSpawnpoint.position, spellSpawnpoint.rotation);
 
-        float damageAdd = parent.GetComponent<PlayerPassives>().fireDamage + parent.GetComponent<PlayerPassives>().damage;
-        float burnDamage = parent.GetComponent<PlayerPassives>().GetBurnDamage();
-        fireball.GetComponent<FireballController>().SetProperties(damage + damageAdd, burnDamage);
+        fireball.GetComponent<FireballController>().SetProperties(damage, isFireball);
     }
 
     public override void CastUpgraded(Transform spellProperty)
