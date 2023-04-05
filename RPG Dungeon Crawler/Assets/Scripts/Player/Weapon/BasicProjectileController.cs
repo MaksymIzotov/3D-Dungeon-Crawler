@@ -41,6 +41,20 @@ public class BasicProjectileController : MonoBehaviour
 
         if (!collision.gameObject.CompareTag(TAGS.ENEMY_TAG))
         {
+            if (collision.gameObject.tag == TAGS.DESTRUCTABLE_TAG)
+            {
+                if (collision.gameObject.GetComponent<CapsuleCollider>() != null)
+                    collision.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                else if (collision.gameObject.GetComponent<SphereCollider>() != null)
+                    collision.gameObject.GetComponent<SphereCollider>().enabled = false;
+                else if (collision.gameObject.GetComponent<MeshCollider>() != null)
+                    collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+
+                collision.gameObject.GetComponent<EnemyExplode>().Explode();
+
+                Destroy(collision.gameObject, 5);
+            }
+
             DestroyObject();
             return;
         }

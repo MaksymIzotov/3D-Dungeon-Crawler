@@ -12,6 +12,8 @@ TagManager:
   - Loot
   - Healthbar
   - Border
+  - Area
+  - Destructable
   layers:
   - Default
   - TransparentFX

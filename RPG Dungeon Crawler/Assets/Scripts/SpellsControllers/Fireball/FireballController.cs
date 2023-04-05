@@ -86,6 +86,19 @@ public class FireballController : MonoBehaviour
                     GetComponent<ParticlesController>().SpawnBurnParticles(n.transform.root, 3f, burnDamage);
                 }
             }
+            else if(n.tag == TAGS.DESTRUCTABLE_TAG)
+            {
+                if (n.GetComponent<CapsuleCollider>() != null)
+                    n.GetComponent<CapsuleCollider>().enabled = false;
+                else if (n.GetComponent<SphereCollider>() != null)
+                    n.GetComponent<SphereCollider>().enabled = false;
+                else if (n.GetComponent<MeshCollider>() != null)
+                    n.GetComponent<MeshCollider>().enabled = false;
+
+                n.GetComponent<EnemyExplode>().Explode();
+
+                Destroy(n.gameObject, 5);
+            }
         }
 
         DestroyObject();
