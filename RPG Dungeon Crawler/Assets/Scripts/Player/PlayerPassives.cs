@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPassives : MonoBehaviour
 {
@@ -28,6 +30,9 @@ public class PlayerPassives : MonoBehaviour
 
     private bool isInstaKillOn = false;
     private float instaKillChance;
+
+    private int blockAmount;
+    private PassiveDescription shieldDescription;
 
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
@@ -165,5 +170,60 @@ public class PlayerPassives : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void EnableShield(int amount, PassiveDescription passiveDescription)
+    {
+        blockAmount = amount;
+
+        shieldDescription = passiveDescription;
+        activePassives.Add(passiveDescription);
+
+        StartCoroutine(ShieldFadeOn());
+        PassiveDescriptionShow.Instance.UpdatePassives();
+    }
+
+    public bool TryShieldBlocking()
+    {
+        if (blockAmount <= 0) return false;
+
+        blockAmount--;
+
+        if(blockAmount <= 0)
+        {
+            //Remove FX
+            StartCoroutine(ShieldFadeOff());
+            activePassives.Remove(shieldDescription);
+        }
+
+        return true;
+    }
+
+    IEnumerator ShieldFadeOn()
+    {
+        Image transitionUI = GameObject.Find("ShieldFX").GetComponent<Image>();
+
+        for (float i = 0; i <= 1; i += Time.deltaTime)
+        {
+            // set color with i as alpha
+            transitionUI.color = new Color(transitionUI.color.r, transitionUI.color.g, transitionUI.color.b, i);
+            yield return null;
+        }
+
+        transitionUI.color = new Color(transitionUI.color.r, transitionUI.color.g, transitionUI.color.b, 255);
+    }
+
+    IEnumerator ShieldFadeOff()
+    {
+        Image transitionUI = GameObject.Find("ShieldFX").GetComponent<Image>();
+
+        for (float i = 1; i >= 0; i -= Time.deltaTime * 2)
+        {
+            // set color with i as alpha
+            transitionUI.color = new Color(transitionUI.color.r, transitionUI.color.g, transitionUI.color.b, i);
+            yield return null;
+        }
+
+        transitionUI.color = new Color(transitionUI.color.r, transitionUI.color.g, transitionUI.color.b, 0);
     }
 }

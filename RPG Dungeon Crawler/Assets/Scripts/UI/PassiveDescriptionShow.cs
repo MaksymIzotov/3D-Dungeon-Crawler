@@ -66,6 +66,11 @@ public class PassiveDescriptionShow : MonoBehaviour
         }
     }
 
+    public void UpdatePassives()
+    {
+        CreatePassiveIcons();
+    }
+
     private void Update()
     {
         MovePassiveDescription();

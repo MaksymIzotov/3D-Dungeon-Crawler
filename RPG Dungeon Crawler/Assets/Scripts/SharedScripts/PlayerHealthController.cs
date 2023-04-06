@@ -43,6 +43,11 @@ public class PlayerHealthController : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage, GameObject damageDealer)
     {
+        if (GetComponent<PlayerPassives>().TryShieldBlocking())
+        {
+            return;
+        }
+
         if (GetComponent<PlayerPassives>().TryBlockDamage())
         {
             //Add sound for blocking
