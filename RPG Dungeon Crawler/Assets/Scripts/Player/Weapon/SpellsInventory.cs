@@ -103,6 +103,7 @@ public class SpellsInventory : MonoBehaviour
     IEnumerator AfterActivate(int index)
     {
         yield return new WaitForSeconds(spells[index].afterActivateTime);
+        spells[index].AfterCast(spellSpawnPoint);
         spellStates[index] = STATE.COOLDOWN;
 
         StartCoroutine(Cooldown(index));

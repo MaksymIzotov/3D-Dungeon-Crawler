@@ -46,6 +46,11 @@ public class Spell : ScriptableObject
         
     }
 
+    public virtual void AfterCast(Transform spellSpawnpoint)
+    {
+
+    }
+
     public virtual void CastUpgraded(Transform spellProperty)
     {
 

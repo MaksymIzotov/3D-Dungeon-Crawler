@@ -9,6 +9,8 @@ public class GroundEnemyMovementController : MonoBehaviour
     private GameObject player;
     private AIPath aiPath;
 
+    private bool isStopped = false;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -18,6 +20,7 @@ public class GroundEnemyMovementController : MonoBehaviour
     private void Update()
     {
         if (aiPath.enableRotation) { return; }
+        if (isStopped) { return; }
 
         RotateEnemy();
     }
@@ -32,12 +35,13 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     public void ChangeDestination()
     {
+        isStopped = false;
         aiPath.destination = player.transform.position;
     }
 
     public void StopAgent()
     {
+        isStopped = true;
         aiPath.destination = transform.position;
     }
-
 }

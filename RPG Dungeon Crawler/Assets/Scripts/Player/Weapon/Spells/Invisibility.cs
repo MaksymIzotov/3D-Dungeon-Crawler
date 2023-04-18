@@ -29,13 +29,20 @@ public class Invisibility : Spell
 
     public override void Cast(Transform spellSpawnpoint)
     {
-        
+        spellSpawnpoint.root.GetComponent<PlayerPassives>().EnableInvisibility(true, description);
         //spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayAudio(spellSpawnpoint.root.GetComponent<AudioSource>(), castAudio);
     }
 
     public override void CastUpgraded(Transform spellProperty)
     {
 
+    }
+
+    public override void AfterCast(Transform spellSpawnpoint)
+    {
+        //Turn off the invisibility
+        //Out animation
+        spellSpawnpoint.root.GetComponent<PlayerPassives>().EnableInvisibility(false, description);
     }
 
     public override string Stats()

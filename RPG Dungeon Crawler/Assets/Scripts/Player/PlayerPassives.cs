@@ -34,7 +34,7 @@ public class PlayerPassives : MonoBehaviour
     private int blockAmount;
     private PassiveDescription shieldDescription;
 
-
+    public bool isInvisible = false;
 
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
@@ -201,9 +201,14 @@ public class PlayerPassives : MonoBehaviour
         return true;
     }
 
-    public void EnableInvisibility()
+    public void EnableInvisibility(bool toggle, PassiveDescription description)
     {
+        isInvisible = toggle;
 
+        if (toggle)
+            activePassives.Add(description);
+        else
+            activePassives.Remove(description);
     }
 
     IEnumerator ShieldFadeOn()

@@ -21,6 +21,13 @@ public class GolemChasingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+        if (player.GetComponent<PlayerPassives>().isInvisible)
+        {
+            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.SwitchState(manager.IdleState);
+            return;
+        }
+
         manager.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is in attack range check
