@@ -34,6 +34,8 @@ public class PlayerPassives : MonoBehaviour
     private int blockAmount;
     private PassiveDescription shieldDescription;
 
+
+
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
     public void EnableBurnDamage(float _burnDamage, PassiveDescription passiveDescription)
@@ -197,6 +199,11 @@ public class PlayerPassives : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void EnableInvisibility()
+    {
+
     }
 
     IEnumerator ShieldFadeOn()

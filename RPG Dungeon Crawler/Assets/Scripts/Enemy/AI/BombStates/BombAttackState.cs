@@ -31,12 +31,17 @@ public class BombAttackState : EnemyBaseState
 
     private void Explode(EnemyStateManager manager)
     {
+        bool isPlayerHit = false;
+
         Collider[] colliders = Physics.OverlapSphere(manager.transform.position, 5);
         foreach (Collider n in colliders)
         {
             if (n.CompareTag(TAGS.PLAYER_TAG))
             {
+                if (isPlayerHit) continue;
+
                 n.gameObject.GetComponent<IDamagable>()?.TakeDamage(properties.damage, null);
+                isPlayerHit = true;
             }
             else if (n.tag == TAGS.DESTRUCTABLE_TAG)
             {
