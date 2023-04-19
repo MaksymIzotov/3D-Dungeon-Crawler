@@ -11,4 +11,6 @@ public static class ANIMATIONS
     public static string EXPLOSION_ANIM = "Explosion";
     public static string HEALINGTHROW_ANIM = "HealingThrow";
     public static string SHIELDSPELL_ANIM = "ShieldSpell";
+    public static string INVISIBILITY_ANIM = "Invisibility";
+    public static string INVISIBILITYAWAY_ANIM = "InvisibilityAway";
 }

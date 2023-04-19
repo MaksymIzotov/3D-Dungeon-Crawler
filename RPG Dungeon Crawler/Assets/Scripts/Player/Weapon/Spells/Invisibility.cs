@@ -23,7 +23,7 @@ public class Invisibility : Spell
     {
         //Animation
         GameObject player = spellSpawnpoint.root.gameObject;
-        //player.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.SHIELDSPELL_ANIM);
+        player.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.INVISIBILITY_ANIM);
 
     }
 
@@ -41,7 +41,8 @@ public class Invisibility : Spell
     public override void AfterCast(Transform spellSpawnpoint)
     {
         //Turn off the invisibility
-        //Out animation
+        GameObject player = spellSpawnpoint.root.gameObject;
+        player.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.INVISIBILITYAWAY_ANIM);
         spellSpawnpoint.root.GetComponent<PlayerPassives>().EnableInvisibility(false, description);
     }
 
