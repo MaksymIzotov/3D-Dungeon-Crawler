@@ -7,4 +7,5 @@ public static class TAGS
     public const string HEALTHBAR_TAG = "Healthbar";
     public const string BORDER_TAG = "Border";
     public const string DESTRUCTABLE_TAG = "Destructable";
+    public const string MIDDLEPOINT_TAG = "MiddlePoint";
 }

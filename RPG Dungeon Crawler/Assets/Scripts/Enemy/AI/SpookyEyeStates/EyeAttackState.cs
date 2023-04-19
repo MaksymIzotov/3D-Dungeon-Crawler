@@ -20,6 +20,13 @@ public class EyeAttackState : EnemyBaseState
     {
         if (manager.gameObject.GetComponent<ShootingEnemy>().isAttacking) { return; }
 
+        if (player.GetComponent<PlayerPassives>().isInvisible)
+        {
+            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.SwitchState(manager.IdleState);
+            return;
+        }
+
         if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
             manager.gameObject.GetComponent<ShootingEnemy>().Push();

@@ -20,6 +20,11 @@ public class EyeIdleState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+        if (player.GetComponent<PlayerPassives>().isInvisible)
+        {  
+            return;
+        }
+
         RaycastHit hit;
         Vector3 rayDirection = player.transform.position - manager.transform.position;
         if (Physics.Raycast(manager.transform.position, rayDirection, out hit, 1000f, ~ignore))

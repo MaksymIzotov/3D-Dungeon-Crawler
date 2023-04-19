@@ -209,6 +209,8 @@ public class PlayerPassives : MonoBehaviour
             activePassives.Add(description);
         else
             activePassives.Remove(description);
+
+        PassiveDescriptionShow.Instance.UpdatePassives();
     }
 
     IEnumerator ShieldFadeOn()

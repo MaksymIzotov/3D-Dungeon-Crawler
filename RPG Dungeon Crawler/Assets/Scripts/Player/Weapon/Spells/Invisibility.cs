@@ -44,11 +44,31 @@ public class Invisibility : Spell
         GameObject player = spellSpawnpoint.root.gameObject;
         player.GetComponent<AnimationManager>().PlayPlayerAnimation(ANIMATIONS.INVISIBILITYAWAY_ANIM);
         spellSpawnpoint.root.GetComponent<PlayerPassives>().EnableInvisibility(false, description);
+
+        //Try stealth attack 
+        float stealthDamage = spellSpawnpoint.root.GetComponent<PlayerPassives>().TryStealthAttack();
+        if (stealthDamage > 0)
+        {
+            bool isEnemyNear = false;
+
+            Collider[] colliders = Physics.OverlapSphere(spellSpawnpoint.root.position, 7);
+            foreach (Collider col in colliders)
+            {
+                if (col.CompareTag(TAGS.ENEMY_TAG))
+                {
+                    isEnemyNear = true;
+                    col.gameObject.GetComponent<IDamagable>()?.TakeDamage(stealthDamage, spellSpawnpoint.root.gameObject);
+                }
+            }
+
+            if (isEnemyNear)
+                spellSpawnpoint.root.GetComponent<PlayerAudio>().PlayStealthAttack();
+        }
     }
 
     public override string Stats()
     {
-        return "\nCooldown: " + coolDownTime.ToString("F");
+        return "Cooldown: " + coolDownTime.ToString("F");
     }
 
     public override string Desription()

@@ -46,6 +46,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8486e569b38859242b0f37b146127448, type: 2}
   - {fileID: 11400000, guid: 4e0ff07286e794341aac7610c1b6c822, type: 2}
   - {fileID: 11400000, guid: bf16a393afe49f04785948fa5b789aa3, type: 2}
+  - {fileID: 11400000, guid: 9db2105a77aa30b42bc00f37f85dc8d1, type: 2}
   GlobalInventory:
   - {fileID: 11400000, guid: 91efb31c1c3bc2741a2e46702efa9158, type: 2}
   - {fileID: 11400000, guid: 86e774c9307a7ce4c9984d1365309c80, type: 2}
@@ -55,7 +56,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce19847788e24b545b2f4fa00b85dead, type: 2}
   - {fileID: 11400000, guid: 8486e569b38859242b0f37b146127448, type: 2}
   - {fileID: 11400000, guid: 4e0ff07286e794341aac7610c1b6c822, type: 2}
-  - {fileID: 11400000, guid: e8010afc73e1a5a4fa3cfa5d9752ce9a, type: 2}
+  - {fileID: 11400000, guid: bf16a393afe49f04785948fa5b789aa3, type: 2}
   spellsInventory:
   - {fileID: 11400000, guid: 25677bf400f398a4c8dc3d54325370eb, type: 2}
   - {fileID: 11400000, guid: b81e0e684d51c284f91b4907f2b47ff2, type: 2}
@@ -64,6 +65,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a8282da95cb74644ae4e5413629a30b, type: 2}
   - {fileID: 11400000, guid: 8486e569b38859242b0f37b146127448, type: 2}
   - {fileID: 11400000, guid: 4e0ff07286e794341aac7610c1b6c822, type: 2}
+  - {fileID: 11400000, guid: bf16a393afe49f04785948fa5b789aa3, type: 2}
   usable: {fileID: 0}
   armor: {fileID: 0}
   weapon: {fileID: 11400000, guid: 86e774c9307a7ce4c9984d1365309c80, type: 2}

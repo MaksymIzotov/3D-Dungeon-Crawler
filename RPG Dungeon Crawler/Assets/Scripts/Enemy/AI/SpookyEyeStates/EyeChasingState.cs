@@ -22,6 +22,13 @@ public class EyeChasingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+        if (player.GetComponent<PlayerPassives>().isInvisible)
+        {
+            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.SwitchState(manager.IdleState);
+            return;
+        }
+
         manager.gameObject.GetComponent<GroundEnemyMovementController>().ChangeDestination();
 
         //If player is out of sight check
