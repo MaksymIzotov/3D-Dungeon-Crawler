@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235520a71398b99478767f17c6bc28fe, type: 3}
   m_Name: Money
   m_EditorClassIdentifier: 
-  amountBlueScrolls: 89
+  amountBlueScrolls: 74
   amountPurpleScrolls: 0
   amountRedScrolls: 0
-  amountCoins: 0
-  amountCrystals: 0
+  amountCoins: 35
+  amountCrystals: 20

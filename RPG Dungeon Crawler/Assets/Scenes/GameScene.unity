@@ -262,7 +262,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66228899}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 1baf687816943044299afbc70baa34d0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0ed34709b6ebd2544bc47f795d0b872a, type: 3}
@@ -4151,7 +4151,7 @@ MonoBehaviour:
   randomMin: -1
   randomMax: 1
   hpTextAnim: {fileID: 2410113050773583648, guid: 051fa129f8620794dba0d1b1db18c857, type: 3}
-  hpText: {fileID: 1408123541}
+  hpText: {fileID: 380488010}
   damageText: {fileID: 892722647978343791, guid: cd2481908d8213d44a5482a4b31016ad, type: 3}
 --- !u!114 &1171373388
 MonoBehaviour:

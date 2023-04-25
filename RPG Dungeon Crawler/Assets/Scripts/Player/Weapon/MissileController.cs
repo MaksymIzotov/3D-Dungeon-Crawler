@@ -77,6 +77,7 @@ public class MissileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag(TAGS.ENEMY_TAG))
             collision.transform.root.GetComponent<IDamagable>().TakeDamage(damage, null);
 

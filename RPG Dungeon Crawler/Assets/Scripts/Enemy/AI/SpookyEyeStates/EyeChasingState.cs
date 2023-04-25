@@ -43,7 +43,7 @@ public class EyeChasingState : EnemyBaseState
         if (manager.attackPoint.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange() ||
            manager.attackPointAbove.GetComponent<EnemyAttackCheck>().GetIsPlayerInRange())
         {
-            manager.GetComponent<GroundEnemyMovementController>().StopAgent();
+            manager.GetComponent<GroundEnemyMovementController>().StopRanged();
             manager.SwitchState(manager.AttackingState);
         }
 
@@ -53,7 +53,7 @@ public class EyeChasingState : EnemyBaseState
         {
             if (attackHit.transform.tag == "Player")
             {
-                manager.gameObject.GetComponent<GroundEnemyMovementController>().StopAgent();
+                manager.gameObject.GetComponent<GroundEnemyMovementController>().StopRanged();
                 manager.SwitchState(manager.AttackingState);
             }
         }

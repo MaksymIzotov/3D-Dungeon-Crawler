@@ -13,7 +13,7 @@ public class GroundEnemyMovementController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(TAGS.PLAYER_TAG);
         aiPath = GetComponent<AIPath>();
     }
 
@@ -37,11 +37,17 @@ public class GroundEnemyMovementController : MonoBehaviour
     {
         isStopped = false;
         aiPath.destination = player.transform.position;
+        aiPath.isStopped = false;
     }
 
     public void StopAgent()
     {
         isStopped = true;
         aiPath.destination = transform.position;
+    }
+
+    public void StopRanged()
+    {
+        aiPath.isStopped = true;
     }
 }
