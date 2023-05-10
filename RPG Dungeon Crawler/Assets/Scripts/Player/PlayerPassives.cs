@@ -38,6 +38,8 @@ public class PlayerPassives : MonoBehaviour
 
     public List<PassiveDescription> activePassives = new List<PassiveDescription>();
 
+    [SerializeField] private PassiveDescription poisonPassiveDescription;
+
     public void EnableBurnDamage(float _burnDamage, PassiveDescription passiveDescription)
     {
         isBurnEffect = true;
@@ -210,6 +212,33 @@ public class PlayerPassives : MonoBehaviour
         else
             activePassives.Remove(description);
 
+        PassiveDescriptionShow.Instance.UpdatePassives();
+    }
+
+    public void Poison(float damage)
+    {
+       if(activePassives.Contains(poisonPassiveDescription))
+            activePassives.Remove(poisonPassiveDescription);
+
+        StopCoroutine("DealPoisonDamage");
+        StartCoroutine(DealPoisonDamage(damage));
+
+        activePassives.Add(poisonPassiveDescription);
+        PassiveDescriptionShow.Instance.UpdatePassives();
+    }
+
+    IEnumerator DealPoisonDamage(float damage)
+    {
+        int amount = 0;
+        while (amount < 5)
+        {         
+            yield return new WaitForSeconds(1);
+
+            GetComponent<IDamagable>().TakeDamage(damage, null);
+            amount++;
+        }
+
+        activePassives.Remove(poisonPassiveDescription);
         PassiveDescriptionShow.Instance.UpdatePassives();
     }
 

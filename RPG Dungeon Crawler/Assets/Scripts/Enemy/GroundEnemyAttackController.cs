@@ -12,6 +12,8 @@ public class GroundEnemyAttackController : MonoBehaviour
     [SerializeField] private Transform eyes;
     [SerializeField] private bool isAddingImpact;
 
+    [SerializeField] private bool isPoisonous = false; 
+
     public void Attack()
     {
         StartCoroutine(PreAttack());
@@ -76,6 +78,8 @@ public class GroundEnemyAttackController : MonoBehaviour
             if (isAddingImpact)
                 player.GetComponent<PlayerController>().AddImpact(transform, 100);
 
+            if (isPoisonous)
+                player.GetComponent<PlayerPassives>().Poison(properties.damage/3);                    
         }
         else
         {
