@@ -23,7 +23,7 @@ MonoBehaviour:
   upgradePrice: 10
   lvl: 1
   maxLvl: 10
-  preCastAudio: {fileID: 0}
+  preCastAudio: {fileID: 11400000, guid: 2dd98410b7bf59a4c9baa3a33cd0061e, type: 2}
   castAudio: {fileID: 0}
   instantiatePrefab: {fileID: 6219316274322399789, guid: b420a8a7132f43c418d573a48f434712, type: 3}
   damage: 20
