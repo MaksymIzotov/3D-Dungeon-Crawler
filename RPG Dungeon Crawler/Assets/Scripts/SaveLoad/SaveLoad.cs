@@ -52,6 +52,14 @@ public class SaveLoad : MonoBehaviour
         ContinueButtonCheck();
     }
 
+    public void ResetSaveFile()
+    {
+        if (File.Exists(saveFile))
+            File.Delete(saveFile);
+
+        ContinueButtonCheck();
+    }
+
     public bool CheckSaveFile()
     {
         return File.Exists(saveFile);

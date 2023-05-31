@@ -56,12 +56,12 @@ public class MenuInventoryController : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        inventory.GlobalInventory.Remove(item);
+        inventory.GlobalInventory.Add(item);
     }
 
     public void RemoveItem(Item item)
     {
-        inventory.GlobalInventory.Add(item);
+        inventory.GlobalInventory.Remove(item);
     }
 
     public void AddSpellToInventory(int spellIndex)

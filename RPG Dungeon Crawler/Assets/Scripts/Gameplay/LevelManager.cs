@@ -29,6 +29,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private bool isTutorialLevel = false;
 
+    [SerializeField] private CurrentSettings settings;
+
     public void AddTotem(GameObject totem)
     {
         totems.Add(totem);
@@ -70,6 +72,15 @@ public class LevelManager : MonoBehaviour
     public void LeaveLevel()
     {
         Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    public void GameLost()
+    {
+        Time.timeScale = 1;
+        settings.isPlaying = false;
+        settings.isLost = true;
+
         SceneManager.LoadScene(0);
     }
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.LowLevel;
+
 public class GameflowController : MonoBehaviour
 {
     #region SIngleton Init
@@ -32,6 +34,12 @@ public class GameflowController : MonoBehaviour
             onContinuePlaying.Invoke();
         else if(settings.isTutorial)
             onTutorialContinue.Invoke();
+
+        if(!settings.isPlaying && settings.isLost)
+        {
+            MenuInventoryController.Instance.ClearInventory();
+            SaveLoad.Instance.ResetSaveFile();
+        }
         
     }
     

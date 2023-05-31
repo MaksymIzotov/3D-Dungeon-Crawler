@@ -10,4 +10,5 @@ public class CurrentSettings : ScriptableObject
 
     public bool isPlaying;
     public bool isTutorial;
+    public bool isLost;
 }
