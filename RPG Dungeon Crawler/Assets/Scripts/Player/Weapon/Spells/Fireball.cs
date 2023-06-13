@@ -51,7 +51,10 @@ public class Fireball : Spell
 
     public override string Desription()
     {
-        return "This. Is. Fireball. Anything else you want to know?";
+        if (isFireball)
+            return "Shoots a fireball with area damage.";
+        else
+            return "Shoots an iceball with area damage.";
     }
 
     public override void UpgradeStats()

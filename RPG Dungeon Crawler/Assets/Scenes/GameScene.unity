@@ -3187,7 +3187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 941879778}
   - component: {fileID: 941879779}
-  - component: {fileID: 941879780}
   - component: {fileID: 941879781}
   - component: {fileID: 941879782}
   - component: {fileID: 941879783}
@@ -3244,19 +3243,6 @@ MonoBehaviour:
   usableAmount: {fileID: 1892111336}
   emptySpellSlot: {fileID: 21300000, guid: 3719cf26ac212aa4bb42ca0c9a7dab5a, type: 3}
   emptyUsableSlot: {fileID: 21300000, guid: cea9a0183a0d19846a6b12912dc582e5, type: 3}
---- !u!114 &941879780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941879776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea152326b13a475459064141418e9e4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 0.5
 --- !u!114 &941879781
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -39,6 +39,8 @@ public class GameflowController : MonoBehaviour
         {
             MenuInventoryController.Instance.ClearInventory();
             SaveLoad.Instance.ResetSaveFile();
+
+            settings.isLost = false;
         }
         
     }

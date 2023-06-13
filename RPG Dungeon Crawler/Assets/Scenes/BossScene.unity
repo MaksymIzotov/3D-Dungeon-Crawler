@@ -9619,7 +9619,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1754740317}
   - component: {fileID: 1754740316}
-  - component: {fileID: 1754740315}
   - component: {fileID: 1754740314}
   - component: {fileID: 1754740313}
   - component: {fileID: 1754740303}
@@ -9683,6 +9682,7 @@ MonoBehaviour:
         m_CallState: 2
   levelExitText: {fileID: 969332287}
   isTutorialLevel: 0
+  settings: {fileID: 0}
 --- !u!114 &1754740304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9804,19 +9804,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1922896542286236741, guid: 26986082e1caad449bf687e0d8711d30, type: 3}
---- !u!114 &1754740315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754740302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea152326b13a475459064141418e9e4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 0.5
 --- !u!114 &1754740316
 MonoBehaviour:
   m_ObjectHideFlags: 0
